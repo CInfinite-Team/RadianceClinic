@@ -7,20 +7,20 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed top-6 left-6 right-6 z-50">
-      <nav className="bg-white rounded-lg shadow-md">
+    <div className="fixed font-Inter font-semibold lg:text-xs xl:text-sm 2xl:text-base w-full lg:w-auto lg:top-6 lg:left-6 lg:right-6 z-50">
+      <nav className="bg-white  shadow-md px-10">
         {/* Rest of the navbar content remains the same */}
         <div className="container mx-auto px-4">
           <div className="flex items-center h-20 relative">
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden absolute right-0">
               <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-gray-700 hover:text-[#725B98]">
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
 
             {/* Left Navigation */}
-            <div className="hidden md:flex space-x-20 flex-1 justify-start">
+            <div className="hidden lg:flex gap-10 xl:gap-20 flex-1 justify-start">
               <Link to="/" className="text-black hover:text-[#725B98]">Home</Link>
               <Link to="/book-appointment" className="text-black hover:text-[#725B98]">Book Appointment</Link>
               <div className="relative group">
@@ -40,19 +40,19 @@ const Navbar = () => {
             </div>
 
             {/* Center Logo */}
-            <div className="absolute left-1/2 transform -translate-x-1/2">
+            <div className="absolute lg:static lg:translate-x-0 left-4  transform -translate-x-1/2">
               <Link to="/">
                 <img src={Logo} alt="Logo" className="h-16 w-auto" />
               </Link>
             </div>
 
             {/* Right Navigation */}
-            <div className="hidden md:flex space-x-20 flex-1 justify-end">
+            <div className="hidden lg:flex gap-14 xl:gap-24 flex-1 justify-end">
               <Link to="/clinic" className="text-black hover:text-[#725B98]">Clinic</Link>
               <Link to="/blog" className="text-black hover:text-[#725B98]">Blog</Link>
               <Link to="/contact-us" className="text-black hover:text-[#725B98]">Contact Us</Link>
               <div className="relative group">
-                <Link to="/patient-form" className="text-black hover:text-[#725B98] flex items-center">
+                <Link to="#" className="text-black hover:text-[#725B98] flex items-center">
                   Patient Form
                   <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5h10z"/></svg>
                 </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} pb-4`}>
+          <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} pb-4`}>
             <ul className="space-y-2">
               <li><Link to="/" className="block px-4 py-2 text-black hover:text-[#725B98]">Home</Link></li>
               <li><Link to="/book-appointment" className="block px-4 py-2 text-black hover:text-[#725B98]">Book Appointment</Link></li>

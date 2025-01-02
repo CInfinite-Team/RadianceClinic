@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-ElMessiri{
+font-family: 'El Messiri', serif;
+}
+
+.font-Inter{
+    font-family: "Inter", serif;
+}
+
+.HeroGradient{
+  
+background: linear-gradient(299.33deg, rgba(139, 82, 179, 0.88) -10.17%, #E5DAEB 43.4%);
+backdrop-filter: blur(165px);
+
+}
+html,body{
+    overflow-x: hidden;
+    
+}
+*{
+    scrollbar-width: thin;
+}
