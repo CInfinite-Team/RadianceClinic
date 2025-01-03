@@ -18,6 +18,14 @@ background: linear-gradient(299.33deg, rgba(139, 82, 179, 0.88) -10.17%, #E5DAEB
 backdrop-filter: blur(165px);
 
 }
+
+.AllheroGradient{
+
+background: linear-gradient(2.14deg, rgba(187, 90, 255, 0.57) -126.54%, #FFFFFF 76.23%);
+
+}
+
+
 html,body{
     overflow-x: hidden;
     

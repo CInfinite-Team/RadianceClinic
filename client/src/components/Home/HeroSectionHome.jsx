@@ -18,7 +18,7 @@ function HeroSectionHome() {
         <img src={Plant} alt="" className='absolute hidden lg:block w-[250px] xl:w-auto 2xl:w-[190px] top-10 left-6  xl:top-7 2xl:top-14 xl:left-20' />
         <img src={sparkling} alt="" className='absolute hidden lg:block 2xl:w-[80px] top-48 2xl:top-44 left-1/2 -translate-x-28' />
        <div className='flex flex-col lg:flex-row relative justify-between w-full ml-5 xl:ml-20 2xl:ml-36 items-center gap-4 '>
-        <div className='flex flex-col mt-32  lg:-translate-y-[40%] xl:-translate-y-[20%] 2xl:-translate-y-[12%] gap-11'>
+        <div className='flex flex-col mt-32  lg:-translate-y-[30%] xl:-translate-y-[20%] 2xl:-translate-y-[12%] gap-11'>
             <div className='flex flex-col gap-4 justify-center md:items-start'>
             <h1 className='font-ElMessiri text-[#52436A] font-bold text-center lg:text-left leading-[40px] md:leading-[70px] lg:leading-[80px] xl:leading-[91px] text-[45px] md:text-[70px] xl:text-[90px] 2xl:text-[98px] ' >
             Beauty redefined,<br /> care perfected.
@@ -28,7 +28,7 @@ function HeroSectionHome() {
 
             </div>
 
-            <div className='flex flex-col md:flex-row gap-7 items-center md:mb-[600px] lg:mb-0 '>
+            <div className='flex flex-col md:flex-row gap-7 items-center '>
                 <PrimaryBtn>Book Appointment  <Appointment size={'24px'} /></PrimaryBtn>
                 <SecondaryBtn>Explore Skin Treatment</SecondaryBtn>
                 <button className='p-4 rounded-full bg-white'><img src={TiledArrow} alt="" /></button>
@@ -45,7 +45,7 @@ function HeroSectionHome() {
             </div>
 
         </div>
-        <img src={Images[currentimg]} loading='eager'  alt="" className={` max-w-[100vw]  md:max-w-[34rem] transition-all duration-500 will-change-auto lg:!max-w-[34rem] xl:!max-w-[42rem]  right-0 md:absolute lg:-right-20 xl:right-0 bottom-0 -z-10 2xl:!max-w-[36rem] ${currentimg === 1  ? '  md:max-w-[24rem]  2xl:!max-w-[27rem] xl:!max-w-[29rem] lg:!max-w-[28rem]' : currentimg === 2  ? 'md:max-w-[29em]  2xl:!max-w-[31rem] xl:!max-w-[35rem]':''} ` }/>
+        <img src={Images[currentimg]} loading='eager'  alt="" className={` max-w-[100vw]  md:max-w-[31rem] transition-all duration-500 will-change-auto lg:max-w-[73vh] xl:max-w-[73vh]  right-0 lg:absolute lg:-right-20 xl:right-0 bottom-0 md:translate-x-[30%] lg:!translate-x-0 -z-10 2xl:max-w-[36rem] ${currentimg === 1  ? ' !max-w-[90vw] md:!max-w-[50%]  2xl:!max-w-[26rem] xl:!max-w-[55vh] md:!translate-x-1/2 lg:right-0 lg:translate-x-0 lg:!max-w-[55vh]' : currentimg === 2  ? 'md:max-w-[50%] lg:!max-w-[59vh] lg:right-0 md:!translate-x-[30%] lg:translate-x-0 2xl:!max-w-[30rem] xl:!max-w-[60vh]':''} ` }/>
         </div>
       
     </div>
