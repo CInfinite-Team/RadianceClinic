@@ -3,11 +3,11 @@ import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import SlidingBanner from '../components/AllServices/SlidingBanner';
 
-function Services() {
+function Services(category) {
   return (
     <div>
       <Navbar />
-      <SlidingBanner></SlidingBanner>
+      <SlidingBanner category={category} ></SlidingBanner>
       <Footer></Footer>
     </div>
   );
