@@ -15,7 +15,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<Services category="all"/>} />
+        <Route path="/services/hair" element={<Services category="hair" />} />
+        <Route path="/services/skin" element={<Services category="skin" />} />
+        <Route path="/services/laser" element={<Services category="laser" />} />
+        <Route path="/services/anti-aging" element={<Services category="anti-aging" />} />
+        <Route path="/services/cosmetic-surgery" element={<Services category="cosmetic" />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/clinic" element={<Clinic />} />
         <Route path="/blog" element={<Blog />} />
