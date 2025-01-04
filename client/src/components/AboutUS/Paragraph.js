@@ -1,0 +1,6 @@
+export const para=[
+    "Founded in 1955, St. Mary’s Medical Center began as a small, community-driven hospital with a mission to provide compassionate care to all. Over the years, we have grown from a 50-bed facility into a leading regional healthcare provider, now boasting over 500 beds and state-of-the-art medical services.",
+    "Our hospital has always been at the forefront of medical innovation, being the first in the region to offer specialized cardiac care in the 1970s and advanced cancer treatments in the 1990s. Today, we are recognized as a center of excellence in cardiology, oncology, and maternal health, serving patients from across the country. Despite our expansion and cutting-edge technology, we have stayed true to our founding values—compassion, respect, and dedication to improving the health of our community. With over six decades of service, we continue to lead with heart, ensuring every patient receives the highest standard of care.",
+    "Cosmetic surgery is a unique discipline of medicine focused on enhancing appearance through surgical and medical techniques. Cosmetic surgery can be performed on all areas of the head.",
+    "Cosmetic surgery is a unique discipline of medicine focused on enhancing appearance through surgical and medical techniques.",
+]
