@@ -8,9 +8,6 @@
 font-family: 'El Messiri', serif;
 }
 
-.font-Inter{
-    font-family: "Inter", serif;
-}
 
 .HeroGradient{
   
@@ -31,6 +28,7 @@ html,body{
     
 }
 *{
+    font-family: "Inter", serif;
     scrollbar-width: thin;
     scrollbar-color: #866dad #E2DBFF;
 }
