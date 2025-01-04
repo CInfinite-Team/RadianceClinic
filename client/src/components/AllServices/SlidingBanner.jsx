@@ -1,27 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import HairServiceBanner from "../../assets/AllServices/Banner/HairServiceBanner.svg"
+import PrimaryBtn from '../Buttons/PrimaryBtn';
+import SecondaryBtn from "../Buttons/SecondaryBtn"
 
 const slides = [
-  {
-    title: "PRP THERAPY",
-    description: "Stimulate natural hair growth with Platelet-Rich Plasma therapy. A revolutionary treatment that uses your body's own healing mechanisms.",
-    buttonText: "Learn More",
-    image: HairServiceBanner,
-  },
-  {
-    title: "HAIR TRANSPLANT",
-    description: "Advanced hair restoration techniques using the latest technology. Our treatments provide natural-looking, permanent results for those experiencing hair loss.",
-    buttonText: "Book Now",
-    image: HairServiceBanner,
-  },
-  {
-    title: "SCALP TREATMENT",
-    description: "Comprehensive scalp care solutions to maintain healthy hair growth. Our specialized treatments address various scalp conditions.",
-    buttonText: "Discover More",
-    image: HairServiceBanner,
-  }
-];
+    {
+      title: "Hair Transplant",
+      description: "Restore your hairline with our advanced hair transplant procedures, offering natural-looking results and boosting your confidence.",
+      buttonText: "Learn More",
+      image: HairServiceBanner,
+    },
+    {
+      title: "FUE Hair Transplant",
+      description: "Experience the cutting-edge Follicular Unit Extraction (FUE) technique for hair transplantation, providing precise and minimally invasive results.",
+      buttonText: "Learn More",
+      image: HairServiceBanner,
+    },
+    {
+      title: "Female Hair Transplant",
+      description: "Specialized hair transplant solutions tailored for women to address hair thinning and balding, enhancing natural hair growth.",
+      buttonText: "Learn More",
+      image: HairServiceBanner,
+    },
+    {
+      title: "Platelet Rich Plasma Therapy",
+      description: "Revitalize your hair growth with PRP therapy, leveraging your body's healing power to stimulate new hair development naturally.",
+      buttonText: "Learn More",
+      image: HairServiceBanner,
+    },
+    {
+      title: "Eyebrow & Beard Hair Transplant",
+      description: "Achieve a fuller look with our eyebrow and beard hair transplant services, designed for natural and long-lasting results.",
+      buttonText: "Learn More",
+      image: HairServiceBanner,
+    },
+    {
+      title: "Treatment of other kinds of alopecia (Hair Loss)",
+      description: "Explore our comprehensive treatments for various types of alopecia, promoting healthier hair and scalp.",
+      buttonText: "Learn More",
+      image: HairServiceBanner,
+    },
+    {
+      title: "Hair Transplant Repair",
+      description: "Enhance or correct previous hair transplant results with our specialized repair services, ensuring your satisfaction.",
+      buttonText: "Learn More",
+      image: HairServiceBanner,
+    },
+    {
+      title: "Hair Transplant in Nagpur",
+      description: "Avail our expert hair transplant services in Nagpur, providing advanced solutions for effective hair restoration.",
+      buttonText: "Learn More",
+      image: HairServiceBanner,
+    }
+  ];
+  
 
 const SlidingBanner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,8 +68,8 @@ const SlidingBanner = () => {
   }, []);
 
   return (
-    <div className="relative top-0 mx-4 pt-28 sm:mx-8 lg:mx-16 lg:mt-40 lg:pt-2 mb-8">
-      <div className="relative w-full bg-purple-50 overflow-hidden rounded-xl shadow-lg border border-purple-100">
+    <div className="relative top-0 mx-4 pt-24 sm:mx-8 lg:mx-16 lg:mt-40 lg:pt-2 mb-8">
+      <div className="relative w-full bg-[#E2DBFF] overflow-hidden rounded-xl shadow-lg border border-purple-100">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -56,19 +89,19 @@ const SlidingBanner = () => {
                 />
               </div>
               <div className="space-y-4 mb-8">
-                <h1 className="text-2xl font-bold text-purple-900 text-center">
+                <h1 className="text-2xl font-bold text-[#554075] font-ElMessiri">
                   {slides[currentIndex].title}
                 </h1>
-                <p className="text-gray-700 text-sm leading-relaxed text-center">
+                <p className="text-[#554075] text-sm leading-relaxed">
                   {slides[currentIndex].description}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <button className="w-full bg-purple-900 text-white py-2.5 rounded-md hover:bg-purple-800 transition-colors text-sm shadow-sm">
-                    {slides[currentIndex].buttonText}
-                  </button>
-                  <button className="w-full border border-purple-900 text-purple-900 py-2.5 rounded-md hover:bg-purple-100 transition-colors text-sm shadow-sm">
-                    Book Appointment
-                  </button>
+                    <PrimaryBtn className="justify-center w-full">   
+                      Book Appointment
+                    </PrimaryBtn>
+                    <PrimaryBtn className="justify-center w-full">
+                      {slides[currentIndex].buttonText}
+                    </PrimaryBtn>
                 </div>
               </div>
             </div>
@@ -77,19 +110,19 @@ const SlidingBanner = () => {
             <div className="hidden lg:flex items-center h-full p-16">
               <div className="flex flex-row items-center justify-between w-full gap-16">
                 <div className="flex-1 space-y-6 text-left">
-                  <h1 className="text-5xl font-bold text-purple-900 leading-tight">
+                  <h1 className="text-6xl font-bold text-[#554075] leading-tight font-ElMessiri">
                     {slides[currentIndex].title}
                   </h1>
-                  <p className="text-gray-700 text-lg">
+                  <p className="text-[#554075] text-lg">
                     {slides[currentIndex].description}
                   </p>
                   <div className="flex gap-4">
-                    <button className="bg-purple-900 text-white px-6 py-3 rounded-md hover:bg-purple-800 transition-colors shadow-sm">
-                      {slides[currentIndex].buttonText}
-                    </button>
-                    <button className="border border-purple-900 text-purple-900 px-6 py-3 rounded-md hover:bg-purple-100 transition-colors shadow-sm">
+                    <PrimaryBtn className="">
                       Book Appointment
-                    </button>
+                    </PrimaryBtn>
+                    <PrimaryBtn className="">
+                      {slides[currentIndex].buttonText}
+                    </PrimaryBtn>
                   </div>
                 </div>
                 <div className="flex-1">
