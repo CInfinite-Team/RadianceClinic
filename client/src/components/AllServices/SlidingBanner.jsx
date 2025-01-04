@@ -35,7 +35,7 @@ const SlidingBanner = () => {
   }, []);
 
   return (
-    <div className="relative top-0 mx-4 sm:mx-8 lg:mx-16 lg:mt-40 mb-8">
+    <div className="relative top-0 mx-4 pt-28 sm:mx-8 lg:mx-16 lg:mt-40 mb-8">
       <div className="relative w-full bg-purple-50 overflow-hidden rounded-xl shadow-lg border border-purple-100">
         <AnimatePresence mode="wait">
           <motion.div
