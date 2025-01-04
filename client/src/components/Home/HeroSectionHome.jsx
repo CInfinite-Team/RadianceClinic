@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import PrimaryBtn from '../Buttons/PrimaryBtn'
 import SecondaryBtn from '../Buttons/SecondaryBtn'
 import Appointment from '../../assets/Appointment'
@@ -12,6 +12,16 @@ import TiledArrow from '../../assets/TiledArrow.svg'
 function HeroSectionHome() {
     const [currentimg,setCurrentimg] = useState(0);
     const Images =[HeroImg1,HeroImg2,HeroImg3];
+
+    useEffect(() => {
+      const interval = setInterval(ChangeImg, 2000);
+      return () => clearInterval(interval);
+  }, [currentimg]); 
+
+  function ChangeImg() {
+      setCurrentimg((prev) => (prev === Images.length - 1 ? 0 : prev + 1));
+  }
+
   return (
     <>
     <div className='w-screen  min-h-screen HeroGradient  flex justify-end md:items-end'>
