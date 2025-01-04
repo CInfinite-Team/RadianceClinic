@@ -5,7 +5,7 @@ import AwardsAndAchievements from './AwardsAndAchievements'
 function DoctorInfo({Photo,Name,Position,CardPosition,info,AwardsData,AwardImage,facebook,instagram,youtube}) {
   return (
    <>
-   <div className='flex flex-col lg:flex-row gap-10 lg:gap-0 items-center sm:items-start lg:justify-between w-screen min-h-screen px-5 md:px-10 xl:px-14 pt-20 '>
+   <div className='flex flex-col lg:flex-row gap-10 lg:gap-0 items-center lg:items-start lg:justify-between w-screen min-h-screen px-5 md:px-10 xl:px-14 pt-20 '>
     <InfoCard Photo={Photo} Name={Name} CardPosition={CardPosition} facebook={facebook}  instagram={instagram} youtube={youtube} />
 
     <div className='flex flex-col gap-3 lg:max-w-[44rem] xl:max-w-5xl'>
