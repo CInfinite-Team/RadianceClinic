@@ -8,6 +8,9 @@
 font-family: 'El Messiri', serif;
 }
 
+.infocardshadow{
+  box-shadow: 0px 4px 21px rgba(130, 106, 106, 0.25);
+}
 
 .HeroGradient{
   

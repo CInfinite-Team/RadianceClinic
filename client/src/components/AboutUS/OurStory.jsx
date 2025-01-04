@@ -14,10 +14,10 @@ function OurStory() {
 
            <div className='flex flex-col'>
             <h1 className='font-ElMessiri text-[#554075] font-bold leading-tight' style={{fontSize:'clamp(36px,6vw,60px)'}}>Our Story</h1>
-            <p className='text-[#B2A6CE] font-Inter font-semibold' style={{fontSize:'clamp(18px,1.5vw,25px)'}}>Our Journey Towards Excellence</p>
+            <p className='text-[#B2A6CE] font-Inter font-semibold' style={{fontSize:'clamp(18px,1.5vw,22px)'}}>Our Journey Towards Excellence</p>
             </div> 
             {para.map((data,index)=>(
-            <p key={index} className='lg:w-[50vw] font-Inter text-[#50535C] xl:text-[18px] lg:text-base ' >{data}</p>
+            <p key={index} className='lg:w-[50vw] font-Inter text-[#50535C]  lg:text-base ' >{data}</p>
         )) }
 
         <PrimaryBtn>Book Appointment <Appointment size={'24px'} /> </PrimaryBtn>
