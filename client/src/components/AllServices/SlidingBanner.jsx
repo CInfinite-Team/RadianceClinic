@@ -52,7 +52,7 @@ const SlidingBanner = () => {
                 <img
                   src={slides[currentIndex].image}
                   alt="Hair treatment visualization"
-                  className="w-full h-full object-cover rounded-lg shadow-md"
+                  className="w-full h-full object-cover bg-[#554075] rounded-lg shadow-md"
                 />
               </div>
               <div className="space-y-4 mb-8">
@@ -96,7 +96,7 @@ const SlidingBanner = () => {
                   <img
                     src={slides[currentIndex].image}
                     alt="Hair treatment visualization"
-                    className="rounded-lg shadow-xl w-full h-auto object-cover max-w-md mx-auto"
+                    className="rounded-lg shadow-xl bg-[#554075] w-full h-auto object-cover max-w-md mx-auto"
                   />
                 </div>
               </div>
