@@ -32,3 +32,46 @@ html,body{
     scrollbar-width: thin;
     scrollbar-color: #866dad #E2DBFF;
 }
+
+.underline-text {
+    position: relative;
+  }
+  
+  .underline-text::after {
+    content: '';
+    position: absolute;
+    left: 60px;
+    bottom: 29px; 
+    z-index: 0;
+    width: 74%;
+    height: 9px;
+    background-color: #AE92C0; 
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 1279px){
+    .underline-text::after {
+        content: '';
+        position: absolute;
+        left: 50px;
+        bottom: 20px; 
+        z-index: 0;
+        width: 74%;
+        height: 9px;
+        background-color: #AE92C0; 
+        border-radius: 10px;
+      }
+  }
+  @media screen and (max-width: 768px){
+    .underline-text::after {
+        content: '';
+        position: absolute;
+        left: 28px;
+        bottom: 10px; 
+        z-index: 0;
+        width: 74%;
+        height: 9px;
+        background-color: #AE92C0; 
+        border-radius: 10px;
+      }
+  }

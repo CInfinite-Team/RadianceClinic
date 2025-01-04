@@ -1,9 +1,9 @@
 import React from 'react'
 import { para } from './Paragraph'
-import Logo from '../../assets/Logo.png'
-import GrayFlower from '../../assets/GrayFlower.svg'
+import Logo from '../../assets/SharedAssets/Logo.png'
+import GrayFlower from '../../assets/SharedAssets/GrayFlower.svg'
 import PrimaryBtn from '../Buttons/PrimaryBtn'
-import Appointment from '../../assets/Appointment'
+import Appointment from '../../assets/SharedAssets/Appointment'
 
 function OurStory() {
   return (
@@ -13,8 +13,8 @@ function OurStory() {
         <div className='flex flex-col gap-8  order-2 lg:order-1'>
 
            <div className='flex flex-col'>
-            <h1 className='font-ElMessiri text-[#554075] font-bold leading-tight' style={{fontSize:'clamp(36px,6vw,75px)'}}>Our Story</h1>
-            <p className='text-[#B2A6CE] font-Inter font-semibold' style={{fontSize:'clamp(18px,2vw,27px)'}}>Our Journey Towards Excellence</p>
+            <h1 className='font-ElMessiri text-[#554075] font-bold leading-tight' style={{fontSize:'clamp(36px,6vw,60px)'}}>Our Story</h1>
+            <p className='text-[#B2A6CE] font-Inter font-semibold' style={{fontSize:'clamp(18px,1.5vw,25px)'}}>Our Journey Towards Excellence</p>
             </div> 
             {para.map((data,index)=>(
             <p key={index} className='lg:w-[50vw] font-Inter text-[#50535C] xl:text-[18px] lg:text-base ' >{data}</p>

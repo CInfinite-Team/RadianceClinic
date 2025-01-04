@@ -1,20 +1,20 @@
 import {useState,useEffect} from 'react'
 import PrimaryBtn from '../Buttons/PrimaryBtn'
 import SecondaryBtn from '../Buttons/SecondaryBtn'
-import Appointment from '../../assets/Appointment'
-import HeroImg1 from '../../assets/HeroImg1.svg'
-import HeroImg2 from '../../assets/HeroImg2.svg'
-import HeroImg3 from '../../assets/HeroImg3.svg'
-import Plant from '../../assets/plant.png'
-import sparkling from '../../assets/sparkling.svg'
-import TiledArrow from '../../assets/TiledArrow.svg'
+import Appointment from '../../assets/SharedAssets/Appointment'
+import HeroImg1 from '../../assets/Home/HeroImg1.svg'
+import HeroImg2 from '../../assets/Home/HeroImg2.svg'
+import HeroImg3 from '../../assets/Home/HeroImg3.svg'
+import Plant from '../../assets/Home/plant.png'
+import sparkling from '../../assets/Home/sparkling.svg'
+import TiledArrow from '../../assets/SharedAssets/TiledArrow.svg'
 
 function HeroSectionHome() {
     const [currentimg,setCurrentimg] = useState(0);
     const Images =[HeroImg1,HeroImg2,HeroImg3];
 
     useEffect(() => {
-      const interval = setInterval(ChangeImg, 2000);
+      const interval = setInterval(ChangeImg, 2500);
       return () => clearInterval(interval);
   }, [currentimg]); 
 
@@ -31,7 +31,7 @@ function HeroSectionHome() {
         <div className='flex flex-col mt-32  lg:-translate-y-[30%] xl:-translate-y-[20%] 2xl:-translate-y-[12%] gap-11'>
             <div className='flex flex-col gap-4 justify-center md:items-start'>
             <h1 className='font-ElMessiri text-[#52436A] font-bold text-center lg:text-left leading-[40px] md:leading-[70px] lg:leading-[80px] xl:leading-[91px] text-[45px] md:text-[70px] xl:text-[90px] 2xl:text-[98px] ' >
-            Beauty redefined,<br /> care perfected.
+            Beauty redefined,<br /> care <span className="underline-text font-ElMessiri leading-[40px]">perfected</span>.
             </h1>
 
             <p className=' max-w-[90vw] mx-auto md:mx-0 md:max-w-[520px] xl:max-w-[680px] text-[#7E7E7E] font-Inter text-[16px] xl:text-[19px] text-center lg:text-left ' >The most common treatment area for fat grafting is the face. Fat may be injected into several areas to restore youthful volume and contours, while also rejuvenating the skin.</p>
