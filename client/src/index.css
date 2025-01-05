@@ -4,6 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+input,textarea::placeholder {
+  color: #725B98;
+  opacity: 1; 
+}
+
+input,textarea::-ms-input-placeholder { 
+  color: #725B98;
+}
+
+input[type="checkbox"] {
+  accent-color: #554075;
+ border: 2px solid #221a2e;
+}
+
 .font-ElMessiri{
 font-family: 'El Messiri', serif;
 }
@@ -34,6 +49,7 @@ html,body{
     font-family: "Inter", serif;
     scrollbar-width: thin;
     scrollbar-color: #866dad #E2DBFF;
+    outline: none;
 }
 
 .underline-text {
