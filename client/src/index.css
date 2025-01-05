@@ -51,6 +51,14 @@ html,body{
     background-color: #AE92C0; 
     border-radius: 10px;
   }
+  .slick-dots{
+    bottom: 70px !important;
+  }
+  .slick-dots li button:before{
+    font-size: 18px !important;
+    color: #554075 !important;
+   
+  }
 
   @media screen and (max-width: 1279px){
     .underline-text::after {
