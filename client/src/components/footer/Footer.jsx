@@ -8,18 +8,18 @@ const Footer = () => {
   return (
     <footer className="bg-[#2D2840] text-white">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="flex flex-wrap  md:grid md:grid-cols-4 justify-items-center gap-8">
           {/* Links Section */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/book-appointment" className="hover:text-gray-300">Book Appointment</Link></li>
-              <li><Link to="/hair-form" className="hover:text-gray-300">Hair Form</Link></li>
-              <li><Link to="/blog" className="hover:text-gray-300">Blog</Link></li>
-              <li><Link to="/about-us" className="hover:text-gray-300">About Us</Link></li>
-              <li><Link to="/clinic" className="hover:text-gray-300">Clinic</Link></li>
-              <li><Link to="/contact-us" className="hover:text-gray-300">Contact Us</Link></li>
-              <li><Link to="/quick-links" className="hover:text-gray-300">Quick Links</Link></li>
+              <li><Link to="/book-appointment" className="hover:underline hover:text-gray-300">Book Appointment</Link></li>
+              <li><Link to="/hair-form" className="hover:underline hover:text-gray-300">Hair Form</Link></li>
+              <li><Link to="/blog" className="hover:underline hover:text-gray-300">Blog</Link></li>
+              <li><Link to="/about-us" className="hover:underline hover:text-gray-300">About Us</Link></li>
+              <li><Link to="/clinic" className="hover:underline hover:text-gray-300">Clinic</Link></li>
+              <li><Link to="/contact-us" className="hover:underline hover:text-gray-300">Contact Us</Link></li>
+              <li><Link to="/quick-links" className="hover:underline hover:text-gray-300">Quick Links</Link></li>
             </ul>
           </div>
 
@@ -27,11 +27,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/hair" className="hover:text-gray-300">Hair</Link></li>
-              <li><Link to="/services/skin" className="hover:text-gray-300">Skin</Link></li>
-              <li><Link to="/services/laser" className="hover:text-gray-300">Laser</Link></li>
-              <li><Link to="/services/anti-aging" className="hover:text-gray-300">Anti-Aging</Link></li>
-              <li><Link to="/services/cosmetic-surgery" className="hover:text-gray-300">Cosmetic Surgery</Link></li>
+              <li><Link to="/services/hair" className="hover:underline hover:text-gray-300">Hair</Link></li>
+              <li><Link to="/services/skin" className="hover:underline hover:text-gray-300">Skin</Link></li>
+              <li><Link to="/services/laser" className="hover:underline hover:text-gray-300">Laser</Link></li>
+              <li><Link to="/services/anti-aging" className="hover:underline hover:text-gray-300">Anti-Aging</Link></li>
+              <li><Link to="/services/cosmetic-surgery" className="hover:underline hover:text-gray-300">Cosmetic Surgery</Link></li>
             </ul>
           </div>
 

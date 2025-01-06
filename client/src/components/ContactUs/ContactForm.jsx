@@ -21,29 +21,29 @@ function ContactForm() {
            
         <div className='flex flex-col gap-3 '>
             <label htmlFor="Name" className='text-[#554075] font-bold '>Name</label>
-            <input type="text" name='Name' placeholder='Enter Your Name' className='text-[#554075] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3 ' />
+            <input type="text" name='Name' placeholder='Enter Your Name' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3 ' />
             </div> 
 
             <div className='flex flex-col gap-3 '>
             <label htmlFor="Email" className='text-[#554075] font-bold '>Email</label>
-            <input type="email" name='Email' placeholder='Enter Your Email' className='text-[#554075] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3 ' />
+            <input type="email" name='Email' placeholder='Enter Your Email' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3 ' />
             </div> 
 
         <div className='flex flex-col gap-3 '>
             <label htmlFor="Mobile" className='text-[#554075] font-bold '>Phone</label>
-            <input type="tel" name='Mobile' placeholder='Enter Your Mobile No' className='text-[#554075] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3 ' />
+            <input type="tel" name='Mobile' placeholder='Enter Your Mobile No' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3 ' />
             </div> 
 
             <div className='flex flex-col gap-3 '>
             <label htmlFor="Subject" className='text-[#554075] font-bold '>Subject</label>
-            <input type="text" name='Subject' placeholder='Enter Your Subject' className='text-[#554075] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3 ' />
+            <input type="text" name='Subject' placeholder='Enter Your Subject' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3 ' />
             </div> 
            
         </div>
 
         <div className='flex flex-col gap-3'>
         <label htmlFor="Message" className='text-[#554075] font-bold '>Your Message</label>
-        <textarea  name='Message' rows={5} placeholder='Your Message' className='text-[#554075] resize-none border border-[#B298DC] p-3 ' />  
+        <textarea  name='Message' rows={5} placeholder='Your Message' className='text-[#554075] resize-none rounded-[3px] border border-[#B298DC] p-3 ' />  
         </div>
 
         <label

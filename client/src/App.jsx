@@ -7,8 +7,8 @@ import AboutUs from './pages/AboutUs';
 import Clinic from './pages/Clinic';
 import Blog from './pages/Blog';
 import ContactUs from './pages/ContactUs';
-import PatientForm from './pages/PatientForm';
-
+import SkinForm from './pages/SkinForm';
+import HairForm from './pages/HairForm';
 function App() {
   return (
     <Router>
@@ -25,7 +25,8 @@ function App() {
         <Route path="/clinic" element={<Clinic />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/patient-form" element={<PatientForm />} />
+        <Route path="/patient-form/skin" element={<SkinForm />} />
+        <Route path="/patient-form/hair" element={<HairForm />} />
       </Routes>
     </Router>
   );

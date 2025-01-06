@@ -5,12 +5,22 @@
 @tailwind utilities;
 
 
-input,textarea::placeholder {
+textarea::placeholder {
   color: #725B98;
   opacity: 1; 
+  font-weight:500;
 }
 
-input,textarea::-ms-input-placeholder { 
+input::placeholder {
+  color: #725B98;
+  opacity: 1; 
+  font-weight:500;
+}
+
+textarea::-ms-input-placeholder { 
+  color: #725B98;
+}
+input::-ms-input-placeholder { 
   color: #725B98;
 }
 
