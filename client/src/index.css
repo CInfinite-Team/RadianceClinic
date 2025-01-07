@@ -17,6 +17,16 @@ input::placeholder {
   font-weight:500;
 }
 
+select {
+  color: #725B98 !important ;
+  font-weight: 500 !important;
+}
+
+select option {
+  color: #725B98 !important;
+  font-weight: 500 !important;
+}
+
 textarea::-ms-input-placeholder { 
   color: #725B98;
 }
@@ -25,7 +35,7 @@ input::-ms-input-placeholder {
 }
 
 input[type="checkbox"] {
-  accent-color: #554075;
+  accent-color: #74579f;
  border: 2px solid #221a2e;
 }
 
