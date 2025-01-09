@@ -22,7 +22,6 @@ const HairFormSchema = new mongoose.Schema({
     gender: {
         type: String,
         required: true,
-        enum: ['Male', 'Female', 'Other'],
     },
     address: {
         type: String,
@@ -34,17 +33,14 @@ const HairFormSchema = new mongoose.Schema({
     },
     mobileNo: {
         type: String,
-        required: true,
-        match: [/^\+?[1-9]\d{1,14}$/, 'Please enter a valid phone number'],
+        required: true
     },
     email: {
         type: String,
         trim: true,
-        match: [/.+@.+\..+/, 'Please enter a valid email address'],
     },
     maritalStatus: {
         type: String,
-        enum: ['Married', 'Unmarried'],
     },
     spouseName: {
         type: String,
@@ -56,25 +52,22 @@ const HairFormSchema = new mongoose.Schema({
     },
     doctor: {
         type: String,
-        enum: ['Dr. Nitin Barde', 'Dr. Radhika Barde'],
         required: true,
     },
     speciality: {
         type: String,
-        enum: ['Hair Treatment', 'Hair Transplant'],
         required: true,
     },
     hairLossDurationMonths: {
-        type: Number,
+        type: String,
         required: true,
     },
     hairLossType: {
         type: String,
-        enum: ['Continuous', 'Intermittent'],
         required: true,
     },
     dailyHairLoss: {
-        type: Number,
+        type: String,
         required: true,
     },
     skinAllergy: {
@@ -82,26 +75,13 @@ const HairFormSchema = new mongoose.Schema({
         default: false,
     },
     currentTreatment: {
-        type: [String],
-        enum: ['Oil', 'Shampoo', 'Solution', 'Tablets', 'Ayurvedic', 'Homeopathy', 'None'],
+        type: String
     },
     skinDisorders: {
-        type: [String],
-        enum: ['Psoriasis', 'Dandruff', 'Itching', 'None'],
+        type: String,
     },
     familyHistory: {
-        type: [String],
-        enum: [
-            'Father',
-            'Brother',
-            'Uncle (Paternal)',
-            'Grandfather (Paternal)',
-            'Mother',
-            'Sister',
-            'Uncle (Maternal)',
-            'Grandfather (Maternal)',
-            'Other',
-        ],
+        type: String,
     },
     suspectedCause: {
         type: String,
@@ -109,8 +89,6 @@ const HairFormSchema = new mongoose.Schema({
     },
     sourceOfReferral: {
         type: String,
-        enum: ['Website', 'Relatives', 'Newspaper', 'Internet', 'Justdial', 'Friends', 'Others', 'Facebook'],
-        required: true,
     },
 }, { timestamps: true }); 
 
