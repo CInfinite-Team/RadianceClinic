@@ -1,147 +1,328 @@
-import React from 'react'
-import PrimaryBtn from '../../components/Buttons/PrimaryBtn'
+import React, { useState } from 'react';
+import axios from 'axios';
+import PrimaryBtn from '../../components/Buttons/PrimaryBtn';
+import SERVER_URL  from '../../constant.mjs';
+import FormInput from '../SharedComponents/FormInput';
+const INITIAL_FORM_STATE = {
+  firstName: '',
+  middleName: '',
+  lastName: '',
+  DOB: '',
+  gender: '',
+  address: '',
+  city: '',
+  mobileNo: '',
+  email: '',
+  maritalStatus: '',
+  spouseName: '',
+  occupation: '',
+  doctor: '',
+  speciality: 'Dermatology',
+  skinProblem: '',
+  problemDurationMonths: 0,
+  medicalConditions: {
+    highBloodPressure: false,
+    heartDisease: false,
+    diabetes: false,
+    asthma: false,
+    thyroidDisease: false,
+    other: ''
+  },
+  isPregnant: false,
+  EDD: '',
+  sourceOfReferral: ''
+};
+
+const MEDICAL_CONDITIONS = [
+  { id: 'highBloodPressure', label: 'High Blood Pressure' },
+  { id: 'heartDisease', label: 'Heart Disease' },
+  { id: 'diabetes', label: 'Diabetes' },
+  { id: 'asthma', label: 'Asthma' },
+  { id: 'thyroidDisease', label: 'Thyroid Disease' }
+];
+
+
 
 function SkinFormComponent() {
+  const [formData, setFormData] = useState(INITIAL_FORM_STATE);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    
+    if (name.includes('medicalConditions.')) {
+      const [_, condition] = name.split('.');
+      setFormData(prev => ({
+        ...prev,
+        medicalConditions: {
+          ...prev.medicalConditions,
+          [condition]: type === 'checkbox' ? checked : value
+        }
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: type === 'radio' ? value === 'true' : value
+      }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await axios.post(`${SERVER_URL}/api/forms/skin`, formData);
+      if (response.status === 201) {
+        alert('Form submitted successfully!');
+        setFormData(INITIAL_FORM_STATE);
+      }
+    } catch (error) {
+      setError('Error submitting form. Please try again.');
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <>
-     <div className='flex flex-col gap-10 py-24 px-4 md:px-8 xl:px-32 '>
-        <form className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 justify-items-start '>
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Mobile" className='text-[#554075] font-bold '>First Name</label>
-            <input type="tel" name='Mobile' placeholder='Enter First Name' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Mobile" className='text-[#554075] font-bold '>Middle Name</label>
-            <input type="tel" name='Mobile' placeholder='Enter Middle Name' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Mobile" className='text-[#554075] font-bold '>Last Name</label>
-            <input type="tel" name='Mobile' placeholder='Enter Last Name' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="DOB" className='text-[#554075] font-bold '>Date of Birth</label>
-            <input type="date" name='DOB' placeholder='Enter Date of Birth' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Gender" className='text-[#554075] font-bold '>Gender</label>
-            <select name='Gender' placeholder='Enter Gender' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' >
-            <option value="" >Select Gender</option>
-                <option value="Male" >Male</option>
-                <option value="Female" >Female</option>
-                <option value="Others" >Others</option>
-            </select>
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Address" className='text-[#554075] font-bold '>Address</label>
-            <input type="text" name='Address' placeholder='Enter Address' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="City" className='text-[#554075] font-bold '>City</label>
-            <input type="text" name='City' placeholder='Enter Your City' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Mobile" className='text-[#554075] font-bold '>Mobile Number</label>
-            <input type="tel" name='Mobile' placeholder='Enter Mobile Number' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Email" className='text-[#554075] font-bold '>Email</label>
-            <input type="email" name='Email' placeholder='Enter Email' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Marital" className='text-[#554075] font-bold '>Marital Status</label>
-            <select  name='Marital'  className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' >
-                <option value="" > Marital Status</option>
-                <option value="Un-married" >Un-married</option>
-                <option value="Female" >Married</option>
-            </select>
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Spouse" className='text-[#554075] font-bold '>Spouse Name </label>
-            <input type="text" name='Spouse' placeholder='Enter Spouse Name ' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Occupation" className='text-[#554075] font-bold '>Occupation</label>
-            <input type="text" name='Occupation' placeholder='Enter Occupation' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Doctor" className='text-[#554075] font-bold '>Doctor</label>
-            <select name="Doctor" className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' >
-            <option value="">Select Doctor</option>
-            <option value="Dr.Nitin">Dr.Nitin Barde</option>
-            <option value="Dr.Radhika">Dr.Radhika Barde</option>
-           
-            </select>
-            </div> 
-
-            <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Specialty" className='text-[#554075] font-bold '>Specialty</label>
-            <select  name='Specialty'  className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' >
-                <option value="" >Select Specialty</option>
-                <option value="Hair Transplant" >Hair Transplant</option>
-                <option value="Hair Treatment" >Hair Treatment</option>
-            </select>
-            </div> 
-            
-
-            <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Problem" className='text-[#554075] font-bold text-[15px] 2xl:text-base '>Skin Problem</label>
-            <input type="text" name='Problem' placeholder='Enter Your Problem' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-
-            <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Since" className='text-[#554075] font-bold '>Since How Long You Have this Problem ?</label>
-            <input type="text" name='Since' placeholder='In Months and Weeks' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-
-            <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Alergy" className='text-[#554075] font-bold '>Do You Any Allergies?</label>
-            <input type="text" name='Alergy' placeholder='Enter Skin Alergy or Disorder' className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-            
-            
-            <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Current" className='text-[#554075] font-bold text-[15px] lg:text-[13px] 2xl:text-base'>Are you Pregnant?(For Females Only*) </label>
-           <div className='flex gap-2 text-[#554075] font-bold '><input type="radio" id="html" name="Yes" value="Yes"/>Yes</div> 
-           <div className='flex gap-2 text-[#554075] font-bold '><input type="radio" id="html" name="Yes" value="Yes"/>No</div> 
-        </div> 
-
-        <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Due" className='text-[#554075] font-bold '>If yes, then mention Estimated Due Date(EDD)?</label>
-            <input type="date" name='Due'  className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' />
-            </div> 
-
-           
-            <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Current" className='text-[#554075] font-bold '>Source of reference</label>
-            <select  name='Specialty'  className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' >
-                <option value="" >Source of reference</option>
-            </select>
-            </div> 
-
-
-            <div className='flex flex-col justify-between gap-2 '>
-            <label htmlFor="Conditions" className='text-[#554075] font-bold '>Do You Have Any Following Conditions?</label>
-            <select  name='Conditions'  className='text-[#554075] rounded-[3px] border border-[#B298DC] w-[90vw] md:w-[40vw] xl:w-[360px] p-3 ' >
-                <option value="" >Select Conditions</option>
-                <option value="High Blood Pressure" >High Blood Pressure</option>
-                <option value="Heart Disease" >Heart Disease</option>
-                <option value="Diabetes" >Diabetes</option>
-                <option value="Asthma" >Asthma</option>
-                <option value="Thyroid Disease" >Thyroid Disease</option>
-                <option value="Other" >Other</option>
-            </select>
-            </div> 
-
-            
-        </form>
-
-        
-        <PrimaryBtn className='w-full sm:w-fit px-16 items-center justify-center'>Submit</PrimaryBtn>
-       
+    <div className="py-24 px-4 md:px-8 xl:px-32">
+      {error && (
+        <div className="mb-4 p-4 bg-red-100 text-red-700 rounded">
+          {error}
         </div>
-            
-    </>
-  )
+      )}
+      
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
+        <FormInput
+          label="First Name"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleInputChange}
+          placeholder="Enter First Name"
+          required
+        />
+
+        <FormInput
+          label="Middle Name"
+          name="middleName"
+          value={formData.middleName}
+          onChange={handleInputChange}
+          placeholder="Enter Middle Name"
+        />
+
+        <FormInput
+          label="Last Name"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleInputChange}
+          placeholder="Enter Last Name"
+          required
+        />
+
+        <FormInput
+          label="Date of Birth"
+          name="DOB"
+          type="date"
+          value={formData.DOB}
+          onChange={handleInputChange}
+          required
+        />
+
+        <FormInput
+          label="Gender"
+          name="gender"
+          type="select"
+          value={formData.gender}
+          onChange={handleInputChange}
+          placeholder="Select Gender"
+          options={[
+            { value: 'Male', label: 'Male' },
+            { value: 'Female', label: 'Female' },
+            { value: 'Others', label: 'Others' }
+          ]}
+        />
+
+        <FormInput
+          label="Address"
+          name="address"
+          value={formData.address}
+          onChange={handleInputChange}
+          placeholder="Enter Address"
+        />
+
+        <FormInput
+          label="City"
+          name="city"
+          value={formData.city}
+          onChange={handleInputChange}
+          placeholder="Enter Your City"
+        />
+
+        <FormInput
+          label="Mobile Number"
+          name="mobileNo"
+          type="tel"
+          value={formData.mobileNo}
+          onChange={handleInputChange}
+          placeholder="Enter Mobile Number"
+          required
+        />
+
+        <FormInput
+          label="Email"
+          name="email"
+          type="email"
+          value={formData.email}
+          onChange={handleInputChange}
+          placeholder="Enter Email"
+        />
+
+        <FormInput
+          label="Marital Status"
+          name="maritalStatus"
+          type="select"
+          value={formData.maritalStatus}
+          onChange={handleInputChange}
+          placeholder="Marital Status"
+          options={[
+            { value: 'Un-married', label: 'Un-married' },
+            { value: 'Married', label: 'Married' }
+          ]}
+        />
+
+        {formData.maritalStatus === 'Married' && (
+          <FormInput
+            label="Spouse Name"
+            name="spouseName"
+            value={formData.spouseName}
+            onChange={handleInputChange}
+            placeholder="Enter Spouse Name"
+          />
+        )}
+
+        <FormInput
+          label="Doctor"
+          name="doctor"
+          type="select"
+          value={formData.doctor}
+          onChange={handleInputChange}
+          placeholder="Select Doctor"
+          required
+          options={[
+            { value: 'Dr.Nitin', label: 'Dr. Nitin Barde' },
+            { value: 'Dr.Radhika', label: 'Dr. Radhika Barde' }
+          ]}
+        />
+
+        <FormInput
+          label="Skin Problem"
+          name="skinProblem"
+          value={formData.skinProblem}
+          onChange={handleInputChange}
+          placeholder="Enter Your Problem"
+        />
+
+        <FormInput
+          label="Problem Duration (in months)"
+          name="problemDurationMonths"
+          type="number"
+          value={formData.problemDurationMonths}
+          onChange={handleInputChange}
+          placeholder="Enter duration in months"
+          required
+        />
+
+        <div className="flex flex-col gap-2">
+          <label className="text-[#554075] font-bold">Are you Pregnant? (For Females Only*)</label>
+          <div className="space-y-2">
+            {['Yes', 'No'].map((option) => (
+              <div key={option} className="flex gap-2 text-[#554075] font-bold">
+                <input
+                  type="radio"
+                  name="isPregnant"
+                  value={option === 'Yes'}
+                  checked={formData.isPregnant === (option === 'Yes')}
+                  onChange={handleInputChange}
+                />
+                {option}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {formData.isPregnant && (
+          <FormInput
+            label="Estimated Due Date (EDD)"
+            name="EDD"
+            type="date"
+            value={formData.EDD}
+            onChange={handleInputChange}
+            required
+          />
+        )}
+
+        <FormInput
+          label="Source of Reference"
+          name="sourceOfReferral"
+          type="select"
+          value={formData.sourceOfReferral}
+          onChange={handleInputChange}
+          placeholder="Source of reference"
+          required
+          options={[
+            { value: 'Website', label: 'Website' },
+            { value: 'Relatives', label: 'Relatives' },
+            { value: 'Newspaper', label: 'Newspaper' },
+            { value: 'Justdial', label: 'Justdial' },
+            { value: 'Friends', label: 'Friends' },
+            { value: 'Facebook', label: 'Facebook' },
+            { value: 'Others', label: 'Others' }
+          ]}
+        />
+
+        <div className="col-span-full">
+          <label className="block text-[#554075] font-bold mb-2">Medical Conditions</label>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {MEDICAL_CONDITIONS.map(({ id, label }) => (
+              <div key={id} className="flex gap-2 text-[#554075] font-bold">
+                <input
+                  type="checkbox"
+                  name={`medicalConditions.${id}`}
+                  checked={formData.medicalConditions[id]}
+                  onChange={handleInputChange}
+                />
+                {label}
+              </div>
+            ))}
+            <div className="flex gap-2 items-center">
+              <input
+                type="text"
+                name="medicalConditions.other"
+                value={formData.medicalConditions.other}
+                onChange={handleInputChange}
+                placeholder="Enter Condition"
+                className="text-[#554075] rounded-[3px] border-b border-[#B298DC] p-1 w-full"
+              />
+              <span className="text-[#554075] font-bold">Other</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-span-full">
+          <PrimaryBtn
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full sm:w-fit px-16 items-center justify-center"
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit'}
+          </PrimaryBtn>
+        </div>
+      </form>
+    </div>
+  );
 }
 
-export default SkinFormComponent
+export default SkinFormComponent;
