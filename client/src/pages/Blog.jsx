@@ -53,6 +53,16 @@ const Blog = () => {
         <PrimaryBtn className=''> Skin </PrimaryBtn>
         <PrimaryBtn className=''> Hair </PrimaryBtn>
         <PrimaryBtn className=''> Laser </PrimaryBtn>
+
+          <div>
+            <span>Sort</span>
+            <select name="dropdown" id="dropdown">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="a-z">A-z</option>
+              <option value="z-a">Z-a</option>
+            </select>
+          </div>
         </div>
 
         <CardList currentCards={currentCards} />
