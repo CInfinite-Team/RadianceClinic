@@ -21,8 +21,6 @@ const SkinFormSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
-    required: true,
-    enum: ['Male', 'Female', 'Other'],
   },
   address: {
     type: String,
@@ -34,17 +32,12 @@ const SkinFormSchema = new mongoose.Schema({
   },
   mobileNo: {
     type: String,
-    required: true,
-    match: [/^\+?[1-9]\d{1,14}$/, 'Please enter a valid phone number'],
-  },
+    required: true,},
   email: {
     type: String,
-    trim: true,
-    match: [/.+@.+\..+/, 'Please enter a valid email address'],
-  },
+    trim: true, },
   maritalStatus: {
     type: String,
-    enum: ['Single', 'Married'],
   },
   spouseName: {
     type: String,
@@ -56,7 +49,6 @@ const SkinFormSchema = new mongoose.Schema({
   },
   doctor: {
     type: String,
-    enum: ['Dr. Nitin Barde', 'Dr. Radhika Barde'],
     required: true,
   },
   speciality: {
@@ -65,7 +57,6 @@ const SkinFormSchema = new mongoose.Schema({
   },
   skinProblem: {
     type: String,
-    required: true,
     trim: true,
   },
   problemDurationMonths: {
@@ -92,7 +83,6 @@ const SkinFormSchema = new mongoose.Schema({
   },
   sourceOfReferral: {
     type: String,
-    enum: ['Website', 'Relatives', 'Newspaper', 'Internet', 'Justdial', 'Friends', 'Others', 'Facebook'],
     required: true,
   },
 }, { timestamps: true });
