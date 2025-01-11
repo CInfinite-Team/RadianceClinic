@@ -45,25 +45,33 @@ const Blog = () => {
       <HeroSectionAll Title={'Blog'} Path={'Home'} SubPath={'Blog'} />
 
       <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
-
           <h1 className="text-4xl font-bold mb-2 text-gray-700 font-ElMessiri text-left">Blogs</h1>
           <p className="text-lg text-gray-600 text-left mb-4 font-ElMessiri">Discover expert insights, hair care tips, and inspiring stories to help you embrace confidence and radiance every day.</p>
-        <div className='flex gap-5'>
-        <PrimaryBtn className=''> All </PrimaryBtn>
-        <PrimaryBtn className=''> Skin </PrimaryBtn>
-        <PrimaryBtn className=''> Hair </PrimaryBtn>
-        <PrimaryBtn className=''> Laser </PrimaryBtn>
 
-          <div>
-            <span>Sort</span>
-            <select name="dropdown" id="dropdown">
+
+        {/* Button */}
+        <div className="flex justify-between items-center w-full mb-4 px-6 pb-4 flex-wrap">
+          <div className="flex gap-5">
+            <PrimaryBtn className="px-4 py-2">All</PrimaryBtn>
+            <PrimaryBtn className="px-4 py-2">Skin</PrimaryBtn>
+            <PrimaryBtn className="px-4 py-2">Hair</PrimaryBtn>
+            <PrimaryBtn className="px-4 py-2">Laser</PrimaryBtn>
+          </div>
+
+          <div className="flex items-center gap-2 mt-4 sm:mt-0 sm:ml-auto">
+            <span className="text-gray-700 font-medium">Sort</span>
+            <select
+              name="dropdown"
+              id="dropdown"
+              className="border border-gray-300 rounded-lg px-3 py-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#947ABB] transition duration-300">
               <option value="newest">Newest</option>
               <option value="oldest">Oldest</option>
-              <option value="a-z">A-z</option>
-              <option value="z-a">Z-a</option>
+              <option value="a-z">A-Z</option>
+              <option value="z-a">Z-A</option>
             </select>
           </div>
         </div>
+
 
         <CardList currentCards={currentCards} />
 
