@@ -78,7 +78,7 @@ function AppointmentForm() {
 <AppointmentCalendar/>
     </div>
 
-    <div className=' w-full bg-[#fef7ff] mb-10 justify-center items-center gap-3 text-[#554075] font-bold flex'> <div className='bg-[#554075] w-44 lg:w-52 xl:w-96 h-[1px]'></div> <div className=' text-xs lg:text-base'>Note:- Online Consultation Charges Rs. 600 Per Session(if chosen)</div> <div className='bg-[#554075] w-44 lg:w-52 xl:w-96 h-[1px]'></div> </div>
+    <div className=' w-full bg-[#fef7ff] pb-10 justify-center items-center gap-3 text-[#554075] font-bold flex'> <div className='bg-[#554075] w-44 lg:w-52 xl:w-96 h-[1px]'></div> <div className=' text-xs lg:text-base'>Note:- Online Consultation Charges Rs. 600 Per Session(if chosen)</div> <div className='bg-[#554075] w-44 lg:w-52 xl:w-96 h-[1px]'></div> </div>
    </>
   )
 }
