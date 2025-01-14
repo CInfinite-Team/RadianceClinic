@@ -23,14 +23,13 @@ const HairformComponent = () => {
         speciality: "Hair Treatment",
         hairLossDurationMonths: "",
         hairLossType: "",
-        // isPregnant: "",
         skinAllergy: false,
         sourceOfReferral: "",
         familyHistory: "",
         currentTreatment: "",
         suspectedCause: "",
         dailyHairLoss: "",
-        skinDisorder: "",
+        skinDisorder: [],
         // conditions: []
       }
 
@@ -53,9 +52,10 @@ const HairformComponent = () => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value === 'Yes'
+      [name]: value ==='true'
     }));
   };
+  
   
 
 
@@ -65,12 +65,12 @@ const HairformComponent = () => {
       if (checked) {
         return {
           ...prev,
-          conditions: [...prev.conditions, value]
+          skinDisorder: [...prev.skinDisorder, value]
         };
       } else {
         return {
           ...prev,
-          conditions: prev.conditions.filter(condition => condition !== value)
+          skinDisorder: prev.skinDisorder.filter(condition => condition !== value)
         };
       }
     });
@@ -355,23 +355,23 @@ const HairformComponent = () => {
           placeholder="How much hair do you lose per day?"
         />
 
-        <FormInput
+        {/* <FormInput
           label="Do you suffer from any skin disorder?"
           name="skinDisorder"
           value={formData.skinDisorder}
           onChange={handleChange}
           placeholder="Enter Skin Disorder"
-        />
-{/* 
-        <div className="flex flex-col col-span-full justify-between gap-2">
-          <label className="text-[#554075] font-bold">Do You Have Any Following Conditions?</label>
-          <div className="md:grid flex flex-row flex-wrap gap-6 md:grid-cols-5 md:gap-4 lg:grid-cols-8 items-center">
+        /> */}
+
+        <div className="flex flex-col col-span-full lg:col-span-2 justify-between gap-2">
+          <label className="text-[#554075] font-bold">Do you suffer from any skin disorder?</label>
+          <div className="md:grid flex flex-row  flex-wrap gap-6 md:grid-cols-5 md:gap-4 lg:grid-cols-8 items-center">
             {["Psoriasis", "Dandruff", "Itching", "None"].map((condition) => (
               <div key={condition} className="flex gap-2 text-[#554075] font-bold">
                 <input
                   type="checkbox"
                   value={condition}
-                  checked={formData.conditions.includes(condition)}
+                  checked={formData.skinDisorder.includes(condition)}
                   onChange={handleCheckboxChange}
                 />
                 {condition}
@@ -381,14 +381,14 @@ const HairformComponent = () => {
               <input
                 type="text"
                 placeholder="Enter Condition"
-                className="text-[#554075] rounded-[3px] border-b border-[#B298DC] w-[150px] md:w-[40vw] xl:w-[130px] p-1"
+                className="text-[#554075] rounded-[3px] border-b border-[#B298DC] w-[150px] md:w-[50px] xl:w-[130px] p-1"
                 value={formData.otherCondition || ""}
                 onChange={(e) => setFormData(prev => ({ ...prev, otherCondition: e.target.value }))}
               />
               Other
             </div>
           </div>
-        </div> */}
+        </div>
 
         <div className="col-span-full">
           <PrimaryBtn
