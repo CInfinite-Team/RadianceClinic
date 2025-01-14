@@ -75,10 +75,12 @@ const HairFormSchema = new mongoose.Schema({
         default: false,
     },
     currentTreatment: {
-        type: String
+        type: [String],
+        enum: ['Oil', 'Shampoo', 'Solution', 'Tablets', 'Ayurvedic', 'Homeopathy', 'Others'],
     },
     skinDisorders: {
-        type: String,
+        type: [String],
+        enum: ['Dandruff', 'Psoriasis', 'Itching', 'None'],
     },
     familyHistory: {
         type: String,
