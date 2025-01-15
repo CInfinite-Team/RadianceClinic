@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed font-Inter font-semibold lg:text-xs xl:text-sm 2xl:text-base w-full lg:w-auto lg:top-6 lg:left-6 lg:right-6 z-50">
+    <div className="fixed font-Inter font-semibold lg:text-xs xl:text-sm 2xl:text-base w-full lg:w-auto lg:top-6 lg:left-6 z-[9999999] lg:right-6 ">
       <nav className="bg-white  shadow-md px-10">
         {/* Rest of the navbar content remains the same */}
         <div className="container mx-auto px-4">

@@ -1,11 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import GrayFlower from '../../assets/SharedAssets/GrayFlower.svg'
+import GrayFlower from '../../assets/SharedAssets/GrayFlower.svg';
 
-const AppointmentCalendar = () => {
+const AppointmentCalendar = ({ selectedDate, setSelectedDate, selectedTime, setSelectedTime }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedTime, setSelectedTime] = useState(null);
 
   // Time slots
   const timeSlots = [
@@ -105,14 +103,12 @@ const AppointmentCalendar = () => {
   };
 
   return (
-    <div className="max-w-md relative mx-auto  mt-10 md:p-6">
+    <div className="max-w-md relative mx-auto mt-10 md:p-6">
+      <p className='font-bold text-center mb-2 text-[#554075]'>Appointment Date</p>
+      <img src={GrayFlower} alt="" className='absolute -top-20 z-0 w-[904px]' />
 
-    <p className='font-bold text-center mb-2 text-[#554075]'>Appointment Date</p>
-        <img src={GrayFlower} alt="" className='absolute -top-20 z-0 w-[904px]' />
-
-     
       <div className='flex flex-col w-full items-center z-10 justify-between relative border border-[#9D74DC] p-2 mb-12 rounded bg-[#FDF2FF]'>
-         {/* Calendar Header */}
+        {/* Calendar Header */}
         <div className="flex items-center justify-between mb-4 w-full">
           <button 
             onClick={() => changeMonth(-1)}
@@ -132,7 +128,7 @@ const AppointmentCalendar = () => {
         </div>
 
         {/* Calendar Grid */}
-        <div className=" w-full">
+        <div className="w-full">
           <div className="grid grid-cols-7 gap-1 mb-2">
             {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map(day => (
               <div key={day} className="h-8 flex items-center justify-center font-bold text-sm text-[#554075]">
@@ -140,10 +136,10 @@ const AppointmentCalendar = () => {
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-7 gap-1 text-[#554075] ">
+          <div className="grid grid-cols-7 gap-1 text-[#554075]">
             {generateCalendarDays()}
           </div>
-        </div>
+          </div>
       </div>
 
       {/* Time Slots */}
@@ -177,7 +173,6 @@ const AppointmentCalendar = () => {
           <span>Available</span>
         </div>
       </div>
-      
     </div>
   );
 };
