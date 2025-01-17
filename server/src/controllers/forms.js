@@ -74,6 +74,7 @@ const consultationForm = async (req, res) => {
             message,
             modeOfConsultation,
             appointmentDate,
+            appointmentTime
         });
 
         const savedForm = await consultationForm.save();
@@ -90,5 +91,5 @@ const consultationForm = async (req, res) => {
 }
 
 module.exports = {
-    skinForm, hairForm, contactUsForm,consultationForm
+    skinForm, hairForm, contactUsForm, consultationForm
 }

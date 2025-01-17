@@ -1,0 +1,3 @@
+PORT = 3000
+MONGODB_URL=mongodb+srv://info:Vfglc6b5mMt6rU9k@magnifyx.bovmc.mongodb.net/RadianceClinic?retryWrites=true&w=majority&appName=MagnifyX
+DB_NAME=RadianceClinic
