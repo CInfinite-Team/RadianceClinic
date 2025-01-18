@@ -22,15 +22,18 @@ const consultationFormSchema = new mongoose.Schema({
         required: true 
     },
     modeOfConsultation: { 
-        type: String, 
-        enum: ['On Call', 'In Person'], 
+        type: String,
         required: true 
     },
     appointmentDate: { 
-        type: Date, 
+        type: String, 
         required: true 
+    },
+    appointmentTime:{
+        type: String,
+        required: true
     }
-});
+},{ timestamps: true });
 
 const ConsultationForm = mongoose.model('ConsultationForm', consultationFormSchema);
 
