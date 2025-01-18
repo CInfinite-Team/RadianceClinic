@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import AppointmentCalendar from './AppointmentCalendar';
+import SERVER_URL from '../../constant.mjs';
 
 function AppointmentForm() {
   const [formData, setFormData] = useState({
@@ -45,7 +46,8 @@ function AppointmentForm() {
     setSuccess('');
 
     try {
-      const response = await axios.post('YOUR_API_ENDPOINT', {
+      const response = await axios.post(`${SERVER_URL}/api/forms/consultation`
+        , {
         ...formData,
         appointmentDate: selectedDate,
         appointmentTime: selectedTime
