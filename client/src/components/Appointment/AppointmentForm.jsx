@@ -53,26 +53,27 @@ function AppointmentForm() {
       });
   
    
-      const formDataObj = new FormData();
-      formDataObj.append('name', formData.name);
-      formDataObj.append('email', formData.email);
-      formDataObj.append('phone', formData.phone);
-      formDataObj.append('category', formData.category);
-      formDataObj.append('message', formData.message);
-      formDataObj.append('modeOfConsultation', formData.consultationMode);
-      formDataObj.append('appointmentDate', formattedDate); 
-      formDataObj.append('appointmentTime', selectedTime);
+      // const formDataObj = new FormData();
+      // formDataObj.append('name', formData.name);
+      // formDataObj.append('email', formData.email);
+      // formDataObj.append('phone', formData.phone);
+      // formDataObj.append('category', formData.category);
+      // formDataObj.append('message', formData.message);
+      // formDataObj.append('modeOfConsultation', formData.consultationMode);
+      // formDataObj.append('appointmentDate', formattedDate); 
+      // formDataObj.append('appointmentTime', selectedTime);
   
-      console.log([...formDataObj.entries()]);
-      const response = await axios.post(
-        `${SERVER_URL}/api/forms/consultation`,
-        formDataObj,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data', 
-          },
-        }
-      );
+      // console.log([...formDataObj.entries()]);
+      const response = await axios.post(`${SERVER_URL}/api/forms/consultation`, {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        category: formData.category,
+        message: formData.message,
+        modeOfConsultation: formData.consultationMode,
+        appointmentDate: formattedDate,
+        appointmentTime: selectedTime
+      });
   
       setSuccess('Appointment booked successfully!');
      
