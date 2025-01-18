@@ -27,34 +27,55 @@ function AppointmentForm() {
       [name]: type === 'checkbox' ? checked : value
     }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Check if date and time are selected
+  
+   
     if (!selectedDate || !selectedTime) {
       setError('Please select both appointment date and time');
       window.scrollTo({
         top: document.querySelector('.appointment-calendar').offsetTop,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       return;
     }
-
+  
     setLoading(true);
     setError('');
     setSuccess('');
-
+  
     try {
-      const response = await axios.post(`${SERVER_URL}/api/forms/consultation`
-        , {
-        ...formData,
-        appointmentDate: selectedDate,
-        appointmentTime: selectedTime
+     
+      const formattedDate = selectedDate.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
       });
-
+  
+   
+      const formDataObj = new FormData();
+      formDataObj.append('name', formData.name);
+      formDataObj.append('email', formData.email);
+      formDataObj.append('phone', formData.phone);
+      formDataObj.append('category', formData.category);
+      formDataObj.append('message', formData.message);
+      formDataObj.append('modeOfConsultation', formData.consultationMode);
+      formDataObj.append('appointmentDate', formattedDate); 
+      formDataObj.append('appointmentTime', selectedTime);
+  
+      console.log([...formDataObj.entries()]);
+      const response = await axios.post(
+        `${SERVER_URL}/api/forms/consultation`,
+        formDataObj,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data', 
+          },
+        }
+      );
+  
       setSuccess('Appointment booked successfully!');
-      // Reset form
+     
       setFormData({
         name: '',
         email: '',
@@ -62,19 +83,21 @@ function AppointmentForm() {
         category: '',
         consultationMode: '',
         message: '',
-        /*agreedToTerms: false*/
       });
       setSelectedDate(null);
       setSelectedTime(null);
-      
     } catch (err) {
-      setError(err.response?.data?.message || 'Something went wrong. Please try again.');
+      console.error(err.response?.data || err.message);
+      setError(
+        err.response?.data?.message || 'Something went wrong. Please try again.'
+      );
     } finally {
       setLoading(false);
     }
   };
+  
 
-  // Add validation check for submit button
+ 
   const isFormValid = () => {
     return (
       formData.name &&
