@@ -65,8 +65,9 @@ const contactUsForm = async (req, res) => {
 
 const consultationForm = async (req, res) => {
     try {
-        const { name, email, phone, category, message, modeOfConsultation, appointmentDate } = req.body;
-        const consultationForm = new ConsultationForm({
+        console.log(req.body);
+        const { name, email, phone, category, message, modeOfConsultation, appointmentDate,appointmentTime } = req.body;
+        const savedForm = await ConsultationForm.create({
             name,
             email,
             phone,
@@ -76,8 +77,7 @@ const consultationForm = async (req, res) => {
             appointmentDate,
             appointmentTime
         });
-
-        const savedForm = await consultationForm.save();
+        console.log(savedForm);
         res.status(201).json({
             message: 'Consultation form submitted successfully',
             data: savedForm,
