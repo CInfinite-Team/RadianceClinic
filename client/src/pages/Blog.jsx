@@ -75,8 +75,8 @@ const Blog = () => {
 
         <CardList currentCards={currentCards} />
 
+        {/*Pagination*/}
         <div className="mt-6">
-          {/* Pagination buttons with < and > symbols */}
           <ul className="flex space-x-2">
             <li>
               <button

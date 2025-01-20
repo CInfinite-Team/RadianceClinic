@@ -9,6 +9,7 @@ import Blog from './pages/Blog';
 import ContactUs from './pages/ContactUs';
 import SkinForm from './pages/SkinForm';
 import HairForm from './pages/HairForm';
+import Dashboard from './pages/Admin/Dashboard';
 function App() {
   return (
     <Router>
@@ -27,6 +28,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/patient-form/skin" element={<SkinForm />} />
         <Route path="/patient-form/hair" element={<HairForm />} />
+        <Route path="/admin-dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
