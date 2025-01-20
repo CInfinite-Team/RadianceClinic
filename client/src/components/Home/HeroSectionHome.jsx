@@ -55,7 +55,7 @@ function HeroSectionHome() {
             </div>
 
         </div>
-        <img src={Images[currentimg]} loading='eager'  alt="" className={` max-w-[100vw]  md:max-w-[31rem] transition-all duration-500 will-change-auto lg:max-w-[73vh] xl:max-w-[73vh]  right-0 lg:absolute lg:-right-20 xl:right-0 bottom-0 md:translate-x-[30%] lg:!translate-x-0 -z-10 2xl:max-w-[36rem] ${currentimg === 1  ? ' !max-w-[90vw] md:!max-w-[50%]  2xl:!max-w-[26rem] xl:!max-w-[55vh] md:!translate-x-1/2 lg:right-0 lg:translate-x-0 lg:!max-w-[55vh]' : currentimg === 2  ? 'md:max-w-[50%] lg:!max-w-[59vh] lg:right-0 md:!translate-x-[30%] lg:translate-x-0 2xl:!max-w-[30rem] xl:!max-w-[60vh]':''} ` }/>
+        <img src={Images[currentimg]} loading='eager'  alt="" className={` max-w-[100vw]  md:max-w-[31rem] transition-all duration-500 will-change-auto lg:max-w-[73vh] xl:max-w-[73vh]  right-0 lg:absolute lg:-right-20 xl:right-0 bottom-0 md:translate-x-[30%] lg:!translate-x-0 -z-10 2xl:max-w-[36rem] ${currentimg === 1  ? ' !max-w-[90vw] md:!max-w-[50%]  2xl:!max-w-[26rem] xl:!max-w-[55vh] md:!translate-x-1/2 lg:right-0 lg:translate-x-0 lg:!max-w-[55vh]' : currentimg === 2  ? 'md:max-w-[55%] lg:!max-w-[59vh] lg:right-0 md:!translate-x-[41%] lg:translate-x-0 2xl:!max-w-[30rem] xl:!max-w-[60vh]':''} ` }/>
         </div>
       
     </div>
