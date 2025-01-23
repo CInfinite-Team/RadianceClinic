@@ -11,7 +11,7 @@ import DataTable from '../../components/Admin/DataTable';
 
 const Dashboard = () => {
   const [selectedLink, setSelectedLink] = useState('dashboard');  //Default set to Dashboard
-  const [data, setData] = useState(1); // State to store the fetched data
+  const [data, setData] = useState(1); // State to store the fetched data    (1 for now for development) ~ will set to null later
   
   const guageTestData = [
     { name: "Red", value: 10, color: "#FF0000" },                                 //DUMMY TESTING ON Guage Meter
