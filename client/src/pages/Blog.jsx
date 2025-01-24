@@ -46,7 +46,7 @@ const Blog = () => {
 
       <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
           <h1 className="text-4xl font-bold mb-2 text-gray-700 font-ElMessiri text-left">Blogs</h1>
-          <p className="text-lg text-gray-600 text-left mb-4 font-ElMessiri">Discover expert insights, hair care tips, and inspiring stories to help you embrace confidence and radiance every day.</p>
+          <p className="text-lg text-gray-600 text-left mb-4 font-ElMessiri p-5">Discover expert insights, hair care tips, and inspiring stories to help you embrace confidence and radiance every day.</p>
 
 
         {/* Button */}
