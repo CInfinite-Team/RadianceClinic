@@ -4,6 +4,8 @@ import HeroSectionHome from '../components/Home/HeroSectionHome'
 import ExploreClinic from '../components/Home/ExploreClinic'
 import HomeTestimonial from '../components/Home/HomeTestimonial'
 import MeetOurTeam from './MeetOurTeam'
+import Faq from '../components/Home/Faq'
+import Footer from '../components/footer/Footer'
 function Home() {
   return (
     <>
@@ -12,6 +14,8 @@ function Home() {
     <ExploreClinic/>
     <HomeTestimonial/>
     <MeetOurTeam/>
+    <Faq/>
+    <Footer/>
     </>
   )
 }
