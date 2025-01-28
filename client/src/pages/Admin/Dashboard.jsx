@@ -11,7 +11,7 @@ import DataTable from '../../components/Admin/DataTable';
 
 const Dashboard = () => {
   const [selectedLink, setSelectedLink] = useState('dashboard');  //Default set to Dashboard
-  const [data, setData] = useState(1); // State to store the fetched data    (1 for now for development) ~ will set to null later
+  const [data, setData] = useState({}); // State to store the fetched data    (1 for now for development) ~ will set to null later
   
   const guageTestData = [
     { name: "Red", value: 10, color: "#FF0000" },                                 //DUMMY TESTING ON Guage Meter
@@ -20,32 +20,54 @@ const Dashboard = () => {
   ];
   const headers = ['Sr. No', 'Name', 'Type', 'For', 'Status', ''];
   
-  
+  const Paneldata = [                                                            //DUMMY DATA                
+    {
+      "leadsCount": "13",
+      "appointmentsCount": "32",
+      "formCount": "31",
+      "LatestLead": {
+        "category": "skin",
+        "username": "Amit Das",
+        "status": "Active",
+        "leadFor": "Dr. Nitin Barde",
+        "uploadDate": "2024-12-15T08:00:00Z"
+      },
+      "AppointmentData": {
+        "category": "skin",
+        "username": "Amit Das",
+        "status": "Active",
+        "onDate": "2024-12-15T08:00:00Z",
+        "nextDate": "2024-12-17T08:00:00Z"
+
+      }
+    }
+  ]
 
   //Get Today's Date
   const currentDate = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD 
 
   // Function to fetch data based on selected link
   const fetchData = (link) => {
+    setData({});
     switch (link) {
       case 'dashboard':
-        return fetch(`/api/dashboard?date=${currentDate}`) // Replace with actual API endpoint
+        return fetch('https://497c7338-5376-407b-a22c-a95ce2eea7b9.mock.pstmn.io/dashboard') // Replace with actual API endpoint
           .then(response => response.json())
           .then(data => setData(data));
       case 'leads':
-        return fetch(`/api/leads?date=${currentDate}`) // Replace with actual API endpoint
+        return fetch(`/api/leadsdata?date=${currentDate}`) // Replace with actual API endpoint
           .then(response => response.json())
           .then(data => setData(data));
       case 'appointments':
-        return fetch(`/api/appointments?date=${currentDate}`) // Replace with actual API endpoint
+        return fetch('https://497c7338-5376-407b-a22c-a95ce2eea7b9.mock.pstmn.io/leads') // Replace with actual API endpoint
           .then(response => response.json())
           .then(data => setData(data));
       case 'forms':
-        return fetch(`/api/forms?date=${currentDate}`) // Replace with actual API endpoint
+        return fetch(`/api/formsdata?date=${currentDate}`) // Replace with actual API endpoint
           .then(response => response.json())
           .then(data => setData(data));
       default:
-        setData(null);
+        setData({});
     }
   };
 
@@ -55,13 +77,13 @@ const Dashboard = () => {
   }, [selectedLink]);
 
   const handleLinkClick = (link) => {
+    setData({});
     setSelectedLink(link);
   };
 
   const handleViewData = (item) => {
     //To be Coded
   };
-
 
   return (
     <div className="flex h-screen">
@@ -75,7 +97,7 @@ const Dashboard = () => {
         <nav className="flex flex-col space-y-4">
           <a
             href="#"
-            className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'dashboard' ? 'font-bold' : ''}`}
+            className={`flex items-center text-[#463660] hover:font-bold text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'dashboard' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('dashboard')}
           >
             <img
@@ -151,20 +173,121 @@ const Dashboard = () => {
                   {/* Box 1 */}
                   <div className="flex-1 bg-[#554078] p-6 flex flex-col justify-between relative">
                     <p className="absolute top-4 left-4 text-3xl font-bold text-white">New Leads Today</p>
-                    <p className="text-9xl p-5 font-bold text-white mt-8">10</p>
-                    <SecondaryBtn children={"View All leads"} className="absolute bottom-4 right-4 text-md" />
+                    <p className="text-9xl p-5 font-bold text-white mt-8">{data.length > 0 ? data[0].leadsCount : 0}</p>
+                    <SecondaryBtn onClick={() => handleLinkClick('leads')} children={"View All leads"} className="absolute bottom-4 right-4 text-md" />
                   </div>
                   {/* Box 2 */}
                   <div className="flex-1 bg-[#554078] p-6 flex flex-col justify-between relative">
                     <p className="absolute top-4 left-4 text-3xl font-bold text-white">Appointments Today</p>
-                    <p className="text-9xl p-5 font-bold text-white mt-8">10</p>
-                    <SecondaryBtn children={"View all appoinments"} className="absolute bottom-4 right-4 text-sm" />
+                    <p className="text-9xl p-5 font-bold text-white mt-8">{data.length > 0 ? data[0].appointmentsCount : 0}</p>
+                    <SecondaryBtn onClick={() => handleLinkClick('appointments')} children={"View all appoinments"} className="absolute bottom-4 right-4 text-sm" />
                   </div>
                   {/* Box 3 */}
                   <div className="flex-1 bg-[#554078] p-6 flex flex-col justify-between relative">
                     <p className="absolute top-4 left-4 text-3xl font-bold text-white">Forms Filled Today</p>
-                    <p className="text-9xl p-5 font-bold text-white mt-8">10</p>
-                    <SecondaryBtn children={"View All forms"} className="absolute bottom-4 right-4 text-md" />
+                    <p className="text-9xl p-5 font-bold text-white mt-8">{data.length > 0 ? data[0].formsCount : 0}</p>
+                    <SecondaryBtn onClick={() => handleLinkClick('forms')}children={"View All forms"} className="absolute bottom-4 right-4 text-md" />
+                  </div>
+                </div>
+              </div>
+              <div className="w-full max-h-8xl flex justify-center">
+                <div className="w-full max-w-7xl flex flex-wrap xl:flex-row flex-col justify-center xl:space-x-6 space-y-6 xl:space-y-0 mt-6 py-6">
+                  {/* Box 1 */}
+                  <div className="flex-1 bg-[#F0DFFF] p-6 flex flex-col justify-between relative">
+                    <p className="absolute top-4 left-4 text-3xl font-bold text-[#463660] px-6">Latest Leads</p>
+                    <div className="mt-6 space-y-6 py-5">
+                    <div className="px-5">
+                      <p className="font-semibold text-[#463660]">Name</p>
+                      <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 
+                                                                      ? Paneldata[0].LatestLead["username"]
+                                                                      .split(' ') 
+                                                                      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
+                                                                      .join(' ') 
+                                                                      : "..."}</p>
+                    </div>
+                      <div className="flex space-x-6">
+                        <div className="flex flex-col px-5 space-y-6 w-1/2">
+                          {/* Treatments Section */}
+                          <div className="flex flex-col">
+                            <p className="font-semibold text-[#463660]">Treatments</p>
+                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? Paneldata[0].LatestLead["category"].charAt(0).toUpperCase() + Paneldata[0].LatestLead["category"].slice(1).toLowerCase(): "..."}</p>
+                          </div>
+
+                          {/* Lead Stage Section */}
+                          <div className="flex flex-col">
+                            <p className="font-semibold text-[#463660]">Lead Stage</p>
+                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? Paneldata[0].LatestLead["status"].charAt(0).toUpperCase() + Paneldata[0].LatestLead["status"].slice(1).toLowerCase(): "..."}</p>
+                          </div>
+                        </div>
+
+                        {/* Column 2: Generated On and Lead For */}
+                        <div className="flex flex-col px-5 space-y-6 w-1/2">
+                          {/* Generated On Section */}
+                          <div className="flex flex-col">
+                            <p className="font-semibold text-[#463660]">Generated On</p>
+                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? new Date(Paneldata[0].LatestLead["uploadDate"]).toLocaleDateString("en-GB"): "..."}</p>
+                          </div>
+
+                          {/* Lead For Section */}
+                          <div className="flex flex-col">
+                            <p className="font-semibold text-[#463660]">Lead For</p>
+                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 
+                                                                      ? Paneldata[0].LatestLead["leadFor"]
+                                                                      .split(' ') 
+                                                                      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
+                                                                      .join(' ') 
+                                                                      : "..."}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-auto">
+                      <PrimaryBtn children={"View All details"} className="text-md w-full px-6 justify-center" />
+                    </div>
+                  </div>
+
+                  {/* Box 2 */}
+                  <div className="flex-1 bg-[#F0DFFF] p-6 flex flex-col justify-between relative">
+                  <p className="absolute top-4 left-4 text-3xl font-bold text-[#463660] px-6">Upcoming Appointments</p>
+                    <div className="mt-6 space-y-6 py-5">
+                    <div className="px-5">
+                      <p className="font-semibold text-[#463660]">Name</p>
+                      <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 
+                                                                      ? Paneldata[0].AppointmentData["username"]
+                                                                      .split(' ') 
+                                                                      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
+                                                                      .join(' ') 
+                                                                      : "..."}</p>
+                    </div>
+                      <div className="flex space-x-6">
+                        <div className="flex flex-col px-5 space-y-6 w-1/2">
+                          <div className="flex flex-col">
+                            <p className="font-semibold text-[#463660]">Treatments</p>
+                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? Paneldata[0].AppointmentData["category"].charAt(0).toUpperCase() + Paneldata[0].AppointmentData["category"].slice(1).toLowerCase(): "..."}</p>
+                          </div>
+                          <div className="flex flex-col">
+                            <p className="font-semibold text-[#463660]">Next Appointment</p>
+                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? new Date(Paneldata[0].AppointmentData["nextDate"]).toLocaleDateString("en-GB"): "..."}</p>
+                          </div>
+                        </div>
+                        <div className="flex flex-col px-5 space-y-6 w-1/2">
+                          <div className="flex flex-col">
+                            <p className="font-semibold text-[#463660]">Treatment Stage</p>
+                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? Paneldata[0].AppointmentData["status"].charAt(0).toUpperCase() + Paneldata[0].AppointmentData["status"].slice(1).toLowerCase(): "..."}</p>
+                          </div>
+
+                          <div className="flex flex-col">
+                            <p className="font-semibold text-[#463660]">Appointment on</p>
+                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? new Date(Paneldata[0].AppointmentData["onDate"]).toLocaleDateString("en-GB"): "..."}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-auto">
+                      <PrimaryBtn children={"View All details"} className="text-md w-full px-6 justify-center" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,7 +350,7 @@ const Dashboard = () => {
                   {/* Box 1 */}
                   <div className="flex-1 max-w-md bg-[#554078] p-6 flex flex-col justify-between relative">
                     <p className="absolute top-4 left-4 text-3xl font-bold text-white">Upcoming Appointments</p>
-                    <p className="text-9xl p-5 font-bold text-white mt-8">10</p>
+                    <p className="text-9xl p-5 font-bold text-white mt-8">{data.length > 0 ? data[0].AppointmentsCount : 0}</p>
                   </div>
                   <div className="w-[250px] h-[250px] px-5 flex items-center justify-center">
                     <GaugeVisualization data={guageTestData} />
