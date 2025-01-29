@@ -10,12 +10,10 @@ const ContactUsSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        match: [/.+@.+\..+/, 'Please enter a valid email address'],
     },
     phone: {
         type: String,
         trim: true,
-        match: [/^\+?[1-9]\d{1,14}$/, 'Please enter a valid phone number'],
     },
     subject: {
         type: String,
@@ -26,7 +24,8 @@ const ContactUsSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-    }
+    },
+    
 }, { timestamps: true });
 
 
