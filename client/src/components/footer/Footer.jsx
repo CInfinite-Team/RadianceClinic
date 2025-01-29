@@ -68,7 +68,7 @@ const Footer = () => {
       {/* Copyright Bar */}
       <div className="border-t border-gray-700 py-4">
         <div className="container mx-auto px-4 text-sm text-center">
-          © {currentYear} Radiance Clinic | All Rights Reserved | Design & Developed by Prime Digital
+          © {currentYear} Radiance Clinic | All Rights Reserved | Design & Developed by Magnify X
         </div>
       </div>
     </footer>
