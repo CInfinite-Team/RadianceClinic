@@ -25,7 +25,7 @@ const consultationFormSchema = new mongoose.Schema({
         required: true 
     },
     appointmentDate: { 
-        type: String, 
+        type: Date, 
         required: true 
     },
     appointmentTime:{
