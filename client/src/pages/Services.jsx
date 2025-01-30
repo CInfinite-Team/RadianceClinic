@@ -4,7 +4,7 @@ import Footer from '../components/footer/Footer';
 import SlidingBanner from '../components/AllServices/SlidingBanner';
 import Servicescarousel from '../components/servicespage/servicescarousel';
 import { Hairtreatments,Skintreatments } from '../components/servicespage/Treatments';
-import PrimaryBtn from '../components/Buttons/PrimaryBtn';
+// import PrimaryBtn from '../components/Buttons/PrimaryBtn';
 import Testimonial from '../components/SharedComponents/Testimonial';
 
 function Services(category) {
@@ -17,7 +17,7 @@ function Services(category) {
 
       <Servicescarousel Data={Hairtreatments} Title={'HAIR'} />
       <Servicescarousel Data={Skintreatments} Title={'SKIN'} />
-      <PrimaryBtn className='mx-auto mt-10'> Explore Our Services </PrimaryBtn>
+      {/* <PrimaryBtn className='mx-auto mt-10'> Explore Our Services </PrimaryBtn> */}
       </div>
 
       <Testimonial/>
