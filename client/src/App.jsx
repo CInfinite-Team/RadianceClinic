@@ -10,6 +10,8 @@ import ContactUs from './pages/ContactUs';
 import SkinForm from './pages/SkinForm';
 import HairForm from './pages/HairForm';
 import Dashboard from './pages/Admin/Dashboard';
+import SpecificService from './pages/SpecificService';
+
 function App() {
   return (
     <Router>
@@ -29,6 +31,7 @@ function App() {
         <Route path="/patient-form/skin" element={<SkinForm />} />
         <Route path="/patient-form/hair" element={<HairForm />} />
         <Route path="/admin-dashboard" element={<Dashboard />} />
+        <Route path="/specific-service" element={<SpecificService />} />
       </Routes>
     </Router>
   );

@@ -1,7 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Hairtreatments } from './Treatments.js';
 
 
 
@@ -58,7 +57,7 @@ const Servicescarousel = ({Data,Title}) => {
         <Slider {...settings}>
           {Data.map((treatment, index) => (
             <div key={index} className="px-4">
-              <div className="flex flex-col items-center">
+              <a href='/specific-service/?Data=Hair' className="flex flex-col items-center">
                 <div className="rounded-full border-[6px] border-[#7491A1] p-1 mb-4">
                   <img
                     src={treatment.image}
@@ -72,7 +71,7 @@ const Servicescarousel = ({Data,Title}) => {
                 <p className='font-ElMessiri text-center text-[#554075] font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,30px)'}}>
                   {treatment.subtitle}
                 </p>
-              </div>
+              </a>
             </div>
           ))}
         </Slider>
