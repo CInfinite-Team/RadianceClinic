@@ -46,11 +46,11 @@ function AppointmentForm() {
   
     try {
      
-      const formattedDate = selectedDate.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-      });
+      // const formattedDate = selectedDate.toLocaleDateString('en-GB', {
+      //   day: '2-digit',
+      //   month: '2-digit',
+      //   year: 'numeric',
+      // });
   
    
       // const formDataObj = new FormData();
@@ -64,6 +64,7 @@ function AppointmentForm() {
       // formDataObj.append('appointmentTime', selectedTime);
   
       // console.log([...formDataObj.entries()]);
+      console.log(selectedDate);
       const response = await axios.post(`${SERVER_URL}/api/forms/consultation`, {
         name: formData.name,
         email: formData.email,
@@ -71,7 +72,7 @@ function AppointmentForm() {
         category: formData.category,
         message: formData.message,
         modeOfConsultation: formData.consultationMode,
-        appointmentDate: formattedDate,
+        appointmentDate: selectedDate,
         appointmentTime: selectedTime
       });
   
