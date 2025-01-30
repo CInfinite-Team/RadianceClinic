@@ -51,7 +51,7 @@ const Servicescarousel = ({Data,Title}) => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="w-full mx-auto px-4 py-8">
     <h1 className='font-ElMessiri text-[#554075] text-center mb-8 font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,50px)'}}>{Title}</h1>
       
       <div className="md:px-8">
