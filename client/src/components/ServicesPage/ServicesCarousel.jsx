@@ -1,57 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import PRP from '../../assets/Services/PRP.svg';
-import ScalpMicropigmentation from '../../assets/Services/ScalpMicropigmentation.svg';
+import { Hairtreatments } from './Treatments.js';
 
 
-const treatments = [
-  {
-    title: 'Hair Transplant',
-    subtitle: '(Fue & FUT)',
-    image: PRP,
-  },
-  {
-    title: 'Scalp',
-    subtitle: 'Micropigmentation',
-    image: ScalpMicropigmentation,
-  },
-  {
-    title: 'PRP Therapy',
-    subtitle: '(Platelet-Rich Plasma)',
-    image: PRP,
-  },
-  {
-    title: 'Hair Transplant',
-    subtitle: '(Fue & FUT)',
-    image: PRP,
-  },
-  {
-    title: 'Scalp',
-    subtitle: 'Micropigmentation',
-    image: ScalpMicropigmentation,
-  },
-  {
-    title: 'PRP Therapy',
-    subtitle: '(Platelet-Rich Plasma)',
-    image: PRP,
-  },
-  {
-    title: 'Hair Transplant',
-    subtitle: '(Fue & FUT)',
-    image: PRP,
-  },
-  {
-    title: 'Scalp',
-    subtitle: 'Micropigmentation',
-    image: ScalpMicropigmentation,
-  },
-  {
-    title: 'PRP Therapy',
-    subtitle: '(Platelet-Rich Plasma)',
-    image: PRP,
-  }
-];
 
 const NextArrow = ({ onClick }) => (
   <button
@@ -71,7 +23,7 @@ const PrevArrow = ({ onClick }) => (
   </button>
 );
 
-const Servicescarousel = () => {
+const Servicescarousel = ({Data,Title}) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -100,24 +52,24 @@ const Servicescarousel = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-    <h1 className='font-ElMessiri text-[#554075] text-center mb-8 font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,50px)'}}>HAIR</h1>
+    <h1 className='font-ElMessiri text-[#554075] text-center mb-8 font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,50px)'}}>{Title}</h1>
       
-      <div className="px-8">
+      <div className="md:px-8">
         <Slider {...settings}>
-          {treatments.map((treatment, index) => (
+          {Data.map((treatment, index) => (
             <div key={index} className="px-4">
               <div className="flex flex-col items-center">
                 <div className="rounded-full border-[6px] border-[#7491A1] p-1 mb-4">
                   <img
                     src={treatment.image}
                     alt={treatment.title}
-                    className="w-48 h-48 rounded-full object-cover"
+                    className=" w-32 h-32 md:w-48 md:h-48 rounded-full object-cover"
                   />
                 </div>
-                <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,30px)'}}>
+                <h2 className='font-ElMessiri text-center text-[#554075] font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,30px)'}}>
                   {treatment.title}
                 </h2>
-                <p className='font-ElMessiri text-[#554075] font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,30px)'}}>
+                <p className='font-ElMessiri text-center text-[#554075] font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,30px)'}}>
                   {treatment.subtitle}
                 </p>
               </div>
