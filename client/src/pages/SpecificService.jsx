@@ -6,6 +6,12 @@ import HairTransplantP from '../assets/Services/Process/HairTransplantP.svg'
 import HeroSectionAll from '../components/SharedComponents/HeroSectionAll'
 import GrayFlower from '../assets/SharedAssets/GrayFlower.svg'
 import AfterCare from '../assets/SharedAssets/AfterCare.svg'
+import Leafs from '../assets/SharedAssets/Leafs.svg'
+import Clinic from '../assets/Home/Clinic.svg'
+import Faq from '../components/Home/Faq'
+import Footer from '../components/footer/Footer'
+import Navbar from '../components/navbar/Navbar'
+
 
 function SpecificService() {
 const [Show, setShow] = useState(false);
@@ -20,7 +26,7 @@ const [Show, setShow] = useState(false);
 
   return (
     <>
-
+<Navbar/>
 <HeroSectionAll Title={'Hair Transplant'} Path={'Home'} SubPath={'Services / Hair Transplant'} />
 
     
@@ -104,20 +110,20 @@ const [Show, setShow] = useState(false);
 
                 <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight text-center md:text-left' style={{fontSize:'clamp(36px,4vw,60px)'}}>AFTERCARE</h2>
 
-                <span className='text-[#554075] mb-4 font-medium xl:w-[650px] text-center md:text-left xl:text-2xl'>
+                <span className='text-[#554075] mb-4 font-medium text-center md:text-left xl:text-2xl'>
                 <span className=' font-bold'>Post-Procedure Consultation: </span>Personalized follow-up sessions to monitor healing and progress.
                 </span>
-                <span className='text-[#554075] mb-4  font-medium xl:w-[650px] text-center md:text-left xl:text-2xl'>
+                <span className='text-[#554075] mb-4  font-medium text-center md:text-left xl:text-2xl'>
                 <span className=' font-bold'>Specialized Hair Wash Service: </span>Professional washing of the treated area for the first few sessions.
                 </span>
-                <span className='text-[#554075] mb-4  font-medium xl:w-[650px] text-center md:text-left xl:text-2xl'>
+                <span className='text-[#554075] mb-4  font-medium text-center md:text-left xl:text-2xl'>
                 <span className=' font-bold'>Medication Guidance: </span> Assistance with post-procedure medications and their usage.
                 </span>
-                <span className='text-[#554075] mb-4  font-medium xl:w-[650px] text-center md:text-left xl:text-2xl'>
+                <span className='text-[#554075] mb-4  font-medium text-center md:text-left xl:text-2xl'>
                 <span className=' font-bold'>Scalp Care Kits: </span> Provide specially formulated shampoos, lotions, and aftercare products.
 
                 </span>
-                <span className='text-[#554075] mb-4  font-medium xl:w-[650px] text-center md:text-left xl:text-2xl'>
+                <span className='text-[#554075] mb-4  font-medium  text-center md:text-left xl:text-2xl'>
                 <span className=' font-bold'>
                 24/7 Support Line: </span> Access to a helpline for any urgent questions or concerns.
                 </span>
@@ -128,8 +134,31 @@ const [Show, setShow] = useState(false);
 
             </div>
 
+<div className='flex lg:flex-row flex-col items-center w-full justify-center gap-10 bg-[#E2DBFF] p-4 md:p-8 shadow-2xl lg:justify-between '>
+
+<div className='flex flex-col order-2 lg:order-1 gap-5'>
+
+<h2 className=" font-bold font-ElMessiri text-[#554075] leading-tight px-1 z-10 " style={{fontSize:'clamp(36px,4vw,55px)'}}>
+Radiance Clinic
+</h2>
+
+<p className='xl:text-lg text-[#554075] font-medium  lg:w-[450px] xl:w-[575px] '>
+At Dr. Barde's Radiance, we understand that hair restoration is a personal journey, and we’re committed to providing the highest level of care and expertise. Our clinic combines advanced hair restoration technologies with a personalized approach tailored to each client’s unique needs. Led by experienced professionals, Radiance ensures safe, effective treatments designed to deliver natural and lasting results. Our mission is not only to restore hair but also to boost confidence and enhance well-being. Choose Radiance for a compassionate, results-driven experience that prioritizes your comfort and satisfaction every step of the way.</p>
+
+<PrimaryBtn>Explore Clinic</PrimaryBtn>
+
+</div>
+
+<img src={Clinic} alt="" className='lg:max-w-[45%] xl:max-w-[460px] order-1 lg:order-2 ' />
+
+</div>
+
+          
+
 
         </div>
+        <Faq/>
+        <Footer/>
 
     </>
   )
