@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import SlidingBanner from '../components/AllServices/SlidingBanner';
-import Servicescarousel from '../components/servicespage/servicescarousel';
+import Servicescarousel from '../components/ServicesPage/ServicesCarousel';
 
 function Services(category) {
   return (
