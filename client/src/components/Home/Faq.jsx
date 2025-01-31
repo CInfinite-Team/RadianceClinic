@@ -17,7 +17,7 @@ function Faq() {
 
   return (
     <>
-      <div className='w-screen relative bg-[#93A7B1] overflow-hidden h-full gap-14 justify-between items-center flex flex-col lg:flex-row px-5 lg:px-10  xl:px-40 p-20'>
+      <div className='w-screen relative bg-[#93A7B1] overflow-hidden min-h-[105vh] gap-14 justify-between items-center flex flex-col lg:flex-row px-5 lg:px-10  xl:px-40 p-20'>
       <img src={Leafs} alt="" className='  h-1/2 lg:h-full -top-32 md:top-0 left-0 z-0 mix-blend-plus-lighter absolute' />
 
         <div className='flex z-10  flex-col lg:w-[30%] gap-5'>

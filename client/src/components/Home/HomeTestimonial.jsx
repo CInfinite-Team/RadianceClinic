@@ -9,6 +9,7 @@ import Leaf from '../../assets/SharedAssets/Leaf.svg';
 import Whiteobject from '../../assets/SharedAssets/Whiteobject.svg';
 import { TestimonialHomeHair, TestimonialHomeSkin, TestimonialHomeLaser } from '../Home/TestimonialHomeData';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
+import BookInterest from './BookInterest';
 
 function HomeTestimonial() {
   const sliderSettings = {
@@ -56,9 +57,13 @@ function HomeTestimonial() {
   };
 
   const [selectedData, setSelectedData] = useState(TestimonialHomeHair);
+  const [showPopup,setShowPopup] = useState(false);
 
   return (
     <>
+    <div className={` ${showPopup ? 'block' : 'hidden'} backdrop-blur-2xl overflow-y-auto fixed bg-[#0000004b] z-[99999999999999] top-0 left-0 w-screen h-screen flex items-center justify-center `}>
+    <BookInterest Showpopup={setShowPopup}  />
+    </div>
       <div className="py-10 bg-[#FDF2FF]">
         <div className="flex flex-col justify-center relative items-center md:min-h-screen w-screen bg-[#FDF2FF]">
           {/* Background images */}
@@ -94,18 +99,19 @@ function HomeTestimonial() {
               {selectedData.map((data, index) => (
                 <div key={index} className=" flex flex-col relative rounded-[5px] group overflow-hidden z-20 border border-[#A287CF] bg-white max-w-[350px] lg:min-h-[600px] max-h-[600px] p-4 justify-center sm:ml-36  md:ml-20 mb-10 items-center">
                   <div className="bg-[#fdf2ff39] justify-center opacity-0 flex transition-all duration-500 group-hover:opacity-100 w-full left-0 top-0 h-full backdrop-blur-lg items-center z-50 absolute">
-                    <a
-                      href={
-                        selectedData === TestimonialHomeHair
-                          ? '/patient-form/hair'
-                          : selectedData === TestimonialHomeSkin
-                          ? '/patient-form/skin'
-                          : '/book-appointment'
-                      }
+                    <button
+                      // href={
+                      //   selectedData === TestimonialHomeHair
+                      //     ? '/patient-form/hair'
+                      //     : selectedData === TestimonialHomeSkin
+                      //     ? '/patient-form/skin'
+                      //     : '/book-appointment'
+                      // }
+                      onClick={() => setShowPopup(true)}
                       className="underline font-ElMessiri font-bold text-xl text-[#554075]"
                     >
                       Register Interest
-                    </a>
+                    </button>
                   </div>
                   <div className="w-[180px] h-[180px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[260px] mb-3 relative aspect-square mx-auto rounded-full">
                     <img src={testimonial} alt="" className="object-cover" />
