@@ -14,7 +14,11 @@ if (require.main === module) {
     app.use(express.json());
 
     // Enable CORS
-    app.use(cors({ origin: true }));
+    const corsOptions = {
+        origin: true,  // Allow requests from any origin
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+    };
 
     // Routes
     app.use('/api/forms', formRouter); // User routes
