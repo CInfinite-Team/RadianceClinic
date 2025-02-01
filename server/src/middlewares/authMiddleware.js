@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const { SECRET_KEY } = require('../../constants');
 
 const authenticateAdmin = (req, res, next) => {
-    const token = req.header('Authorization');
+    const token = req.header('Authorization')?.split(' ')[1];
     if (!token) {
         return res.status(401).json({ message: 'Access denied. No token provided.' });
     }
