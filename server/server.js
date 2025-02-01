@@ -19,6 +19,8 @@ if (require.main === module) {
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
     };
+    app.use(cors(corsOptions)); // Apply CORS to all routes
+    app.options('*', cors(corsOptions)); // Handle preflight requests
 
     // Routes
     app.use('/api/forms', formRouter); // User routes
