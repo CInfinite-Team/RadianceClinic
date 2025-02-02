@@ -33,7 +33,7 @@ function Stats() {
   to={data.Number}
   separator=","
   direction="up"
-  duration={1}
+  duration={0.5}
   className="count-up-text"
 />+
     </p>
