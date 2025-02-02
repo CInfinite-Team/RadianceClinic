@@ -1,7 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 function AwardsAndAchievements({AwardsData, AwardImage}) {
 
+  const [TwoLinesOnly, setTwoLinesOnly] = useState(null);
   
   return (
   <>
@@ -17,7 +18,9 @@ function AwardsAndAchievements({AwardsData, AwardImage}) {
             <div className="bg-white p-1 ">
               <h3 className=" text-xl sm:text-2xl font-semibold text-[#554075] font-ElMessiri ">{award.title}</h3>
               <p className=" text-sm sm:text-base text-[#B2A6CE] mb-2">{award.dateRange}</p>
-              <p className="text-xs w-[65vw] sm:w-auto sm:text-base text-[#50535C] ">{award.description}</p>
+              <p className=" text-sm sm:text-sm text-[#B2A6CE] mb-2">{award.location}</p>
+
+              <p onMouseEnter={() => setTwoLinesOnly(index)} onMouseLeave={() => setTwoLinesOnly(null)} className={`text-xs ${TwoLinesOnly ==null || TwoLinesOnly !== index ? 'TwoLinesOnly' : ''} w-[65vw] sm:w-auto sm:text-base text-[#50535C] `}>{award.description}</p>
             </div>
           </div>
         ))}

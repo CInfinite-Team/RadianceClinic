@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import PatientFormsTitle from '../components/SharedComponents/PatientFormsTitle'
 import Navbar from '../components/navbar/Navbar'
 import SkinFormComponent from '../components/SkinForm/SkinFormComponent'
 import Footer from '../components/footer/Footer'
 function SkinForm() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
   return (
    <>
     <Navbar/>

@@ -10,7 +10,7 @@ function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: '',
+    phone: '',
     subject: '',
     message: '',
   });
@@ -38,7 +38,7 @@ function ContactForm() {
       setFormData({
         name: '',
         email: '',
-        mobile: '',
+        phone: '',
         subject: '',
         message: '',
       });
@@ -94,7 +94,7 @@ function ContactForm() {
               <input
                 type="tel"
                 name="mobile"
-                value={formData.mobile}
+                value={formData.phone}
                 onChange={handleChange}
                 placeholder="Enter Your Mobile No"
                 className="text-[#554075] rounded-[3px] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3"

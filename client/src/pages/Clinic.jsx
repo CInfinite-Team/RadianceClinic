@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import ExploreClinic from '../components/Clinic/ExploreClinic'
 import HeroSectionAll from '../components/SharedComponents/HeroSectionAll'
 import Treatments from '../components/Clinic/Treatments'
@@ -7,6 +7,11 @@ import Footer from '../components/footer/Footer'
 import BeforeAfter from '../components/Clinic/BeforeAfter'
 
 function Clinic() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
   return (
    <>
    <Navbar/>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import SlidingBanner from '../components/AllServices/SlidingBanner';
@@ -8,6 +8,11 @@ import { Hairtreatments,Skintreatments } from '../components/servicespage/Treatm
 import Testimonial from '../components/SharedComponents/Testimonial';
 
 function Services(category) {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
   return (
     <div>
       <Navbar />

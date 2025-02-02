@@ -14,6 +14,11 @@ import Navbar from '../components/navbar/Navbar'
 
 
 function SpecificService() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
 const [Show, setShow] = useState(false);
 
     useEffect(() => {

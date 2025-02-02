@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import OurTeamIntroCard from '../components/Home/OurTeamIntroCard'
 import {NitinData} from '../components/Home/OurTeamData'
 import {RadhikaData} from '../components/Home/OurTeamData'
 
 function MeetOurTeam() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
   return (
    <>
     <div className='flex flex-col py-20 w-full px-5 md:px-10 xl:px-28  min-h-screen gap-10 '>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Navbar from '../components/navbar/Navbar'
 import HeroSectionHome from '../components/Home/HeroSectionHome'
 import ExploreClinic from '../components/Home/ExploreClinic'
@@ -7,6 +7,11 @@ import MeetOurTeam from './MeetOurTeam'
 import Faq from '../components/Home/Faq'
 import Footer from '../components/footer/Footer'
 function Home() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
   return (
     <>
     <Navbar />

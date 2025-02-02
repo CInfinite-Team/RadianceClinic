@@ -7,6 +7,11 @@ import FillerContent from '../components/Blog/FillerContent';
 import PrimaryBtn from '../components/Buttons/PrimaryBtn';
 
 const Blog = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
   const [cards, setCards] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);

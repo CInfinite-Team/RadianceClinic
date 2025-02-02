@@ -96,6 +96,24 @@ html,body{
    
   }
 
+
+  .TwoLinesOnly {
+ 
+    max-lines: 2;
+    
+    text-overflow: ellipsis;
+    
+      display: -webkit-box;
+      -webkit-line-clamp: 2; 
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  
+    
+  }
+
+
+
   @media screen and (max-width: 1279px){
     .underline-text::after {
         content: '';
@@ -122,3 +140,5 @@ html,body{
         border-radius: 10px;
       }
   }
+
+

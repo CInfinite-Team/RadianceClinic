@@ -1,6 +1,8 @@
 import React from 'react'
 import PrimaryBtn from '../Buttons/PrimaryBtn'
 import Appointment from '../../assets/SharedAssets/Appointment'
+import { Play } from 'lucide-react'
+import VideoThumb from '../../assets/Clinic/VideoThumb.svg'
 
 function Treatments() {
   return (
@@ -15,7 +17,15 @@ function Treatments() {
         
         <div className='flex flex-col  lg:flex-row gap-5 xl:gap-10'>
             
-            <video className='bg-black w-full lg:w-[60%] xl:w-1/2 aspect-video' src=""></video>
+            <div className='w-full lg:w-[60%] xl:w-1/2 relative '>
+            <div className='bg-[#ffffff86] p-2 rounded-full flex items-center justify-center top-1/2 z-50 left-1/2 cursor-pointer absolute -translate-x-1/2 -translate-y-1/2 '>
+                      <div className='bg-[#ffffff94] rounded-full w-12 h-12 flex items-center justify-center   '>
+                        <Play color='white' />
+                      </div>
+                      </div>
+            <video className='bg-black w-full h-full object-cover ' poster={VideoThumb} src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"></video>
+            </div>
+
 
             <div className='flex flex-col bg-[#E2DBFF] p-5 gap-2 lg:max-w-[400px] xl:max-w-[573px]'>
                 <h4 className='font-ElMessiri text-[#554075] font-bold' style={{fontSize:'clamp(20px,3vw,42px)'}}>Hair Treatment</h4>
