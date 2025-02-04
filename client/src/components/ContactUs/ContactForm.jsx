@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useRef,useEffect } from 'react';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import { ArrowRightCircleIcon } from 'lucide-react';
 import leftVector from '../../assets/ContactUs/leftVector.svg';
@@ -14,9 +14,34 @@ function ContactForm() {
     subject: '',
     message: '',
   });
+  const formRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.intersectionRatio >= 0.2) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2, 
+      }
+    );
+
+    if (formRef.current) {
+      observer.observe(formRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +88,12 @@ function ContactForm() {
           className="absolute hidden md:block -bottom-20 -right-48 xl:-right-72 z-0 max-w-[218px] xl:max-w-[303px]"
         />
 
-        <form onSubmit={handleSubmit} className="bg-white relative overflow-visible gap-12 z-10 p-7 flex flex-col shadow-lg shadow-[#E0D1F7]">
+        <form ref={formRef} onSubmit={handleSubmit} className='bg-white relative overflow-visible gap-12 z-10 p-7 flex flex-col shadow-lg shadow-[#E0D1F7]  '
+         style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateX(0)' : 'translateX(-100px)',
+          transition: `all 0.5s ease-out ${ 0.2}s`
+        }}>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="flex flex-col gap-3">
               <label htmlFor="name" className="text-[#554075] font-bold">Name</label>
