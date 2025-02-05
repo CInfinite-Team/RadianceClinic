@@ -34,6 +34,10 @@ input::-ms-input-placeholder {
   color: #725B98;
 }
 
+input[type="radio"] {
+  accent-color: #74579f; 
+}
+
 input[type="checkbox"] {
   accent-color: #74579f;
  border: 2px solid #221a2e;
