@@ -57,7 +57,7 @@ const Servicescarousel = ({Data,Title}) => {
         <Slider {...settings}>
           {Data.map((treatment, index) => (
             <div key={index} className="px-4">
-              <a href='/specific-service/?Data=Hair' className="flex flex-col items-center">
+             <a href={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(treatment))}`} className="flex flex-col items-center">
                 <div className="rounded-full border-[6px] border-[#7491A1] p-1 mb-4">
                   <img
                     src={treatment.image}
