@@ -37,16 +37,16 @@ export const hairSlides = [
       buttonText: "Learn More",
       image: HairServiceBanner,
     },
-    {
-      title: "Hair Transplant Repair",
-      description: "Enhance or correct previous hair transplant results with our specialized repair services, ensuring your satisfaction.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    },
-    {
-      title: "Hair Transplant in Nagpur",
-      description: "Avail our expert hair transplant services in Nagpur, providing advanced solutions for effective hair restoration.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    }
+    // {
+    //   title: "Hair Transplant Repair",
+    //   description: "Enhance or correct previous hair transplant results with our specialized repair services, ensuring your satisfaction.",
+    //   buttonText: "Learn More",
+    //   image: HairServiceBanner,
+    // },
+    // {
+    //   title: "Hair Transplant in Nagpur",
+    //   description: "Avail our expert hair transplant services in Nagpur, providing advanced solutions for effective hair restoration.",
+    //   buttonText: "Learn More",
+    //   image: HairServiceBanner,
+    // }
 ];

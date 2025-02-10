@@ -318,7 +318,7 @@ export const LaserTreatments = [
   },
   {
     CardTitle:" Pigmentation Removal",
-    title: " Pigmentation ",
+    title: "Pigmentation ",
       subtitle: 'Removal',
     description:"Pigmentation removal through laser treatment is an effective and non-invasive solution to reduce unwanted spots like freckles, sun spots, and age spots. Laser treatment targets melanin buildup beneath the skin, effectively removing up to 80% of pigmentation in one session. The procedure is quick, safe, and minimally painful, with visible results after just 1-3 sessions.",
     approach:"At Radiance Clinic, we use advanced lasers to treat skin pigmentation. The treatment begins with a comprehensive analysis of your pigmentation profile, followed by focused laser energy to break down melanin. The melanin is drawn to the skin's surface, where it eventually forms a dark, dry scab that falls off, revealing clear, even skin. The process is gentle and results are often seen quickly.",
@@ -354,7 +354,7 @@ export const LaserTreatments = [
   },
   {
     CardTitle:"Stretch Marks Reduction",
-    title: " Stretch Marks",
+    title: "Stretch Marks",
       subtitle: 'Reduction',
     description:"Stretch marks, a common concern for many, especially women post-pregnancy, can cause significant self-consciousness. Stretch Marks Reduction treatments, such as laser therapy, PRP with ultrasound, and plastic surgery, effectively minimize or remove these marks. Laser therapy uses high-energy light to target the marks, helping to remove damaged skin layers, while PRP promotes collagen growth. Plastic surgery offers a more permanent solution for severe cases, providing smoother, clearer skin.",
     approach:"At Radiance Clinic, we provide the most advanced treatments for stretch mark reduction. Our expert dermatologists tailor treatments to your skin's unique needs, whether it's lightening the marks or complete removal. Laser therapy, including pulsed dye lasers or intense pulsed light, is the most effective method. These lasers disintegrate the tissue around the marks, stimulating the skin to regenerate and fade the stretch marks naturally. Healing typically occurs within a few weeks, with visible improvements.",
@@ -430,7 +430,7 @@ export const AntiAgingTreatments = [
   },
   {
     CardTitle:" Hand/Feet/Elbow Rejuvenation",
-    title: " Hand/Feet/Elbow",
+    title: "Hand/Feet/Elbow",
       subtitle: 'Rejuvenation',
     description:"Aging affects not only the face but also visible areas like hands, feet, and elbows. Daily activities lead to dryness, roughness, and the appearance of dark spots, redness, and spider veins. Hand, feet, and elbow rejuvenation are non-invasive treatments designed to restore youthful, smooth, and hydrated skin. These treatments help reduce signs of aging, brighten skin tone, and improve texture, leaving your hands and feet looking refreshed and rejuvenated.",
     approach:"At Radiance Clinic, we offer customized non-surgical treatments for hand, feet, and elbow rejuvenation. Our expert dermatologists create personalized plans using a combination of dermal fillers, laser therapy, chemical peels, and mesotherapy. These treatments target issues like sun damage, dark spots, and rough skin, providing long-lasting results and restoring youthful radiance to your hands, feet, and elbows.",
@@ -522,7 +522,7 @@ export const AntiAgingTreatments = [
 export const CosmeticTreatments = [
   {
     CardTitle:"Wart/Mole Removal",
-    title: " Wart/Mole",
+    title: "Wart/Mole",
       subtitle: 'Removal',
     description:"Moles can add charm as beauty spots, but some may be unsightly or even medically concerning. Warts, on the other hand, can spread due to their viral origin, requiring timely removal to prevent recurrence. Whether for cosmetic or medical reasons, wart and mole removal should always be entrusted to a skilled dermatologist. At Radiance Clinic, we offer safe and advanced solutions for mole and wart removal. Moles are removed using two reliable methods: simple excision or excision with cautery, performed under local anesthesia. For warts, we use specialized radiofrequency treatment that is painless and effective. Suspicious moles are sent for pathological analysis to rule out melanoma or skin cancer, ensuring your health and safety.",
    approach:"At Radiance Clinic, we prioritize your safety, comfort, and satisfaction. Our procedures are conducted by expert dermatologists using cutting-edge technology to deliver the best outcomes. Our Advanced Methods Include: ● Mole Removal: ○ Simple excision or excision with cautery under local anesthesia. ○ Minimal scarring, with follow-up treatments to improve skin appearance. ○ Suspicious moles are sent for laboratory analysis to ensure they are non-cancerous. ● Wart Removal: ○ Painless radiofrequency treatment to remove warts effectively. ○ Preventive care to stop the spread of viral warts to other areas.",

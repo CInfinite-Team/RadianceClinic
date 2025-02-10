@@ -1,52 +1,44 @@
 import HairServiceBanner from "../../assets/AllServices/Banner/HairServiceBanner.svg"
 
 export const cosmeticSlides = [
-    {
-      title: "Permanent Hair Removal",
-      description: "Achieve smooth, hair-free skin with our permanent hair removal treatments, providing long-lasting results.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    },
-    {
-      title: "Tattoo Removal",
-      description: "Remove unwanted tattoos safely and effectively with our advanced laser tattoo removal techniques.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    },
-    {
-      title: "Laser Facial/Carbon Peels",
-      description: "Rejuvenate your skin with our laser facials and carbon peels, enhancing your complexion and reducing imperfections.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    },
-    {
-      title: "Pigmentation Removal",
-      description: "Reduce pigmentation and achieve an even skin tone with our targeted pigmentation removal treatments.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    },
-    {
-      title: "Laser Skin Rejuvenation",
-      description: "Revitalize your skin with laser skin rejuvenation, addressing signs of aging and improving skin texture.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    },
-    {
-      title: "Laser for Scar Revision",
-      description: "Minimize the appearance of scars with our effective laser scar revision treatments, helping you achieve smoother skin.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    },
-    {
-      title: "Stretch Marks Reduction",
-      description: "Reduce the appearance of stretch marks with our advanced treatments, improving skin texture and elasticity.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    },
-    {
-      title: "Body Contouring/Face Contouring",
-      description: "Enhance your body and facial contours with our non-surgical contouring treatments, achieving a more defined look.",
-      buttonText: "Learn More",
-      image: HairServiceBanner,
-    }
+   
+   {
+        title: "Wart/Mole Removal",
+        description: "Safely and effectively remove warts and moles with our specialized treatment options, improving your skin's appearance and health.",
+        buttonText: "Learn More",
+        image: HairServiceBanner,
+      },
+      {
+        title: "Vitiligo Surgery",
+        description: "Restore pigmentation and improve the appearance of vitiligo-affected areas with our advanced surgical procedures.",
+        buttonText: "Learn More",
+        image: HairServiceBanner,
+      },
+      {
+        title: "Ear Lobe Repair",
+        description: "Repair and restore damaged or stretched earlobes with our precise surgical techniques, achieving natural-looking results.",
+        buttonText: "Learn More",
+        image: HairServiceBanner,
+      },
+      {
+        title: "Scar Revision",
+        description: "Minimize the appearance of scars with our effective scar revision treatments, helping you achieve smoother and clearer skin.",
+        buttonText: "Learn More",
+        image: HairServiceBanner,
+      },
+      {
+        title: "Vampire Facelift & Facial",
+        description: "Rejuvenate your skin with the Vampire Facelift & Facial, using platelet-rich plasma to enhance your skin's texture and tone.",
+        buttonText: "Learn More",
+        image: HairServiceBanner,
+      },
+      {
+        title: "Other Surgery",
+        description: "Explore our range of surgical treatments designed to address various cosmetic and medical concerns, enhancing your overall well-being.",
+        buttonText: "Learn More",
+        image: HairServiceBanner,
+      }
+  
+  
+  
 ];

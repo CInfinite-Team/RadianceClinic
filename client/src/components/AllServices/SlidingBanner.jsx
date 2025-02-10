@@ -7,28 +7,35 @@ import Appointment from '../../assets/SharedAssets/Appointment';
 import SecondaryBtn from "../Buttons/SecondaryBtn"
 import { hairSlides } from './hair';
 import { skinSlides } from './skin';
-import { laserSlides } from "./laser";
+import { laserSlides } from "./laser.js";
 import { antiAgingSlides } from "./antiAging";
-import { cosmeticSlides } from "./cosmetic";
+import { cosmeticSlides } from "./cosmetic.js";
+import {Hairtreatments,Skintreatments,LaserTreatments,AntiAgingTreatments,CosmeticTreatments} from "../ServicesPage/Treatments";
 
 const SlidingBanner = (category) => {
   
   let slides = hairSlides;
+  let data = Hairtreatments;
 
   if (category.category.category === 'hair') {
     slides = hairSlides;
+    data = Hairtreatments;
   } else if (category.category.category === 'skin') {
     slides = skinSlides;
+    data = Skintreatments;
   } else if (category.category.category === 'laser') {
     slides = laserSlides;
+    data = LaserTreatments;
   } else if (category.category.category === 'anti-aging') {
     slides = antiAgingSlides;
+    data = AntiAgingTreatments;
   } else if (category.category.category === 'cosmetic') {
     slides = cosmeticSlides;
+    data = CosmeticTreatments;
   }
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const[TreatmentData, setTreatmentData] = useState(data);
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
@@ -36,6 +43,14 @@ const SlidingBanner = (category) => {
 
     return () => clearInterval(timer);
   }, []);
+
+  // useEffect(() => {
+  //   setTreatmentData(data.filter(
+  //     (treatment) => treatment.title === slides[currentIndex].title
+  //   )[0]);
+  //   console.log(TreatmentData);
+  // }, [currentIndex, slides, data]);
+  
 
   return (
     <div className="relative top-0 mx-4 pt-24 sm:mx-8 lg:mx-16 lg:mt-40 lg:pt-2 mb-8">
@@ -90,8 +105,8 @@ const SlidingBanner = (category) => {
                     <PrimaryBtn className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
                         <Link to='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
-                    <SecondaryBtn className="">
-                      {slides[currentIndex].buttonText}
+                    <SecondaryBtn className="!p-0 !py-0">
+                    <a href={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(data[currentIndex]))}`} className='p-4 py-3' > {slides[currentIndex].buttonText}</a> 
                     </SecondaryBtn>
                   </div>
                 </div>
