@@ -3,7 +3,7 @@ import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import SlidingBanner from '../components/AllServices/SlidingBanner';
 import Servicescarousel from '../components/servicespage/servicescarousel';
-import { Hairtreatments,Skintreatments } from '../components/servicespage/Treatments';
+import { Hairtreatments,Skintreatments,LaserTreatments,AntiAgingTreatments,CosmeticTreatments } from '../components/servicespage/Treatments';
 // import PrimaryBtn from '../components/Buttons/PrimaryBtn';
 import Testimonial from '../components/SharedComponents/Testimonial';
 
@@ -24,11 +24,11 @@ function Services(category) {
       :  category.category === 'skin' ?
       <Servicescarousel Data={Skintreatments} Title={'SKIN'} />
       : category.category === 'laser' ?
-      <Servicescarousel Data={Skintreatments} Title={'LASER'} />
+      <Servicescarousel Data={LaserTreatments} Title={'LASER'} />
       : category.category === 'anti-aging' ?
-      <Servicescarousel Data={Skintreatments} Title={'ANTI-AGING'} />
+      <Servicescarousel Data={AntiAgingTreatments} Title={'ANTI-AGING'} />
       : category.category === 'cosmetic' ?
-      <Servicescarousel Data={Skintreatments} Title={'COSMETIC'} />
+      <Servicescarousel Data={CosmeticTreatments} Title={'COSMETIC'} />
       :
       <Servicescarousel Data={Hairtreatments} Title={'HAIR'} />
       )}
