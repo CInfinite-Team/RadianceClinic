@@ -29,7 +29,7 @@ adminRouter.get('/appointments', authenticateAdmin, getUpcomingAppointments);
 adminRouter.get('/appointments/:id', authenticateAdmin, getAppointmentDetails);
 
 // Blogs API
-adminRouter.post('/blogs', authenticateAdmin, upload.single('profileImage'), createBlog);  
+adminRouter.post('/blogs', authenticateAdmin, upload.single('image'), createBlog);  
 adminRouter.get('/blogs', authenticateAdmin, getAllBlogs);  
 adminRouter.get('/blogs/:id', authenticateAdmin, getBlogById); 
 adminRouter.delete('/blogs/:id', authenticateAdmin, deleteBlog);

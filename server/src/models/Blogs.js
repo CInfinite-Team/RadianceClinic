@@ -17,8 +17,14 @@ const BlogSchema = new mongoose.Schema({
         },
     ],
     image: {
-        data: Buffer,
-    },
+        data: {
+            type: Buffer,
+            required: false,
+        },
+        contentType: {
+            type: String,
+            required: false,
+        }},
     category: {
         type: String,
         default: 'General',
