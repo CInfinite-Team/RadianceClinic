@@ -1,29 +1,45 @@
+const fs = require('fs');
+const path = require('path');
 const Blog = require('../models/Blogs');
 const Admin = require('../models/Admin');
 
 const createBlog = async (req, res) => {
     try {
-        const { title, introduction,content, category } = req.body;
+        const { title, introduction, content, category } = req.body;
         const adminId = req.admin.id;
+
         const admin = await Admin.findById(adminId);
         if (!admin) return res.status(404).json({ message: 'Admin not found' });
-        console.log(admin);
-        let imageBase64 = null;
+
+        let imageData = null;
+        let imageType = null;
+
         if (req.file) {
-            imageBase64 = req.file.buffer.toString('base64');
+            const fileExt = path.extname(req.file.originalname).toLowerCase();
+
+            if (fileExt === '.jpg' || fileExt === '.jpeg') {
+                imageType = 'image/jpeg';
+            } else if (fileExt === '.png') {
+                imageType = 'image/png';
+            } else {
+                return res.status(400).json({ message: 'Invalid file format! Only JPG, JPEG, and PNG are allowed.' });
+            }
+
+            imageData = req.file.buffer;
         }
-        categoryLower = category.toLowerCase();
-        console.log('Category:', categoryLower);
+
+        const categoryLower = category.toLowerCase();
+
         const newBlog = new Blog({
             title,
             introduction,
-            content, 
-            image: imageBase64,
-            category:categoryLower,
+            content,
+            category: categoryLower,
+            image: imageData ? { data: imageData, contentType: imageType } : undefined,
             admin: {
                 name: admin.name,
-                speciality: admin.speciality, 
-                profileImage: admin.profileImage,
+                speciality: admin.speciality,
+                profileImage: admin.profileImage
             },
         });
 
@@ -40,15 +56,21 @@ const createBlog = async (req, res) => {
 const getAllBlogs = async (req, res) => {
     try {
         const blogs = await Blog.find();
+
         const blogsWithBase64 = blogs.map(blog => {
-            if (blog.image && blog.image.data) {
-                blog.image = blog.image.data.toString('base64');
+            const blogData = blog.toObject();
+
+            if (blogData.image && blogData.image.data) {
+                blogData.image = `data:${blogData.image.contentType};base64,${blogData.image.data.toString('base64')}`;
             }
-            if (blog.admin.profileImage && blog.admin.profileImage.data) {
-                blog.admin.profileImage = blog.admin.profileImage.data.toString('base64');
+
+            if (blogData.admin && blogData.admin.profileImage && blogData.admin.profileImage.data) {
+                blogData.admin.profileImage = `data:${blogData.admin.profileImage.contentType};base64,${blogData.admin.profileImage.data.toString('base64')}`;
             }
-            return blog;
+
+            return blogData;
         });
+
         res.status(200).json(blogsWithBase64);
     } catch (error) {
         console.error('Error fetching blogs:', error.message);
@@ -62,14 +84,18 @@ const getBlogById = async (req, res) => {
         const blog = await Blog.findById(req.params.id);
 
         if (!blog) return res.status(404).json({ message: 'Blog not found' });
-        if (blog.image && blog.image.data) {
-            blog.image = blog.image.data.toString('base64');
-        }
-        if (blog.admin.profileImage && blog.admin.profileImage.data) {
-            blog.admin.profileImage = blog.admin.profileImage.data.toString('base64');
+
+        const blogData = blog.toObject();  
+
+        if (blogData.image && blogData.image.data) {
+            blogData.image = `data:${blogData.image.contentType};base64,${blogData.image.data.toString('base64')}`;
         }
 
-        res.status(200).json(blog);
+        if (blogData.admin && blogData.admin.profileImage && blogData.admin.profileImage.data) {
+            blogData.admin.profileImage = `data:${blogData.admin.profileImage.contentType};base64,${blogData.admin.profileImage.data.toString('base64')}`;
+        }
+
+        res.status(200).json(blogData);
     } catch (error) {
         console.error('Error fetching blog:', error.message);
         res.status(500).json({ message: 'Internal server error', error: error.message });
