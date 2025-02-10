@@ -7,7 +7,9 @@ import "slick-carousel/slick/slick-theme.css";
 import WhitePlant from '../../assets/Aboutus/WhitePlant.svg'
 import Leaf from '../../assets/SharedAssets/Leaf.svg'
 import Whiteobject from '../../assets/SharedAssets/Whiteobject.svg'
-
+import Yogesh_review from '../../assets/Home/Review_Hairs/Yogesh_review.mp4'
+import Mayur_Karro_Review from '../../assets/Home/Review_Hairs/Mayur_Karro_Review.mp4'
+import Mustafa from '../../assets/Home/Review_Hairs/Mustafa.mp4'
 
 const sliderSettings = {
   dots: true,
@@ -23,20 +25,41 @@ const sliderSettings = {
 
 const TestimonialData =[
   {
-    Name:'Deepika Agarwal',
+    video:Yogesh_review ,
+    Treatment:'Hair Transplant',
+    Name:'Yogesh',
     Position:'Lawyer',
     Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
-  },
-  {
-    Name:'Deepika Agarwal',
+},
+{
+    video:Mayur_Karro_Review,
+    Treatment:'Scalp Micropigmentation',
+    Name:'Mayur Karro',
     Position:'Lawyer',
     Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
-  },
-  {
-    Name:'Deepika Agarwal',
+},
+{
+    video:Mustafa,
+    Treatment:'PRP Therapy',
+    Name:'Mustafa',
     Position:'Lawyer',
     Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
-  },
+},
+  // {
+  //   Name:'Deepika Agarwal',
+  //   Position:'Lawyer',
+  //   Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
+  // },
+  // {
+  //   Name:'Deepika Agarwal',
+  //   Position:'Lawyer',
+  //   Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
+  // },
+  // {
+  //   Name:'Deepika Agarwal',
+  //   Position:'Lawyer',
+  //   Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
+  // },
  
 ]
 
@@ -60,7 +83,19 @@ function Testimonial() {
 
             <div className='flex flex-col gap-10 justify-center mb-10 items-center'>
             <div className=' w-[180px] h-[180px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[260px] relative aspect-square rounded-full '>
-                <img src={testimonial} alt="" className='object-cover ' />
+                {/* <img src={testimonial} alt="" className='object-cover ' /> */}
+               
+               <div className='overflow-hidden rounded-full w-full h-full bg-black'><video 
+                            // id={`video-${index}`}
+                            // ref={videoRef}
+                            src={data.video} 
+                            className="w-full h-full   " 
+                            muted
+                            autoPlay 
+                            controls
+                            // onEnded={() => setPlayingVideo(null)}
+                          />
+                          </div> 
                 <div className=' p-2 md:p-3 lg:p-4 rounded-full bg-white absolute right-0 bottom-0 '>
                   <img src={InvertedComa} alt="" className='w-8' />
                 </div>

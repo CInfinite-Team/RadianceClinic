@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import SecondaryBtn from '../Buttons/SecondaryBtn';
 import Appointment from '../../assets/SharedAssets/Appointment';
@@ -13,6 +14,8 @@ function HeroSectionHome() {
     const [currentImg, setCurrentImg] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const Images = [HeroImg1, HeroImg2, HeroImg3];
+    const Links=['/services/anti-aging','/services/hair','/services/skin'];
+    const SecondBtnText=['Explore Anti-Aging Treatments','Explore Hair Treatments','Explore Skin Treatments'];
 
     useEffect(() => {
         setIsVisible(true);
@@ -50,15 +53,16 @@ function HeroSectionHome() {
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-7 items-center animate-fadeIn animation-delay-400">
-                        <PrimaryBtn className="hover:scale-105 transition-transform">
-                            Book Appointment <Appointment size={'24px'} />
+                        <PrimaryBtn className="hover:scale-105 !p-0 !py-0 transition-transform">
+                        <Link to='/book-appointment' className='p-4 py-3 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
-                        <SecondaryBtn className="hover:scale-105 transition-transform">
-                            Explore Skin Treatment
+                        <SecondaryBtn className="hover:scale-105 !p-0 !py-0 relative group max-w-[250px]  whitespace-nowrap transition-transform">
+                        <Link to={Links[currentImg]} className='p-4 py-3 flex overflow-hidden text-ellipsis' > Explore {SecondBtnText[currentImg]}</Link>
+                       <span className='absolute bg-[#0000005d] text-white rounded-md font-normal backdrop-blur-md border-[#d4cafd] border-2 opacity-0 group-hover:opacity-100 transition-all duration-500  -top-12 -left-2 p-1 '>Explore {SecondBtnText[currentImg]}</span>
                         </SecondaryBtn>
-                        <button className="p-4 rounded-full bg-white hover:rotate-45 transition-transform">
+                        <a href='/about-us' className="p-4 rounded-full bg-white hover:rotate-45 transition-transform duration-500">
                             <img src={TiledArrow} alt="" />
-                        </button>
+                        </a>
                     </div>
                 </div>
 

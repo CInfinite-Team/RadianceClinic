@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Clinic from '../../assets/Home/Clinic.svg';
+import { Link } from 'react-router-dom';
 
 function ExploreClinic() {
   const [isVisible, setIsVisible] = useState(false);
@@ -53,7 +54,9 @@ function ExploreClinic() {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <PrimaryBtn className="hover:scale-105 transition-transform">
+                          <Link to="/clinic" >
             Explore Clinic
+            </Link >
           </PrimaryBtn>
         </div>
       </div>

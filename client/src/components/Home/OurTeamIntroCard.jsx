@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Appointment from '../../assets/SharedAssets/Appointment';
 import TiledArrow from '../../assets/SharedAssets/TiledArrow.svg';
@@ -74,12 +75,12 @@ function OurTeamIntroCard({ Data }) {
         <div className={`flex items-center flex-wrap gap-5 transition-all duration-700 delay-500 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <PrimaryBtn className='z-10  '>
-            Book Appointment <Appointment size={'24px'} />
-          </PrimaryBtn>
-          <a href='/about-us' className='p-4 z-10 rounded-full bg-white hover:rotate-45 duration-500 transition-transform'>
-            <img src={TiledArrow} alt="" />
-          </a>
+           <PrimaryBtn className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
+                        <Link to='/book-appointment' className='p-4 py-3 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
+                        </PrimaryBtn>
+          <a href='/about-us' className="p-4 rounded-full bg-white hover:rotate-45 transition-transform duration-500">
+                                     <img src={TiledArrow} alt="" />
+        </a>
           <div className='flex gap-4 items-center'>
             <p className='text-lg font-semibold text-[#7E719E]'>Follow :</p>
             <a href={Data.InsagramLink} className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">

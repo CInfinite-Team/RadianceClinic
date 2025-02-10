@@ -172,22 +172,24 @@ function HomeTestimonial() {
                         <img src={testimonial} alt="" className="object-cover" />
                       ) : (
                         <div className='rounded-full relative overflow-hidden w-full h-full bg-black'>
-                          <button 
+                          {/* <button 
                             onClick={() => handleVideoClick(index, videoRef)}
                             className='bg-[#ffffff86] p-2 rounded-full flex items-center justify-center top-1/2 z-30 left-1/2 cursor-pointer absolute -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:scale-110'
                           >
                             <span className='bg-[#ffffff94] rounded-full w-12 h-12 flex items-center justify-center'>
                               {playingVideo === index ? <Pause color='white' /> : <Play color='white' />}
                             </span>
-                          </button>
+                          </button> */}
 
                           <video 
                             id={`video-${index}`}
-                            ref={videoRef}
+                            // ref={videoRef}
                             src={data.video} 
                             className="w-full h-full" 
-                            muted 
-                            onEnded={() => setPlayingVideo(null)}
+                            muted
+                            autoPlay 
+                            controls
+                            // onEnded={() => setPlayingVideo(null)}
                           />
                         </div>
                       )}
@@ -209,7 +211,7 @@ function HomeTestimonial() {
             </Slider>
           </div>
 
-          <div className={`flex gap-5 z-10 transition-all duration-1000 delay-500 transform ${
+          {/* <div className={`flex gap-5 z-10 transition-all duration-1000 delay-500 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
             <PrimaryBtn 
@@ -236,7 +238,7 @@ function HomeTestimonial() {
             >
               Laser
             </PrimaryBtn>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
