@@ -47,7 +47,6 @@ const Dashboard = () => {
 
   //Get Today's Date
   const currentDate = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD 
-console.log(currentDate);
   // Function to fetch data based on selected link
   const fetchData = (link) => {
     setData({});

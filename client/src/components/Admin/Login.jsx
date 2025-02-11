@@ -21,7 +21,6 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading2, setIsLoading2] = useState(true);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
@@ -31,7 +30,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
+  
     if (!validateEmail(email)) {
       setError('Please enter a valid email address.');
       setIsLoading(false);
@@ -40,82 +39,56 @@ const Login = () => {
   
     setError('');
     try {
-      const response = await axios.post(`${SERVER_URL}/login`, {
+      const response = await axios.post(`${SERVER_URL}/api/admin/login`, {
         email: email,
         password: password,
       });
   
-      const data = response.data;
+      if (response.status === 200) {
+        const { token } = response.data;
   
-      // Set cookie with token data and 24-hour expiration
-      Cookies.set('LoginStatus', JSON.stringify(data), { 
-        expires: 1, // 1 day
-        path: '/',
-        secure: true,
-        sameSite: 'strict'
-      });
+        Cookies.set('LoginStatus', JSON.stringify({ token }), { 
+          expires: 1, 
+          path: '/',
+          secure: true,
+          sameSite: 'strict'
+        });
   
-      // Navigate to dashboard
-      navigate('/admin/dashboard');
+        navigate('/admin-dashboard');
+      }
     } catch (error) {
-      console.error('Error during login:', error);
-      setError(error.response?.data?.message || 'Login failed. Please try again.');
+      if (error.response?.status === 401) {
+        setError('Invalid email or password');
+      } else {
+        setError('Login failed. Please try again.');
+      }
     } finally {
       setIsLoading(false);
     }
   };
   
+  
 
   useEffect(() => {
-    const checkIfAuthenticated = async () => {
-      try {
+    
+    
         const loginTokenCookie = Cookies.get('LoginStatus');
-        
-        if (!loginTokenCookie) {
-          setIsAuthenticated(false);
-          setIsLoading2(false);
-          return;
-        }
-
-        const tokenData = JSON.parse(loginTokenCookie);
-
-        const response = await axios.get(
-          `${SERVER_URL}/login`,
-          {
-            headers: {
-              Authorization: `Bearer ${tokenData.token}`,
-            },
-          }
-        );
-
-        if (response.data.authenticated) {
+        if (loginTokenCookie && loginTokenCookie !== '{}' && loginTokenCookie !== 'null') {
+          
           setIsAuthenticated(true);
+          return;
         } else {
+        
           setIsAuthenticated(false);
         }
-      } catch (error) {
-        console.error('Token verification error:', error);
-        Cookies.remove('LoginStatus');
-        setIsAuthenticated(false);
-      } finally {
-        setIsLoading2(false);
-      }
-    };
+     
+  
+},[]);
+  
 
-    checkIfAuthenticated();
-  }, []);
-
-  if (isLoading2) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="animate-spin rounded-full h-32 w-32 border-t-3 border-[#ffaaaa]"></div>
-      </div>
-    );
-  }
-
-  // If authenticated, redirect to dashboard
+  
   if (isAuthenticated) {
-    return <Navigate to="/admin/dashboard" />;
+    return <Navigate to="/admin-dashboard" />;
   }
 
 

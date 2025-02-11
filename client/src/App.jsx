@@ -32,7 +32,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/patient-form/skin" element={<SkinForm />} />
         <Route path="/patient-form/hair" element={<HairForm />} />
-        <Route path="/admin" element={<Login />} />
+        <Route path="/admin/login" element={<Login />} />
         <Route path="/admin-dashboard" element={<Dashboard />} />
         <Route path="/specific-service" element={<SpecificService />} />
         <Route path="/quick-links" element={<QuickLinks />} />
