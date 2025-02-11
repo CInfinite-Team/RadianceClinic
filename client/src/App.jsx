@@ -11,6 +11,7 @@ import SkinForm from './pages/SkinForm';
 import HairForm from './pages/HairForm';
 import Dashboard from './pages/Admin/Dashboard';
 import SpecificService from './pages/SpecificService';
+import Login from './components/Admin/Login';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/patient-form/skin" element={<SkinForm />} />
         <Route path="/patient-form/hair" element={<HairForm />} />
+        <Route path="/admin" element={<Login />} />
         <Route path="/admin-dashboard" element={<Dashboard />} />
         <Route path="/specific-service" element={<SpecificService />} />
       </Routes>
