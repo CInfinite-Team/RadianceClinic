@@ -1,10 +1,10 @@
 import {useState} from 'react'
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Logo from '../../assets/SharedAssets/adminPanel_logo.png';
-import dashboard from '../../assets/Admin/dashboard.png';
-import leads from '../../assets/Admin/leads.png';
-import appointments from '../../assets/Admin/appointments.png';
-import forms from '../../assets/Admin/forms.png';
+import dashboard from '../../assets/Admin/dashboard.svg';
+import leads from '../../assets/Admin/leads.svg';
+import appointments from '../../assets/Admin/appointments.svg';
+import forms from '../../assets/Admin/forms.svg';
 import { Menu,X } from 'lucide-react';
 
 function Left_Panel({handleLinkClick,selectedLink}) {
@@ -13,9 +13,9 @@ function Left_Panel({handleLinkClick,selectedLink}) {
 
   return (
    <>
-    <button onClick={()=> setShowNavbar(!ShowNavbar)} className='fixed left-4 top-4 z-[80] p-2 bg-[#0e0e0e93] transition-all duration-500 backdrop-blur-sm rounded-full text-purple-200 border '>
-   { !ShowNavbar? <Menu size={32}/>
-          : <X size={32}/>}
+    <button onClick={()=> setShowNavbar(!ShowNavbar)} className='fixed left-4 top-4 z-[80] p-2 bg-[#0e0e0e93] transition-all md:hidden duration-500 backdrop-blur-sm rounded-full text-purple-200 border '>
+   { !ShowNavbar? <Menu size={24}/>
+          : <X size={24}/>}
         </button>
    <div className={`flex-1 bg-white h-screen ${ShowNavbar === true ? 'translate-x-0' : '-translate-x-full' } transition-all duration-500 md:translate-x-0 p-6 flex flex-col fixed border-r-2 border-[#3A2E2B] border-opacity-[20%] md:static z-50 items-center `}>
         
@@ -34,7 +34,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
           >
             <img
               src={dashboard}
-              className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+              className="mr-2 w-8 h-8 "
               alt="Dashboard"
             />
             Dashboard
@@ -46,7 +46,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
           >
             <img
               src={appointments}
-              className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+              className="mr-2 w-8 h-8"
               alt="Appointments"
             />
             Appointments
@@ -58,7 +58,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
           >
             <img
               src={leads}
-              className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+              className="mr-2 w-8 h-8"
               alt="Leads"
             />
             Leads
@@ -70,16 +70,16 @@ function Left_Panel({handleLinkClick,selectedLink}) {
           >
             <img
               src={forms}
-              className="mr-2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5"
+              className="mr-2 w-6 h-6 "
               alt="Forms"
             />
             Forms
           </a>
         </nav>
 
-        <div className="mt-auto">
+        <div className="mt-auto w-full">
           <PrimaryBtn
-             className={'px-20 py-2 rounded-md  whitespace-nowrap  xs:text-xs md:text-lg'}
+             className={'w-full justify-center !py-2 rounded-md  whitespace-nowrap  '}
         >Log out</PrimaryBtn>
         </div>
       </div>
