@@ -5,7 +5,19 @@ import DataTable from './DataTable'
 import Topbar from './Topbar'
 import CountBox from './CountBox'
 
-function LeadsAdmin({selectedLink,headers,data,handleViewData,guageTestData,handleLinkClick}) {
+function LeadsAdmin({selectedLink,headers,data,handleViewData,handleLinkClick}) {
+  console.log(data)
+  const LeadsData = data?.data?.leads || {};
+  const Count = data?.data?.categoryCounts || {};
+
+  const hairCount = Count.Hair;
+  const skinCount = Count.Skin;
+
+  const guageTestData = [
+    { name: "Hair", value: hairCount, color: "#926FB0" },
+    { name: "Skin", value: skinCount, color: "#564375" },
+   
+  ];
   return (
     <>
       {selectedLink === "leads" && (
@@ -20,22 +32,17 @@ function LeadsAdmin({selectedLink,headers,data,handleViewData,guageTestData,hand
                   
                   {/* <CountBox handleLinkClick={handleLinkClick} data={data} title='Hair Leads' hiddenBtn={true} countEntity='' /> */}
                   {/* Box 1 */}
-                  <div className="flex-1 bg-[#554078] p-1 md:p-6 flex flex-col justify-between relative w-full max-w-xs md:max-w-md">
-                    <p className="absolute pd-5 top-4 left-4 text-xl md:text-2xl lg:text-3xl font-bold text-white">Hair Leads</p>
-                    <p className="text-5xl p-5 md:text-7xl lg:text-9xl font-bold text-white mt-8">10</p>
-                  </div>
+                  <CountBox data={Count} title='Hair Leads' hiddenBtn={true} countEntity='Hair' />
+                
                   
                   {/* Box 2 */}
-                  <div className="flex-1 bg-[#554078] p-1 md:p-6 flex flex-col justify-between relative w-full max-w-xs md:max-w-md">
-                    <p className="absolute pd-5 top-4 left-4 text-xl md:text-2xl lg:text-3xl font-bold text-white">Skin Leads</p>
-                    <p className="text-5xl p-5 md:text-7xl lg:text-9xl font-bold text-white mt-8">10</p>
-                  </div>
+                  <CountBox data={Count} title='Skin Leads' hiddenBtn={true} countEntity='Skin' />
+
+                  
             
                   {/* Box 3 */}
-                  <div className="flex-1 bg-[#554078] p-1 md:p-6 flex flex-col justify-between relative w-full max-w-xs md:max-w-md">
-                    <p className="absolute pd-5 top-4 left-4 text-xl md:text-2xl lg:text-3xl font-bold text-white">Laser Leads</p>
-                    <p className="text-5xl p-5 md:text-7xl lg:text-9xl font-bold text-white mt-8">10</p>
-                  </div>
+                  <CountBox data={Count} title='Laser Leads' hiddenBtn={true} countEntity='Laser' />
+
             
                   {/* Gauge Container */}
                   
@@ -45,7 +52,7 @@ function LeadsAdmin({selectedLink,headers,data,handleViewData,guageTestData,hand
                 </div>
               </div>
               <div className="w-full max-w-7xl overflow-x-auto mx-auto">
-                <DataTable headers={headers} data={data} handleViewData={handleViewData} />
+                <DataTable headers={headers} data={LeadsData} handleViewData={handleViewData} />
               </div>
             </>
             

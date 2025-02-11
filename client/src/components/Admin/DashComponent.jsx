@@ -5,7 +5,6 @@ import CountBox from './CountBox';
 
 function DashComponent({ selectedLink, handleLinkClick, data }) {
   const dashboardData = data?.data || {};
-  console.log(dashboardData)
   const counts = {
     leadsCount: dashboardData.newLeadsToday || 0,
     appointmentsCount: dashboardData.todaysAppointments || 0,
@@ -39,20 +38,20 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
             <div className="w-full max-w-7xl flex flex-wrap flex-row justify-center gap-5 mt-6 py-6">
               <CountBox 
                 handleLinkClick={handleLinkClick} 
-                data={[counts]} 
+                data={counts} 
                 title='New Leads Today' 
                 countEntity='leadsCount' 
               />
               <CountBox 
                 handleLinkClick={handleLinkClick} 
-                data={[counts]} 
+                data={counts} 
                 title='Appointments Today' 
                 BtnText='appointments' 
                 countEntity='appointmentsCount' 
               />
               <CountBox 
                 handleLinkClick={handleLinkClick} 
-                data={[counts]} 
+                data={counts} 
                 title='Upcoming Appointments' 
                 countEntity='totalUpcomingAppointments' 
               />

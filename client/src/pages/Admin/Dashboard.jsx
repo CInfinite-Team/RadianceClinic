@@ -28,7 +28,8 @@ const Dashboard = () => {
   const API_ENDPOINTS = {
     dashboard: '/api/admin/dashboard',
     leads: '/api/admin/leads',
-    appointments: '/api/admin/appointments'
+    appointments: '/api/admin/appointments',
+    forms: '/api/admin/forms'
   };
 
   const fetchFunctions = {
@@ -75,8 +76,17 @@ const Dashboard = () => {
     },
 
     forms: async () => {
-      // Implement forms endpoint when available
-      console.log('Forms endpoint not yet implemented');
+      try {
+        const response = await axios.get(SERVER_URL+API_ENDPOINTS.forms, getHeaders());
+        if (response.data.success) {
+          setData(response.data);
+        } else {
+          throw new Error(response.data.message || 'Failed to fetch appointments data');
+        }
+      } catch (error) {
+        setError(error.message);
+        console.error('Appointments fetch error:', error);
+      }
     }
   };
 
@@ -104,13 +114,7 @@ const Dashboard = () => {
   // Constants for table headers and gauge data
   const headers = ['Sr. No', 'Name', 'Category', 'Contact', 'Status', 'Actions'];
 
-  const guageTestData = [
-    { name: "Hair", value: 10, color: "#926FB0" },
-    { name: "Skin", value: 20, color: "#564375" },
-    // { name: "Laser", value: 15, color: "#7B5A9E" },
-    // { name: "Anti Aging", value: 8, color: "#4A3866" },
-    // { name: "Cosmetics", value: 12, color: "#8C74B1" }
-  ];
+  
 
   const handleViewData = async (id, type) => {
     try {
@@ -153,21 +157,18 @@ const Dashboard = () => {
             <AppointmentAdmin 
               selectedLink={selectedLink} 
               data={data} 
-              guageTestData={guageTestData}
               handleViewData={handleViewData}
               headers={headers}
             />
             <LeadsAdmin 
               selectedLink={selectedLink} 
               data={data} 
-              guageTestData={guageTestData}
               handleViewData={handleViewData}
               headers={headers}
             />
             <FormsAdmin 
               selectedLink={selectedLink} 
               data={data} 
-              guageTestData={guageTestData}
               handleViewData={handleViewData}
               headers={headers}
             />
