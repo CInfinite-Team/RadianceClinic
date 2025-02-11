@@ -1,120 +1,178 @@
 import { React, useState, useEffect } from 'react';
+import axios from 'axios';
 import Left_Panel from '../../components/Admin/Left_Panel.jsx';
-import PrimaryBtn from '../../components/Buttons/PrimaryBtn';
-import SecondaryBtn from '../../components/Buttons/SecondaryBtn';
-import GaugeVisualization from '../../components/Admin/GaugeVisualizer';
-import DataTable from '../../components/Admin/DataTable';
 import DashComponent from '../../components/Admin/DashComponent.jsx';
 import LeadsAdmin from '../../components/Admin/LeadsAdmin.jsx';
 import AppointmentAdmin from '../../components/Admin/AppointmentAdmin.jsx';
 import FormsAdmin from '../../components/Admin/FormsAdmin.jsx';
-// import Topbar from '../../components/Admin/Topbar.jsx';
-// import CountBox from '../../components/Admin/CountBox.jsx';
+import Cookies from 'js-cookie';
+import SERVER_URL from '../../constant.mjs';
 
 const Dashboard = () => {
-  const [selectedLink, setSelectedLink] = useState('dashboard');  //Default set to Dashboard
-  const [data, setData] = useState({}); // State to store the fetched data    (1 for now for development) ~ will set to null later
-  
-  const guageTestData = [
-    { name: "Hair", value: 10, color: "#926FB0" },                                 //DUMMY TESTING ON Guage Meter
-    { name: "Skin", value: 20, color: "#564375" },
-    
-  ];
-  const headers = ['Sr. No', 'Name', 'Type', 'For', 'Status', ''];
-  
-  const Paneldata = [                                                            //DUMMY DATA                
-    {
-      "leadsCount": "13",
-      "appointmentsCount": "32",
-      "formCount": "31",
-      "LatestLead": {
-        "category": "skin",
-        "username": "Amit Das",
-        "status": "Active",
-        "leadFor": "Dr. Nitin Barde",
-        "uploadDate": "2024-12-15T08:00:00Z"
-      },
-      "AppointmentData": {
-        "category": "skin",
-        "username": "Amit Das",
-        "status": "Active",
-        "onDate": "2024-12-15T08:00:00Z",
-        "nextDate": "2024-12-17T08:00:00Z"
+  const [selectedLink, setSelectedLink] = useState('dashboard');
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-      }
+  // Headers configuration
+   const loginTokenCookie = Cookies.get('LoginStatus');
+   const token = loginTokenCookie ? JSON.parse(loginTokenCookie).token : null;
+  const getHeaders = () => ({
+    headers: {
+      'Authorization': `Bearer ${token}`, 
+      'Content-Type': 'application/json'
     }
-  ]
+  });
 
-  //Get Today's Date
-  const currentDate = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD 
-  // Function to fetch data based on selected link
-  const fetchData = (link) => {
-    setData({});
-    switch (link) {
-      case 'dashboard':
-        return fetch('https://497c7338-5376-407b-a22c-a95ce2eea7b9.mock.pstmn.io/dashboard') // Replace with actual API endpoint
-          .then(response => response.json())
-          .then(data => setData(data));
-      case 'leads':
-        return fetch(`/api/leadsdata?date=${currentDate}`) // Replace with actual API endpoint
-          .then(response => response.json())
-          .then(data => setData(data));
-      case 'appointments':
-        return fetch('https://497c7338-5376-407b-a22c-a95ce2eea7b9.mock.pstmn.io/leads') // Replace with actual API endpoint
-          .then(response => response.json())
-          .then(data => setData(data));
-      case 'forms':
-        return fetch(`/api/formsdata?date=${currentDate}`) // Replace with actual API endpoint
-          .then(response => response.json())
-          .then(data => setData(data));
-      default:
-        setData({});
-    }
+  // API endpoints
+  const API_ENDPOINTS = {
+    dashboard: '/api/admin/dashboard',
+    leads: '/api/admin/leads',
+    appointments: '/api/admin/appointments'
   };
 
-  // Trigger data fetch whenever the selectedLink state changes
-  useEffect(() => {
-    fetchData(selectedLink);
-  }, [selectedLink]);
+  const fetchFunctions = {
+    dashboard: async () => {
+      try {
+        const response = await axios.get(SERVER_URL+API_ENDPOINTS.dashboard, getHeaders());
+        if (response.data.success) {
+          setData(response.data);
+        } else {
+          throw new Error(response.data.message || 'Failed to fetch dashboard data');
+        }
+      } catch (error) {
+        setError(error.message);
+        console.error('Dashboard fetch error:', error);
+      }
+    },
+
+    leads: async () => {
+      try {
+        const response = await axios.get(SERVER_URL+API_ENDPOINTS.leads, getHeaders());
+        if (response.data.success) {
+          setData(response.data);
+        } else {
+          throw new Error(response.data.message || 'Failed to fetch leads data');
+        }
+      } catch (error) {
+        setError(error.message);
+        console.error('Leads fetch error:', error);
+      }
+    },
+
+    appointments: async () => {
+      try {
+        const response = await axios.get(SERVER_URL+API_ENDPOINTS.appointments, getHeaders());
+        if (response.data.success) {
+          setData(response.data);
+        } else {
+          throw new Error(response.data.message || 'Failed to fetch appointments data');
+        }
+      } catch (error) {
+        setError(error.message);
+        console.error('Appointments fetch error:', error);
+      }
+    },
+
+    forms: async () => {
+      // Implement forms endpoint when available
+      console.log('Forms endpoint not yet implemented');
+    }
+  };
 
   const handleLinkClick = (link) => {
-    setData({});
-    setSelectedLink(link);
+    if (link !== selectedLink) {
+      setSelectedLink(link);
+      setLoading(true);
+      setData(null);
+      setError(null);
+    }
   };
 
-  const handleViewData = (item) => {
-    //To be Coded
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      if (fetchFunctions[selectedLink]) {
+        await fetchFunctions[selectedLink]();
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [selectedLink]);
+
+  // Constants for table headers and gauge data
+  const headers = ['Sr. No', 'Name', 'Category', 'Contact', 'Status', 'Actions'];
+
+  const guageTestData = [
+    { name: "Hair", value: 10, color: "#926FB0" },
+    { name: "Skin", value: 20, color: "#564375" },
+    // { name: "Laser", value: 15, color: "#7B5A9E" },
+    // { name: "Anti Aging", value: 8, color: "#4A3866" },
+    // { name: "Cosmetics", value: 12, color: "#8C74B1" }
+  ];
+
+  const handleViewData = async (id, type) => {
+    try {
+      const endpoint = type === 'lead' 
+        ? `${SERVER_URL}/api/admin/leads/${id}`
+        : `${SERVER_URL}/api/admin/appointments/${id}`;
+      
+      const response = await axios.get(endpoint, getHeaders());
+      if (response.data.success) {
+        // Handle viewing the details - implement modal or navigation
+        console.log('View details:', response.data.data);
+      }
+    } catch (error) {
+      console.error('Error fetching details:', error);
+    }
   };
 
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Left Panel */}
-      <Left_Panel handleLinkClick={handleLinkClick} selectedLink={selectedLink}/>
+      <Left_Panel handleLinkClick={handleLinkClick} selectedLink={selectedLink} />
 
-     
       {/* Right Panel */}
       <div className="flex-[3] bg-white p-2 md:p-6 overflow-y-auto">
-        
-        <div>
-        {data ? (
-          <>
-           <DashComponent selectedLink={selectedLink} data={data} Paneldata={Paneldata} handleLinkClick={handleLinkClick} />
-
-
-            <AppointmentAdmin handleLinkClick={handleLinkClick} selectedLink={selectedLink} data={data} guageTestData={guageTestData} handleViewData={handleViewData} headers={headers} />
-
-            <LeadsAdmin selectedLink={selectedLink} data={data} headers={headers} guageTestData={guageTestData}  handleViewData={handleViewData} />
-
-           <FormsAdmin selectedLink={selectedLink} data={data} headers={headers} guageTestData={guageTestData} handleViewData={handleViewData} />
-
-           
-        </>
-        ) : (
+        {loading ? (
           <div className='flex w-full h-[90vh] items-center justify-center'>
-          <p className=" rounded-full border-2 animate-spin border-r-0 border-[#725B98] p-12"></p>
+            <p className="rounded-full border-2 animate-spin border-r-0 border-[#725B98] p-12"></p>
+          </div>
+        ) : error ? (
+          <div className="text-red-500 text-center p-4">
+            {error}
+          </div>
+        ) : (
+          <div>
+            <DashComponent 
+              selectedLink={selectedLink} 
+              data={data} 
+              handleLinkClick={handleLinkClick} 
+            />
+            <AppointmentAdmin 
+              selectedLink={selectedLink} 
+              data={data} 
+              guageTestData={guageTestData}
+              handleViewData={handleViewData}
+              headers={headers}
+            />
+            <LeadsAdmin 
+              selectedLink={selectedLink} 
+              data={data} 
+              guageTestData={guageTestData}
+              handleViewData={handleViewData}
+              headers={headers}
+            />
+            <FormsAdmin 
+              selectedLink={selectedLink} 
+              data={data} 
+              guageTestData={guageTestData}
+              handleViewData={handleViewData}
+              headers={headers}
+            />
           </div>
         )}
-        </div>
       </div>
     </div>
   );

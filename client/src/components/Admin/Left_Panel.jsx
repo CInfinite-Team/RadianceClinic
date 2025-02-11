@@ -6,9 +6,16 @@ import leads from '../../assets/Admin/leads.svg';
 import appointments from '../../assets/Admin/appointments.svg';
 import forms from '../../assets/Admin/forms.svg';
 import { Menu,X } from 'lucide-react';
-
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 function Left_Panel({handleLinkClick,selectedLink}) {
-
+    
+  const navigate = useNavigate(); 
+  
+  function Logout(){
+    Cookies.remove('LoginStatus');
+    navigate('/admin-login');
+ }
   const [ShowNavbar,setShowNavbar]=useState(false);
 
   return (
@@ -78,7 +85,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
         </nav>
 
         <div className="mt-auto w-full">
-          <PrimaryBtn
+          <PrimaryBtn onClick={Logout}
              className={'w-full justify-center !py-2 rounded-md  whitespace-nowrap  '}
         >Log out</PrimaryBtn>
         </div>

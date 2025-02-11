@@ -39,7 +39,7 @@ const Login = () => {
   
     setError('');
     try {
-      const response = await axios.post(`${SERVER_URL}/api/admin-login`, {
+      const response = await axios.post(`${SERVER_URL}/api/admin/login`, {
         email: email,
         password: password,
       });

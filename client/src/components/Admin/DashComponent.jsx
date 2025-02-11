@@ -1,130 +1,140 @@
-import React from 'react'
+import React from 'react';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Topbar from './Topbar';
 import CountBox from './CountBox';
-function DashComponent({selectedLink,handleLinkClick,data,Paneldata}) {
+
+function DashComponent({ selectedLink, handleLinkClick, data }) {
+  const dashboardData = data?.data || {};
+  console.log(dashboardData)
+  const counts = {
+    leadsCount: dashboardData.newLeadsToday || 0,
+    appointmentsCount: dashboardData.todaysAppointments || 0,
+    totalUpcomingAppointments: dashboardData.totalUpcomingAppointments || 0
+  };
+
+
+  const latestLead = dashboardData.latestContactUsLead || {};
+  // console.log(latestLead)
+  const upcomingAppointment = dashboardData.upcomingAppointment || {};
+  // console.log(upcomingAppointment)
+
+  const formatDate = (dateString) => {
+    if (!dateString) return "...";
+    return new Date(dateString).toLocaleDateString("en-GB");
+  };
+
+  const capitalizeWords = (str) => {
+    if (!str) return "...";
+    return str.split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  };
+
   return (
     <>
-       {selectedLink === "dashboard" && ( <>
-            <Topbar title={'Welcome, Dr. Barde'}/>
-              <div className="w-full flex justify-center">
-                <div className="w-full max-w-7xl flex flex-wrap flex-row justify-center gap-5 mt-6 py-6">
-                  {/* Box 1 */}
-                  <CountBox handleLinkClick={handleLinkClick} data={data} title='New Leads Today' countEntity='leadsCount' />
-                  {/* Box 2 */}
-                  <CountBox handleLinkClick={handleLinkClick} data={data} title='Appointments Today' BtnText='appointments' countEntity='appointmentsCount' />
-                   {/* Box 3 */}
-                  <CountBox handleLinkClick={handleLinkClick} data={data} title='Forms Filled Today' countEntity='formsCount' />
+      {selectedLink === "dashboard" && (
+        <>
+          <Topbar title={'Welcome, Dr. Barde'} />
+          <div className="w-full flex justify-center">
+            <div className="w-full max-w-7xl flex flex-wrap flex-row justify-center gap-5 mt-6 py-6">
+              <CountBox 
+                handleLinkClick={handleLinkClick} 
+                data={[counts]} 
+                title='New Leads Today' 
+                countEntity='leadsCount' 
+              />
+              <CountBox 
+                handleLinkClick={handleLinkClick} 
+                data={[counts]} 
+                title='Appointments Today' 
+                BtnText='appointments' 
+                countEntity='appointmentsCount' 
+              />
+              <CountBox 
+                handleLinkClick={handleLinkClick} 
+                data={[counts]} 
+                title='Upcoming Appointments' 
+                countEntity='totalUpcomingAppointments' 
+              />
+            </div>
+          </div>
+
+          <div className="w-full max-h-8xl flex justify-center">
+            <div className="w-full max-w-7xl flex flex-wrap xl:flex-row flex-col justify-center xl:space-x-6 space-y-6 xl:space-y-0 mt-6 py-6">
+              
+              {/* Latest Leads Box */}
+              <div className='grid grid-cols-1 sm:grid-cols-2 bg-[#F0DFFF] items-start flex-1 w-full p-6 gap-4'>
+                <p className="leading-tight text-3xl col-span-full font-bold text-[#463660]">Latest Leads</p>
                 
+                <div className='flex flex-col col-span-full'>
+                  <p className="font-semibold text-[#463660]">Name</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{capitalizeWords(latestLead.name)}</p>
+                </div>
+
+                <div className="flex flex-col">
+                  <p className="font-semibold text-[#463660]">Subject</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{capitalizeWords(latestLead.subject)}</p>
+                </div>
+
+                <div className="flex flex-col">
+                  <p className="font-semibold text-[#463660]">Generated On</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{formatDate(latestLead.createdAt)}</p>
+                </div>
+
+                <div className="flex flex-col">
+                  <p className="font-semibold text-[#463660]">Email</p>
+                  <p className="text-[#8C74B1] text-xl font-bold">{latestLead.email || "..."}</p>
+                </div>
+
+                <div className="flex flex-col">
+                  <p className="font-semibold text-[#463660]">Phone</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{latestLead.phone || "..."}</p>
+                </div>
+
+                <div className="mt-auto col-span-full">
+                  <PrimaryBtn className="text-md w-full px-6 justify-center">See All details</PrimaryBtn>
                 </div>
               </div>
-              <div className="w-full max-h-8xl flex justify-center">
-                <div className="w-full max-w-7xl flex flex-wrap xl:flex-row flex-col justify-center xl:space-x-6 space-y-6 xl:space-y-0 mt-6 py-6">
-                  
-                    {/* Box 1 */}
-                  <div className='grid grid-cols-1 sm:grid-cols-2 bg-[#F0DFFF] items-start flex-1 w-full p-6 gap-4'>
-                    
-                  <p className="leading-tight text-3xl col-span-full font-bold text-[#463660] ">Latest Leads</p>
 
-                    <div className='flex flex-col col-span-full'>
-                    <p className="font-semibold text-[#463660]">Name</p>
-                      <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 
-                                                                      ? Paneldata[0].LatestLead["username"]
-                                                                      .split(' ') 
-                                                                      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
-                                                                      .join(' ') 
-                                                                      : "..."}</p>
-                    </div>
+              {/* Upcoming Appointments Box */}
+              <div className='grid grid-cols-1 sm:grid-cols-2 bg-[#F0DFFF] items-start flex-1 w-full p-6 gap-4'>
+                <p className="leading-tight text-3xl col-span-full font-bold text-[#463660]">Upcoming Appointments</p>
 
-                    <div className="flex flex-col">
-                      <p className="font-semibold text-[#463660]">Treatments</p>
-                      <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? Paneldata[0].LatestLead["category"].charAt(0).toUpperCase() + Paneldata[0].LatestLead["category"].slice(1).toLowerCase(): "..."}</p>
-                    </div>
+                <div className='flex flex-col col-span-full'>
+                  <p className="font-semibold text-[#463660]">Name</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{capitalizeWords(upcomingAppointment.name)}</p>
+                </div>
 
+                <div className="flex flex-col">
+                  <p className="font-semibold text-[#463660]">Category</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{capitalizeWords(upcomingAppointment.category)}</p>
+                </div>
 
-                    <div className="flex flex-col">
-                            <p className="font-semibold text-[#463660]">Generated On</p>
-                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? new Date(Paneldata[0].LatestLead["uploadDate"]).toLocaleDateString("en-GB"): "..."}</p>
-                          </div>
+                <div className="flex flex-col">
+                  <p className="font-semibold text-[#463660]">Mode</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{capitalizeWords(upcomingAppointment.modeOfConsultation)}</p>
+                </div>
 
+                <div className="flex flex-col">
+                  <p className="font-semibold text-[#463660]">Date</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{formatDate(upcomingAppointment.appointmentDate)}</p>
+                </div>
 
-                    <div className="flex flex-col">
-                      <p className="font-semibold text-[#463660]">Lead Stage</p>
-                      <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? Paneldata[0].LatestLead["status"].charAt(0).toUpperCase() + Paneldata[0].LatestLead["status"].slice(1).toLowerCase(): "..."}</p>
-                    </div>     
+                <div className="flex flex-col">
+                  <p className="font-semibold text-[#463660]">Time</p>
+                  <p className="text-[#8C74B1] text-2xl font-bold">{upcomingAppointment.appointmentTime || "..."}</p>
+                </div>
 
-                   
-
-                          <div className="flex flex-col">
-                            <p className="font-semibold text-[#463660]">Lead For</p>
-                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 
-                                                                      ? Paneldata[0].LatestLead["leadFor"]
-                                                                      .split(' ') 
-                                                                      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
-                                                                      .join(' ') 
-                                                                      : "..."}</p>
-                          </div>
-
-                          <div className="mt-auto col-span-full">
-                      <PrimaryBtn  className="text-md  w-full px-6 justify-center" >See All details</PrimaryBtn>
-                    </div>
-
-                  </div>
-
-                  {/* Box 2 */}
-                  <div className='grid grid-cols-1 sm:grid-cols-2 bg-[#F0DFFF] items-start flex-1 w-full p-6 gap-4'>
-                    
-                  <p className="leading-tight text-3xl col-span-full font-bold text-[#463660] ">Upcoming Appointments</p>
-
-                    <div className='flex flex-col col-span-full'>
-                    
-                      <p className="font-semibold text-[#463660]">Name</p>
-                      <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 
-                                                                      ? Paneldata[0].AppointmentData["username"]
-                                                                      .split(' ') 
-                                                                      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
-                                                                      .join(' ') 
-                                                                      : "..."}</p>
-                   
-                    </div>
-
-                    <div className="flex flex-col">
-                            <p className="font-semibold text-[#463660]">Treatments</p>
-                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? Paneldata[0].AppointmentData["category"].charAt(0).toUpperCase() + Paneldata[0].AppointmentData["category"].slice(1).toLowerCase(): "..."}</p>
-                          </div>
-
-
-                          <div className="flex flex-col">
-                            <p className="font-semibold text-[#463660]">Treatment Stage</p>
-                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? Paneldata[0].AppointmentData["status"].charAt(0).toUpperCase() + Paneldata[0].AppointmentData["status"].slice(1).toLowerCase(): "..."}</p>
-                          </div>
-
-                          <div className="flex flex-col">
-                            <p className="font-semibold text-[#463660]">Next Appointment</p>
-                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? new Date(Paneldata[0].AppointmentData["nextDate"]).toLocaleDateString("en-GB"): "..."}</p>
-                          </div>
-
-                   
-
-                          
-                          <div className="flex flex-col">
-                            <p className="font-semibold text-[#463660]">Appointment on</p>
-                            <p className="text-[#8C74B1] text-2xl font-bold">{Paneldata.length > 0 ? new Date(Paneldata[0].AppointmentData["onDate"]).toLocaleDateString("en-GB"): "..."}</p>
-                          </div>
-
-                          <div className="mt-auto col-span-full">
-                          <PrimaryBtn  className="text-md  w-full px-6 justify-center" >See All details</PrimaryBtn>
-                          </div>
-
-                  </div>
-                  
-
+                <div className="mt-auto col-span-full">
+                  <PrimaryBtn className="text-md w-full px-6 justify-center">See All details</PrimaryBtn>
                 </div>
               </div>
-              </>
-            )}
+            </div>
+          </div>
+        </>
+      )}
     </>
-  )
+  );
 }
 
-export default DashComponent
+export default DashComponent;
