@@ -2,8 +2,8 @@ import React,{useEffect} from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import SlidingBanner from '../components/AllServices/SlidingBanner';
-import Servicescarousel from '../components/servicespage/servicescarousel';
-import { Hairtreatments,Skintreatments,LaserTreatments,AntiAgingTreatments,CosmeticTreatments } from '../components/servicespage/Treatments';
+import Servicescarousel from '../components/ServicesPage/ServicesCarousel';
+import { Hairtreatments,Skintreatments,LaserTreatments,AntiAgingTreatments,CosmeticTreatments } from '../components/ServicesPage/Treatments';
 // import PrimaryBtn from '../components/Buttons/PrimaryBtn';
 import Testimonial from '../components/SharedComponents/Testimonial';
 
