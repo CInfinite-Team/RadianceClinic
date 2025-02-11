@@ -51,14 +51,16 @@ const Blog = () => {
       <Navbar />
       <HeroSectionAll Title={'Blog'} Path={'Home'} SubPath={'Blog'} />
 
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
-          <h1 className="text-4xl font-bold mb-2 text-gray-700 font-ElMessiri text-left">Blogs</h1>
-          <p className="text-lg text-gray-600 text-left mb-4 font-ElMessiri p-5">Discover expert insights, hair care tips, and inspiring stories to help you embrace confidence and radiance every day.</p>
+      <div className="min-h-screen bg-gray-100 flex flex-col py-8 p-5 xl:p-10">
+      <h1 className='font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
+              Blogs
+            </h1>
+          <p className="text-lg text-gray-600 text-left mb-4 font-ElMessiri ">Discover expert insights, hair care tips, and inspiring stories to help you embrace confidence and radiance every day.</p>
 
 
         {/* Button */}
-        <div className="flex justify-between items-center w-full mb-4 px-6 pb-4 flex-wrap">
-          <div className="flex gap-5">
+        <div className="flex justify-between items-center w-full mb-4  pb-4 flex-wrap">
+          <div className="flex gap-5 overflow-x-auto pb-2">
             <PrimaryBtn className="px-4 py-2">All</PrimaryBtn>
             <PrimaryBtn className="px-4 py-2">Skin</PrimaryBtn>
             <PrimaryBtn className="px-4 py-2">Hair</PrimaryBtn>

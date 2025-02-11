@@ -8,7 +8,7 @@ import BeforeAfter from "../../assets/Clinic/BeforeAfter.svg"
 function FillerContent(){
     return(
         <>
-            <div className='grid md:grid-cols-2 gap-2 items-stretch'>
+            <div className='grid md:grid-cols-2 gap-2 p-5 xl:p-10 items-stretch'>
                 <div className="flex flex-col gap-2">
                     <div className='bg-[#E2DBFF] p-5 flex-1 flex flex-col justify-between'>
                         <h4 className='font-Inter text-[#554075] font-bold' style={{ fontSize: 'clamp(20px,3vw,42px)' }}>
