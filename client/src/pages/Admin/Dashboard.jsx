@@ -97,7 +97,7 @@ const Dashboard = () => {
       <div className="flex-[3] bg-white p-2 md:p-6 overflow-y-auto">
         
         <div>
-        {data ? (
+        {!data ? (
           <>
            <DashComponent selectedLink={selectedLink} data={data} Paneldata={Paneldata} handleLinkClick={handleLinkClick} />
 
@@ -111,7 +111,9 @@ const Dashboard = () => {
            
         </>
         ) : (
-          <p className="text-gray-500 mt-6 text-3xl">Loading data...</p>
+          <div className='flex w-full h-[90vh] items-center justify-center'>
+          <p className=" rounded-full border-2 animate-spin border-r-0 border-[#725B98] p-12"></p>
+          </div>
         )}
         </div>
       </div>

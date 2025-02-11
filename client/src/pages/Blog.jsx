@@ -41,7 +41,9 @@ const Blog = () => {
   };
 
   if (loading) {
-    return <div className="text-center mt-10">Loading...</div>;
+    return <div className='flex w-full h-[90vh] items-center justify-center'>
+    <p className=" rounded-full border-2 animate-spin border-r-0 border-[#725B98] p-12"></p>
+    </div>;
   }
 
   return (
