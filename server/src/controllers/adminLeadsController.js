@@ -1,59 +1,43 @@
 const ContactUs = require('../models/ContactUs');
-const HairForm = require('../models/HairForm'); // Import HairForm model
-const SkinForm = require('../models/SkinForm'); // Import SkinForm model
 
 const getLeads = async (req, res) => {
     try {
-        const { category } = req.query;
+        const { category, date, startDate, endDate } = req.body;
 
-        
-        const categories = ['Hair', 'Skin', 'Laser', 'Anti Aging', 'Cosmetics'];
+        let query = {};
 
-    
-        const leadCounts = {};
+        if (category ) {
+            query.subject = category;
+        }
 
-        
+        if (date) {
+            const selectedDate = moment(date, 'YYYY-MM-DD').startOf('day');
+            if (selectedDate.isValid()) {
+                query.createdAt = { $gte: selectedDate.toDate(), $lt: moment(selectedDate).add(1, 'day').toDate() };
+            }
+        }
+
+        if (startDate && endDate) {
+            const start = moment(startDate, 'YYYY-MM-DD').startOf('day');
+            const end = moment(endDate, 'YYYY-MM-DD').endOf('day');
+            if (start.isValid() && end.isValid()) {
+                query.createdAt = { $gte: start.toDate(), $lte: end.toDate() };
+            }
+        }
+
+        const categoryCounts = {};
+        const categories = ['Hair', 'Skin', 'Laser', 'Anti-Aging', 'Cosmetics'];
+
         for (const cat of categories) {
-            let count = 0;
-
-            
-            count += await ContactUs.countDocuments({ subject: cat });
-
-            
-            if (cat === 'Hair') {
-                count += await HairForm.countDocuments(); 
-            }
-
-            
-            if (cat === 'Skin') {
-                count += await SkinForm.countDocuments(); 
-            }
-
-            leadCounts[cat] = count;
+            categoryCounts[cat] = await ContactUs.countDocuments({ subject: cat });
         }
 
-        let leads;
-        if (category && categories.includes(category)) {
-            leads = await ContactUs.find({ subject: category }).sort({ createdAt: -1 });
-            if (category === 'Hair') {
-                const hairLeads = await HairForm.find().sort({ createdAt: -1 });
-                leads = leads.concat(hairLeads);
-            }
-            if (category === 'Skin') {
-                const skinLeads = await SkinForm.find().sort({ createdAt: -1 });
-                leads = leads.concat(skinLeads); 
-            }
-        } else {
-            leads = await ContactUs.find().sort({ createdAt: -1 });
-            const hairLeads = await HairForm.find().sort({ createdAt: -1 });
-            const skinLeads = await SkinForm.find().sort({ createdAt: -1 });
-            leads = leads.concat(hairLeads, skinLeads);
-        }
+        const leads = await ContactUs.find(query).sort({ createdAt: -1 });
 
         res.status(200).json({
             success: true,
             data: {
-                leadCounts,
+                categoryCounts,
                 leads,
             },
         });
@@ -66,6 +50,7 @@ const getLeads = async (req, res) => {
         });
     }
 };
+
 
 const getLeadDetails = async (req, res) => {
     try {
