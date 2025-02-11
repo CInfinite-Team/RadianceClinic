@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import BookAppointment from './pages/BookAppointment';
+import PrivateRoute from './components/Admin/PrivateRoute';
 import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 import Clinic from './pages/Clinic';
@@ -15,30 +16,97 @@ import Login from './components/Admin/Login';
 import QuickLinks from './pages/QuickLinks';
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/book-appointment" element={<BookAppointment />} />
-        {/* <Route path="/services" element={<Services category="all"/>} /> */}
-        <Route path="/services/hair" element={<Services category="hair" />} />
-        <Route path="/services/skin" element={<Services category="skin" />} />
-        <Route path="/services/laser" element={<Services category="laser" />} />
-        <Route path="/services/anti-aging" element={<Services category="anti-aging" />} />
-        <Route path="/services/cosmetic-surgery" element={<Services category="cosmetic" />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/clinic" element={<Clinic />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/patient-form/skin" element={<SkinForm />} />
-        <Route path="/patient-form/hair" element={<HairForm />} />
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin-dashboard" element={<Dashboard />} />
-        <Route path="/specific-service" element={<SpecificService />} />
-        <Route path="/quick-links" element={<QuickLinks />} />
-      </Routes>
-    </Router>
-  );
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Home />,
+      errorElement:' 404 error',
+    },
+    {
+      path: '/book-appointment',
+      element: <BookAppointment />,
+    },
+    // {
+    //   path: '/services',
+    //   element: <Services category="all" />,
+    // },
+    {
+      path: '/services/hair',
+      element: <Services category="hair" />,
+    },
+    {
+      path: '/services/skin',
+      element: <Services category="skin" />,
+    },
+    {
+      path: '/services/laser',
+      element: <Services category="laser" />,
+    },
+    {
+      path: '/services/anti-aging',
+      element: <Services category="anti-aging" />,
+    },
+    {
+      path: '/services/cosmetic-surgery',
+      element: <Services category="cosmetic" />,
+    },
+    {
+      path: '/about-us',
+      element: <AboutUs/>,
+    },
+    {
+      path: '/clinic',
+      element: <Clinic/>,
+    },
+    {
+      path: '/blog',
+      element: <Blog/>,
+    },
+    {
+      path: '/contact-us',
+      element: <ContactUs/>,
+    },
+    {
+      path: '/patient-form/skin',
+      element: <SkinForm/>,
+    },
+    {
+      path: '/patient-form/hair',
+      element: <HairForm/>,
+    },
+    {
+      path: '/specific-service',
+      element: <SpecificService/>,
+    },
+    {
+      path: '/quick-links',
+      element: <QuickLinks/>,
+    },
+    {
+      path: '/admin-dashboard',
+      element: <Dashboard/>,
+    },
+    {
+      path: '/admin-login',
+      element: <Login />,  
+    },
+   
+   
+    {
+      path: '/admin-dashboard',
+      element: (
+        <PrivateRoute>
+          <Dashboard />
+          </PrivateRoute>
+    
+      ), 
+    },
+
+  ]);
+
+  return <RouterProvider router={router} />;
+
 }
 
 export default App;
