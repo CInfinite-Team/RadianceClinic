@@ -18,7 +18,7 @@ const Dashboard = () => {
   const guageTestData = [
     { name: "Hair", value: 10, color: "#926FB0" },                                 //DUMMY TESTING ON Guage Meter
     { name: "Skin", value: 20, color: "#564375" },
-    // { name: "Blue", value: 30, color: "#0000FF" },
+    
   ];
   const headers = ['Sr. No', 'Name', 'Type', 'For', 'Status', ''];
   
@@ -47,7 +47,7 @@ const Dashboard = () => {
 
   //Get Today's Date
   const currentDate = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD 
-
+console.log(currentDate);
   // Function to fetch data based on selected link
   const fetchData = (link) => {
     setData({});
@@ -97,12 +97,12 @@ const Dashboard = () => {
       <div className="flex-[3] bg-white p-2 md:p-6 overflow-y-auto">
         
         <div>
-        {!data ? (
+        {data ? (
           <>
            <DashComponent selectedLink={selectedLink} data={data} Paneldata={Paneldata} handleLinkClick={handleLinkClick} />
 
 
-            <AppointmentAdmin selectedLink={selectedLink} data={data} guageTestData={guageTestData} handleViewData={handleViewData} headers={headers} />
+            <AppointmentAdmin handleLinkClick={handleLinkClick} selectedLink={selectedLink} data={data} guageTestData={guageTestData} handleViewData={handleViewData} headers={headers} />
 
             <LeadsAdmin selectedLink={selectedLink} data={data} headers={headers} guageTestData={guageTestData}  handleViewData={handleViewData} />
 

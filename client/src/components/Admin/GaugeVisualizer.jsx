@@ -59,9 +59,10 @@ const GaugeVisualization = ({ data }) => {
   };
 
   return (
-    <div className="flex justify-center items-center mt-8">
-      <Doughnut data={chartData} options={chartOptions} />
-    </div>
+    <div className="flex justify-center items-center mt-4">
+ <div className="w-60 h-60"> {/* Adjust size here */}
+        <Doughnut data={chartData} options={chartOptions} />
+      </div>    </div>
   );
 };
 export default GaugeVisualization;

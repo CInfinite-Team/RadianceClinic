@@ -10,11 +10,11 @@ function DashComponent({selectedLink,handleLinkClick,data,Paneldata}) {
               <div className="w-full flex justify-center">
                 <div className="w-full max-w-7xl flex flex-wrap flex-row justify-center gap-5 mt-6 py-6">
                   {/* Box 1 */}
-                  <CountBox handleLinkClick={handleLinkClick} data={data} title='New Leads Today' />
+                  <CountBox handleLinkClick={handleLinkClick} data={data} title='New Leads Today' countEntity='leadsCount' />
                   {/* Box 2 */}
-                  <CountBox handleLinkClick={handleLinkClick} data={data} title='Appointments Today' />
+                  <CountBox handleLinkClick={handleLinkClick} data={data} title='Appointments Today' BtnText='appointments' countEntity='appointmentsCount' />
                    {/* Box 3 */}
-                  <CountBox handleLinkClick={handleLinkClick} data={data} title='Forms Filled Today' />
+                  <CountBox handleLinkClick={handleLinkClick} data={data} title='Forms Filled Today' countEntity='formsCount' />
                 
                 </div>
               </div>

@@ -13,7 +13,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
 
   return (
    <>
-    <button onClick={()=> setShowNavbar(!ShowNavbar)} className='fixed left-4 top-4 z-[80] p-2 bg-[#0e0e0e93] transition-all md:hidden duration-500 backdrop-blur-sm rounded-full text-purple-200 border '>
+    <button onClick={()=> setShowNavbar(!ShowNavbar)} className='fixed left-1 top-2 z-[80] p-1 bg-[#0e0e0e93] transition-all md:hidden duration-500 backdrop-blur-sm rounded-full text-white border '>
    { !ShowNavbar? <Menu size={24}/>
           : <X size={24}/>}
         </button>

@@ -7,7 +7,7 @@ const DataTable = ({ headers, data, handleViewData }) => {
         <thead>
           <tr className="bg-[#554078] text-white text-xl font-'Inter' ">
             {headers.map((header, index) => (
-              <th key={index} className="px-4 py-2">{header}</th>
+              <th key={index} className="px-4 whitespace-nowrap py-2">{header}</th>
             ))}
           </tr>
         </thead>
