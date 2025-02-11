@@ -12,6 +12,7 @@ import HairForm from './pages/HairForm';
 import Dashboard from './pages/Admin/Dashboard';
 import SpecificService from './pages/SpecificService';
 import Login from './components/Admin/Login';
+import QuickLinks from './pages/QuickLinks';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/admin" element={<Login />} />
         <Route path="/admin-dashboard" element={<Dashboard />} />
         <Route path="/specific-service" element={<SpecificService />} />
+        <Route path="/quick-links" element={<QuickLinks />} />
       </Routes>
     </Router>
   );
