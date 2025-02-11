@@ -19,28 +19,28 @@ const getAdminDashboard = async (req, res) => {
             appointmentDate: { $gte: today.toDate(), $lt: now.endOf('day').toDate() },
         });
 
-        // Count of new leads today from HairForm
-        const newHairLeadsToday = await HairForm.countDocuments({
+        // Count of new forms today from HairForm
+        const newHairFormsToday = await HairForm.countDocuments({
             createdAt: { $gte: today.toDate() },
         });
 
-        // Count of new leads today from SkinForm
-        const newSkinLeadsToday = await SkinForm.countDocuments({
+        // Count of new Forms today from SkinForm
+        const newSkinFormsToday = await SkinForm.countDocuments({
             createdAt: { $gte: today.toDate() },
         });
 
-        // Total new leads today
-        const totalNewLeadsToday = newLeadsToday + newHairLeadsToday + newSkinLeadsToday;
+        // Total new Forms today
+        const totalNewForms = newHairFormsToday + newSkinFormsToday;
 
         // Latest lead from ContactUs
         const latestContactUsLead = await ContactUs.findOne().sort({ createdAt: -1 });
-        const latestHairLead = await HairForm.findOne().sort({ createdAt: -1 });
-        const latestSkinLead = await SkinForm.findOne().sort({ createdAt: -1 });
+        // const latestHairLead = await HairForm.findOne().sort({ createdAt: -1 });
+        // const latestSkinLead = await SkinForm.findOne().sort({ createdAt: -1 });
 
-        const latestLeads = [latestContactUsLead, latestHairLead, latestSkinLead];
+        // const latestLeads = [latestContactUsLead, latestHairLead, latestSkinLead];
 
-        const latestLead = latestLeads.filter(lead => lead !== null)
-                                       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0];
+        // const latestLead = latestLeads.filter(lead => lead !== null)
+        //                                .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0];
 
 
         // Upcoming appointment
@@ -56,9 +56,10 @@ const getAdminDashboard = async (req, res) => {
         res.status(200).json({
             success: true,
             data: {
-                totalNewLeadsToday,
+                newLeadsToday,
+                totalNewForms,
                 todaysAppointments,
-                latestLead,
+                latestContactUsLead,
                 upcomingAppointment,
                 totalUpcomingAppointments,
             },
