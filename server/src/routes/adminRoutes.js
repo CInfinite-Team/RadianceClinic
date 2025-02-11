@@ -4,6 +4,7 @@ const { getAdminDashboard } = require('../controllers/adminDashboardController')
 const { getLeads, getLeadDetails } = require('../controllers/adminLeadsController');
 const { getUpcomingAppointments, getAppointmentDetails } = require('../controllers/adminAppointmentsController');
 const { createBlog, deleteBlog, getAllBlogs, getBlogById } = require('../controllers/blogController');
+const { getForms, getFormById } = require('../controllers/adminForms');
 
 const authenticateAdmin = require('../middlewares/authMiddleware');
 const multer = require('multer');
@@ -27,6 +28,10 @@ adminRouter.get('/leads/:id', authenticateAdmin, getLeadDetails);
 // Upcoming Appointments
 adminRouter.get('/appointments', authenticateAdmin, getUpcomingAppointments);
 adminRouter.get('/appointments/:id', authenticateAdmin, getAppointmentDetails);
+
+//Forms API
+adminRouter.get('/forms', authenticateAdmin, getForms);
+adminRouter.get('/forms/:id', authenticateAdmin, getFormById);
 
 // Blogs API
 adminRouter.post('/blogs', authenticateAdmin, upload.single('image'), createBlog);  
