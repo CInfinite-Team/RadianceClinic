@@ -1,22 +1,20 @@
 import { React, useState, useEffect } from 'react';
-import Logo from '../../assets/SharedAssets/adminPanel_logo.png';
-import dashboard from '../../assets/Admin/dashboard.png';
-import leads from '../../assets/Admin/leads.png';
-import appointments from '../../assets/Admin/appointments.png';
-import forms from '../../assets/Admin/forms.png';
+import Left_Panel from '../../components/Admin/Left_Panel.jsx';
 import PrimaryBtn from '../../components/Buttons/PrimaryBtn';
 import SecondaryBtn from '../../components/Buttons/SecondaryBtn';
 import GaugeVisualization from '../../components/Admin/GaugeVisualizer';
 import DataTable from '../../components/Admin/DataTable';
+import Topbar from '../../components/Admin/Topbar.jsx';
+import CountBox from '../../components/Admin/CountBox.jsx';
 
 const Dashboard = () => {
   const [selectedLink, setSelectedLink] = useState('dashboard');  //Default set to Dashboard
   const [data, setData] = useState({}); // State to store the fetched data    (1 for now for development) ~ will set to null later
   
   const guageTestData = [
-    { name: "Red", value: 10, color: "#FF0000" },                                 //DUMMY TESTING ON Guage Meter
-    { name: "Green", value: 20, color: "#00FF00" },
-    { name: "Blue", value: 30, color: "#0000FF" },
+    { name: "Hair", value: 10, color: "#926FB0" },                                 //DUMMY TESTING ON Guage Meter
+    { name: "Skin", value: 20, color: "#564375" },
+    // { name: "Blue", value: 30, color: "#0000FF" },
   ];
   const headers = ['Sr. No', 'Name', 'Type', 'For', 'Status', ''];
   
@@ -86,108 +84,28 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
       {/* Left Panel */}
-      <div className="flex-[1] bg-white p-6 flex flex-col items-center ">
-        <div className="text-center mb-6 pb-6">
-          <img src={Logo} alt="Logo" className="h-auto w-auto" />
-        </div>
+      <Left_Panel handleLinkClick={handleLinkClick} selectedLink={selectedLink}/>
 
-        {/* Navigation Links */}
-        <nav className="flex flex-col space-y-4">
-          <a
-            href="#"
-            className={`flex items-center text-[#463660] hover:font-bold text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'dashboard' ? 'font-bold' : ''}`}
-            onClick={() => handleLinkClick('dashboard')}
-          >
-            <img
-              src={dashboard}
-              className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
-              alt="Dashboard"
-            />
-            Dashboard
-          </a>
-          <a
-            href="#"
-            className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'appointments' ? 'font-bold' : ''}`}
-            onClick={() => handleLinkClick('appointments')}
-          >
-            <img
-              src={appointments}
-              className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
-              alt="Appointments"
-            />
-            Appointments
-          </a>
-          <a
-            href="#"
-            className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'leads' ? 'font-bold' : ''}`}
-            onClick={() => handleLinkClick('leads')}
-          >
-            <img
-              src={leads}
-              className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
-              alt="Leads"
-            />
-            Leads
-          </a>
-          <a
-            href="#"
-            className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'forms' ? 'font-bold' : ''}`}
-            onClick={() => handleLinkClick('forms')}
-          >
-            <img
-              src={forms}
-              className="mr-2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5"
-              alt="Forms"
-            />
-            Forms
-          </a>
-        </nav>
-
-        <div className="mt-auto">
-          <PrimaryBtn
-            children={'Log out'}
-            className={'px-20 py-2 rounded-md xs:px-2 sm:px-6 md:px-20 xs:text-xs md:text-lg'}
-          />
-        </div>
-      </div>
-
-      <div className="w-[2px] bg-gray-300"></div>
-
+     
       {/* Right Panel */}
-      <div className="flex-[3] bg-white p-6">
-        {/* Displaying the fetched data dynamically */}
+      <div className="flex-[3] bg-white p-6 overflow-y-auto">
+        
         <div>
         {data ? (
           <>
             {selectedLink === "dashboard" && ( <>
-              <div className="w-full max-w-7xl mx-auto p-6 bg-[#554078] flex items-center justify-between">
-                <p className="text-3xl font-semibold text-white pl-5">
-                  Welcome, Dr. Barde
-                </p>
-                <SecondaryBtn children={"View Website"} classname={"p-2"} />
-              </div>
+            <Topbar/>
               <div className="w-full flex justify-center">
-                <div className="w-full max-w-7xl flex flex-wrap xl:flex-row flex-col justify-center xl:space-x-6 space-y-6 xl:space-y-0 mt-6 py-6">
+                <div className="w-full max-w-7xl flex flex-wrap flex-row justify-center gap-5 mt-6 py-6">
                   {/* Box 1 */}
-                  <div className="flex-1 bg-[#554078] p-6 flex flex-col justify-between relative">
-                    <p className="absolute top-4 left-4 text-3xl font-bold text-white">New Leads Today</p>
-                    <p className="text-9xl p-5 font-bold text-white mt-8">{data.length > 0 ? data[0].leadsCount : 0}</p>
-                    <SecondaryBtn onClick={() => handleLinkClick('leads')} children={"View All leads"} className="absolute bottom-4 right-4 text-md" />
-                  </div>
+                  <CountBox handleLinkClick={handleLinkClick} data={data} title='New Leads Today' />
                   {/* Box 2 */}
-                  <div className="flex-1 bg-[#554078] p-6 flex flex-col justify-between relative">
-                    <p className="absolute top-4 left-4 text-3xl font-bold text-white">Appointments Today</p>
-                    <p className="text-9xl p-5 font-bold text-white mt-8">{data.length > 0 ? data[0].appointmentsCount : 0}</p>
-                    <SecondaryBtn onClick={() => handleLinkClick('appointments')} children={"View all appoinments"} className="absolute bottom-4 right-4 text-sm" />
-                  </div>
-                  {/* Box 3 */}
-                  <div className="flex-1 bg-[#554078] p-6 flex flex-col justify-between relative">
-                    <p className="absolute top-4 left-4 text-3xl font-bold text-white">Forms Filled Today</p>
-                    <p className="text-9xl p-5 font-bold text-white mt-8">{data.length > 0 ? data[0].formsCount : 0}</p>
-                    <SecondaryBtn onClick={() => handleLinkClick('forms')}children={"View All forms"} className="absolute bottom-4 right-4 text-md" />
-                  </div>
+                  <CountBox handleLinkClick={handleLinkClick} data={data} title='Appointments Today' />
+                   {/* Box 3 */}
+                  <CountBox handleLinkClick={handleLinkClick} data={data} title='Forms Filled Today' />
+                
                 </div>
               </div>
               <div className="w-full max-h-8xl flex justify-center">
