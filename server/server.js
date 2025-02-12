@@ -17,6 +17,7 @@ if (require.main === module) {
     const corsOptions = {
         origin: '*',  // Allow requests from any origin
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization'],
     };
     app.use(cors(corsOptions)); // Apply CORS to all routes
@@ -28,7 +29,7 @@ if (require.main === module) {
     app.use('/api/user', userRouter); // User routes
   
     app.listen(PORT, () => {
-        console.log(`Server running at http://localhost:${PORT}/`);
+        console.log(`Server is Live`);
         connectDB();
     });
 }
