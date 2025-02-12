@@ -14,17 +14,16 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Headers configuration
-   const loginTokenCookie = Cookies.get('LoginStatus');
-   const token = loginTokenCookie ? JSON.parse(loginTokenCookie).token : null;
+  const loginTokenCookie = Cookies.get('LoginStatus');
+  const token = loginTokenCookie ? JSON.parse(loginTokenCookie).token : null;
+  
   const getHeaders = () => ({
     headers: {
-      'Authorization': `Bearer ${token}`, 
+      'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
     }
   });
 
-  // API endpoints
   const API_ENDPOINTS = {
     dashboard: '/api/admin/dashboard',
     leads: '/api/admin/leads',
@@ -35,7 +34,7 @@ const Dashboard = () => {
   const fetchFunctions = {
     dashboard: async () => {
       try {
-        const response = await axios.get(SERVER_URL+API_ENDPOINTS.dashboard, getHeaders());
+        const response = await axios.get(SERVER_URL + API_ENDPOINTS.dashboard, getHeaders());
         if (response.data.success) {
           setData(response.data);
         } else {
@@ -49,7 +48,7 @@ const Dashboard = () => {
 
     leads: async () => {
       try {
-        const response = await axios.get(SERVER_URL+API_ENDPOINTS.leads, getHeaders());
+        const response = await axios.get(SERVER_URL + API_ENDPOINTS.leads, getHeaders());
         if (response.data.success) {
           setData(response.data);
         } else {
@@ -63,7 +62,7 @@ const Dashboard = () => {
 
     appointments: async () => {
       try {
-        const response = await axios.get(SERVER_URL+API_ENDPOINTS.appointments, getHeaders());
+        const response = await axios.get(SERVER_URL + API_ENDPOINTS.appointments, getHeaders());
         if (response.data.success) {
           setData(response.data);
         } else {
@@ -77,25 +76,31 @@ const Dashboard = () => {
 
     forms: async () => {
       try {
-        const response = await axios.get(SERVER_URL+API_ENDPOINTS.forms, getHeaders());
+        const response = await axios.get(SERVER_URL + API_ENDPOINTS.forms, getHeaders());
         if (response.data.success) {
           setData(response.data);
         } else {
-          throw new Error(response.data.message || 'Failed to fetch appointments data');
+          throw new Error(response.data.message || 'Failed to fetch forms data');
         }
       } catch (error) {
         setError(error.message);
-        console.error('Appointments fetch error:', error);
+        console.error('Forms fetch error:', error);
       }
     }
   };
 
   const handleLinkClick = (link) => {
-    if (link !== selectedLink) {
-      setSelectedLink(link);
+    setSelectedLink(link);
+    setLoading(true);
+    setData(null);
+    setError(null);
+  };
+
+  const refreshData = async () => {
+    if (fetchFunctions[selectedLink]) {
       setLoading(true);
-      setData(null);
-      setError(null);
+      await fetchFunctions[selectedLink]();
+      setLoading(false);
     }
   };
 
@@ -111,20 +116,16 @@ const Dashboard = () => {
     fetchData();
   }, [selectedLink]);
 
-  // Constants for table headers and gauge data
   const headers = ['Sr. No', 'Name', 'Category', 'Contact', 'Status', 'Actions'];
-
-  
 
   const handleViewData = async (id, type) => {
     try {
-      const endpoint = type === 'lead' 
+      const endpoint = type === 'lead'
         ? `${SERVER_URL}/api/admin/leads/${id}`
         : `${SERVER_URL}/api/admin/appointments/${id}`;
-      
+
       const response = await axios.get(endpoint, getHeaders());
       if (response.data.success) {
-        // Handle viewing the details - implement modal or navigation
         console.log('View details:', response.data.data);
       }
     } catch (error) {
@@ -134,16 +135,12 @@ const Dashboard = () => {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Left Panel */}
       <Left_Panel handleLinkClick={handleLinkClick} selectedLink={selectedLink} />
-
-      {/* Right Panel */}
       <div className="flex-[3] bg-white p-2 md:p-6 overflow-y-auto">
         {loading ? (
           <div className='flex w-full h-[90vh] items-center justify-center'>
             <p className="rounded-full border-2 animate-spin border-r-0 border-[#725B98] p-12"></p>
-          </div>
-        ) : error ? (
+          </div>) : error ? (
           <div className="text-red-500 text-center p-4">
             {error}
           </div>
@@ -170,7 +167,7 @@ const Dashboard = () => {
               selectedLink={selectedLink} 
               data={data} 
               handleViewData={handleViewData}
-              headers={headers}
+              onRefresh={refreshData}
             />
           </div>
         )}
