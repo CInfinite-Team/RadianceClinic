@@ -5,7 +5,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import SERVER_URL from '../../constant.mjs';
 
-function StatusUpdate({ setShowStatusUpdate, ShowStatusUpdate, id, onStatusUpdate }) {
+function StatusUpdate({ setShowStatusUpdate, ShowStatusUpdate, id, onStatusUpdate,route }) {
   const [selectedStatus, setSelectedStatus] = useState(null);
 const[StatusLoading,setSatusLoading]=useState(false)
   const handleStatusUpdate = async () => {
@@ -20,7 +20,7 @@ const[StatusLoading,setSatusLoading]=useState(false)
 
     try {
       const response = await axios.post(
-        `${SERVER_URL}/api/admin/updateFormStatus`,
+        `${SERVER_URL}/api/admin/${route}`,
         { id, status: selectedStatus },
         {
           headers: {

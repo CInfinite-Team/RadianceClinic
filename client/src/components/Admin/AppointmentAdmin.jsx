@@ -5,7 +5,7 @@ import DataTable from './DataTable'
 import Topbar from './Topbar'
 import CountBox from './CountBox'
 
-function AppointmentAdmin({selectedLink,data,headers,handleViewData,handleLinkClick }) {
+function AppointmentAdmin({selectedLink,data,headers,handleViewData,handleLinkClick,onRefresh }) {
   const AppointmentData = data?.data || {};
 
   const Countdata = AppointmentData?.appointments || [];
@@ -37,7 +37,7 @@ function AppointmentAdmin({selectedLink,data,headers,handleViewData,handleLinkCl
                 </div>
               </div>
               <div className="w-full max-w-7xl overflow-x-auto  mx-auto">
-                <DataTable headers={headers} data={Countdata} handleViewData={handleViewData} />
+                <DataTable headers={headers} route='updateAppointmentStatus' onStatusUpdate={onRefresh} data={Countdata} handleViewData={handleViewData} />
               </div>
               </>
             )}

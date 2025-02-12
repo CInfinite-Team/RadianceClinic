@@ -106,6 +106,7 @@ function FormTable({ data, handleViewData, onStatusUpdate }) {
           setShowStatusUpdate={() => setActiveId(null)}
           ShowStatusUpdate={!!activeId}
           id={activeId}
+          route='updateFormStatus'
           onStatusUpdate={onStatusUpdate}
         />
       )}

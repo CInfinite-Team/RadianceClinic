@@ -14,6 +14,7 @@ import Dashboard from './pages/Admin/Dashboard';
 import SpecificService from './pages/SpecificService';
 import Login from './components/Admin/Login';
 import QuickLinks from './pages/QuickLinks';
+import FormDetailPopup from './components/Admin/FormDetailPopup';
 
 function App() {
 
@@ -66,6 +67,10 @@ function App() {
     {
       path: '/contact-us',
       element: <ContactUs/>,
+    },
+    {
+      path: '/FormDetailPopup',
+      element: <FormDetailPopup/>,
     },
     {
       path: '/patient-form/skin',

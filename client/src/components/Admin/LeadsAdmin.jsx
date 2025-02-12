@@ -5,7 +5,7 @@ import DataTable from './DataTable'
 import Topbar from './Topbar'
 import CountBox from './CountBox'
 
-function LeadsAdmin({selectedLink,headers,data,handleViewData,handleLinkClick}) {
+function LeadsAdmin({selectedLink,headers,data,handleViewData,onRefresh}) {
   console.log(data)
   const LeadsData = data?.data?.leads || {};
   const Count = data?.data?.categoryCounts || {};
@@ -52,7 +52,7 @@ function LeadsAdmin({selectedLink,headers,data,handleViewData,handleLinkClick}) 
                 </div>
               </div>
               <div className="w-full max-w-7xl overflow-x-auto mx-auto">
-                <DataTable headers={headers} data={LeadsData} handleViewData={handleViewData} />
+                <DataTable headers={headers} route='updateLeadStatus' onStatusUpdate={onRefresh} data={LeadsData} handleViewData={handleViewData} />
               </div>
             </>
             

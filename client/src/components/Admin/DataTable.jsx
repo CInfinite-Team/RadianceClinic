@@ -1,7 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
+import StatusUpdate from './StatusUpdate';
 
-const DataTable = ({ headers, data, handleViewData }) => {
+const DataTable = ({ headers, data, handleViewData,onStatusUpdate,route }) => {
+    const [activeId, setActiveId] = useState(null);
+  
   return (
+    <> 
     <div className="mt-6 overflow-x-auto">
       <table className="min-w-full table-auto border-collapse rounded-md">
         <thead>
@@ -22,10 +26,48 @@ const DataTable = ({ headers, data, handleViewData }) => {
                 <td className="px-4 py-2 bg-[#F0DFFF]  text-center">{item.category ? item.category : 'N/A'}</td>
                 <td className="px-4 py-2 bg-[#F0DFFF]  text-center">{item.phone ? item.phone : 'N/A'}</td>
                 <td className="px-4 py-2 bg-[#F0DFFF]  text-center">
-                  <span className="relative inline-flex h-3 w-3">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
-                  </span>
+                <div
+                      onClick={() => setActiveId(item._id)}
+                      className="inline-flex items-center cursor-pointer gap-2"
+                    >
+                      <span className="whitespace-nowrap">{item.status || 'N/A'}</span>
+                      <span className="relative inline-flex h-3 w-3">
+                        <span
+                          className={`absolute inline-flex h-full w-full animate-ping rounded-full ${
+                            item.status === 'Submitted'
+                              ? 'bg-blue-400'
+                              : item.status === 'Contacted'
+                              ? 'bg-yellow-400'
+                              : item.status === 'Accepted'
+                              ? 'bg-green-400'
+                              : item.status === 'In Progress'
+                              ? 'bg-orange-400'
+                              : item.status === 'Closed'
+                              ? 'bg-purple-400'
+                              : item.status === 'Cancelled'
+                              ? 'bg-red-400'
+                              : 'bg-gray-400' 
+                          } opacity-75`}
+                        ></span>
+                        <span
+                          className={`relative inline-flex h-3 w-3 rounded-full ${
+                            item.status === 'Submitted'
+                              ? 'bg-blue-500'
+                              : item.status === 'Contacted'
+                              ? 'bg-yellow-500'
+                              : item.status === 'Accepted'
+                              ? 'bg-green-500'
+                              : item.status === 'In Progress'
+                              ? 'bg-orange-500'
+                              : item.status === 'Closed'
+                              ? 'bg-purple-500'
+                              : item.status === 'Cancelled'
+                              ? 'bg-red-500'
+                              : 'bg-gray-500' 
+                          }`}
+                        ></span>
+                      </span>
+                    </div>
                 </td>
                 <td className="px-4 py-2 bg-[#F0DFFF] text-center">
                   <button
@@ -47,6 +89,15 @@ const DataTable = ({ headers, data, handleViewData }) => {
         </tbody>
       </table>
     </div>
+     {activeId && (
+      <StatusUpdate
+        setShowStatusUpdate={() => setActiveId(null)}
+        ShowStatusUpdate={!!activeId}
+        id={activeId}
+        route={route}
+        onStatusUpdate={onStatusUpdate}
+      />
+    )}</>
   );
 };
 

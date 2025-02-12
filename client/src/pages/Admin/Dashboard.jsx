@@ -7,13 +7,14 @@ import AppointmentAdmin from '../../components/Admin/AppointmentAdmin.jsx';
 import FormsAdmin from '../../components/Admin/FormsAdmin.jsx';
 import Cookies from 'js-cookie';
 import SERVER_URL from '../../constant.mjs';
-
+import FormDetailPopup from '../../components/Admin/FormDetailPopup.jsx'
 const Dashboard = () => {
   const [selectedLink, setSelectedLink] = useState('dashboard');
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedItemData, setSelectedItemData] = useState(null);
   const loginTokenCookie = Cookies.get('LoginStatus');
   const token = loginTokenCookie ? JSON.parse(loginTokenCookie).token : null;
   
@@ -118,19 +119,13 @@ const Dashboard = () => {
 
   const headers = ['Sr. No', 'Name', 'Category', 'Contact', 'Status', 'Actions'];
 
-  const handleViewData = async (id, type) => {
-    try {
-      const endpoint = type === 'lead'
-        ? `${SERVER_URL}/api/admin/leads/${id}`
-        : `${SERVER_URL}/api/admin/appointments/${id}`;
-
-      const response = await axios.get(endpoint, getHeaders());
-      if (response.data.success) {
-        console.log('View details:', response.data.data);
-      }
-    } catch (error) {
-      console.error('Error fetching details:', error);
+  const handleViewData = async (item) => {
+    if (item) {
+      setSelectedItemData(item);
+      setShowPopup(true);
+      return;
     }
+
   };
 
   return (
@@ -156,12 +151,14 @@ const Dashboard = () => {
               data={data} 
               handleViewData={handleViewData}
               headers={headers}
+              onRefresh={refreshData}
             />
             <LeadsAdmin 
               selectedLink={selectedLink} 
               data={data} 
               handleViewData={handleViewData}
               headers={headers}
+              onRefresh={refreshData}
             />
             <FormsAdmin 
               selectedLink={selectedLink} 
@@ -169,7 +166,19 @@ const Dashboard = () => {
               handleViewData={handleViewData}
               onRefresh={refreshData}
             />
+
+            
           </div>
+        )}
+         {showPopup && selectedItemData && (
+          <FormDetailPopup 
+            data={selectedItemData} 
+            selectedLink={selectedLink}
+            onClose={() => {
+              setShowPopup(false);
+              setSelectedItemData(null);
+            }}
+          />
         )}
       </div>
     </div>
