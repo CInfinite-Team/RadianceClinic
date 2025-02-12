@@ -75,5 +75,32 @@ const getLeadDetails = async (req, res) => {
         });
     }
 };
+const updateLeadStatus = async (req, res) => {
+    try {
+        const { id, status } = req.body;
 
-module.exports = { getLeads, getLeadDetails };
+        let updatedLead = await ContactUs.findByIdAndUpdate(id, { status: status }, { new: true });
+
+        if (!updatedLead) {
+            return res.status(404).json({
+                success: false,
+                message: 'Lead not found'
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: 'Lead status updated successfully',
+            data: updatedLead
+        });
+    } catch (error) {
+        console.error('Error updating lead status:', error.message);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+            error: error.message,
+        });
+    }
+};
+
+module.exports = { getLeads, getLeadDetails, updateLeadStatus };

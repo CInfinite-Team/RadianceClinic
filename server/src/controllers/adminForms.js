@@ -96,7 +96,7 @@ const getFormById = async (req, res) => {
     }
 };
 
-const updateStatus = async (req, res) => {
+const updateFormStatus = async (req, res) => {
     try {
         const {id, status } = req.body;  // Get new status from request body
 
@@ -146,4 +146,4 @@ const updateStatus = async (req, res) => {
 };
 
 
-module.exports = { getForms, getFormById,updateStatus };
+module.exports = { getForms, getFormById,updateFormStatus };
