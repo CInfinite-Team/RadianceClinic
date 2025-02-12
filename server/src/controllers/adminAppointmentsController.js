@@ -103,7 +103,7 @@ const getUpcomingAppointments = async (req, res) => {
 
 const getAppointmentDetails = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.body;
         const appointment = await ConsultationForm.findById(id);
         if (!appointment) {
             return res.status(404).json({
@@ -125,4 +125,38 @@ const getAppointmentDetails = async (req, res) => {
     }
 };
 
-module.exports = { getUpcomingAppointments,getAppointmentDetails };
+const updateAppointmentStatus = async (req, res) => {
+    try {
+        const { id, status } = req.body;
+
+        const updatedAppointment = await ConsultationForm.findByIdAndUpdate(
+            id,
+            { status: status },
+            { new: true }
+        );
+
+        if (!updatedAppointment) {
+            return res.status(404).json({
+                success: false,
+                message: 'Appointment not found'
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: 'Appointment status updated successfully',
+            data: updatedAppointment,
+        });
+    } catch (error) {
+        console.error('Error updating appointment status:', error.message);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+            error: error.message,
+        });
+    }
+};
+
+
+
+module.exports = { getUpcomingAppointments,getAppointmentDetails, updateAppointmentStatus };

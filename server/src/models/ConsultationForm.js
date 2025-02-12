@@ -17,6 +17,10 @@ const consultationFormSchema = new mongoose.Schema({
         type: String, 
         required: true 
     },
+    status:{
+        type: String,
+        default: 'Submitted'
+    },
     message: { 
         type: String,
     },

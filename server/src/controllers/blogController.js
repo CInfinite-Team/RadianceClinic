@@ -81,7 +81,7 @@ const getAllBlogs = async (req, res) => {
 
 const getBlogById = async (req, res) => {
     try {
-        const blog = await Blog.findById(req.params.id);
+        const blog = await Blog.findById(req.body.id);
 
         if (!blog) return res.status(404).json({ message: 'Blog not found' });
 
@@ -104,7 +104,7 @@ const getBlogById = async (req, res) => {
 
 const deleteBlog = async (req, res) => {
     try {
-        const blog = await Blog.findByIdAndDelete(req.params.id);
+        const blog = await Blog.findByIdAndDelete(req.body.id);
         if (!blog) return res.status(404).json({ message: 'Blog not found' });
 
         res.status(200).json({ message: 'Blog deleted successfully' });

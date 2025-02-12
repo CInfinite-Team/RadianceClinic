@@ -4,6 +4,6 @@ const { getAllBlogs, getBlogById } = require('../controllers/userBlogController'
 const userRouter = express.Router();
 
 userRouter.get('/blogs', getAllBlogs);
-userRouter.get('/blogs/:id', getBlogById);
+userRouter.get('/blogsById', getBlogById);
 
 module.exports = userRouter;

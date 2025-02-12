@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from '../../assets/Admin/Admin.svg';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
-import Logo from '../../assets/admin/loginLogo.svg'
+import Logo from '../../assets/Admin/LoginLogo.svg'
 import { useNavigate } from 'react-router-dom'; 
 import Cookies from 'js-cookie';
 import axios from 'axios';

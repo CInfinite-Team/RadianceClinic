@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const HairFormSchema = new mongoose.Schema({
+    
     firstName: {
         type: String,
         required: true,
@@ -14,6 +15,14 @@ const HairFormSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
+    },
+    status:{
+        type: String,
+        default: 'Submitted'
+    },
+    category:{
+        type: String,
+        default: 'Hair'
     },
     DOB: {
         type: Date,
