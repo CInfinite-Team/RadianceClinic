@@ -7,7 +7,7 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
   const dashboardData = data?.data || {};
   const counts = {
     leadsCount: dashboardData.newLeadsToday || 0,
-    appointmentsCount: dashboardData.todaysAppointments || 0,
+    totalNewForms: dashboardData.totalNewForms || 0,
     totalUpcomingAppointments: dashboardData.totalUpcomingAppointments || 0
   };
 
@@ -45,9 +45,9 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
               <CountBox 
                 handleLinkClick={handleLinkClick} 
                 data={counts} 
-                title='Appointments Today' 
-                BtnText='appointments' 
-                countEntity='appointmentsCount' 
+                title='New Forms Today' 
+                BtnText='See Forms' 
+                countEntity='totalNewForms' 
               />
               <CountBox 
                 handleLinkClick={handleLinkClick} 

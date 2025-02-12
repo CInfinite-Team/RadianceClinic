@@ -44,38 +44,38 @@ function FormTable({ data, handleViewData, onStatusUpdate }) {
                       <span className="whitespace-nowrap">{item.status || 'N/A'}</span>
                       <span className="relative inline-flex h-3 w-3">
                         <span
-                          className={`absolute inline-flex h-full w-full animate-ping rounded-full bg-${
+                          className={`absolute inline-flex h-full w-full animate-ping rounded-full ${
                             item.status === 'Submitted'
-                              ? 'blue'
+                              ? 'bg-blue-400'
                               : item.status === 'Contacted'
-                              ? 'yellow'
+                              ? 'bg-yellow-400'
                               : item.status === 'Accepted'
-                              ? 'green'
+                              ? 'bg-green-400'
                               : item.status === 'In Progress'
-                              ? 'orange'
+                              ? 'bg-orange-400'
                               : item.status === 'Closed'
-                              ? 'purple'
+                              ? 'bg-purple-400'
                               : item.status === 'Cancelled'
-                              ? 'red'
-                              : ''
-                          }-400 opacity-75`}
+                              ? 'bg-red-400'
+                              : 'bg-gray-400' 
+                          } opacity-75`}
                         ></span>
                         <span
-                          className={`relative inline-flex h-3 w-3 rounded-full bg-${
+                          className={`relative inline-flex h-3 w-3 rounded-full ${
                             item.status === 'Submitted'
-                              ? 'blue'
+                              ? 'bg-blue-500'
                               : item.status === 'Contacted'
-                              ? 'yellow'
+                              ? 'bg-yellow-500'
                               : item.status === 'Accepted'
-                              ? 'green'
+                              ? 'bg-green-500'
                               : item.status === 'In Progress'
-                              ? 'orange'
+                              ? 'bg-orange-500'
                               : item.status === 'Closed'
-                              ? 'purple'
+                              ? 'bg-purple-500'
                               : item.status === 'Cancelled'
-                              ? 'red'
-                              : ''
-                          }-500`}
+                              ? 'bg-red-500'
+                              : 'bg-gray-500' 
+                          }`}
                         ></span>
                       </span>
                     </div>
