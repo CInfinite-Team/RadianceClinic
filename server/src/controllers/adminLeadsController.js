@@ -54,7 +54,7 @@ const getLeads = async (req, res) => {
 
 const getLeadDetails = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.body;
         const lead = await ContactUs.findById(id);
         if (!lead) {
             return res.status(404).json({

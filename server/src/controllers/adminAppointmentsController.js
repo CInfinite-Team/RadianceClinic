@@ -103,7 +103,7 @@ const getUpcomingAppointments = async (req, res) => {
 
 const getAppointmentDetails = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.body;
         const appointment = await ConsultationForm.findById(id);
         if (!appointment) {
             return res.status(404).json({
@@ -124,5 +124,7 @@ const getAppointmentDetails = async (req, res) => {
         });
     }
 };
+
+
 
 module.exports = { getUpcomingAppointments,getAppointmentDetails };

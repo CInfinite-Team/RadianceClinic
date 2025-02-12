@@ -67,7 +67,7 @@ const getForms = async (req, res) => {
 
 const getFormById = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.body;
 
         let form = await HairForm.findById(id);
         if (!form) {
@@ -96,4 +96,54 @@ const getFormById = async (req, res) => {
     }
 };
 
-module.exports = { getForms, getFormById };
+const updateStatus = async (req, res) => {
+    try {
+        const {id, status } = req.body;  // Get new status from request body
+
+        if (!status) {
+            return res.status(400).json({
+                success: false,
+                message: 'Status is required in the request body.',
+            });
+        }
+
+        let updatedForm = await HairForm.findByIdAndUpdate(
+            id,
+            { status: status },
+            { new: true }
+        );
+
+        // If not found in HairForm, check in SkinForm
+        if (!updatedForm) {
+            updatedForm = await SkinForm.findByIdAndUpdate(
+                id,
+                { status: status },
+                { new: true }
+            );
+        }
+
+        if (!updatedForm) {
+            return res.status(404).json({
+                success: false,
+                message: 'Form not found with the provided ID.',
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: 'Form status updated successfully.',
+            data: updatedForm,
+        });
+
+    } catch (error) {
+        console.error('Error updating form status:', error.message);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error.',
+            error: error.message,
+        });
+    }
+};
+
+
+module.exports = { getForms, getFormById,updateStatus };
