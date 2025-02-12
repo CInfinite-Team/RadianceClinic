@@ -15,6 +15,10 @@ const ContactUsSchema = new mongoose.Schema({
         type: String,
         trim: true,
     },
+    status:{
+        type: String,
+        default: 'Submitted'
+    },
     subject: {
         type: String,
         required: true,

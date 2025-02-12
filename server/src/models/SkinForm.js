@@ -15,10 +15,19 @@ const SkinFormSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  status:{
+    type: String,
+    default: 'Submitted'
+  },
+  category:{
+    type: String,
+    default: 'Skin'
+  },
   DOB: {
     type: Date,
     required: true,
   },
+
   gender: {
     type: String,
   },
