@@ -32,7 +32,7 @@ adminRouter.get('/appointmentsById', authenticateAdmin, getAppointmentDetails);
 //Forms API
 adminRouter.get('/forms', authenticateAdmin, getForms);
 adminRouter.get('/formsById', authenticateAdmin, getFormById);
-adminRouter.get('/updateFormStatus', authenticateAdmin, updateStatus);
+adminRouter.post('/updateFormStatus', authenticateAdmin, updateStatus);
 
 // Blogs API
 adminRouter.post('/blogs', authenticateAdmin, upload.single('image'), createBlog);  

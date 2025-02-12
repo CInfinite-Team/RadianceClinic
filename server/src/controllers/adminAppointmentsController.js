@@ -127,4 +127,5 @@ const getAppointmentDetails = async (req, res) => {
 
 
 
+
 module.exports = { getUpcomingAppointments,getAppointmentDetails };
