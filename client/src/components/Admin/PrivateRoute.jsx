@@ -13,6 +13,7 @@ const PrivateRoute = ({ children }) => {
             if (loginTokenCookie && loginTokenCookie !== '{}' && loginTokenCookie !== 'null') {
               
               setIsAuthenticated(true);
+              setIsLoadingPri(false);
               return;
             } else {
             

@@ -83,10 +83,7 @@ function App() {
       path: '/quick-links',
       element: <QuickLinks/>,
     },
-    {
-      path: '/admin-dashboard',
-      element: <Dashboard/>,
-    },
+  
     {
       path: '/admin-login',
       element: <Login />,  
