@@ -2,7 +2,7 @@ import {useState} from 'react'
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Logo from '../../assets/SharedAssets/adminPanel_logo.png';
 import dashboard from '../../assets/Admin/dashboard.svg';
-// import Blog from '../../assets/Admin/Blog.svg';
+import Blog from '../../assets/Admin/Blog.svg';
 import leads from '../../assets/Admin/leads.svg';
 import appointments from '../../assets/Admin/appointments.svg';
 import forms from '../../assets/Admin/forms.svg';
@@ -54,7 +54,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
           >
             <img
               src={appointments}
-              className="mr-2 w-8 h-8"
+              className="mr-2 w-7 h-7"
               alt="Appointments"
             />
             Appointments
@@ -72,7 +72,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             Leads
           </a>
           <a
-            href="/admin-forms"
+            href="#"
             className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'forms' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('forms')}
           >
@@ -83,10 +83,10 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             />
             Forms
           </a>
-          {/* <a
+          <a
             href="#"
-            className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'forms' ? 'font-bold' : ''}`}
-            
+            className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'blogs' ? 'font-bold' : ''}`}
+            onClick={() => handleLinkClick('blogs')}
           >
             <img
               src={Blog}
@@ -94,7 +94,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
               alt="Blog"
             />
             Add Blogs
-          </a> */}
+          </a>
         </nav>
 
         <div className="mt-auto w-full">

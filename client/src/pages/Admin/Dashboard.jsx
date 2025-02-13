@@ -8,6 +8,8 @@ import FormsAdmin from '../../components/Admin/FormsAdmin.jsx';
 import Cookies from 'js-cookie';
 import SERVER_URL from '../../constant.mjs';
 import FormDetailPopup from '../../components/Admin/FormDetailPopup.jsx'
+import BlogAdd from '../../components/Admin/BlogAdd.jsx';
+
 const Dashboard = () => {
   const [selectedLink, setSelectedLink] = useState('dashboard');
   const [data, setData] = useState(null);
@@ -29,7 +31,8 @@ const Dashboard = () => {
     dashboard: '/api/admin/dashboard',
     leads: '/api/admin/leads',
     appointments: '/api/admin/appointments',
-    forms: '/api/admin/forms'
+    forms: '/api/admin/forms',
+    blogs: null,
   };
 
   const fetchFunctions = {
@@ -87,14 +90,19 @@ const Dashboard = () => {
         setError(error.message);
         console.error('Forms fetch error:', error);
       }
-    }
+    },
+    blogs: async () => {   
+      setData(null);
+    },
   };
 
   const handleLinkClick = (link) => {
-    setSelectedLink(link);
-    setLoading(true);
-    setData(null);
-    setError(null);
+    if (link !== selectedLink) {
+      setSelectedLink(link);
+      setLoading(true);
+      setData(null);
+      setError(null);
+    }
   };
 
   const refreshData = async () => {
@@ -167,6 +175,9 @@ const Dashboard = () => {
               onRefresh={refreshData}
             />
 
+            <BlogAdd 
+              selectedLink={selectedLink}        
+            />
             
           </div>
         )}
