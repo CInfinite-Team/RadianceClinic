@@ -2,7 +2,7 @@ const Blog = require('../models/Blogs');
 
 const getAllBlogs = async (req, res) => {
     try {
-        const { category, sort } = req.query; 
+        const { category, sort } = req.body; 
 
         const filter = category ? { category: category.toLowerCase() } : {};
 
@@ -42,7 +42,7 @@ const getAllBlogs = async (req, res) => {
 
 const getBlogById = async (req, res) => {
     try {
-        const blog = await Blog.findById(req.params.id);
+        const blog = await Blog.findById(req.body.id);
         if (!blog) {
             return res.status(404).json({ message: 'Blog not found' });
         }
