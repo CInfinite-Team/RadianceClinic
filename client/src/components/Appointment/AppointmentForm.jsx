@@ -120,7 +120,7 @@ function AppointmentForm() {
 
   return (
     <>
-      <div className={`grid grid-cols-1 lg:grid-cols-3 py-24 px-4 md:px-4 xl:px-20 bg-[#fef7ff] transition-  duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`grid grid-cols-1 lg:grid-cols-3 py-24 px-4 md:px-4 xl:px-20 bg-[#fef7ff] transition  duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <form onSubmit={handleSubmit} className='bg-white col-span-2 relative overflow-visible gap-12 z-10 p-7 flex flex-col shadow-lg shadow-[#E0D1F7]'>
           {error && <div className="text-red-500 mb-4 p-3 bg-red-50 rounded animate-fadeIn">{error}</div>}
           {success && <div className="text-green-500 mb-4 p-3 bg-green-50 rounded animate-fadeIn">{success}</div>}

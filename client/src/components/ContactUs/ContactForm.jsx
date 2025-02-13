@@ -120,10 +120,10 @@ function ContactForm() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <label htmlFor="mobile" className="text-[#554075] font-bold">Phone</label>
+              <label htmlFor="phone" className="text-[#554075] font-bold">Phone</label>
               <input
                 type="tel"
-                name="mobile"
+                name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Enter Your Mobile No"

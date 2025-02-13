@@ -2,6 +2,7 @@ import {useState} from 'react'
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Logo from '../../assets/SharedAssets/adminPanel_logo.png';
 import dashboard from '../../assets/Admin/dashboard.svg';
+// import Blog from '../../assets/Admin/Blog.svg';
 import leads from '../../assets/Admin/leads.svg';
 import appointments from '../../assets/Admin/appointments.svg';
 import forms from '../../assets/Admin/forms.svg';
@@ -71,7 +72,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             Leads
           </a>
           <a
-            href="#"
+            href="/admin-forms"
             className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'forms' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('forms')}
           >
@@ -82,6 +83,18 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             />
             Forms
           </a>
+          {/* <a
+            href="#"
+            className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'forms' ? 'font-bold' : ''}`}
+            
+          >
+            <img
+              src={Blog}
+              className="mr-2 w-6 h-6 "
+              alt="Blog"
+            />
+            Add Blogs
+          </a> */}
         </nav>
 
         <div className="mt-auto w-full">
