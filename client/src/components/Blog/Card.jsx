@@ -1,7 +1,7 @@
 import React from 'react';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 
-const Card = ({ title, description, category, image, username, designation, uploadDate}) => {
+const Card = ({ title, description, category, image, username, designation, uploadDate,UserPhoto}) => {
   const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
   };
@@ -24,12 +24,13 @@ const timeAgo = (dateString) => {
 const formatUploadDate = (dateString) => {
   const options = { year: 'numeric', month: 'short', day: 'numeric' };
   const date = new Date(dateString);
-  return date.toLocaleDateString(undefined, options); // Default locale formatting
+  return date.toLocaleDateString(undefined, options); 
 };
   
   return (
-    <div className="max-w-sm bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden flex flex-col">
-      <img src={image} alt={category} className="w-full h-64 object-cover" />
+    <div className="max-w-sm bg-white border relative border-gray-300 rounded-lg shadow-lg overflow-hidden flex flex-col">
+      <span className='px-4 rounded-xl bg-[#0000006c] backdrop-blur-md top-2 left-2 font-ElMessiri absolute text-white w-fit'>{category}</span>
+      <img src={`data:image/png;base64,${image}`} alt={title} className="w-full h-64 object-cover" />
       <div className="p-4 flex flex-col justify-between flex-grow">
 
         <div className="text-xs text-gray-400 flex items-center space-x-1 font-ElMessiri">
@@ -41,14 +42,17 @@ const formatUploadDate = (dateString) => {
         <p className="text-sm text-gray-600 mt-2"> {truncateText(description, 100)}</p>
 
         {/* User information and button in a flex container */}
-        <div className="mt-4 flex items-center justify-between">
+        <div className="mt-4 flex flex-wrap md:items-center justify-between">
+          <div className='flex items-center  gap-4'>
+          <img src={`data:image/png;base64,${UserPhoto}`} alt="" className=' w-16 h-16 rounded-full object-cover' />
           <div>
             <p className="text-lg font-semibold text-gray-700 font-ElMessiri">{username}</p>
             <p className="text-xs text-gray-500">{designation}</p>
           </div>
+          </div>
           <PrimaryBtn
-            children = {'Read More'} className = {''}
-          />
+            className = 'w-full justify-center md:w-fit mt-4 md:mt-0'
+          >Read More</PrimaryBtn>
         </div>
       </div>
     </div>
