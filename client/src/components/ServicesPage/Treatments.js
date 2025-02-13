@@ -1,5 +1,66 @@
 import PRP from "../../assets/Services/PRP.svg";
-import ScalpMicropigmentation from "../../assets/Services/ScalpMicropigmentation.svg";
+// import ScalpMicropigmentation from "../../assets/Services/ScalpMicropigmentation.svg";
+import Fue from "../../assets/Services/Fue.svg"
+import PRPCover from "../../assets/Services/PRPCover.svg"
+import CosmeticSurgery from "../../assets/Services/CosmeticSurgery.svg"
+import CosmeticSurgeryCover from "../../assets/Services/CosmeticSurgeryCover.svg"
+import EarlobeRepairCrousal from "../../assets/Services/EarlobeRepairCrousal.svg"
+import EarLobeRepairCover from "../../assets/Services/EarLobeRepairCover.svg"
+import ScarRevisionCover from "../../assets/Services/ScarRevisionCover.svg"
+import ScarRevision from "../../assets/Services/ScarRevision.svg"
+import VitiligoSurgeryCover from "../../assets/Services/VitiligoSurgeryCover.svg"
+import VitiligoSurgery from "../../assets/Services/VitiligoSurgery.svg"
+import MoleRemovalCover from "../../assets/Services/MoleRemovalCover.svg"
+import MoleRemoval from "../../assets/Services/MoleRemoval.svg"
+import VampireFacelift from "../../assets/Services/VampireFacelift.svg"
+import VampireFaceliftCover from "../../assets/Services/VampireFaceliftCover.svg"
+import Autologous from "../../assets/Services/Autologous.svg"
+import AutologousCover from "../../assets/Services/AutologousCover.svg"
+import ThreadLift from "../../assets/Services/ThreadLift.svg"
+import ThreadLiftCover from "../../assets/Services/ThreadLiftCover.svg"
+import SkinTightning from "../../assets/Services/SkinTightning.svg"
+import SkinTightningCover from "../../assets/Services/SkinTightningCover.svg"
+import ElbowRejuvenationCover from "../../assets/Services/ElbowRejuvenationCover.svg"
+import ElbowRejuvenation from "../../assets/Services/ElbowRejuvenation.svg"
+import DermalFillers from "../../assets/Services/DermalFillers.svg"
+import DermalFillersCover from "../../assets/Services/DermalFillersCover.svg"
+import Botox from "../../assets/Services/Botox.svg"
+import BotoxCover from "../../assets/Services/BotoxCover.svg"
+import BodyContouringCover from "../../assets/Services/BodyContouringCover.svg"
+import BodyCountoyring from "../../assets/Services/BodyCountoyring.svg"
+import StretchMarkRemoval from "../../assets/Services/StretchMarkRemoval.svg"
+import StretchMarksCover from "../../assets/Services/StretchMarksCover.svg"
+import PigmentationRemoval from "../../assets/Services/PigmentationRemoval.svg"
+import PigmentationRemovalCover from "../../assets/Services/PigmentationRemovalCover.svg"
+import LaserFacialCover from "../../assets/Services/LaserFacialCover.svg"
+import LaserFacial from "../../assets/Services/LaserFacial.svg"
+import TatooRemovalCover from "../../assets/Services/TatooRemovalCover.svg"
+import TatooRemoval from "../../assets/Services/TatooRemoval.svg"
+import PermanentHairRemoval from "../../assets/Services/PermanentHairRemoval.svg"
+import PermanentHairRemovalCover from "../../assets/Services/PermanentHairRemovalCover.svg"
+import MicrodermabrasionCover from "../../assets/Services/MicrodermabrasionCover.svg"
+import PigmentReductionCover from "../../assets/Services/PigmentReductionCover.svg"
+import ChemicalpeelCover from "../../assets/Services/ChemicalpeelCover.svg"
+import SkinRejuventionCover from "../../assets/Services/SkinRejuventionCover.svg"
+import AchneScarCover from "../../assets/Services/AchneScarCover.svg"
+import PimpleCover from "../../assets/Services/PimpleCover.svg"
+import MicrodermabrasionCrousal from "../../assets/Services/MicrodermabrasionCrousal.svg"
+import PigmentationCrousal from "../../assets/Services/PigmentationCrousal.svg"
+import MesoGlowCrousal from "../../assets/Services/MesoGlowCrousal.svg"
+import ChemicalpeelCrousal from "../../assets/Services/ChemicalpeelCrousal.svg"
+import SkinRejuventionCrousal from "../../assets/Services/SkinRejuventionCrousal.svg"
+import AchneScarCrousal from "../../assets/Services/AchneScarCrousal.svg"
+import EyebrowCover from "../../assets/Services/EyebrowCover.svg"
+import FueCrousal from "../../assets/Services/FueCrousal.svg"
+import AlopeciaCover from "../../assets/Services/AlopeciaCover.svg"
+import PimpleCrousal from "../../assets/Services/PimpleCrousal.svg"
+import HairTransplantCover from "../../assets/Services/HairTransplantCover.svg"
+import FemailHairTransplant from "../../assets/Services/FemailHairTransplant.svg"
+import FemalHairTransplantCrousal from "../../assets/Services/FemalHairTransplantCrousal.svg"
+import BeardTransplantCrousal from "../../assets/Services/BeardTransplantCrousal.svg"
+import HairTransplantP from '../../assets/Services/Process/HairTransplantP.svg'
+import HairTransplant from '../../assets/Services/HairTransplant.svg'
+
 
 export const Hairtreatments = [
   {
@@ -21,7 +82,9 @@ export const Hairtreatments = [
       "<strong >Scalp Care Kits: </strong> Provide specially formulated shampoos, lotions, and aftercare products.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any urgent questions or concerns.</strong>",
     ],
-      image: PRP,
+      image: HairTransplantCover,
+      Coverimage: HairTransplant,
+      Processimage: HairTransplantP,
   },
   {
     CardTitle:"FUE",
@@ -39,7 +102,9 @@ export const Hairtreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: FueCrousal,
+    Coverimage: Fue,
+    // Processimage: HairTransplantP,
   },
   {
     CardTitle:"Female Hair Transplant",
@@ -57,7 +122,8 @@ export const Hairtreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: FemalHairTransplantCrousal,
+    Coverimage: FemailHairTransplant,
   },
   {
     CardTitle:"PRP Therapy",
@@ -76,6 +142,7 @@ export const Hairtreatments = [
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
     image: PRP,
+    Coverimage:PRPCover,
   },
   {
     CardTitle:"Eyebrow & Beard Hair Transplant",
@@ -93,7 +160,8 @@ export const Hairtreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: BeardTransplantCrousal,
+    Coverimage: EyebrowCover,
   },
   {
     CardTitle:"Alopecia Treatment",
@@ -112,6 +180,7 @@ export const Hairtreatments = [
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
     image: PRP,
+    Coverimage:AlopeciaCover,
   },
   // {
   //   CardTitlw:"Alopecia Treatment",
@@ -150,7 +219,8 @@ export const Skintreatments = [
      "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
      "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
    ],
-    image: PRP,
+    image: PimpleCrousal,
+    Coverimage:PimpleCover,
   },
   {
     CardTitle:"Acne Scar Treatment",
@@ -168,7 +238,8 @@ export const Skintreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: AchneScarCrousal,
+    Coverimage:AchneScarCover,
   },
   {
     CardTitle:"Rejuvenation of Skin",
@@ -186,7 +257,8 @@ export const Skintreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: SkinRejuventionCrousal,
+    Coverimage:SkinRejuventionCover,
   },
   {
     CardTitle:"Chemical Peels",
@@ -204,7 +276,8 @@ export const Skintreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: ChemicalpeelCrousal,
+    Coverimage:ChemicalpeelCover,
   },
   {
     CardTitle:"Meso Glow Treatment",
@@ -222,7 +295,8 @@ export const Skintreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: MesoGlowCrousal,
+    Coverimage:SkinRejuventionCover,
   },
   {
     CardTitle:"Pigment Reduction",
@@ -240,7 +314,8 @@ export const Skintreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: PigmentationCrousal,
+    Coverimage:PigmentReductionCover,
   },
   {
     CardTitle:"Microdermabrasion",
@@ -258,7 +333,8 @@ export const Skintreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: MicrodermabrasionCrousal,
+    Coverimage:MicrodermabrasionCover,
   },
 ];
 export const LaserTreatments = [
@@ -278,7 +354,8 @@ export const LaserTreatments = [
      "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
      "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
    ],
-    image: PRP,
+    image: PermanentHairRemoval,
+    Coverimage:PermanentHairRemovalCover,
   },
   {
     CardTitle:"Tattoo Removal",
@@ -296,7 +373,8 @@ export const LaserTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: TatooRemoval,
+    Coverimage:TatooRemovalCover,
   },
   {
     CardTitle:"Laser Facial / Carbon Peels",
@@ -314,7 +392,8 @@ export const LaserTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: LaserFacial,
+    Coverimage:LaserFacialCover,
   },
   {
     CardTitle:" Pigmentation Removal",
@@ -332,7 +411,8 @@ export const LaserTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: PigmentationRemoval,
+    Coverimage:PigmentationRemovalCover,
   },
   {
     CardTitle:"Laser Skin Rejuvenation",
@@ -350,7 +430,8 @@ export const LaserTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: SkinRejuventionCrousal,
+    Coverimage:SkinRejuventionCover,
   },
   {
     CardTitle:"Stretch Marks Reduction",
@@ -368,7 +449,8 @@ export const LaserTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: StretchMarkRemoval,
+    Coverimage:StretchMarksCover,
   },
   {
     CardTitle:"Body Contouring / Face Contouring",
@@ -386,7 +468,8 @@ export const LaserTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: BodyCountoyring,
+    Coverimage:BodyContouringCover,
   },
 ];
 
@@ -408,7 +491,8 @@ export const AntiAgingTreatments = [
      "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
      "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
    ],
-    image: PRP,
+    image: Botox,
+    Coverimage:BotoxCover,
   },
   {
     CardTitle:"Dermal Fillers",
@@ -426,10 +510,11 @@ export const AntiAgingTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: DermalFillers,
+    Coverimage:DermalFillersCover,
   },
   {
-    CardTitle:" Hand/Feet/Elbow Rejuvenation",
+    CardTitle:"Hand/Feet/Elbow Rejuvenation",
     title: "Hand/Feet/Elbow",
       subtitle: 'Rejuvenation',
     description:"Aging affects not only the face but also visible areas like hands, feet, and elbows. Daily activities lead to dryness, roughness, and the appearance of dark spots, redness, and spider veins. Hand, feet, and elbow rejuvenation are non-invasive treatments designed to restore youthful, smooth, and hydrated skin. These treatments help reduce signs of aging, brighten skin tone, and improve texture, leaving your hands and feet looking refreshed and rejuvenated.",
@@ -444,7 +529,8 @@ export const AntiAgingTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: ElbowRejuvenation,
+    Coverimage:ElbowRejuvenationCover,
   },
   {
     CardTitle:"Skin Tightening",
@@ -462,7 +548,8 @@ export const AntiAgingTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: SkinTightning,
+    Coverimage:SkinTightningCover,
   },
   {
     CardTitle:"Thread Lift",
@@ -480,7 +567,8 @@ export const AntiAgingTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: ThreadLift,
+    Coverimage:ThreadLiftCover,
   },
   {
     CardTitle:"Autologous Fat Transfer",
@@ -498,7 +586,8 @@ export const AntiAgingTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: Autologous,
+    Coverimage:AutologousCover,
   },
   {
     CardTitle:"Vampire Facelift & Facial",
@@ -516,7 +605,8 @@ export const AntiAgingTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: VampireFacelift,
+    Coverimage:VampireFaceliftCover,
   },
 ];
 export const CosmeticTreatments = [
@@ -536,7 +626,8 @@ export const CosmeticTreatments = [
      "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
      "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
    ],
-    image: PRP,
+    image: MoleRemoval,
+    Coverimage:MoleRemovalCover,
   },
   {
     CardTitle:"Vitiligo Surgery",
@@ -554,7 +645,8 @@ export const CosmeticTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: ScalpMicropigmentation,
+    image: VitiligoSurgery,
+    Coverimage:VitiligoSurgeryCover,
   },
   {
     CardTitle:"Ear Lobe Repair",
@@ -572,7 +664,8 @@ export const CosmeticTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: EarlobeRepairCrousal,
+    Coverimage:EarLobeRepairCover,
   },
   {
     CardTitle:"Scar Revision",
@@ -590,7 +683,8 @@ export const CosmeticTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: ScarRevision,
+    Coverimage:ScarRevisionCover,
   },
   {
     CardTitle:"Vampire Facelift & Facial",
@@ -608,7 +702,8 @@ export const CosmeticTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: VampireFacelift,
+    Coverimage:VampireFaceliftCover,
   },
   {
     CardTitle:"Cosmetic Surgeries",
@@ -626,7 +721,8 @@ export const CosmeticTreatments = [
       "<strong>Scalp Care Kits: </strong> Formulated products for hair care and healing.</strong>",
       "<strong>24/7 Support Line: </strong> Access to a helpline for any concerns.</strong>",
     ],
-    image: PRP,
+    image: CosmeticSurgery,
+    Coverimage:CosmeticSurgeryCover,
   },
   
 ];

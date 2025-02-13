@@ -21,14 +21,17 @@ function SpecificService() {
   },[]);
 
 const [Show, setShow] = useState(null);
+const [Title, setTitle] = useState(null);
 
 const location = useLocation();
 useEffect(() => {
   const urlParams = new URLSearchParams(location.search);
   const treatmentData = JSON.parse(urlParams.get('Data'));
+  const Title = urlParams.get('Title');
 console.log(treatmentData.CardTitle)
   if (treatmentData) {
     setShow(treatmentData);
+    setTitle(Title);
   }
 }, [location]);
 
@@ -43,7 +46,7 @@ console.log(treatmentData.CardTitle)
             
 {/* Information card */}
             <div className='flex flex-col  lg:flex-row bg-[#E2DBFF] p-4 md:p-8 shadow-2xl items-center gap-10 justify-between w-full'>
-            <img src={HairTransplant} alt="" className='md:w-[60%] lg:w-[40%]' />
+           {Show && <img src={Show.Coverimage} alt="" className='md:w-[60%] lg:w-[40%]' />}
                 <div className='flex flex-col items-center md:items-start  gap-5 lg:w-[53%]'>
 
                 <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight text-center md:text-left' style={{fontSize:'clamp(36px,4vw,60px)'}}>What is {Show ? Show.CardTitle : 'Loading....'}</h2>
@@ -67,7 +70,8 @@ console.log(treatmentData.CardTitle)
                 <p className='text-[#554075] font-medium text-center  xl:text-2xl'>
                 {Show ? Show.approach : 'Loading....'}  </p>
 
-                <img src={HairTransplantP} alt="" className='w-[80%] ' />
+                {Show &&
+                  <img src={Show.Processimage} alt="" className='w-[80%] ' />}
 
                 </div>
 
@@ -112,7 +116,7 @@ console.log(treatmentData.CardTitle)
 
         </div>
 
-        <div className='flex flex-col  lg:flex-row bg-[#E2DBFF] p-4 md:p-8 shadow-2xl items-center gap-10 justify-between w-full'>
+        <div className={`flex flex-col ${Title ==='HAIR' ? '' : 'hidden'}  lg:flex-row bg-[#E2DBFF] p-4 md:p-8 shadow-2xl items-center gap-10 justify-between w-full`}>
             <img src={AfterCare} alt="" className='md:w-[60%] lg:w-[40%]' />
                 <div className='flex flex-col items-center md:items-start  gap-5 lg:w-1/2'>
 
