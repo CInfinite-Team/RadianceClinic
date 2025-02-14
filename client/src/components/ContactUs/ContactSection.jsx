@@ -9,7 +9,7 @@ function ContactSection() {
           className=" font-bold font-ElMessiri text-[#554075] leading-tight text-center px-1 z-10 "
           style={{ fontSize: "clamp(36px,4vw,55px)" }}
         >
-          Write Us Your Thoughts
+          What Is Your Query
         </h2>
 
 

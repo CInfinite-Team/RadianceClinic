@@ -14,7 +14,7 @@ function ContactUs() {
   return (
     <>
       <Navbar/>
-      <HeroSectionAll Title={'ContactUs'} Path={'Home'} SubPath={'Contact Us'} />
+      <HeroSectionAll Title={'Contact Us'} Path={'Home'} SubPath={'Contact Us'} />
       <ContactSection/>
       <ContactPlate/>
       <Map/>

@@ -120,7 +120,7 @@ const Footer = () => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`} style={{ transitionDelay: '1000ms' }}>
         <div className="container mx-auto px-4 text-sm text-center">
-          © {currentYear} Radiance Clinic | All Rights Reserved | Design & Developed by <a href="https://www.magnifyx.co.uk/" className='hover:underline' target='_blank'>Magnify X</a>
+          © {currentYear} Radiance Clinic | All Rights Reserved | Designed & Developed by <a href="https://www.magnifyx.co.uk/" className='hover:underline' target='_blank'>Magnify X</a>
         </div>
       </div>
     </footer>
