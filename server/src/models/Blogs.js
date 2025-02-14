@@ -34,10 +34,10 @@ const BlogSchema = new mongoose.Schema({
         name: { type: String, required: true },
         speciality: { type: String, required: true },
         profileImage: {
-            data: Buffer,
-            contentType: String
+          data: Buffer,
+          contentType: String,  // add this line
         },
-    },
+      },
 }, { timestamps: true });
 
 const Blog = mongoose.model('Blog', BlogSchema);

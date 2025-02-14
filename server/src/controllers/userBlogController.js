@@ -42,25 +42,24 @@ const getAllBlogs = async (req, res) => {
 
 const getBlogById = async (req, res) => {
     try {
-        const {id} = req.query;
+        const { id } = req.query;
         console.log(id);
         const blog = await Blog.findById(id);
         if (!blog) {
             return res.status(404).json({ message: 'Blog not found' });
         }
 
-        const blogData = blog.toObject(); 
+        const blogData = blog.toObject();
         
         if (blogData.image && blogData.image.data && blogData.image.contentType) {
             blogData.image = `data:${blogData.image.contentType};base64,${blogData.image.data.toString('base64')}`;
         }
 
-        
-        if (blogData.admin && blogData.admin.profileImage && blogData.admin.profileImage.data && blogData.admin.profileImage.contentType) {
-            blogData.admin.profileImage = `data:${blogData.admin.profileImage.contentType};base64,${blogData.admin.profileImage.data.toString('base64')}`;
+        if (blogData.admin && blogData.admin.profileImage && blogData.admin.profileImage.data) {
+            const contentType = blogData.admin.profileImage.contentType || 'image/jpeg'; // default type if missing
+            blogData.admin.profileImage = `data:${contentType};base64,${blogData.admin.profileImage.data.toString('base64')}`;
         }
         
-
         console.log('Blog fetched:', blogData);
         res.status(200).json(blogData);
     } catch (error) {
@@ -68,6 +67,7 @@ const getBlogById = async (req, res) => {
         res.status(500).json({ message: 'Internal server error', error: error.message });
     }
 };
+
 
 
 
