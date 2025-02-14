@@ -59,6 +59,7 @@ const getBlogById = async (req, res) => {
         if (blogData.admin && blogData.admin.profileImage && blogData.admin.profileImage.data && blogData.admin.profileImage.contentType) {
             blogData.admin.profileImage = `data:${blogData.admin.profileImage.contentType};base64,${blogData.admin.profileImage.data.toString('base64')}`;
         }
+        
 
         console.log('Blog fetched:', blogData);
         res.status(200).json(blogData);
