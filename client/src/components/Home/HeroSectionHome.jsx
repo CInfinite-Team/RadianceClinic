@@ -53,10 +53,10 @@ function HeroSectionHome() {
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-7 items-center animate-fadeIn animation-delay-400">
-                        <PrimaryBtn className="hover:scale-105 !p-0 !py-0 transition-transform">
+                        <PrimaryBtn className=" !p-0 !py-0 ">
                         <Link to='/book-appointment' className='p-4 py-3 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
-                        <SecondaryBtn className="hover:scale-105 !p-0 !py-0 relative group max-w-[250px] whitespace-nowrap transition-transform">
+                        <SecondaryBtn className=" !p-0 !py-0 relative group max-w-[250px] whitespace-nowrap ">
     <Link to={Links[currentImg]} className='p-4 py-3 overflow-hidden text-ellipsis whitespace-nowrap' > 
         Explore {SecondBtnText[currentImg]}
     </Link>
