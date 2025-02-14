@@ -16,6 +16,7 @@ import Login from './components/Admin/Login';
 import QuickLinks from './pages/QuickLinks';
 import FormDetailPopup from './components/Admin/FormDetailPopup';
 import QuickLinkDescription from './components/QuickLinks/QuickLinkDescription';
+import SpecificBlogPage from './pages/SpecificBlogPage';
 function App() {
 
   const router = createBrowserRouter([
@@ -87,6 +88,10 @@ function App() {
     {
       path: '/quick-links',
       element: <QuickLinks/>,
+    },
+    {
+      path:'/BlogSpecific',
+      element:<SpecificBlogPage/>
     },
   
     {

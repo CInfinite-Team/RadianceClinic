@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import SERVER_URL  from '../../constant.mjs';
 import Cookies from 'js-cookie';
+import PrimaryBtn from '../Buttons/PrimaryBtn';
 
 function BlogAdd({ selectedLink }) {
   const [activeTab, setActiveTab] = useState('blogDetails');
@@ -150,8 +151,8 @@ function BlogAdd({ selectedLink }) {
             </div>
 
             {/* Warning Message */}
-            <div className="mx-6 mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-              <p className="text-amber-800 text-sm">
+            <div className="mx-6 mt-6 p-4 bg-purple-100 border border-purple-200 rounded-lg">
+              <p className="text-purple-800 text-sm">
                 <span className="font-semibold">Note:</span> The uploaded images should be of size 1MB or less.
               </p>
             </div>
@@ -404,13 +405,13 @@ function BlogAdd({ selectedLink }) {
 
                 {/* Submit Button - Always visible at bottom */}
                 <div className="p-6 border-t border-gray-200">
-                  <button
+                  <PrimaryBtn
                     type="submit"
                     disabled={loading}
-                    className="w-full py-2 font-semibold bg-black hover:bg-white border-2 border-black hover:text-black text-white rounded-md transition-colors"
+                    className="w-full !py-2 justify-center "
                   >
                     {loading ? 'Submitting....' : 'Submit'}
-                  </button>
+                  </PrimaryBtn>
                 </div>
               </form>
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 
-const Card = ({ title, description, category, image, username, designation, uploadDate,UserPhoto}) => {
+const Card = ({id, title, description, category, image, username, designation, uploadDate,UserPhoto}) => {
+
+
+
   const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
   };
@@ -51,8 +54,8 @@ const formatUploadDate = (dateString) => {
           </div>
           </div>
           <PrimaryBtn
-            className = 'w-full justify-center md:w-fit mt-4 md:mt-0'
-          >Read More</PrimaryBtn>
+            className = 'w-full !p-0 !py-0 justify-center md:w-fit mt-4 md:mt-0'
+          ><a className='p-4 py-3' href={`/BlogSpecific?id=${id}`}>Read More</a></PrimaryBtn>
         </div>
       </div>
     </div>
