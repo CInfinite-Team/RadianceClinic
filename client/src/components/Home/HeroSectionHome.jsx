@@ -56,10 +56,15 @@ function HeroSectionHome() {
                         <PrimaryBtn className="hover:scale-105 !p-0 !py-0 transition-transform">
                         <Link to='/book-appointment' className='p-4 py-3 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
-                        <SecondaryBtn className="hover:scale-105 !p-0 !py-0 relative group max-w-[250px]  whitespace-nowrap transition-transform">
-                        <Link to={Links[currentImg]} className='p-4 py-3 flex overflow-hidden text-ellipsis' > Explore {SecondBtnText[currentImg]}</Link>
-                       <span className='absolute bg-[#0000005d] text-white rounded-md font-normal backdrop-blur-md border-[#d4cafd] border-2 opacity-0 group-hover:opacity-100 transition-all duration-500  -top-12 -left-2 p-1 '>Explore {SecondBtnText[currentImg]}</span>
-                        </SecondaryBtn>
+                        <SecondaryBtn className="hover:scale-105 !p-0 !py-0 relative group max-w-[250px] whitespace-nowrap transition-transform">
+    <Link to={Links[currentImg]} className='p-4 py-3 overflow-hidden text-ellipsis whitespace-nowrap' > 
+        Explore {SecondBtnText[currentImg]}
+    </Link>
+    <span className='absolute bg-[#0000005d] text-white rounded-md font-normal backdrop-blur-md border-[#d4cafd] border-2 opacity-0 group-hover:opacity-100 transition-all duration-500 -top-12 -left-2 p-1'>
+        Explore {SecondBtnText[currentImg]}
+    </span>
+</SecondaryBtn>
+
                         <a href='/about-us' className="p-4 rounded-full bg-white hover:rotate-45 transition-transform duration-500">
                             <img src={TiledArrow} alt="" />
                         </a>
