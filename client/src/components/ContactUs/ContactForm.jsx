@@ -132,16 +132,23 @@ function ContactForm() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <label htmlFor="subject" className="text-[#554075] font-bold">Subject</label>
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Enter Your Subject"
-                className="text-[#554075] rounded-[3px] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3"
-              />
-            </div>
+  <label htmlFor="subject" className="text-[#554075] font-bold">Subject</label>
+  <select
+    name="subject"
+    value={formData.subject}
+    onChange={handleChange}
+    className="text-[#554075] rounded-[3px] border border-[#B298DC] w-[80vw] md:w-auto xl:w-[417px] p-3"
+  >
+    <option value="" disabled>Select Subject</option>
+    <option value="Hair">Hair</option>
+    <option value="Skin">Skin</option>
+    <option value="Laser">Laser</option>
+    <option value="Anti-Aging">Anti-Aging</option>
+    <option value="Cosmetic">Cosmetic</option>
+    <option value="General">General</option>
+  </select>
+</div>
+
           </div>
 
           <div className="flex flex-col gap-3">
