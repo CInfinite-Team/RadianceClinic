@@ -8,7 +8,7 @@ function QuickLinkDescription() {
     const urlParams = new URLSearchParams(location.search);
     // const treatmentData = JSON.parse(urlParams.get('Data'));
     const Description = urlParams.get('Description');
-    const Title = urlParams.get('Title');
+    const Heading = urlParams.get('Title');
   return (
     <>
     <Navbar/>
@@ -16,7 +16,7 @@ function QuickLinkDescription() {
     <AppointmentForm/>
     <div className='bg-[#fef7ff] py-24 px-4 md:px-4 xl:px-20'>
     <h1 className='font-ElMessiri text-[#554075] text-center font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
-            {Title}
+            {Heading}
             </h1>
        <p className='font-semibold text-center text-[#392c4e]'>{Description}</p>
     </div>

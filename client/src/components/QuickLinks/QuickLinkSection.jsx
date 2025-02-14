@@ -20,7 +20,7 @@ function QuickLinkSection() {
               {QuickLinkData[city]?.map((linkData, linkIndex) => (
                 <div key={linkIndex} className='flex flex-col pl-2 pb-2 group'>
                   <a 
-                    href={linkData.href+`?Description=${linkData.description}&Title=${linkData.title}`} 
+                    href={linkData.href+`?Description=${linkData.description}&Title=${linkData.text}`} 
                     className='flex gap-2 items-center transition duration-500 hover:font-semibold group-hover:-translate-y-1'>
                     <Sparkle 
                       size={18} 
@@ -44,7 +44,7 @@ function QuickLinkSection() {
               {QuickLinkData[city]?.map((linkData, linkIndex) => (
                 <div key={linkIndex} className='flex flex-col pl-2 pb-2 group'>
                   <a 
-                    href={linkData.href+`?Description=${linkData.description}&Title=${linkData.title}`} 
+                    href={linkData.href+`?Description=${linkData.description}&Title=${linkData.text}`} 
                     className='flex gap-2 items-center transition duration-500 hover:font-semibold group-hover:-translate-y-1'>
                     <Sparkle 
                       size={18} 
