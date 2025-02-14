@@ -46,7 +46,7 @@ const moment = require('moment');
 
 const getUpcomingAppointments = async (req, res) => {
     try {
-        const { category, date, time, modeOfConsultation } = req.body;
+        const { category, date, time, modeOfConsultation } = req.query;
 
         const totalUpcomingAppointments = await ConsultationForm.countDocuments({
             appointmentDate: { $gte: moment().startOf('day').toDate() }
@@ -103,7 +103,7 @@ const getUpcomingAppointments = async (req, res) => {
 
 const getAppointmentDetails = async (req, res) => {
     try {
-        const { id } = req.body;
+        const { id } = req.query;
         const appointment = await ConsultationForm.findById(id);
         if (!appointment) {
             return res.status(404).json({
