@@ -16,7 +16,7 @@ console.log(id)
     const fetchBlog = async () => {
       try {
         // Fix: Add the missing `/` in the API URL
-        const response = await axios.get(`${SERVER_URL}/api/user/blogsById`,{id:id});
+        const response = await axios.get(`${SERVER_URL}/api/user/blogsById`,{params:{id}});
         setArticle(response.data);
         setSelectedSection(response.data.content[0]?.heading || ''); // Set the first heading as default
         setLoading(false);
@@ -61,13 +61,15 @@ console.log(id)
     }
   };
 
-  if (loading) return <div>Loading...</div>; // Display loading state
+  if (loading) return  <div className='flex w-full h-[90vh] items-center justify-center'>
+  <p className="rounded-full border-2 animate-spin border-r-0 border-[#725B98] p-12"></p>
+</div>; // Display loading state
   if (error) return <div>{error}</div>; // Display error message
-
+console.log(article.admin.profileImage)
   return (
     article && (
-      <div className="p-24 mx-auto bg-white shadow-lg w-screen flex items-center justify-center rounded-lg overflow-hidden">
-        <div className="p-6 w-[90%] ">
+      <div className="lg:p-24 mx-auto bg-white shadow-lg w-screen flex items-center justify-center rounded-lg overflow-hidden">
+        <div className="lg:p-6 w-[90%] ">
           {/* Header Section */}
           <h1 className="font-ElMessiri font-bold text-[#554075] leading-tight" style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
             {article.title}
@@ -89,7 +91,7 @@ console.log(id)
           )}
 
           {/* Content Section */}
-          <div className="flex gap-2 pt-6">
+          <div className="flex flex-col gap-2 pt-6">
             {/* Left Navigation */}
             <div className="w-48 flex-shrink-0">
               <div className="flex items-center mb-8 space-x-4">
@@ -99,6 +101,7 @@ console.log(id)
                     alt="Admin profile"
                     className="w-12 h-12 object-cover rounded-full"
                   />
+                  
                 )}
                 <div>
                   <h3 className="font-medium text-lg">{article.admin.name}</h3>
@@ -107,15 +110,15 @@ console.log(id)
               </div>
 
               {/* Sidebar with clickable headings */}
-              <div className="space-y-2 sticky top-4 border-l">
+              <div className="space-y-2 flex sticky overflow-auto top-4 border-t lg:border-t-0 lg:border-l">
                 {article.content.map((section, index) => (
                   <div
                     key={index}
                     className={`${
                       selectedSection === section.heading
-                        ? 'text-[#554075] font-medium border-l-4 border-[#554075]'
+                        ? 'text-[#554075] font-medium border-t-2 lg:border-t-0 lg:border-l-4 border-[#554075]'
                         : 'text-gray-600'
-                    } cursor-pointer hover:text-[#2e2241] w-full hover:bg-purple-100 pl-4`}
+                    } cursor-pointer hover:text-[#2e2241] lg:w-full pr-4 hover:bg-purple-100 pl-4`}
                     onClick={() => setSelectedSection(section.heading)}
                   >
                     {section.heading}
@@ -125,7 +128,7 @@ console.log(id)
             </div>
 
             {/* Right Content */}
-            <div className="flex-1 pl-7 w-full">
+            <div className="flex-1 lg:pl-7 w-full">
               {/* Content dynamically based on the selected heading */}
               {getContentToShow()}
             </div>

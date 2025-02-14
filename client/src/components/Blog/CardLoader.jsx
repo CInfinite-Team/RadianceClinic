@@ -40,7 +40,7 @@ const CardList = ({ currentCards ,Loading}) => {
                     username={card.admin?.name} 
                     designation={card.admin?.speciality} 
                     uploadDate={card.createdAt} 
-                    UserPhoto={card.admin?.profileImage?.data}
+                    UserPhoto={card.admin?.profileImage}
                    
                 />
             ))}

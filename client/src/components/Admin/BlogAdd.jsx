@@ -12,14 +12,14 @@ function BlogAdd({ selectedLink }) {
     introduction: '',
     category: '',
     contentSections: [{ heading: '', body: '' }],
-    adminName: '',
-    adminSpecialty: '',
+    // adminName: '',
+    // adminSpecialty: '',
   });
   const [image, setImage] = useState(null);
-  const [adminImage, setAdminImage] = useState(null);
-  const [adminData, setAdminData] = useState(null);
+  // const [adminImage, setAdminImage] = useState(null);
+  // const [adminData, setAdminData] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
-  const [previewAdminImage, setPreviewAdminImage] = useState(null);
+  // const [previewAdminImage, setPreviewAdminImage] = useState(null);
 
   const loginTokenCookie = Cookies.get('LoginStatus');
   const token = loginTokenCookie ? JSON.parse(loginTokenCookie).token : null;
@@ -52,10 +52,11 @@ function BlogAdd({ selectedLink }) {
     if (type === 'blog') {
       setImage(file);
       setPreviewImage(URL.createObjectURL(file));
-    } else if (type === 'admin') {
-      setAdminImage(file);
-      setPreviewAdminImage(URL.createObjectURL(file));
     }
+    //  else if (type === 'admin') {
+    //   setAdminImage(file);
+    //   setPreviewAdminImage(URL.createObjectURL(file));
+    // }
   };
 
   const handleSubmit = async (e) => {
@@ -81,17 +82,17 @@ function BlogAdd({ selectedLink }) {
         formDataToSend.append('image', image);
       }
 
-      if (adminImage) {
-        formDataToSend.append('adminImage', adminImage);
-      }
+      // if (adminImage) {
+      //   formDataToSend.append('adminImage', adminImage);
+      // }
 
-      // Add admin details if they exist
-      if (formData.adminName) {
-        formDataToSend.append('adminName', formData.adminName);
-      }
-      if (formData.adminSpecialty) {
-        formDataToSend.append('adminSpecialty', formData.adminSpecialty);
-      }
+      // // Add admin details if they exist
+      // if (formData.adminName) {
+      //   formDataToSend.append('adminName', formData.adminName);
+      // }
+      // if (formData.adminSpecialty) {
+      //   formDataToSend.append('adminSpecialty', formData.adminSpecialty);
+      // }
 
       const config = {
         headers: {
@@ -107,20 +108,20 @@ function BlogAdd({ selectedLink }) {
       );
 
       if (response.status === 201) {
-        setAdminData(response.data.blog.admin);
+        // setAdminData(response.data.blog.admin);
         // Reset form
         setFormData({
           title: '',
           introduction: '',
           category: '',
           contentSections: [{ heading: '', body: '' }],
-          adminName: '',
-          adminSpecialty: '',
+          // adminName: '',
+          // adminSpecialty: '',
         });
         setImage(null);
-        setAdminImage(null);
+        // setAdminImage(null);
         setPreviewImage(null);
-        setPreviewAdminImage(null);
+        // setPreviewAdminImage(null);
         alert('Blog created successfully!');
       }
     } catch (error) {
@@ -144,10 +145,10 @@ function BlogAdd({ selectedLink }) {
   return (
     <>
       {selectedLink === 'blogs' && (
-        <div className="flex flex-col items-center min-h-screen bg-gray-50 p-6">
+        <div className="flex flex-col items-center min-h-screen bg-gray-50 md:p-6">
           <div className="w-full max-w-4xl bg-white rounded-xl shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
-              <h1 className="text-2xl font-semibold text-gray-900">Upload Blog (Admin)</h1>
+              <h1 className="text-2xl font-semibold text-[#554075]">Upload Blog (Admin)</h1>
             </div>
 
             {/* Warning Message */}
@@ -162,23 +163,23 @@ function BlogAdd({ selectedLink }) {
               <button
                 onClick={() => setActiveTab('blogDetails')}
                 className={`py-2 text-sm font-medium ${
-                  activeTab === 'blogDetails' ? 'text-black border-b-2 border-black' : 'text-gray-400'
+                  activeTab === 'blogDetails' ? 'text-[#554075] border-b-2 border-[#554075]' : 'text-gray-400'
                 }`}
               >
                 Blog Details
               </button>
-              <button
+              {/* <button
                 onClick={() => setActiveTab('adminDetails')}
                 className={`py-2 text-sm font-medium ${
                   activeTab === 'adminDetails' ? 'text-black border-b-2 border-black' : 'text-gray-400'
                 }`}
               >
                 Admin Details
-              </button>
+              </button> */}
               <button
                 onClick={() => setActiveTab('preview')}
                 className={`py-2 text-sm font-medium ${
-                  activeTab === 'preview' ? 'text-black border-b-2 border-black' : 'text-gray-400'
+                  activeTab === 'preview' ? 'text-[#554075] border-b-2 border-[#554075]' : 'text-gray-400'
                 }`}
               >
                 Preview
@@ -201,7 +202,7 @@ function BlogAdd({ selectedLink }) {
                               strokeLinejoin="round"
                             />
                           </svg>
-                          <span>Upload Blog Cover Image</span>
+                          <span className='text-[#554075]'>Upload Blog Cover Image</span>
                           <input
                             type="file"
                             id="blogImage"
@@ -298,7 +299,7 @@ function BlogAdd({ selectedLink }) {
               )}
 
               {/* Admin Details Tab */}
-              {activeTab === 'adminDetails' && (
+              {/* {activeTab === 'adminDetails' && (
                 <div className="p-6">
                   <div className="flex space-x-6">
                     <div className="w-1/2 border-dashed border-2 border-gray-300 p-6 rounded-lg">
@@ -352,7 +353,7 @@ function BlogAdd({ selectedLink }) {
                     </div>
                   </div>
                 </div>
-              )}
+              )} */}
 
               {/* Preview Tab */}
               {activeTab === 'preview' && (
@@ -382,7 +383,7 @@ function BlogAdd({ selectedLink }) {
                       </div>
                     ))}
 
-                    <div className="pt-6 border-t">
+                    {/* <div className="pt-6 border-t">
                       <h3 className="text-lg font-semibold">Author Information</h3>
                       <div className="mt-4 flex items-center space-x-4">
                         {adminImage && (
@@ -398,7 +399,7 @@ function BlogAdd({ selectedLink }) {
                           <p className="font-medium">{formData.adminName}</p>
                           <p className="text-gray-600">{formData.adminSpecialty}</p>
                         </div></div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 )}
@@ -416,7 +417,7 @@ function BlogAdd({ selectedLink }) {
               </form>
 
               {/* Admin Data Section - Shows after successful submission */}
-              {adminData && (
+              {/* {adminData && (
                 <div className="p-6 border-t border-gray-200">
                   <h2 className="text-xl font-bold mb-4">Blog Posted By</h2>
                   <div className="flex items-center space-x-4">
@@ -437,7 +438,7 @@ function BlogAdd({ selectedLink }) {
                     </div>
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         
