@@ -28,7 +28,7 @@ function LeadsAdmin({selectedLink,headers,data,handleViewData,onRefresh}) {
               
               {/* Responsive Container */}
               <div className="w-full flex justify-center overflow-hidden">
-                <div className="w-full max-w-7xl flex flex-wrap xl:flex-row flex-col items-center justify-center xl:space-x-6 space-y-6 xl:space-y-0 mt-6 py-6">
+                <div className="w-full  flex flex-wrap flex-row  items-center justify-center lg:justify-between gap-6  mt-6 py-6">
                   
                   {/* <CountBox handleLinkClick={handleLinkClick} data={data} title='Hair Leads' hiddenBtn={true} countEntity='' /> */}
                   {/* Box 1 */}
@@ -46,7 +46,7 @@ function LeadsAdmin({selectedLink,headers,data,handleViewData,onRefresh}) {
             
                   {/* Gauge Container */}
                   
-                  <div className="w-[250px] h-[250px] px-5 flex items-center justify-center">
+                  <div className=" h-[250px] w-[250px] lg:w-[180px] lg:h-[200px] xl:w-[250px] xl:h-[250px] px-5 flex items-center justify-center">
                     <GaugeVisualization data={guageTestData} />
                   </div>
                 </div>

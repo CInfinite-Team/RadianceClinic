@@ -18,10 +18,10 @@ function FormsAdmin({ selectedLink, data, handleViewData, onRefresh }) {
         <>
           <Topbar title={'Forms'} />
           <div className="w-full flex justify-center overflow-hidden">
-            <div className="w-full max-w-7xl flex flex-wrap xl:flex-row flex-col justify-between xl:space-x-6 space-y-6 xl:space-y-0 mt-6 py-6">
+            <div className="w-full flex flex-wrap flex-row justify-center lg:justify-start gap-10 lg:gap-20 xl:space-x-6 items-center  xl:space-y-0 mt-6 py-6">
               <CountBox data={formData} title='Forms Today' hiddenBtn={true} countEntity='length' />
 
-              <div className="w-[250px] h-[250px] mx-auto md:mx-0 px-5 flex items-center justify-center">
+              <div className="h-[250px] w-[250px] lg:w-[180px] lg:h-[200px] xl:w-[250px] xl:h-[250px]   px-5 flex items-center justify-center">
                 <GaugeVisualization data={guageTestData} />
               </div>
             </div>

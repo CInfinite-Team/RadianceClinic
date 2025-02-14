@@ -23,7 +23,7 @@ const DataTable = ({ headers, data, handleViewData,onStatusUpdate,route }) => {
               <tr key={index} className="border-b-8 border-t-8 border-white">
                 <td className="px-4 py-2 bg-[#F0DFFF] text-center">{index + 1}</td>
                 <td className="px-4 py-2 bg-[#F0DFFF]  text-center">{item.name ? item.name : 'N/A'}</td>
-                <td className="px-4 py-2 bg-[#F0DFFF]  text-center">{item.category ? item.category : 'N/A'}</td>
+                <td className="px-4 py-2 bg-[#F0DFFF]  text-center">{item.category ? item.category : item.subject}</td>
                 <td className="px-4 py-2 bg-[#F0DFFF]  text-center">{item.phone ? item.phone : 'N/A'}</td>
                 <td className="px-4 py-2 bg-[#F0DFFF]  text-center">
                 <div

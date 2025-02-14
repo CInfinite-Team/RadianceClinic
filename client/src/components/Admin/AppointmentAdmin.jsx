@@ -27,11 +27,11 @@ function AppointmentAdmin({selectedLink,data,headers,handleViewData,handleLinkCl
               <>
              <Topbar title={'Appointments'} />
               <div className="w-full flex justify-center overflow-hidden">
-                <div className="w-full max-w-4xl flex flex-wrap xl:flex-row flex-col justify-center items-center  xl:justify-between xl:space-x-6 space-y-6 xl:space-y-0 mt-6 ">
+                <div className="w-full  flex flex-wrap flex-row justify-center items-center  lg:justify-start lg:gap-20 xl:gap-40 space-y-6 xl:space-y-0 mt-6 ">
                   {/* Box 1 */}
                   <CountBox handleLinkClick={handleLinkClick} data={AppointmentData} title='Upcoming Appointments' countEntity='totalUpcomingAppointments'/>
                  
-                  <div className="w-[250px] h-[250px] px-5 flex items-center justify-center">
+                  <div className="h-[250px] w-[250px]   lg:w-[150px] lg:h-[200px] xl:h-[250px] px-5 flex items-center justify-center">
                     <GaugeVisualization data={guageTestData} />
                   </div>
                 </div>

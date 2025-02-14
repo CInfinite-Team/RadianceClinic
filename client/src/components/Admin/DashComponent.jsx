@@ -35,7 +35,7 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
         <>
           <Topbar title={'Welcome, Dr. Barde'} />
           <div className="w-full flex justify-center">
-            <div className="w-full max-w-7xl flex flex-wrap flex-row justify-center gap-5 mt-6 py-6">
+            <div className="w-full max-w-7xl flex flex-wrap  flex-row lg:justify-between  gap-5 mt-6 py-6">
               <CountBox 
                 handleLinkClick={handleLinkClick} 
                 data={counts} 
