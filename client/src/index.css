@@ -76,6 +76,11 @@ html,body{
     outline: none;
 }
 
+.smallScrollbar{
+  scrollbar-width: none;
+
+}
+
 .underline-text {
     position: relative;
   }

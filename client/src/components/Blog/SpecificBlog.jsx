@@ -68,13 +68,13 @@ console.log(id)
 console.log(article.admin.profileImage)
   return (
     article && (
-      <div className="lg:p-24 mx-auto bg-white shadow-lg w-screen flex items-center justify-center rounded-lg overflow-hidden">
+      <div className="py-24 lg:p-24 mx-auto bg-white shadow-lg w-screen flex items-center justify-center rounded-lg overflow-hidden">
         <div className="lg:p-6 w-[90%] ">
           {/* Header Section */}
           <h1 className="font-ElMessiri font-bold text-[#554075] leading-tight" style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
             {article.title}
           </h1>
-          <p className="font-medium text-[#B2A6CE] leading-relaxed mb-3" style={{ fontSize: 'clamp(18px,1.5vw,22px)' }}>
+          <p className=" text-[#a491ce] leading-relaxed mb-3" style={{ fontSize: 'clamp(13px,1.5vw,22px)' }}>
             {article.introduction}
           </p>
           <div className="text-sm text-gray-500 mb-5">
@@ -91,7 +91,7 @@ console.log(article.admin.profileImage)
           )}
 
           {/* Content Section */}
-          <div className="flex flex-col gap-2 pt-6">
+          <div className="flex flex-col mt-8 lg:flex-row gap-10 lg:gap-2 lg:pt-6">
             {/* Left Navigation */}
             <div className="w-48 flex-shrink-0">
               <div className="flex items-center mb-8 space-x-4">
@@ -110,7 +110,7 @@ console.log(article.admin.profileImage)
               </div>
 
               {/* Sidebar with clickable headings */}
-              <div className="space-y-2 flex sticky overflow-auto top-4 border-t lg:border-t-0 lg:border-l">
+              <div className="flex  lg:flex-col sticky smallScrollbar overflow-y-auto w-[90vw] lg:w-auto  whitespace-nowrap lg:whitespace-normal top-4 border-t lg:border-t-0 lg:border-l">
                 {article.content.map((section, index) => (
                   <div
                     key={index}
@@ -118,7 +118,7 @@ console.log(article.admin.profileImage)
                       selectedSection === section.heading
                         ? 'text-[#554075] font-medium border-t-2 lg:border-t-0 lg:border-l-4 border-[#554075]'
                         : 'text-gray-600'
-                    } cursor-pointer hover:text-[#2e2241] lg:w-full pr-4 hover:bg-purple-100 pl-4`}
+                    } cursor-pointer hover:text-[#2e2241] lg:w-full pr-4 hover:bg-purple-100 py-2  pl-4`}
                     onClick={() => setSelectedSection(section.heading)}
                   >
                     {section.heading}
