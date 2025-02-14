@@ -48,7 +48,7 @@ function FormDetailPopup({data,onClose,selectedLink}) {
                 <p className={`${selectedLink ==='leads' ? 'hidden' :''}`}>{selectedLink==='appointments' ? 'Time: '+data.appointmentTime : selectedLink ==='forms' ? data.maritalStatus : 'N/A'}</p>
                 <p className={`${selectedLink ==='leads' ? 'col-span-full' : ''}`}>{selectedLink ==='leads' ? 'Subject: '+data.subject : selectedLink==='appointments' ? 'Category: '+data.category : selectedLink ==='forms' ? 'MOB: '+data.mobileNo : 'MOB:N/A'}</p>
                 {selectedLink==='forms' && <>
-                <p className={`${data.speciality ? '' : 'hidden'}`}>{data.speciality}</p>
+                <p >{data.speciality ? 'Speciality: '+data.speciality : 'Speciality: Dermatology'}</p>
                 <p className={`${data.category ? '' : 'hidden'}`}>{'Category: '+data.category}</p>
                 <p className={`${data.status ? '' : 'hidden'}`}>{'Status: '+data.status}</p>
                 <p className={`${selectedLink === 'forms' && data.category === 'Hair'  ? '' : selectedLink !== 'forms' ?'' :'hidden' } col-span-full`}>{'Submission Date: '+formatDate(data.createdAt)}</p>   
