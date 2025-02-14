@@ -80,9 +80,10 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
                   <p className="text-[#8C74B1] text-2xl font-bold">{formatDate(latestLead.createdAt)}</p>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col group  relative">
                   <p className="font-semibold text-[#463660]">Email</p>
-                  <p className="text-[#8C74B1] text-xl font-bold">{latestLead.email || "..."}</p>
+                  <p className="text-[#8C74B1] text-xl font-bold whitespace-nowrap overflow-clip overflow-ellipsis ">{latestLead.email || "..."}</p>
+                  <p className="text-white text-lg px-1 transition duration-500 opacity-0 group-hover:opacity-100 rounded-sm  whitespace-nowrap absolute top-0 backdrop-blur-sm bg-[#00000069] ">{latestLead.email || "..."}</p>
                 </div>
 
                 <div className="flex flex-col">
