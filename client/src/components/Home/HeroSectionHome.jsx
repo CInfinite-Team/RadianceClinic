@@ -64,6 +64,17 @@ function HeroSectionHome() {
                             <img src={TiledArrow} alt="" />
                         </a>
                     </div>
+                    <div className="  transform translate-x-[10%] hidden lg:flex items-center gap-2">
+                {Array.from({ length: Images.length }).map((_, index) => (
+                    <div
+                        onClick={() => setCurrentImg(index)}
+                        key={index}
+                        className={`h-1 w-20 md:w-28 rounded-full cursor-pointer transition-all duration-500 ${
+                            index === currentImg ? 'bg-[#9A73B3] scale-110' : 'bg-white'
+                        }`}
+                    />
+                ))}
+            </div>
                 </div>
 
                 <img 
@@ -79,7 +90,7 @@ function HeroSectionHome() {
             </div>
 
             {/* Move the indicator div outside the content but inside the outermost container */}
-            <div className="absolute bottom-5 left-1/2 lg:left-[22%] lg:bottom-9 transform -translate-x-1/2 flex items-center gap-2">
+            <div className="absolute bottom-5 left-1/2 lg:left-[22%] lg:hidden lg:bottom-9 transform -translate-x-1/2 flex items-center gap-2">
                 {Array.from({ length: Images.length }).map((_, index) => (
                     <div
                         onClick={() => setCurrentImg(index)}

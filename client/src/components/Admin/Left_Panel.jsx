@@ -3,6 +3,7 @@ import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Logo from '../../assets/SharedAssets/adminPanel_logo.png';
 import dashboard from '../../assets/Admin/dashboard.svg';
 import Blog from '../../assets/Admin/Blog.svg';
+import DeleteBlog from '../../assets/Admin/DeleteBlog.svg';
 import leads from '../../assets/Admin/leads.svg';
 import appointments from '../../assets/Admin/appointments.svg';
 import forms from '../../assets/Admin/forms.svg';
@@ -30,7 +31,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
        
 
         <div className="text-center mb-6 pb-6">
-          <img src={Logo} alt="Logo" className="h-auto w-auto" />
+          <img src={Logo} alt="Logo" className="w-36 md:w-44" />
         </div>
 
         {/* Navigation Links */}
@@ -94,6 +95,18 @@ function Left_Panel({handleLinkClick,selectedLink}) {
               alt="Blog"
             />
             Add Blogs
+          </a>
+          <a
+            href="#"
+            className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'Delblogs' ? 'font-bold' : ''}`}
+            onClick={() => handleLinkClick('Delblogs')}
+          >
+            <img
+              src={DeleteBlog}
+              className="mr-2 w-5 h-5 "
+              alt="Blog"
+            />
+            Delete Blogs
           </a>
         </nav>
 

@@ -9,6 +9,7 @@ import Cookies from 'js-cookie';
 import SERVER_URL from '../../constant.mjs';
 import FormDetailPopup from '../../components/Admin/FormDetailPopup.jsx'
 import BlogAdd from '../../components/Admin/BlogAdd.jsx';
+import DeleteBlog from '../../components/Admin/DeleteBlog.jsx';
 
 const Dashboard = () => {
   const [selectedLink, setSelectedLink] = useState('dashboard');
@@ -33,6 +34,7 @@ const Dashboard = () => {
     appointments: '/api/admin/appointments',
     forms: '/api/admin/forms',
     blogs: null,
+    Delblogs:null,
   };
 
   const fetchFunctions = {
@@ -92,6 +94,9 @@ const Dashboard = () => {
       }
     },
     blogs: async () => {   
+      setData(null);
+    },
+    Delblogs: async () => {   
       setData(null);
     },
   };
@@ -176,6 +181,9 @@ const Dashboard = () => {
             />
 
             <BlogAdd 
+              selectedLink={selectedLink}        
+            />
+            <DeleteBlog 
               selectedLink={selectedLink}        
             />
             
