@@ -2,7 +2,7 @@ const ContactUs = require('../models/ContactUs');
 
 const getLeads = async (req, res) => {
     try {
-        const { category, date, startDate, endDate } = req.body;
+        const { category, date, startDate, endDate } = req.query;
 
         let query = {};
 
@@ -54,7 +54,7 @@ const getLeads = async (req, res) => {
 
 const getLeadDetails = async (req, res) => {
     try {
-        const { id } = req.body;
+        const { id } = req.query;
         const lead = await ContactUs.findById(id);
         if (!lead) {
             return res.status(404).json({

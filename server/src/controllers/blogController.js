@@ -16,7 +16,6 @@ const createBlog = async (req, res) => {
 
         if (req.file) {
             const fileExt = path.extname(req.file.originalname).toLowerCase();
-
             if (fileExt === '.jpg' || fileExt === '.jpeg') {
                 imageType = 'image/jpeg';
             } else if (fileExt === '.png') {
@@ -24,16 +23,20 @@ const createBlog = async (req, res) => {
             } else {
                 return res.status(400).json({ message: 'Invalid file format! Only JPG, JPEG, and PNG are allowed.' });
             }
-
             imageData = req.file.buffer;
         }
 
+        // Parse the content if it's a string
+        let parsedContent = content;
+        if (typeof content === 'string') {
+            parsedContent = JSON.parse(content);
+        }
         const categoryLower = category.toLowerCase();
 
         const newBlog = new Blog({
             title,
             introduction,
-            content,
+            content: parsedContent,  // Use parsed array of objects
             category: categoryLower,
             image: imageData ? { data: imageData, contentType: imageType } : undefined,
             admin: {
@@ -81,7 +84,8 @@ const getAllBlogs = async (req, res) => {
 
 const getBlogById = async (req, res) => {
     try {
-        const blog = await Blog.findById(req.body.id);
+        const {id} = req.query;
+        const blog = await Blog.findById(id);
 
         if (!blog) return res.status(404).json({ message: 'Blog not found' });
 

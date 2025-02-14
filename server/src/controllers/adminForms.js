@@ -4,7 +4,7 @@ const moment = require('moment');
 
 const getForms = async (req, res) => {
     try {
-        const { formType, date, startDate, endDate } = req.body;
+        const { formType, date, startDate, endDate } = req.query;
 
         const totalHairForms = await HairForm.countDocuments();
         const totalSkinForms = await SkinForm.countDocuments();
@@ -67,7 +67,7 @@ const getForms = async (req, res) => {
 
 const getFormById = async (req, res) => {
     try {
-        const { id } = req.body;
+        const { id } = req.query;
 
         let form = await HairForm.findById(id);
         if (!form) {
