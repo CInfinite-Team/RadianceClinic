@@ -30,7 +30,7 @@ function DoctorInfo({
   }, []);
 
   return (
-    <div ref={sectionRef} className="flex flex-col lg:flex-row gap-10 lg:gap-0 items-center lg:items-start lg:justify-between w-screen min-h-screen px-5 md:px-10 xl:px-14 pt-20">
+    <div ref={sectionRef} className="flex flex-col lg:flex-row gap-10 lg:gap-0 items-center md:items-start lg:items-start lg:justify-between w-screen min-h-screen px-5 md:px-10 xl:px-14 pt-20">
       
       {/* InfoCard */}
       <div className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}>
