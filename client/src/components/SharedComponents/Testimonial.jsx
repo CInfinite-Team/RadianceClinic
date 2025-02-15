@@ -90,8 +90,10 @@ function Testimonial() {
                             // ref={videoRef}
                             src={data.video} 
                             className="w-full h-full   " 
+                            autoPlay
                             muted
-                            autoPlay 
+                            loop
+                            playsInline
                             controls
                             // onEnded={() => setPlayingVideo(null)}
                           />

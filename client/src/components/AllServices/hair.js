@@ -1,4 +1,8 @@
 import HairServiceBanner from "../../assets/AllServices/Banner/HairServiceBanner.svg"
+import Fue from "../../assets/AllServices/Banner/Fue.svg"
+import PRP from "../../assets/AllServices/Banner/PRP.svg"
+import FemaleTransplant from "../../assets/AllServices/Banner/FemaleTransplant.svg"
+import BeardTransplant from "../../assets/AllServices/Banner/BeardTransplant.svg"
 
 export const hairSlides = [
     {
@@ -11,25 +15,25 @@ export const hairSlides = [
       title: "FUE Hair Transplant",
       description: "Experience the cutting-edge Follicular Unit Extraction (FUE) technique for hair transplantation, providing precise and minimally invasive results.",
       buttonText: "Learn More",
-      image: HairServiceBanner,
+      image: Fue,
     },
     {
       title: "Female Hair Transplant",
       description: "Specialized hair transplant solutions tailored for women to address hair thinning and balding, enhancing natural hair growth.",
       buttonText: "Learn More",
-      image: HairServiceBanner,
+      image: FemaleTransplant,
     },
     {
       title: "Platelet Rich Plasma Therapy",
       description: "Revitalize your hair growth with PRP therapy, leveraging your body's healing power to stimulate new hair development naturally.",
       buttonText: "Learn More",
-      image: HairServiceBanner,
+      image: PRP,
     },
     {
       title: "Eyebrow & Beard Hair Transplant",
       description: "Achieve a fuller look with our eyebrow and beard hair transplant services, designed for natural and long-lasting results.",
       buttonText: "Learn More",
-      image: HairServiceBanner,
+      image: BeardTransplant,
     },
     {
       title: "Treatment of other kinds of alopecia (Hair Loss)",
