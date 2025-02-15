@@ -84,9 +84,9 @@ console.log(article.admin.profileImage)
           {/* Main Image */}
           {article.image && (
             <img
-              src={article.image} // Already a base64 string
+              src={article.image}
               alt="Article header"
-              className="w-full object-cover rounded-lg"
+              className="w-full h-[550px] object-cover rounded-lg"
             />
           )}
 
