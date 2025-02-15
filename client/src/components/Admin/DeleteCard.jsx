@@ -48,7 +48,7 @@ const DeleteCard = ({
       <span className="px-4 rounded-xl bg-[#0000006c] backdrop-blur-md top-2 left-2 font-ElMessiri absolute text-white w-fit">
         {category}
       </span>
-      <img src={`${image}`} alt={title} className="w-full h-64 object-cover" />
+      <img src={`${image}`} alt={title} className="w-full h-64 object-fit" />
       <div className="p-4 flex flex-col justify-between flex-grow">
         <div className="text-xs text-gray-400 flex items-center space-x-1 font-ElMessiri">
           <span>{formatUploadDate(uploadDate)}</span>
