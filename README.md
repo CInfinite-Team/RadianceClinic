@@ -1,1 +1,1 @@
-# Radinace Clinic
+# RadinaceClinic
