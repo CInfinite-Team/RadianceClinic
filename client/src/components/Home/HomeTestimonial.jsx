@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import InvertedComa from '../../assets/SharedAssets/InvertedComa.svg';
 import WhitePlant from '../../assets/Aboutus/WhitePlant.svg';
 import Leaf from '../../assets/SharedAssets/Leaf.svg';
 import Whiteobject from '../../assets/SharedAssets/Whiteobject.svg';
 import { TestimonialHomeHair, TestimonialHomeSkin, TestimonialHomeLaser } from '../Home/TestimonialHomeData';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import BookInterest from './BookInterest';
-import testimonial from '../../assets/SharedAssets/testimonial.svg';
-import { Play, Pause } from 'lucide-react';
+import TestimonialCard from './TestimonialCard';
 
 function HomeTestimonial() {
   const [isVisible, setIsVisible] = useState(false);
@@ -85,20 +83,6 @@ function HomeTestimonial() {
     ],
   };
 
-  const handleVideoClick = (index, videoRef) => {
-    if (playingVideo === index) {
-      videoRef.current.pause();
-      setPlayingVideo(null);
-    } else {
-      if (playingVideo !== null) {
-        const prevVideo = document.querySelector(`#video-${playingVideo}`);
-        if (prevVideo) prevVideo.pause();
-      }
-      videoRef.current.play();
-      setPlayingVideo(index);
-    }
-  };
-
   const handleCategoryChange = (category, data) => {
     setActiveCategory(category);
     setSelectedData(data);
@@ -112,6 +96,7 @@ function HomeTestimonial() {
       
       <div id="testimonial-section" className="py-10 bg-[#FDF2FF] relative overflow-hidden">
         <div className="flex flex-col justify-center relative items-center md:min-h-screen w-screen bg-[#FDF2FF]">
+          {/* Background Images */}
           <img
             src={WhitePlant}
             alt=""
@@ -134,10 +119,11 @@ function HomeTestimonial() {
             } `}
           />
 
+          {/* Header Section */}
           <div className={`flex flex-col justify-center mb-10 items-center gap-5 transition-all delay-300 duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
-            <h2 className="font-bold font-ElMessiri text-[#554075] leading-tight text-center px-1 z-10 " 
+            <h2 className="font-bold font-ElMessiri text-[#554075] leading-tight text-center px-1 z-10" 
                 style={{ fontSize: 'clamp(36px,4vw,55px)' }}>
               What Our Patients Say
             </h2>
@@ -146,73 +132,26 @@ function HomeTestimonial() {
             </p>
           </div>
 
+          {/* Testimonial Slider */}
           <div className={`w-full md:px-32 lg:px-12 transition-all delay-300 duration-700 transform ${
             isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
           }`}>
             <Slider className='sm:h-[650px] lg:h-[740px] px-7 md:px-0' {...sliderSettings}>
-              {selectedData.map((data, index) => {
-                const videoRef = React.createRef();
-                return (
-                  <div 
-                    onMouseLeave={() => setHoveredIndex(null)}
-                    key={index} 
-                    className="flex flex-col relative rounded-[5px] group overflow-hidden z-20 border border-[#A287CF] bg-white max-w-[350px] lg:min-h-[600px] max-h-[600px] p-4 justify-center sm:ml-36 md:ml-20 mb-10 items-center transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
-                  >
-                    <div className={`${hoveredIndex === index ? 'opacity-100 z-50' : ''} opacity-0 bg-[#fdf2ff39] justify-center flex transition-all duration-500 w-full left-0 top-0 h-full backdrop-blur-lg items-center absolute`}>
-                      <button
-                        onClick={() => setShowPopup(true)}
-                        className="underline font-ElMessiri font-bold text-xl text-[#554075] hover:scale-110 transition-transform"
-                      >
-                        Register Interest
-                      </button>
-                    </div>
-                  
-                    <div className="w-[180px] h-[180px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[260px] mb-3 relative aspect-square mx-auto rounded-full transition-transform duration-300 hover:scale-105">
-                      {data.video === '' ? (
-                        <img src={testimonial} alt="" className="object-cover" />
-                      ) : (
-                        <div className='rounded-full relative overflow-hidden w-full h-full bg-black'>
-                          {/* <button 
-                            onClick={() => handleVideoClick(index, videoRef)}
-                            className='bg-[#ffffff86] p-2 rounded-full flex items-center justify-center top-1/2 z-30 left-1/2 cursor-pointer absolute -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:scale-110'
-                          >
-                            <span className='bg-[#ffffff94] rounded-full w-12 h-12 flex items-center justify-center'>
-                              {playingVideo === index ? <Pause color='white' /> : <Play color='white' />}
-                            </span>
-                          </button> */}
-
-                          <video 
-                            id={`video-${index}`}
-                            // ref={videoRef}
-                            src={data.video} 
-                            className="w-full h-full" 
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            controls
-                            // onEnded={() => setPlayingVideo(null)}
-                          />
-                        </div>
-                      )}
-
-                      <div className="p-2 md:p-3 lg:p-4 rounded-full bg-white shadow-md absolute right-0 bottom-0 animate-bounce">
-                        <img src={InvertedComa} alt="" className="w-8" />
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col mb-3" onMouseEnter={() => setHoveredIndex(index)}>
-                      <h3 className="text-2xl font-bold md:text-4xl text-[#4d3c69] text-center font-ElMessiri z-10 hover:scale-105 transition-transform">{data.Treatment}</h3>
-                      <p className="text-[#41335A] text-center text-xl font-ElMessiri font-bold z-10">{data.Name}</p>
-                      <p className="text-[#554075] text-center z-10">{data.Position}</p>
-                      <p className="text-[#554075] text-center mt-3 z-10">''{data.Review}''</p>
-                    </div>
-                  </div>
-                );
-              })}
+              {selectedData.map((data, index) => (
+                <TestimonialCard
+                  key={index}
+                  data={data}
+                  index={index}
+                  playingVideo={playingVideo}
+                  setPlayingVideo={setPlayingVideo}
+                  hoveredIndex={hoveredIndex}
+                  setHoveredIndex={setHoveredIndex}
+                  setShowPopup={setShowPopup}
+                />
+              ))}
             </Slider>
           </div>
-
+          
           {/* <div className={`flex gap-5 z-10 transition-all duration-1000 delay-500 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>

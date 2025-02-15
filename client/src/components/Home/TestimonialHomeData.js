@@ -47,6 +47,15 @@ export const TestimonialHomeHair=[
         // Position:'Lawyer',
         Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
 },
+
+{
+        video:'Neha_Review_Acne',
+        Treatment:'Achne Treatment',
+        Name:'Neha',
+    //     Position:'Lawyer',
+        Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
+},
+
 //     {
 //             video:'',
 //             Treatment:'Hair Transplant',
