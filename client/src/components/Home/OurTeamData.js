@@ -11,9 +11,9 @@ export const NitinData =
         'Known for his advanced skills in dermatology, Dr. Nitin Barde specializes in treatments for skin conditions, hair loss, and cosmetic enhancements. His experience ensures that patients receive effective, tailored solutions for their needs.',
         'With a strong reputation in the field of dermatology, Dr. Nitin Barde delivers expert care in skin and hair treatments. His focus on patient satisfaction and cutting-edge techniques sets him apart in the field of aesthetic and medical dermatology.',
     ],
-    InsagramLink:'',
-    FacebookLink:'',
-    YoutubeLink:'',
+    InsagramLink:'https://www.instagram.com/radianceclinicnagpur/',
+    FacebookLink:'https://www.facebook.com/radianceclinicnagpur1/',
+    YoutubeLink:'https://www.youtube.com/channel/UCcca28C8TbpVCiCj2sKsWmw',
 }
 export const RadhikaData =
 {   Image:Radhika, 
@@ -24,7 +24,7 @@ export const RadhikaData =
         'Her focus on non-invasive treatments, like laser therapies and thread lifts, allows patients to achieve a refreshed look. She is known for her precision and dedication to skin health.',
         'With a strong background in dermatology, she provides advanced solutions such as anti-aging treatments, Botox, and fillers. These procedures help maintain youthful skin while offering natural enhancements.',
     ],
-    InsagramLink:'',
-    FacebookLink:'',
-    YoutubeLink:'',
+    InsagramLink:'https://www.instagram.com/radianceclinicnagpur/',
+    FacebookLink:'https://www.facebook.com/radianceclinicnagpur1/',
+    YoutubeLink:'https://www.youtube.com/channel/UCcca28C8TbpVCiCj2sKsWmw',
 }

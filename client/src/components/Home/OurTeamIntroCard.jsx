@@ -38,7 +38,7 @@ function OurTeamIntroCard({ Data }) {
   return (
     <div 
       id={`team-card-${Data.name}`}
-      className='flex flex-col lg:flex-row items-center relative justify-between bg-[#FDF2FF] px-3 md:px-10 py-16 rounded-lg transition-all duration-300 hover:shadow-xl'
+      className='flex flex-col lg:flex-row items-center gap-6 relative justify-between bg-[#FDF2FF] px-3 md:px-10 py-16 rounded-lg transition-all duration-300 hover:shadow-xl'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -99,7 +99,7 @@ function OurTeamIntroCard({ Data }) {
       <img 
         src={Data.Image} 
         alt="" 
-        className={`z-[0] md:max-w-[80%] lg:max-w-[350px] xl:max-w-[450px] order-1 lg:order-2 -translate-y-14 transition-all duration-700 transform hover:scale-105 ${
+        className={`z-[0] md:max-w-[78%] lg:max-w-[300px] xl:max-w-[430px] order-1 lg:order-2  transition-all duration-700 transform hover:scale-105 ${
           isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
       />

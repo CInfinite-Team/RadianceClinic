@@ -86,7 +86,7 @@ console.log(article.admin.profileImage)
             <img
               src={article.image}
               alt="Article header"
-              className="w-full h-[550px] object-cover rounded-lg"
+              className="w-full max-h-[550px] 2xl:max-h-[900px] object-cover rounded-lg"
             />
           )}
 

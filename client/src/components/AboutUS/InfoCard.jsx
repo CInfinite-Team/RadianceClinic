@@ -1,5 +1,5 @@
 import React from 'react'
-import Nitin from '../../assets/Aboutus/Nitin.svg'
+// import Nitin from '../../assets/Aboutus/Nitin.svg'
 import {Link} from 'react-router-dom'
 import Facebook from '../../assets/SharedAssets/facebook.svg'
 import Instagram from '../../assets/SharedAssets/Instagram.svg'
