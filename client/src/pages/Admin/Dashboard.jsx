@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { memo, useState, useEffect } from 'react';
 import axios from 'axios';
 import Left_Panel from '../../components/Admin/Left_Panel.jsx';
 import DashComponent from '../../components/Admin/DashComponent.jsx';
@@ -183,9 +183,7 @@ const Dashboard = () => {
             <BlogAdd 
               selectedLink={selectedLink}        
             />
-            <DeleteBlog 
-              selectedLink={selectedLink}        
-            />
+            { selectedLink === 'Delblogs' && <DeleteBlog />}
             
           </div>
         )}
@@ -204,4 +202,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default memo(Dashboard);

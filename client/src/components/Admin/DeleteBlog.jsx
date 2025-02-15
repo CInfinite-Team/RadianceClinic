@@ -1,42 +1,58 @@
-import { React, useState, useEffect } from 'react';
+import { memo, useState, useEffect } from 'react';
 import axios from 'axios'; 
 import BlogDeleteCards from './BlogDeleteCards';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import SERVER_URL from '../../constant.mjs';
-const DeleteBlog = () => {
+import Cookies from 'js-cookie';
 
- 
+// import { React, useState, useEffect } from 'react';
+// import axios from 'axios'; 
+// import HeroSectionAll from '../components/SharedComponents/HeroSectionAll';
+// import Navbar from '../components/navbar/Navbar';
+// import Footer from '../components/footer/Footer';
+// import CardList from '../components/Blog/CardLoader';
+// import FillerContent from '../components/Blog/FillerContent';
+// import PrimaryBtn from '../Buttons/PrimaryBtn';
+// import SERVER_URL from '../constant.mjs';
+
+const DeleteBlog = ({setshowDeletePopup}) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [cards, setCards] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
-  const [category, setCategory] = useState(''); 
-  const [loading,setLoading] = useState(true);
-  const [sort, setSort] = useState('newest'); 
-
+  const [category, setCategory] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [sort, setSort] = useState('newest');
+  const loginTokenCookie = Cookies.get('LoginStatus');
+  const token = loginTokenCookie ? JSON.parse(loginTokenCookie).token : null;
   
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get(`${SERVER_URL}/api/user/blogs`, {
+    // Assuming the JWT token is stored in localStorage
+      const response = await axios.get(`${SERVER_URL}/api/admin/blogs`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
         params: {
           category,
-          sort
-        }
+          sort,
+        },
       });
-      setCards(response.data);  
+      setCards(response.data);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching blogs:', error);
       setLoading(false);
-
     }
   };
 
   useEffect(() => {
-    fetchBlogs(); 
+    fetchBlogs();
   }, [category, sort]);
 
-  
   const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
   const currentCards = cards.slice(firstIndex, lastIndex);
@@ -44,30 +60,29 @@ const DeleteBlog = () => {
   const totalPages = Math.ceil(cards.length / itemsPerPage);
 
   const handlePageChange = (page) => {
-    setCurrentPage(page);  
+    setCurrentPage(page);
   };
 
   const handleCategoryChange = (newCategory) => {
-    setCategory(newCategory); 
+    setCategory(newCategory);
   };
 
   const handleSortChange = (event) => {
-    setSort(event.target.value); 
+    setSort(event.target.value);
   };
-
-  // if (loading) {
-  //   return <div className='flex w-full h-[90vh] items-center justify-center'>
-  //     <p className=" rounded-full border-2 animate-spin border-r-0 border-[#725B98] p-12"></p>
-  //   </div>;
-  // }
 
   return (
     <>
+      {/* <Navbar />
+      <HeroSectionAll Title={'Blog'} Path={'Home'} SubPath={'Blog'} /> */}
 
-      <div className="min-h-screen flex flex-col py-8 ">
-       
+      <div className="min-h-screen  flex flex-col py-8 p-5 xl:p-10">
+        <h1 className='mb-10 font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
+          Delete Blogs
+        </h1>
+
         {/* Button for category filtering */}
-        <div className="flex justify-between items-center w-full mb-4  pb-4 flex-wrap">
+        {/* <div className="flex justify-between items-center w-full mb-4  pb-4 flex-wrap">
           <div className="flex gap-5 overflow-x-auto pb-2">
             <PrimaryBtn className="px-4 py-2" onClick={() => handleCategoryChange('')}>All</PrimaryBtn>
             <PrimaryBtn className="px-4 py-2" onClick={() => handleCategoryChange('skin')}>Skin</PrimaryBtn>
@@ -81,18 +96,17 @@ const DeleteBlog = () => {
               name="dropdown"
               id="dropdown"
               className="border border-gray-300 rounded-lg px-3 py-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#947ABB] transition duration-300"
-              onChange={handleSortChange} 
+              onChange={handleSortChange}
               value={sort}
             >
               <option value="newest">Newest</option>
               <option value="oldest">Oldest</option>
-              <option value="a-z">A-Z</option>
-              <option value="z-a">Z-A</option>
+           
             </select>
           </div>
-        </div>
+        </div> */}
 
-        <BlogDeleteCards currentCards={currentCards} Loading={loading} />
+        <BlogDeleteCards  currentCards={currentCards} Loading={loading} />
 
         {/* Pagination */}
         <div className="mt-6">
@@ -125,9 +139,11 @@ const DeleteBlog = () => {
         </div>
       </div>
       
-     
+      {/* <FillerContent />
+      <Footer /> */}
     </>
   );
 };
 
-export default DeleteBlog;
+
+export default memo(DeleteBlog);

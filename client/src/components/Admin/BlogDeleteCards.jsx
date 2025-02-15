@@ -1,4 +1,4 @@
-import React from 'react';
+import {memo} from 'react';
 import DeleteCard from './DeleteCard';
 import imageMapper from '../Blog/imageMapper';
 
@@ -48,4 +48,4 @@ const BlogDeleteCards = ({ currentCards ,Loading}) => {
     );
 };
 
-export default BlogDeleteCards;
+export default memo(BlogDeleteCards);

@@ -12,7 +12,6 @@ function SpecificBlog() {
   const [error, setError] = useState(null);
   const [selectedSection, setSelectedSection] = useState('');
 
-  // Refs for each section to scroll into view
   const sectionRefs = useRef({});
 
   useEffect(() => {
@@ -20,7 +19,7 @@ function SpecificBlog() {
       try {
         const response = await axios.get(`${SERVER_URL}/api/user/blogsById`, { params: { id } });
         setArticle(response.data);
-        setSelectedSection(response.data.content[0]?.heading || ''); // Set the first heading as default
+        setSelectedSection(response.data.content[0]?.heading || ''); 
         setLoading(false);
       } catch (err) {
         setError(`Failed to fetch blog data: ${err.message}`);
@@ -119,7 +118,7 @@ function SpecificBlog() {
 
             {/* Right Content */}
             <div className="flex-1 lg:pl-7 w-full">
-              {/* Display each content section */}
+
               {article.content.map((section, index) => (
                 <div
                   key={index}

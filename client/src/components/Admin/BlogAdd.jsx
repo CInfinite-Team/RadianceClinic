@@ -358,22 +358,23 @@ function BlogAdd({ selectedLink }) {
               {/* Preview Tab */}
               {activeTab === 'preview' && (
                 <div className="p-6">
-                  <div className="space-y-6">
+                  <div className="space-y-6 ">
                     <div>
                       <h2 className="text-xl font-bold">{formData.title}</h2>
+                      <p className="mt-2 text-gray-600">{formData.introduction}</p>
+
 {
                      previewImage  && (
-    <div className="mt-4">
+    <div className="mt-4 flex w-full justify-center">
       <img
         src={previewImage}
         alt="Blog preview"
-        className="max-w-full h-auto rounded-lg"
+        className=" rounded-lg"
         style={{ maxHeight: '200px' }}
       />
     </div>
   )
 }
-                      <p className="mt-2 text-gray-600">{formData.introduction}</p>
                     </div>
 
                     {formData.contentSections.map((section, index) => (
