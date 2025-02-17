@@ -105,12 +105,12 @@ const Login = () => {
 
       {/* Left Side - Login Form */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center relative items-center p-8 bg-white">
-      <img src={Plantall1} alt="" className='fixed w-44 md:w-60 lg:hidden left-0 top-0' />
-      <img src={Plantall2} alt="" className='fixed w-44 md:w-52 lg:hidden right-0 -bottom-12' />
+      <img loading='lazy' width="auto" height="auto" src={Plantall1} alt="" className='fixed w-44 md:w-60 lg:hidden left-0 top-0' />
+      <img  loading='lazy'width="auto" height="auto" src={Plantall2} alt="" className='fixed w-44 md:w-52 lg:hidden right-0 -bottom-12' />
         <div className="w-full max-w-md z-50 backdrop-blur-sm py-5 p-2 rounded-md bg-[#ffffff83]">
           <div className=" mb-5">
           <div className="mb-2 flex justify-center">
-            <img src={Logo} loading="eager"  width={'auto'} height={'auto'} className="w-[260px] md:w-[360px] pt-1"/>
+            <img  loading='lazy' width="auto" height="auto" src={Logo} loading="eager"  width={'auto'} height={'auto'} className="w-[260px] md:w-[360px] pt-1"/>
           </div>
           
           

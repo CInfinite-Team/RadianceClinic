@@ -41,7 +41,7 @@ function Faq() {
   return (
     <>
       <div id="faq-section" className='w-screen relative bg-[#93A7B1] overflow-hidden min-h-[105vh] gap-14 justify-between items-center flex flex-col lg:flex-row px-5 lg:px-10 xl:px-40 p-20'>
-        <img 
+        <img loading='lazy' width="auto" height="auto" 
           src={Leafs} 
           alt="" 
           className='h-1/2 lg:h-full -top-32 md:top-0 left-0 z-0 mix-blend-plus-lighter absolute animate-float' 
@@ -50,10 +50,10 @@ function Faq() {
         <div className={`flex z-10 flex-col lg:w-[30%] gap-5 transition-all duration-700 transform ${
           isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
         }`}>
-          <h1 className='font-ElMessiri text-white font-bold leading-tight ' 
+          <h2 className='font-ElMessiri text-white font-bold leading-tight ' 
               style={{fontSize: 'clamp(36px,6vw,60px)'}}>
             Frequently Asked Questions
-          </h1>
+          </h2>
 
           <div className='relative w-full transition-all duration-700' style={{ transitionDelay: '200ms' }}>
             <span className='absolute left-3 bottom-4 text-[#554075]'>

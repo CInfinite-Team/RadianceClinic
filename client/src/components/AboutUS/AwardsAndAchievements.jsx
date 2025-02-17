@@ -28,7 +28,7 @@ function AwardsAndAchievements({AwardsData, AwardImage}) {
 
       <div className="flex gap-16 mt-12 sm:ml-16 ">
         {AwardImage.map((img, index) => (
-        <img key={index}  src={img} alt="Award 1" className="h-16"/>
+        <img loading='lazy' width="auto" height="auto" key={index}  src={img} alt="Award 1" className="h-16"/>
      ))} 
       </div>
     </section>

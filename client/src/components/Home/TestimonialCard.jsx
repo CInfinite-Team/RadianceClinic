@@ -44,7 +44,7 @@ const TestimonialCard = ({
     
       <div className="w-[180px] h-[180px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[260px] mb-3 relative aspect-square mx-auto rounded-full transition-transform duration-300 hover:scale-105">
         {data.video === '' ? (
-          <img src={testimonial} alt="" className="object-cover" />
+          <img loading='lazy' width="auto" height="auto" src={testimonial} alt="" className="object-cover" />
         ) : (
           <div className='rounded-full relative group overflow-hidden w-full h-full bg-black'>
             <button 
@@ -68,7 +68,7 @@ const TestimonialCard = ({
         )}
 
         <div className="p-2 md:p-3 lg:p-4 rounded-full bg-white shadow-md absolute right-0 bottom-0 animate-bounce">
-          <img src={InvertedComa} alt="" className="w-8" />
+          <img loading='lazy' width="auto" height="auto" src={InvertedComa} alt="" className="w-8" />
         </div>
       </div>
 

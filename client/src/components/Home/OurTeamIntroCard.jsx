@@ -46,12 +46,12 @@ function OurTeamIntroCard({ Data }) {
         isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
       }`}>
         <div className='flex flex-col'>
-          <h1 
+          <h2 
             className='font-ElMessiri text-[#554075] font-bold leading-tight mb-2 ' 
             style={{fontSize:'clamp(36px,6vw,60px)'}}
           >
             {Data.name}
-          </h1>
+          </h2>
           <p 
             className='text-[#B2A6CE] font-Inter font-semibold mb-8 transition-all duration-500' 
             style={{fontSize:'clamp(18px,1.5vw,22px)'}}
@@ -79,24 +79,24 @@ function OurTeamIntroCard({ Data }) {
                         <Link to='/book-appointment' className='p-4 py-3 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
           <a href='/about-us' className="p-4 rounded-full bg-white hover:rotate-45 transition-transform duration-500">
-                                     <img src={TiledArrow} alt="" />
+                                     <img width="auto" loading='lazy' height="auto" src={TiledArrow} alt="" />
         </a>
           <div className='flex gap-4 items-center'>
             <p className='text-lg font-semibold text-[#7E719E]'>Follow :</p>
             <a href={Data.InsagramLink} className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
-              <img src={Instagram} alt="" className='w-6' />
+              <img loading='lazy' width="auto" height="auto" src={Instagram} alt="" className='w-6' />
             </a>
             <a href={Data.FacebookLink} className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
-              <img src={Facebook} alt="" className='w-6' />
+              <img loading='lazy' width="auto" height="auto" src={Facebook} alt="" className='w-6' />
             </a>
             <a href={Data.YoutubeLink} className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
-              <img src={Youtube} alt="" className='w-7' />
+              <img loading='lazy' width="auto" height="auto" src={Youtube} alt="" className='w-7' />
             </a>
           </div>
         </div>
       </div>
 
-      <img 
+      <img loading='lazy' width="auto" height="auto" 
         src={Data.Image} 
         alt="" 
         className={`z-[0] md:max-w-[78%] lg:max-w-[300px] xl:max-w-[430px] order-1 lg:order-2  transition-all duration-700 transform hover:scale-105 ${
@@ -104,7 +104,7 @@ function OurTeamIntroCard({ Data }) {
         }`}
       />
       
-      <img 
+      <img loading='lazy' width="auto" height="auto" 
         src={GrayFlower} 
         alt="" 
         className={`absolute bottom-0 right-0 z-0 max-w-[250px] transition-all duration-1000 ${
@@ -112,7 +112,7 @@ function OurTeamIntroCard({ Data }) {
         } animate-float`}
       />
       
-      <img 
+      <img loading='lazy' width="auto" height="auto" 
         src={PurpleCircle} 
         alt="" 
         className={`absolute hidden lg:block bottom-20 2xl:bottom-16 lg:right-72 xl:right-[430px] 2xl:right-[500px] z-0 max-w-[100px] transition-all duration-700 ${

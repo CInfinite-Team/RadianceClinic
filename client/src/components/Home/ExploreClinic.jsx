@@ -61,7 +61,7 @@ function ExploreClinic() {
         </div>
       </div>
 
-      <img 
+      <img loading='lazy' width="auto" height="auto" 
         src={Clinic} 
         alt="" 
         className={`lg:max-w-[460px] order-1 lg:order-2 xl:max-w-[593px] transition-all duration-1000 transform hover:scale-[1.02] ${

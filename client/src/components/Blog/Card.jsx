@@ -34,7 +34,7 @@ const formatUploadDate = (dateString) => {
   return (
     <div className="max-w-sm bg-white border relative border-gray-300 rounded-lg shadow-lg overflow-hidden flex flex-col">
       <span className='px-4 rounded-xl bg-[#0000006c] backdrop-blur-md top-2 left-2 font-ElMessiri absolute text-white w-fit'>{category}</span>
-      <img src={`${image}`} alt={title} className="w-full h-64 object-fit" />
+      <img loading='lazy' width="auto" height="auto" src={`${image}`} alt={title} className="w-full h-64 object-fit" />
       <div className="p-4 flex flex-col justify-between flex-grow">
 
         <div className="text-xs text-gray-400 flex items-center space-x-1 font-ElMessiri">
@@ -48,7 +48,7 @@ const formatUploadDate = (dateString) => {
         {/* User information and button in a flex container */}
         <div className="mt-4 flex flex-wrap md:items-center justify-between">
           <div className='flex items-center  gap-4'>
-          <img src={UserPhoto} alt="" className=' w-16 h-16 rounded-full object-cover' />
+          <img loading='lazy' width="auto" height="auto" src={UserPhoto} alt="" className=' w-16 h-16 rounded-full object-cover' />
           <div>
             <p className="text-lg font-semibold text-gray-700 font-ElMessiri">{username}</p>
             <p className="text-xs text-gray-500">{designation}</p>

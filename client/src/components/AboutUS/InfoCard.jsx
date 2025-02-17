@@ -8,7 +8,7 @@ function InfoCard({Photo,Name,CardPosition,facebook,instagram,youtube}) {
   return (
     <>
         <div className='flec flex-col items-center justify-center px-6 py-4 infocardshadow rounded-md xl:px-8 w-fit h-fit xl:py-4 gap-3 bg-[#FCEBFF] '>
-            <img src={Photo} alt="" />
+            <img loading='lazy' width="auto" height="auto" src={Photo} alt="" />
             <div className='flex flex-col items-center justify-center py-2 gap-5 '>
                 <div className='flex flex-col items-center justify-center'>
                 <p className='font-ElMessiri font-bold text-center text-lg text-[#554075] w-full leading-5 '>{Name}</p>
@@ -16,9 +16,9 @@ function InfoCard({Photo,Name,CardPosition,facebook,instagram,youtube}) {
                 </div>
 
                 <div className='flex gap-5 bg-white px-5 py-1 '>
-                    <Link to={facebook} > <img src={Instagram} alt="" /> </Link>
-                    <Link to={instagram} > <img src={Facebook} alt="" /> </Link>
-                    <Link to={youtube} > <img src={Youtube} alt="" /> </Link>
+                    <Link to={facebook} > <img loading='lazy' width="auto" height="auto" src={Instagram} alt="" /> </Link>
+                    <Link to={instagram} > <img loading='lazy' width="auto" height="auto" src={Facebook} alt="" /> </Link>
+                    <Link to={youtube} > <img loading='lazy' width="auto" height="auto" src={Youtube} alt="" /> </Link>
                 </div>
 
             </div>

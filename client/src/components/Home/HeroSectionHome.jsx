@@ -34,12 +34,12 @@ function HeroSectionHome() {
     
     return (
         <div className="relative w-screen min-h-screen xl:min-h-max xl:h-screen  HeroGradient flex justify-end items-end xl:items-center 2xl:items-end 2xl:pb-24 overflow-hidden">
-            <img 
+            <img loading='lazy' width="auto" height="auto" 
                 src={Plant} 
                 alt="" 
                 className="absolute hidden plant-img  lg:block w-[25%] xl:w-[290px] 2xl:w-[290px] top-10 left-6 xl:top-5 2xl:top-10 xl:left-20 animate-float"
             />
-            <img 
+            <img loading='lazy' width="auto" height="auto" 
                 src={sparkling} 
                 alt="" 
                 className="absolute Sparkle hidden lg:block 2xl:w-[160px] top-32 xl:top-48 2xl:top-44 left-1/2 -translate-x-28 "
@@ -70,7 +70,7 @@ function HeroSectionHome() {
 </SecondaryBtn>
 
                         {/* <a href='/about-us' className="p-4 rounded-full bg-white hover:rotate-45 transition-transform duration-500">
-                            <img src={TiledArrow} alt="" />
+                            <img width="auto" height="auto" src={TiledArrow} alt="" />
                         </a> */}
                     </div>
                     <div className=" lg:pb-10 xl:pb-0 transform translate-x-[10%] hidden lg:flex items-center 2xl:gap-5 gap-2">
@@ -85,7 +85,7 @@ function HeroSectionHome() {
                 ))}
             </div>
                 </div>
- <img 
+ <img  width="auto" height="auto" 
                     src={Images[currentImg]} 
                     loading="eager" 
                     alt="" 
@@ -110,7 +110,7 @@ function HeroSectionHome() {
                     />
                 ))}
             </div>
-            <img 
+            <img width="auto" height="auto" 
                     src={Images1[currentImg]} 
                     loading="eager" 
                     alt="" 

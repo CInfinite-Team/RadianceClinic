@@ -38,7 +38,7 @@ function Stats() {
 />+
     </p>
     <p className='font-ElMessiri text-[#554075] text-center font-bold text-xl xl:text-3xl'>{data.text}</p>
-    <img src={data.img} alt="" className='max-w-[90px] xl:max-w-[117px] ' />
+    <img loading='lazy' width="auto" height="auto" src={data.img} alt="" className='max-w-[90px] xl:max-w-[117px] ' />
     </div>
 ))}
     </div>

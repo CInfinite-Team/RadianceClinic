@@ -33,7 +33,7 @@ function FillerContent(){
                     Transform Your Look, Transform Your Life</h4>
                     <p className='text-[#8C73B3] font-Inter font-bold pb-2 text-sm md:text-base xl:text-lg'>
                     Book your consultation today and take the first step toward revitalizing your hair and skin health.</p>
-                    <img src={BeforeAfter} alt="" className='w-full' />
+                    <img loading='lazy' width="auto" height="auto" src={BeforeAfter} alt="" className='w-full' />
                 </div>
             </div>
 

@@ -73,7 +73,7 @@ function SpecificBlog() {
 
           {/* Main Image */}
           {article.image && (
-            <img
+            <img loading='lazy' width="auto" height="auto"
               src={article.image}
               alt="Article header"
               className="w-full max-h-[550px] 2xl:max-h-[920px] object-cover rounded-lg"
@@ -86,7 +86,7 @@ function SpecificBlog() {
             <div className="w-48 flex-shrink-0">
               <div className="flex items-center mb-8 space-x-4">
                 {article.admin.profileImage && (
-                  <img
+                  <img  loading='lazy' width="auto" height="auto"
                     src={article.admin.profileImage}
                     alt="Admin profile"
                     className="w-12 h-12 object-cover rounded-full"

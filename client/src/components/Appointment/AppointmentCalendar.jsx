@@ -105,7 +105,7 @@ const AppointmentCalendar = ({ selectedDate, setSelectedDate, selectedTime, setS
   return (
     <div className="max-w-md relative mx-auto mt-10 md:p-6">
       <p className='font-bold text-center mb-2 text-[#554075]'>Appointment Date</p>
-      <img src={GrayFlower} alt="" className='absolute -top-20 z-0 w-[904px]' />
+      <img loading='lazy' width="auto" height="auto" src={GrayFlower} alt="" className='absolute -top-20 z-0 w-[904px]' />
 
       <div className='flex flex-col w-full items-center z-10 justify-between relative border border-[#9D74DC] p-2 mb-12 rounded bg-[#FDF2FF]'>
         {/* Calendar Header */}

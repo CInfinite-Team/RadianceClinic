@@ -31,7 +31,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
        
 
         <div className="text-center mb-6 pb-6">
-          <img src={Logo} alt="Logo" className="w-36 md:w-44" />
+          <img loading='lazy' width="auto" height="auto" src={Logo} alt="Logo" className="w-36 md:w-44" />
         </div>
 
         {/* Navigation Links */}
@@ -41,7 +41,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             className={`flex items-center text-[#463660] hover:font-bold text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'dashboard' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('dashboard')}
           >
-            <img
+            <img loading='lazy' width="auto" height="auto"
               src={dashboard}
               className="mr-2 w-8 h-8 "
               alt="Dashboard"
@@ -53,7 +53,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'appointments' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('appointments')}
           >
-            <img
+            <img  loading='lazy' width="auto" height="auto"
               src={appointments}
               className="mr-2 w-7 h-7"
               alt="Appointments"
@@ -65,7 +65,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'leads' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('leads')}
           >
-            <img
+            <img loading='lazy' width="auto" height="auto"
               src={leads}
               className="mr-2 w-8 h-8"
               alt="Leads"
@@ -77,7 +77,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'forms' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('forms')}
           >
-            <img
+            <img loading='lazy' width="auto" height="auto"
               src={forms}
               className="mr-2 w-6 h-6 "
               alt="Forms"
@@ -89,7 +89,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'blogs' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('blogs')}
           >
-            <img
+            <img loading='lazy' width="auto" height="auto"
               src={Blog}
               className="mr-2 w-6 h-6 "
               alt="Blog"
@@ -101,7 +101,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             className={`flex items-center text-[#463660] hover:font-bold  text-sm sm:text-base md:text-lg transition-all duration-200 ${selectedLink === 'Delblogs' ? 'font-bold' : ''}`}
             onClick={() => handleLinkClick('Delblogs')}
           >
-            <img
+            <img loading='lazy' width="auto" height="auto"
               src={DeleteBlog}
               className="mr-2 w-5 h-5 "
               alt="Blog"

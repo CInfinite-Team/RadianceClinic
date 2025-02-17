@@ -48,7 +48,7 @@ const TestimonialSlide = ({ data }) => {
         </div>{" "}
         <div className="p-2 md:p-3 z-10 lg:p-4 rounded-full bg-white absolute right-0 bottom-0">
           {" "}
-          <img src={InvertedComa} alt="Inverted Coma" className="w-8" />{" "}
+          <img loading='lazy' width="auto" height="auto" src={InvertedComa} alt="Inverted Coma" className="w-8" />{" "}
         </div>{" "}
       </div>{" "}
       <div className="flex flex-col">

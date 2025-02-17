@@ -77,12 +77,12 @@ function ContactForm() {
   return (
     <>
       <div className="relative">
-        <img
+        <img loading='lazy' width="auto" height="auto"
           src={leftVector}
           alt=""
           className="absolute hidden md:block -bottom-20 -left-48 xl:-left-72 z-0 max-w-[218px] xl:max-w-[303px]"
         />
-        <img
+        <img loading='lazy' width="auto" height="auto"
           src={rightVector}
           alt=""
           className="absolute hidden md:block -bottom-20 -right-48 xl:-right-72 z-0 max-w-[218px] xl:max-w-[303px]"

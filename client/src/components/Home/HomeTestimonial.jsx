@@ -97,21 +97,21 @@ function HomeTestimonial() {
       <div id="testimonial-section" className="py-10 bg-[#FDF2FF] relative overflow-hidden">
         <div className="flex flex-col justify-center relative items-center md:min-h-screen w-screen bg-[#FDF2FF]">
           {/* Background Images */}
-          <img
+          <img loading='lazy' width="auto" height="auto"
             src={WhitePlant}
             alt=""
             className={`absolute hidden md:block -bottom-20 xl:bottom-16 2xl:-bottom-8 left-0 mix-blend-plus-lighter max-w-[343px] z-0 transition-all duration-1000 delay-300 transform ${
               isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
             }`}
           />
-          <img
+          <img loading='lazy' width="auto" height="auto"
             src={Leaf}
             alt=""
             className={`absolute md:right-20 top-1/2 right-0 md:top-36 lg:top-28 xl:top-20 max-w-[343px] z-0 transition-all duration-1000 delay-300 transform ${
               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             } animate-float`}
           />
-          <img
+          <img loading='lazy' width="auto" height="auto"
             src={Whiteobject}
             alt=""
             className={`absolute bottom-5 right-[10vw] lg:right-[20vw] xl:right-[30vw] md:bottom-20 lg:bottom-7 xl:bottom-24 max-w-[200px] z-0 transition-all duration-1000 delay-300 transform ${

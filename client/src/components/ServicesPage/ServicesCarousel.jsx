@@ -51,7 +51,7 @@ const Servicescarousel = ({Data,Title}) => {
 
   return (
     <div className="w-full mx-auto px-4 py-8">
-    <h1 className='font-ElMessiri text-[#554075] text-center mb-8 font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,50px)'}}>{Title}</h1>
+    <h2 className='font-ElMessiri text-[#554075] text-center mb-8 font-bold leading-tight ' style={{fontSize:'clamp(28px,4vw,50px)'}}>{Title}</h2>
       
       <div className="md:px-8">
         <Slider {...settings}>
@@ -59,7 +59,7 @@ const Servicescarousel = ({Data,Title}) => {
             <div key={index} className="px-4">
              <a href={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(treatment))}&Title=${encodeURIComponent(Title)}`} className="flex flex-col items-center">
                 <div className="rounded-full border-[6px] border-[#7491A1] p-1 mb-4">
-                  <img
+                  <img loading='lazy' width="auto" height="auto"
                     src={treatment.image}
                     alt={treatment.title}
                     className=" w-32 h-32 md:w-48 md:h-48 rounded-full object-cover"

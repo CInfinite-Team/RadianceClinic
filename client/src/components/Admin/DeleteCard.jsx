@@ -48,20 +48,20 @@ const DeleteCard = ({
       <span className="px-4 rounded-xl bg-[#0000006c] backdrop-blur-md top-2 left-2 font-ElMessiri absolute text-white w-fit">
         {category}
       </span>
-      <img src={`${image}`} alt={title} className="w-full h-64 object-fit" />
+      <img width="auto" height="auto" loading='lazy' src={`${image}`} alt={title} className="w-full h-64 object-fit" />
       <div className="p-4 flex flex-col justify-between flex-grow">
         <div className="text-xs text-gray-400 flex items-center space-x-1 font-ElMessiri">
           <span>{formatUploadDate(uploadDate)}</span>
           <span className="text-gray-400">·</span>
           <span>{timeAgo(uploadDate)}</span>
         </div>
-        <h3 className="text-xl font-bold text-[#554075] font-ElMessiri">{title}</h3>
+        <h2 className="text-xl font-bold text-[#554075] font-ElMessiri">{title}</h2>
         <p className="text-sm text-gray-600 mt-2"> {truncateText(description, 100)}</p>
 
         {/* User information and button in a flex container */}
         <div className="mt-4 flex flex-col justify-between">
           <div className="flex items-center gap-4">
-            <img src={UserPhoto} alt="" className="w-16 h-16 rounded-full object-cover" />
+            <img width="auto" height="auto" loading='lazy' src={UserPhoto} alt="" className="w-16 h-16 rounded-full object-cover" />
             <div>
               <p className="text-lg font-semibold text-gray-700 font-ElMessiri">{username}</p>
               <p className="text-xs text-gray-500">{designation}</p>

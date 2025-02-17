@@ -17,13 +17,13 @@ function ContactPlate() {
         <div className={`flex fixed -right-1 rounded-s-lg top-1/2 z-20 bg-white pr-4 justify-start items-center gap-2 p-2 border-2 border-[#997EC1] w-[300px] max-h-[77px] transition-all duration-500 ${IsOpen ? 'translate-x-0' : 'translate-x-[68%]'} `}>
             <button onClick={ToggleVisibility} className='w-fit bg-transparent h-fit text-[#997EC1] '>{IsOpen ? (<ChevronRight  />) :   (<ChevronLeft/>)}</button>
             
-            <a href="/"><img src={Logo} alt="" className={` ${IsOpen ? 'hidden' : ''} w-16`} /></a>
+            <a href="/"><img loading='lazy' width="auto" height="auto" src={Logo} alt="" className={` ${IsOpen ? 'hidden' : ''} w-16`} /></a>
 
             <div className='flex justify-between items-center w-full '>
-                <a href="/"><img src={Phone} alt="" /></a>
-                <a href="/"><img src={Whatsapp} alt="" /></a>
-                <a href="/"><img src={Email} alt="" /></a>
-                <a href="/"><img src={Logo} alt="" className='w-11' /></a>
+                <a href="/"><img loading='lazy' width="auto" height="auto" src={Phone} alt="" /></a>
+                <a href="/"><img loading='lazy' width="auto" height="auto" src={Whatsapp} alt="" /></a>
+                <a href="/"><img loading='lazy' width="auto" height="auto" src={Email} alt="" /></a>
+                <a href="/"><img  loading='lazy' width="auto" height="auto" src={Logo} alt="" className='w-11' /></a>
             </div>
         </div>
     </>

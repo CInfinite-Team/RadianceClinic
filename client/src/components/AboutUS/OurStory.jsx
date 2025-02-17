@@ -12,9 +12,9 @@ function OurStory() {
         
         <div className='flex flex-col gap-8 order-2 lg:order-1'>
           <div className='flex flex-col'>
-            <h1 className='font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
+            <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
               Our Story
-            </h1>
+            </h2>
             <p className='text-[#B2A6CE] font-Inter font-semibold animate-fadeIn animation-delay-200' style={{ fontSize: 'clamp(18px,1.5vw,22px)' }}>
               Our Journey Towards Excellence
             </p>
@@ -32,10 +32,10 @@ function OurStory() {
         </div>
 
         <div className='px-10 pb-20 lg:p-20 z-10 order-1 lg:order-2'>
-          <img src={Logo} alt="" className='w-[317px] animate-fadeIn animation-delay-800' />
+          <img loading='lazy' width="auto" height="auto" src={Logo} alt="" className='w-[317px] animate-fadeIn animation-delay-800' />
         </div>
 
-        <img src={GrayFlower} alt="" className='absolute bottom-0 right-0 z-0 max-w-[300px] animate-fadeIn animation-delay-1000' />
+        <img loading='lazy' width="auto" height="auto" src={GrayFlower} alt="" className='absolute bottom-0 right-0 z-0 max-w-[300px] animate-fadeIn animation-delay-1000' />
       </div>
     </>
   );

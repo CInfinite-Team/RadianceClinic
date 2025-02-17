@@ -46,7 +46,7 @@ console.log(treatmentData.CardTitle)
             
 {/* Information card */}
             <div className='flex flex-col  lg:flex-row bg-[#E2DBFF] p-4 md:p-8 shadow-2xl items-center gap-10 justify-between w-full'>
-           {Show && <img src={Show.Coverimage} alt="" className='md:w-[60%] lg:w-[40%]' />}
+           {Show && <img  loading='lazy' width="auto" height="auto" src={Show.Coverimage} alt="" className='md:w-[60%] lg:w-[40%]' />}
                 <div className='flex flex-col items-center md:items-start  gap-5 lg:w-[53%]'>
 
                 <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight text-center md:text-left' style={{fontSize:'clamp(36px,4vw,60px)'}}>What is {Show ? Show.CardTitle : 'Loading....'}</h2>
@@ -71,7 +71,7 @@ console.log(treatmentData.CardTitle)
                 {Show ? Show.approach : 'Loading....'}  </p>
 
                 {Show &&
-                  <img src={Show.Processimage} alt="" className='w-[80%] ' />}
+                  <img loading='lazy' width="auto" height="auto" src={Show.Processimage} alt="" className='w-[80%] ' />}
 
                 </div>
 
@@ -88,7 +88,7 @@ console.log(treatmentData.CardTitle)
 
               
               <div className='flex flex-col relative bg-[#E2DBFF] shadow-xl items-center justify-start gap-10 p-5 w-[300px]'>
-              <img src={GrayFlower} alt="" className='absolute bottom-0 right-0 w-[70%] ' />
+              <img loading='lazy' width="auto" height="auto" src={GrayFlower} alt="" className='absolute bottom-0 right-0 w-[70%] ' />
                 <h2 className='font-ElMessiri text-[#554075] z-10 font-bold leading-tight text-center ' style={{fontSize:'clamp(36px,4vw,60px)'}}>Diagonise</h2>
                 <h2 className='font-ElMessiri text-[#554075] z-10 font-bold text-center text-9xl leading-[100px]' >1</h2>
                 <p className='text-[#554075] font-bold text-center z-10  '> {Show ? Show.Diagnose : 'Loading....'} </p>
@@ -96,7 +96,7 @@ console.log(treatmentData.CardTitle)
 
 
               <div className='flex relative flex-col bg-[#E2DBFF] shadow-xl items-center justify-start gap-10 p-5 w-[300px]'>
-              <img src={GrayFlower} alt="" className='absolute bottom-0 right-0 w-[70%] ' />
+              <img loading='lazy' width="auto" height="auto" src={GrayFlower} alt="" className='absolute bottom-0 right-0 w-[70%] ' />
 
                 <h2 className='font-ElMessiri text-[#554075] z-10 font-bold leading-tight text-center ' style={{fontSize:'clamp(36px,4vw,60px)'}}>TREAT</h2>
                 <h2 className='font-ElMessiri text-[#554075] z-10 font-bold text-center text-9xl leading-[100px]' >2</h2>
@@ -104,7 +104,7 @@ console.log(treatmentData.CardTitle)
               </div>
 
               <div className='flex relative flex-col bg-[#E2DBFF] shadow-xl items-center justify-start gap-10 p-5 w-[300px]'>
-              <img src={GrayFlower} alt="" className='absolute bottom-0 right-0 w-[70%] ' />
+              <img loading='lazy' width="auto" height="auto" src={GrayFlower} alt="" className='absolute bottom-0 right-0 w-[70%] ' />
 
                 <h2 className='font-ElMessiri text-[#554075] font-bold z-10 leading-tight text-center ' style={{fontSize:'clamp(36px,4vw,60px)'}}>MAINTAIN</h2>
                 <h2 className='font-ElMessiri text-[#554075] font-bold z-10 text-center text-9xl leading-[100px]' >3</h2>
@@ -117,7 +117,7 @@ console.log(treatmentData.CardTitle)
         </div>
 
         <div className={`flex flex-col ${Title ==='HAIR' ? '' : 'hidden'}  lg:flex-row bg-[#E2DBFF] p-4 md:p-8 shadow-2xl items-center gap-10 justify-between w-full`}>
-            <img src={AfterCare} alt="" className='md:w-[60%] lg:w-[40%]' />
+            <img loading='lazy' width="auto" height="auto" src={AfterCare} alt="" className='md:w-[60%] lg:w-[40%]' />
                 <div className='flex flex-col items-center md:items-start  gap-5 lg:w-1/2'>
 
                 <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight text-center md:text-left' style={{fontSize:'clamp(36px,4vw,60px)'}}>AFTERCARE</h2>
@@ -147,7 +147,7 @@ At Dr. Barde's Radiance, we understand that hair restoration is a personal journ
 
 </div>
 
-<img src={Clinic} alt="" className='lg:max-w-[45%] xl:max-w-[460px] order-1 lg:order-2 ' />
+<img loading='lazy' width="auto" height="auto" src={Clinic} alt="" className='lg:max-w-[45%] xl:max-w-[460px] order-1 lg:order-2 ' />
 
 </div>
 

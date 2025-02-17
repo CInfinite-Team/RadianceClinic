@@ -73,9 +73,9 @@ const Blog = () => {
       <HeroSectionAll Title={'Blog'} Path={'Home'} SubPath={'Blog'} />
 
       <div className="min-h-screen bg-gray-100 flex flex-col py-8 p-5 xl:p-10">
-        <h1 className='font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
+        <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
           Blogs
-        </h1>
+        </h2>
         <p className="text-lg text-gray-600 text-left mb-4 font-ElMessiri ">Discover expert insights, hair care tips, and inspiring stories to help you embrace confidence and radiance every day.</p>
 
         {/* Button for category filtering */}

@@ -56,13 +56,13 @@ function FormDetailPopup({data,onClose,selectedLink}) {
 }
             </div>
 
-            <img src={PopupOverlay1} className='absolute object-cover mix-blend-multiply z-0 left-0 bottom-0' alt="" />
+            <img width="auto" height="auto" loading='lazy' src={PopupOverlay1} className='absolute object-cover mix-blend-multiply z-0 left-0 bottom-0' alt="" />
 
             </div>
 
             <div className='flex flex-col relative text-[#463660] w-full gap-5 pl-3 p-8 '
             >
-            <img src={PopupOverlay2} className='absolute object-cover  w-full h-full z-0 right-0 bottom-0'  alt="" />
+            <img width="auto" height="auto" loading='lazy' src={PopupOverlay2} className='absolute object-cover  w-full h-full z-0 right-0 bottom-0'  alt="" />
 
 <div className='flex flex-col gap-4 z-10'>
                 <p>{selectedLink ==='leads' ? 'Message: '+data.message : selectedLink ==='appointments' ? 'Message: '+data.message : selectedLink ==='forms' ? 'Adress: '+data.address : 'Adress :N/A'}</p>

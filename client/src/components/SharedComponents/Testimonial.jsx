@@ -50,9 +50,9 @@ function Testimonial() {
     <Slider className='overflow-hidden h-[850px] md:h-[750px] lg:h-[800px] pt-10 bg-[#FDF2FF]' {...sliderSettings}>
       {TestimonialData.map((data, index) => (
         <div key={index} className='flex flex-col justify-center relative items-center md:min-h-screen w-screen bg-[#FDF2FF]'>
-          <img src={WhitePlant} alt="" className='absolute !hidden md:!block -bottom-20 xl:bottom-16 2xl:-bottom-8 left-0 mix-blend-plus-lighter max-w-[343px] z-0' />
-          <img src={Leaf} alt="" className='absolute md:right-20 top-1/2 right-0 md:top-36 lg:top-28 xl:top-20 max-w-[343px] z-0' />
-          <img src={Whiteobject} alt="" className='absolute bottom-5 right-[10vw] lg:right-[20vw] xl:right-[30vw] md:bottom-20 lg:bottom-7 xl:bottom-24 max-w-[200px] z-0' />
+          <img loading='lazy' width="auto" height="auto" src={WhitePlant} alt="" className='absolute !hidden md:!block -bottom-20 xl:bottom-16 2xl:-bottom-8 left-0 mix-blend-plus-lighter max-w-[343px] z-0' />
+          <img loading='lazy' width="auto" height="auto" src={Leaf} alt="" className='absolute md:right-20 top-1/2 right-0 md:top-36 lg:top-28 xl:top-20 max-w-[343px] z-0' />
+          <img loading='lazy' width="auto" height="auto" src={Whiteobject} alt="" className='absolute bottom-5 right-[10vw] lg:right-[20vw] xl:right-[30vw] md:bottom-20 lg:bottom-7 xl:bottom-24 max-w-[200px] z-0' />
 
           <div className='flex flex-col justify-center mb-10 items-center gap-5'>
             <h2 className="font-bold font-ElMessiri text-[#554075] leading-tight text-center px-1 z-10" style={{ fontSize: 'clamp(36px,4vw,55px)' }}>

@@ -24,7 +24,7 @@ const ExploreClinic = () => {
         <div 
           className={`col-span-2 w-fit h-fit opacity-0 translate-y-4 transition-all duration-700 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
         >
-          <img 
+          <img loading='lazy' width="auto" height="auto" 
             src={Reception} 
             alt="Reception" 
             className="object-cover transition-transform duration-300 hover:z-50  hover:scale-105" 
@@ -34,7 +34,7 @@ const ExploreClinic = () => {
         <div 
           className={`w-fit h-fit opacity-0 translate-y-4 transition-all duration-700 delay-300 ease-out ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
         >
-          <img 
+          <img loading='lazy' width="auto" height="auto" 
             src={OperationTheater} 
             alt="Operation Theater" 
             className="object-cover transition-transform duration-300 hover:z-50  hover:scale-105" 
@@ -44,7 +44,7 @@ const ExploreClinic = () => {
         <div 
           className={`w-fit h-fit opacity-0 translate-y-4 transition-all duration-700 delay-400 ease-out ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
         >
-          <img 
+          <img loading='lazy' width="auto" height="auto" 
             src={Image3} 
             alt="Clinic Image" 
             className="object-cover transition-transform duration-300 hover:z-50  hover:scale-105" 
@@ -54,7 +54,7 @@ const ExploreClinic = () => {
         <div 
           className={`col-span-2 w-fit h-fit opacity-0 translate-y-4 transition-all duration-700 delay-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
         >
-          <img 
+          <img loading='lazy' width="auto" height="auto" 
             src={Operation2} 
             alt="Operation Room" 
             className="object-cover transition-transform duration-300 hover:z-50 hover:scale-105" 

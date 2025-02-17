@@ -260,7 +260,7 @@ function BlogAdd({ selectedLink }) {
                   {/* Content Sections */}
                   {formData.contentSections.map((section, index) => (
                     <div key={index} className="mt-6 p-4 border border-gray-200 rounded-lg bg-gray-50">
-                      <h3 className="font-medium text-gray-900">Content Section {index + 1}</h3>
+                      <h2 className="font-medium text-gray-900">Content Section {index + 1}</h2>
                       <div className="mt-4 space-y-4">
                         <div>
                           <label className="block text-sm font-medium text-gray-700">Heading</label>
@@ -366,7 +366,7 @@ function BlogAdd({ selectedLink }) {
 {
                      previewImage  && (
     <div className="mt-4 flex w-full justify-center">
-      <img
+      <img loading='lazy' width="auto" height="auto"
         src={previewImage}
         alt="Blog preview"
         className=" rounded-lg"
@@ -389,7 +389,7 @@ function BlogAdd({ selectedLink }) {
                       <div className="mt-4 flex items-center space-x-4">
                         {adminImage && (
                           <div className="w-16 h-16 rounded-full bg-gray-200 overflow-hidden">
-                            <img
+                            <img width="auto" height="auto"
                               src={URL.createObjectURL(adminImage)}
                               alt="Admin Preview"
                               className="w-full h-full object-cover"
@@ -425,7 +425,7 @@ function BlogAdd({ selectedLink }) {
                   {
                       previewAdminImage && (
     <div className="w-16 h-16 rounded-full overflow-hidden">
-      <img
+      <img width="auto" height="auto"
         src={previewAdminImage}
         alt="Admin preview"
         className="w-full h-full object-cover"

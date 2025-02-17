@@ -67,7 +67,7 @@ const SlidingBanner = (category) => {
             {/* Mobile Layout */}
             <div className="lg:hidden flex flex-col p-6 sm:p-8 h-full">
               <div className="aspect-[4/3] w-full mb-6">
-                <img
+                <img loading='lazy' width="auto" height="auto"
                   src={slides[currentIndex].image}
                   alt="Hair treatment visualization"
                   className="w-full h-full object-cover bg-[#554075] rounded-lg shadow-md"
@@ -95,9 +95,9 @@ const SlidingBanner = (category) => {
             <div className="hidden lg:flex items-center h-full p-16">
               <div className="flex flex-row items-center justify-between w-full gap-16">
                 <div className="flex-1 space-y-6 text-left">
-                  <h1 className="text-6xl font-bold text-[#554075] leading-tight font-ElMessiri">
+                  <h2 className="text-6xl font-bold text-[#554075] leading-tight font-ElMessiri">
                     {slides[currentIndex].title}
-                  </h1>
+                  </h2>
                   <p className="text-[#554075] text-lg">
                     {slides[currentIndex].description}
                   </p>
@@ -111,7 +111,7 @@ const SlidingBanner = (category) => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <img
+                  <img loading='lazy' width="auto" height="auto"
                     src={slides[currentIndex].image}
                     alt="Hair treatment visualization"
                     className="rounded-lg shadow-xl bg-[#554075] w-full h-auto object-cover max-w-md mx-auto"

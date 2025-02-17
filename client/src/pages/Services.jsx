@@ -17,7 +17,7 @@ function Services(category) {
       <Navbar />
       <SlidingBanner category={category} />
       <div className=' px-5 lg:px-10 gap-10 py-20'>
-      <h1 className='font-ElMessiri text-[#554075] font-bold leading-tight text-left' style={{fontSize:'clamp(36px,6vw,60px)'}}>Services that we offer</h1>
+      <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight text-left' style={{fontSize:'clamp(36px,6vw,60px)'}}>Services that we offer</h2>
 {(
      category.category ==='hair' ?
       <Servicescarousel Data={Hairtreatments} Title={'HAIR'} />

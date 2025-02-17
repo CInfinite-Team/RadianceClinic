@@ -36,7 +36,7 @@ const Footer = () => {
           <div className={`transition-all duration-700 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <h3 className="text-lg font-semibold mb-4  duration-300 transition-transform">Links</h3>
+            <h2 className="text-lg font-semibold mb-4  duration-300 transition-transform">Links</h2>
             <ul className="space-y-2">
               {["Book Appointment", "Hair Form", "Blog", "About Us", "Clinic", "Contact Us", "Quick Links"].map((item, index) => (
                 <li key={index} className={`transition-all duration-500 transform ${

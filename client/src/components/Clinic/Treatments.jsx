@@ -70,14 +70,14 @@ function Treatments() {
             isVisible ? 'translate-y-0' : 'translate-x-full'
           }`}
         >
-          <h4 
+          <h3 
             className={`font-ElMessiri text-[#554075] font-bold transition-all duration-500 delay-400 ease-out ${
               isVisible ? 'translate-y-0' : 'translate-x-full'
             }`}
             style={{fontSize:'clamp(20px,3vw,42px)'}}
           >
             Hair Treatment
-          </h4>
+          </h3>
           <p 
             className={`text-[#554075] pb-2 text-sm md:text-base xl:text-lg opacity-0 translate-y-2 transition-all duration-500 delay-500 ease-out ${
               isVisible ? 'opacity-100 translate-y-0' : ''
