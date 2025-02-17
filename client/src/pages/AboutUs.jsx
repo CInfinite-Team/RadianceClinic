@@ -14,8 +14,7 @@ import Radhika from '../assets/Aboutus/Radhika.svg'
 import Stats from '../components/AboutUS/Stats'
 import Testimonial from '../components/SharedComponents/Testimonial'
 import Footer from '../components/footer/Footer'
-
-
+import { Helmet } from 'react-helmet-async'
 
 function AboutUs() {
 
@@ -25,6 +24,18 @@ function AboutUs() {
 
   return (
   <>
+  <Helmet>
+    <title>About Us – Radiance Skin Anti-Aging & Hair Transplant
+    Clinic, Nagpur</title>
+    <meta
+    name="description"
+    content="Learn about Radiance Clinic, a leading skin and hair
+    treatment center in Nagpur. Meet our expert team and discover our
+    commitment to advanced cosmetic dermatology."
+    />
+    <link rel="canonical" href="https://radianceclinic.co.in/about-us"
+    />
+  </Helmet>
   <Navbar />
   <HeroSectionAll Title={'About Us'} Path={'Home'} SubPath={'About Us'} />
   <OurStory />
