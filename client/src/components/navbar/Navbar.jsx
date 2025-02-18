@@ -1,15 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Logo from "../../assets/logo.svg";
+import { Hairtreatments, Skintreatments, LaserTreatments, AntiAgingTreatments, CosmeticTreatments } from '../ServicesPage/Treatments';
 
 const serviceItems = {
-  hair: ['Hair Loss Treatment', 'Hair Transplant', 'PRP Treatment'],
-  skin: ['Acne Treatment', 'Skin Brightening', 'Chemical Peels'],
-  laser: ['Hair Removal', 'Skin Resurfacing', 'Tattoo Removal'],
-  'anti-aging': ['Botox', 'Fillers', 'Thread Lift'],
-  'cosmetic-surgery': ['Rhinoplasty', 'Liposuction', 'Face Lift']
+  hair: {
+    category: 'Hair',
+    treatments: Hairtreatments
+  },
+  skin: {
+    category: 'Skin',
+    treatments: Skintreatments
+  },
+  laser: {
+    category: 'Laser',
+    treatments: LaserTreatments
+  },
+  'anti-aging': {
+    category: 'Anti-Aging',
+    treatments: AntiAgingTreatments
+  },
+  'cosmetic-surgery': {
+    category: 'Cosmetic-Surgery',
+    treatments: CosmeticTreatments
+  }
 };
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,20 +94,22 @@ const Navbar = () => {
                   <svg className="w-4 h-4 ml-1 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5h10z" /></svg>
                 </button>
                 <ul className={`absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-md transition-all duration-300 ${activeSubmenu === 'services' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-5'}`}>
-                  {Object.keys(serviceItems).map((service) => (
-                    <li key={service} className="relative group/submenu">
+                  {Object.entries(serviceItems).map(([key, category]) => (
+                    <li key={key} className="relative group/submenu">
                       <div className="flex items-center justify-between text-black hover:bg-gray-100 hover:text-[#725B98] cursor-pointer">
-                        <Link to={`/services/${service}`} className=' px-4 py-2 w-full '>
-                          {service.charAt(0).toUpperCase() + service.slice(1).replace('-', ' ')}
+                        <Link to={`/services/${category.category}`} className=' px-4 py-2 w-full '>
+                          {category.category}
                         </Link>
                         <svg className="w-4 h-4 ml-1 lg:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5h10z" /></svg>
                         </div>
                       <ul className="absolute left-full top-0 w-48 bg-white border border-gray-200 rounded shadow-md opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300">
-                        {serviceItems[service].map((item) => (
-                          <li key={item}>
-                            <Link to={`/services/${service}/${item.toLowerCase().replace(/\s+/g, '-')}`} 
-                                  className="block px-4 py-2 text-black hover:bg-gray-100 hover:text-[#725B98]">
-                              {item}
+                        {category.treatments.map((treatment) => (
+                          <li key={treatment.CardTitle}>
+                             <Link 
+                              to={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(treatment))}&Title=${encodeURIComponent(category.category)}`}
+                              className="block px-4 py-2 text-black hover:bg-gray-100 hover:text-[#725B98]"
+                            >
+                              <div className="text-sm font-medium">{treatment.CardTitle}</div>
                             </Link>
                           </li>
                         ))}
@@ -142,25 +161,25 @@ const Navbar = () => {
               
                 </button>
                 <ul className={`pl-4 space-y-2 transition-all duration-300 ${activeMobileMenus.services ? 'block' : 'hidden'}`}>
-                  {Object.keys(serviceItems).map((service) => (
-                    <li key={service}>
-                      <button  onClick={() => toggleMobileSubmenu(service)}
+                {Object.entries(serviceItems).map(([key, category]) => (
+                    <li key={key}>
+                      <button  onClick={() => toggleMobileSubmenu(key)}
                        
                         className="w-full text-left px-4 py-2 text-black hover:text-[#725B98] flex items-center justify-between"
                       >
-                       <a  href={`/services/${service}`} className='w-[80%]'>{service.charAt(0).toUpperCase() + service.slice(1).replace('-', ' ')}</a> 
-                        <svg className={`w-4 h-4 ml-1 lg:hidden  ${activeMobileSubmenu === service ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5h10z" /></svg>
+                       <a  href={`/services/${category.category}`} className='w-[80%]'>  {category.category}</a> 
+                        <svg className={`w-4 h-4 ml-1 lg:hidden  ${activeMobileSubmenu === key ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5h10z" /></svg>
 
                       </button>
-                      <ul className={`pl-4 space-y-2 transition-all duration-300 ${activeMobileSubmenu === service ? 'block' : 'hidden'}`}>
-                        {serviceItems[service].map((item) => (
-                          <li key={item}>
+                      <ul className={`pl-4 space-y-2 transition-all duration-300 ${activeMobileSubmenu === key ? 'block' : 'hidden'}`}>
+                      {category.treatments.map((treatment) => (
+                          <li key={treatment.CardTitle}>
                             <Link
-                              to={`/services/${service}/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                              className="block px-4 py-2 text-black hover:text-[#725B98]"
-                            >
-                              {item}
-                            </Link>
+                                to={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(treatment))}&Title=${encodeURIComponent(category.category)}`}
+                                className="block px-4 py-2 text-black hover:text-[#725B98]"
+                              >
+                                <div className="text-sm font-medium">{treatment.CardTitle}</div>
+                              </Link>
                           </li>
                         ))}
                       </ul>

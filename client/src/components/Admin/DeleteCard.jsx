@@ -17,7 +17,6 @@ const DeleteCard = ({
   const [ShowPopUp, SetShowPopUp] = useState(false);
 
   const truncateText = (text, maxLength) => {
-    console.log(UserPhoto);
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
   };
 
