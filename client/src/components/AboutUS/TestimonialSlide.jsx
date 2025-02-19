@@ -21,7 +21,7 @@ const TestimonialSlide = ({ data }) => {
       {" "}
       <div className="w-[180px] h-[180px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[260px] relative aspect-square rounded-full">
         {" "}
-        <div className="z-10 overflow-hidden rounded-full w-full h-full bg-black relative">
+        <div className="z-10 overflow-hidden group rounded-full w-full h-full bg-black relative">
           {" "}
           <video
             ref={videoRef}
@@ -33,7 +33,7 @@ const TestimonialSlide = ({ data }) => {
           />{" "}
           <button
             onClick={handleVideoClick}
-            className="bg-[#ffffff86] p-2 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-500 hover:scale-110"
+            className={`${isPlaying ? 'opacity-0' : ''} group-hover:opacity-100 bg-[#ffffff86] p-2 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-500 hover:scale-110`}
           >
             {" "}
             <span className="bg-[#ffffff94] rounded-full w-12 h-12 flex items-center justify-center">

@@ -49,7 +49,7 @@ export const TestimonialHomeHair=[
 },
 
 {
-        video:'Neha_Review_Acne',
+        video: Neha_Review_Acne,
         Treatment:'Achne Treatment',
         Name:'Neha',
     //     Position:'Lawyer',
