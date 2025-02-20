@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './pages/Home';
-import BookAppointment from './pages/BookAppointment';
-import PrivateRoute from './components/Admin/PrivateRoute';
-import Services from './pages/Services';
-import AboutUs from './pages/AboutUs';
-import Clinic from './pages/Clinic';
-import Blog from './pages/Blog';
-import ContactUs from './pages/ContactUs';
-import SkinForm from './pages/SkinForm';
-import HairForm from './pages/HairForm';
-import Dashboard from './pages/Admin/Dashboard';
-import SpecificService from './pages/SpecificService';
-import Login from './components/Admin/Login';
-import QuickLinks from './pages/QuickLinks';
-import FormDetailPopup from './components/Admin/FormDetailPopup';
-import QuickLinkDescription from './components/QuickLinks/QuickLinkDescription';
-import SpecificBlogPage from './pages/SpecificBlogPage';
+import LoadingAnimation from './components/Loading/LoadingAnimation';
+const Home = lazy(() => import('./pages/Home'));
+const BookAppointment = lazy(() => import('./pages/BookAppointment'));
+const PrivateRoute = lazy(() => import('./components/Admin/PrivateRoute'));
+const Services = lazy(() => import('./pages/Services'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const Clinic = lazy(() => import('./pages/Clinic'));
+const Blog = lazy(() => import('./pages/Blog'));
+const ContactUs = lazy(() => import('./pages/ContactUs'));
+const SkinForm = lazy(() => import('./pages/SkinForm'));
+const HairForm = lazy(() => import('./pages/HairForm'));
+const Dashboard = lazy(() => import('./pages/Admin/Dashboard'));
+const SpecificService = lazy(() => import('./pages/SpecificService'));
+const Login = lazy(() => import('./components/Admin/Login'));
+const QuickLinks = lazy(() => import('./pages/QuickLinks'));
+const FormDetailPopup = lazy(() => import('./components/Admin/FormDetailPopup'));
+const QuickLinkDescription = lazy(() => import('./components/QuickLinks/QuickLinkDescription'));
+const SpecificBlogPage = lazy(() => import('./pages/SpecificBlogPage'));
+
 function App() {
 
   const router = createBrowserRouter([
@@ -298,8 +300,11 @@ function App() {
     { path: '/dermatologist-in-jabalpur', element: <QuickLinkDescription/> },
   ]);
 
-  return <RouterProvider router={router} />;
-
+  return (
+    <Suspense fallback={<LoadingAnimation />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { para } from './Paragraph';
-import Logo from '../../assets/SharedAssets/Logo.png';
+import Logo from "../../assets/logo.svg";
 import GrayFlower from '../../assets/SharedAssets/GrayFlower.svg';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Appointment from '../../assets/SharedAssets/Appointment';
