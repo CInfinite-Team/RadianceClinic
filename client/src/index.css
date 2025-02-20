@@ -90,6 +90,14 @@ html,body{
     opacity: 0;
   }
 }
+@media (min-width: 1920px) and (max-height: 1080px) {
+  .plant-img {
+    opacity: 0; 
+  }
+  .Sparkle {
+    opacity: 0;
+  }
+}
 @media (min-width: 1024px) and (max-height: 674px) {
   .plant-img {
     opacity: 0; 
