@@ -11,7 +11,7 @@ import HeroImg22 from '../../assets/Home/Image2.png';
 import HeroImg33 from '../../assets/Home/Image3.png';
 import Plant from '../../assets/Home/plant.png';
 import sparkling from '../../assets/Home/sparkling.svg';
-import TiledArrow from '../../assets/SharedAssets/TiledArrow.svg';
+// import TiledArrow from '../../assets/SharedAssets/TiledArrow.svg';
 
 function HeroSectionHome() {
     const [currentImg, setCurrentImg] = useState(0);
@@ -98,7 +98,6 @@ function HeroSectionHome() {
                
             </div>
 
-            {/* Move the indicator div outside the content but inside the outermost container */}
             <div className="absolute bottom-5 left-1/2 lg:left-[22%] lg:hidden lg:bottom-9 transform -translate-x-1/2 flex items-center gap-2">
                 {Array.from({ length: Images.length }).map((_, index) => (
                     <div
