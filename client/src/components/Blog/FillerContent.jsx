@@ -22,7 +22,7 @@ function FillerContent(){
                         <h4 className='font-Inter text-[#E2DBFF] font-bold' style={{ fontSize: 'clamp(20px,3vw,42px)' }}>
                             Empowered Beauty, Expertly Delivered.</h4>
                         <p className='text-[#E2DBFF] font-Inter font-bold pb-2 text-sm md:text-base xl:text-lg'>
-                            Explore personalized treatments for hair restoration and skincare that redefine beauty and self-confidence at Dr Barde’s Radience.</p>
+                            Explore personalized treatments for hair restoration and skincare that redefine beauty and self-confidence at Dr Barde’s Radiance.</p>
                         <SecondaryBtn className='w-full md:w-fit items-center justify-center'>Book Appointment <Appointment size={'24px'} /></SecondaryBtn>
                     </div>
                 </div>

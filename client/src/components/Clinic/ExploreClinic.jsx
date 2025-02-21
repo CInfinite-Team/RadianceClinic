@@ -20,14 +20,14 @@ const ExploreClinic = () => {
         Explore The Clinic
       </h2>
 
-      <div className="grid grid-cols-3 gap-2 md:gap-4 lg:gap-5 w-full">
+      <div className="grid grid-cols-3 gap-2 md:gap-4 lg:gap-5 w-full ">
         <div 
           className={`col-span-2 w-fit h-fit opacity-0 translate-y-4 transition-all duration-700 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
         >
           <img loading='lazy' width="auto" height="auto" 
             src={Reception} 
             alt="Reception" 
-            className="object-cover transition-transform duration-300 hover:z-50  hover:scale-105" 
+            className="object-cover w-[200vh] transition-transform duration-300 hover:z-50  hover:scale-105" 
           />
         </div>
         
@@ -37,7 +37,7 @@ const ExploreClinic = () => {
           <img loading='lazy' width="auto" height="auto" 
             src={OperationTheater} 
             alt="Operation Theater" 
-            className="object-cover transition-transform duration-300 hover:z-50  hover:scale-105" 
+            className="object-cover w-[200vh] transition-transform duration-300 hover:z-50  hover:scale-105" 
           />
         </div>
         
@@ -47,7 +47,7 @@ const ExploreClinic = () => {
           <img loading='lazy' width="auto" height="auto" 
             src={Image3} 
             alt="Clinic Image" 
-            className="object-cover transition-transform duration-300 hover:z-50  hover:scale-105" 
+            className="object-cover w-[200vh] transition-transform duration-300 hover:z-50  hover:scale-105" 
           />
         </div>
         
@@ -57,7 +57,7 @@ const ExploreClinic = () => {
           <img loading='lazy' width="auto" height="auto" 
             src={Operation2} 
             alt="Operation Room" 
-            className="object-cover transition-transform duration-300 hover:z-50 hover:scale-105" 
+            className="object-cover w-[200vh] transition-transform duration-300 hover:z-50 hover:scale-105" 
           />
         </div>
       </div>
