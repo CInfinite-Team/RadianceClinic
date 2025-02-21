@@ -138,6 +138,14 @@ html,body{
   .slick-dots{
     bottom: 70px !important;
   }
+
+  @media (min-width: 1200px)  {
+    .slick-dots{
+      bottom: -20px !important;
+    }
+   
+  }
+
   .slick-dots li button:before{
     font-size: 18px !important;
     color: #554075 !important;

@@ -8,7 +8,7 @@ import Whiteobject from '../../assets/SharedAssets/Whiteobject.svg';
 import { TestimonialHomeHair, TestimonialHomeSkin, TestimonialHomeLaser } from '../Home/TestimonialHomeData';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import BookInterest from './BookInterest';
-import TestimonialCard from './TestimonialCard';
+import TestimonialCardNew from './TestimonialCardNew';
 
 function HomeTestimonial() {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,16 +45,16 @@ function HomeTestimonial() {
     infinite: true,
     speed: 1000,
     fade: false,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 2,
+    slidesToScroll: 2,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 1400,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
@@ -95,7 +95,7 @@ function HomeTestimonial() {
       </div>
       
       <div id="testimonial-section" className="py-10 bg-[#FDF2FF] relative overflow-hidden">
-        <div className="flex flex-col justify-center relative items-center md:min-h-screen w-screen bg-[#FDF2FF]">
+        <div className="flex flex-col justify-center relative items-center  w-screen bg-[#FDF2FF]">
           {/* Background Images */}
           <img loading='lazy' width="auto" height="auto"
             src={WhitePlant}
@@ -136,9 +136,9 @@ function HomeTestimonial() {
           <div className={`w-full md:px-32 lg:px-12 transition-all delay-300 duration-700 transform ${
             isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
           }`}>
-            <Slider className='sm:h-[650px] lg:h-[740px] px-7 md:px-0' {...sliderSettings}>
+            <Slider className='sm:h-[450px] lg:h-[440px] 2xl:h-full px-7 md:px-0' {...sliderSettings}>
               {selectedData.map((data, index) => (
-                <TestimonialCard
+                <TestimonialCardNew
                   key={index}
                   data={data}
                   index={index}
