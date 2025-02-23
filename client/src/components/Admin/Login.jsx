@@ -110,7 +110,7 @@ const Login = () => {
         <div className="w-full max-w-md z-50 backdrop-blur-sm py-5 p-2 rounded-md bg-[#ffffff83]">
           <div className=" mb-5">
           <div className="mb-2 flex justify-center">
-            <img  loading='lazy' width="auto" height="auto" src={Logo} loading="eager"  width={'auto'} height={'auto'} className="w-[260px] md:w-[360px] pt-1"/>
+            <img  src={Logo} loading="eager"  width={'auto'} height={'auto'} className="w-[260px] md:w-[360px] pt-1"/>
           </div>
           
           

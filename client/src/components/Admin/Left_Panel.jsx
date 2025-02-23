@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import PrimaryBtn from '../Buttons/PrimaryBtn';
-import Logo from '../../assets/SharedAssets/adminPanel_logo.png';
+import Logo from '../../assets/Admin/LoginLogo.svg';
 import dashboard from '../../assets/Admin/dashboard.svg';
 import Blog from '../../assets/Admin/Blog.svg';
 import DeleteBlog from '../../assets/Admin/DeleteBlog.svg';
@@ -30,8 +30,8 @@ function Left_Panel({handleLinkClick,selectedLink}) {
         
        
 
-        <div className="text-center mb-6 pb-6">
-          <img loading='lazy' width="auto" height="auto" src={Logo} alt="Logo" className="w-36 md:w-44" />
+        <div className="text-center mt-4 pb-6">
+          <img loading='lazy' width="auto" height="auto" src={Logo} alt="Logo" className="w-36 md:w-56" />
         </div>
 
         {/* Navigation Links */}
