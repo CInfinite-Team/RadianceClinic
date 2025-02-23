@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import SecondaryBtn from '../Buttons/SecondaryBtn';
 import Appointment from '../../assets/SharedAssets/Appointment';
-import HeroImg1 from '../../assets/Home/HeroImg1.svg';
-import HeroImg2 from '../../assets/Home/HeroImg2.svg';
-import HeroImg3 from '../../assets/Home/HeroImg3.svg';
-import HeroImg11 from '../../assets/Home/Image1.png';
-import HeroImg22 from '../../assets/Home/Image2.png';
-import HeroImg33 from '../../assets/Home/Image3.png';
+import HeroImg1 from '../../assets/Home/HeroImg1.webp';
+import HeroImg2 from '../../assets/Home/HeroImg2.webp';
+import HeroImg3 from '../../assets/Home/HeroImg3.webp';
+// import HeroImg11 from '../../assets/Home/Image1.png';
+// import HeroImg22 from '../../assets/Home/Image2.png';
+// import HeroImg33 from '../../assets/Home/Image3.png';
 import Plant from '../../assets/Home/plant.png';
 import sparkling from '../../assets/Home/sparkling.svg';
 // import TiledArrow from '../../assets/SharedAssets/TiledArrow.svg';
@@ -17,7 +17,6 @@ function HeroSectionHome() {
     const [currentImg, setCurrentImg] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const Images = [HeroImg1, HeroImg2, HeroImg3];
-    const Images1 = [HeroImg11, HeroImg33,HeroImg22];
     const Links=['/services/anti-aging','/services/hair','/services/skin'];
     const SecondBtnText=['Explore Anti-Aging Treatments','Explore Hair Treatments','Explore Skin Treatments'];
 
@@ -110,7 +109,7 @@ function HeroSectionHome() {
                 ))}
             </div>
             <img width="auto" height="auto" 
-                    src={Images1[currentImg]} 
+                    src={Images[currentImg]} 
                     loading="eager" 
                     alt="" 
                     className={`max-w-[100vw] hidden lg:block  will-change-auto  right-0 lg:absolute lg:-right-0 xl:right-0 bottom-0 md:translate-x-[30%] lg:!translate-x-0 -z-10 !h-[80vh] transition-all duration-700 transform  ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
