@@ -66,12 +66,12 @@ const DeleteCard = ({
               <p className="text-xs text-gray-500">{designation}</p>
             </div>
           </div>
-          <PrimaryBtn className="w-full !p-0 !py-0 justify-center my-4">
+          <PrimaryBtn title='View Blog' className="w-full !p-0 !py-0 justify-center my-4">
             <a href={`/BlogSpecific?id=${id}`} target='_blank' className="p-4 py-3 w-full h-full">
               View Blog
             </a>
           </PrimaryBtn>
-          <PrimaryBtn className="w-full !p-0 bg-[#e22d2d] border-[#e22d2d] hover:text-[#e22d2d] !py-0 justify-center">
+          <PrimaryBtn title='Delete Blog' className="w-full !p-0 bg-[#e22d2d] border-[#e22d2d] hover:text-[#e22d2d] !py-0 justify-center">
             <a className="p-4 py-3 w-full h-full" onClick={() => SetShowPopUp(true)}>
               Delete Blog
             </a>

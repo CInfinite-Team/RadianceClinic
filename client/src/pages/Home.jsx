@@ -42,7 +42,7 @@ function Home() {
         <Servicescarousel Title='Anti-Aging' Data={AntiAgingTreatments}/>
         <Servicescarousel Title='Cosmetic' Data={CosmeticTreatments}/>
         </>}
-        <PrimaryBtn onClick={() => setShowall(!Showall)}>{Showall ? 'Show Less' : 'Show All Services'} </PrimaryBtn>
+        <PrimaryBtn title={Showall ? 'Show Less' : 'Show All Services'} onClick={() => setShowall(!Showall)}>{Showall ? 'Show Less' : 'Show All Services'} </PrimaryBtn>
     </div>
     <Faq/>
     <Footer/>

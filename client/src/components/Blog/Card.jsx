@@ -55,6 +55,7 @@ const formatUploadDate = (dateString) => {
           </div>
           </div>
           <PrimaryBtn
+          title='Read More'
             className = 'w-full !p-0 !py-0 justify-center md:w-fit mt-4 md:mt-0'
           ><a className='p-4 py-3' href={`/BlogSpecific?id=${id}`}>Read More</a></PrimaryBtn>
         </div>

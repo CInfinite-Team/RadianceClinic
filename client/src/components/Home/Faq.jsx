@@ -72,12 +72,14 @@ function Faq() {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`} style={{ transitionDelay: '400ms' }}>
             <PrimaryBtn
+            title='Hair'
               className='px-8   duration-500 transition-transform'
               onClick={() => setSelectedCategory('hair')} 
             >
               Hair
             </PrimaryBtn>
             <PrimaryBtn
+            title='Skin'
               className='px-8 duration-500 transition-transform'
               onClick={() => setSelectedCategory('skin')}
             >

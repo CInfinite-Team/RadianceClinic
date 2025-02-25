@@ -92,7 +92,7 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
                 </div>
 
                 <div className="mt-auto col-span-full">
-                  <PrimaryBtn className="text-md w-full px-6 justify-center">See All details</PrimaryBtn>
+                  <PrimaryBtn title='See All details' className="text-md w-full px-6 justify-center">See All details</PrimaryBtn>
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
                 </div>
 
                 <div className="mt-auto col-span-full">
-                  <PrimaryBtn className="text-md w-full px-6 justify-center">See All details</PrimaryBtn>
+                  <PrimaryBtn title='See All details' className="text-md w-full px-6 justify-center">See All details</PrimaryBtn>
                 </div>
               </div>
             </div>

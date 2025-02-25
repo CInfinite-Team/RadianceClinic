@@ -281,6 +281,7 @@ function AppointmentForm() {
           </label>
 
           <PrimaryBtn
+          title= {loading ? 'Submitting...' : 'Submit'}
             type="submit"
             disabled={loading || !isFormValid()}
             className='items-center justify-center px-16 gap-3'

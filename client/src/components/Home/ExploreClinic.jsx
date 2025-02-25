@@ -53,7 +53,7 @@ function ExploreClinic() {
         <div className={`transition-all duration-1000 delay-300 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <PrimaryBtn className="hover:scale-105 !p-0 !py-0 transition-transform">
+          <PrimaryBtn title='Explore Clinic' className="hover:scale-105 !p-0 !py-0 transition-transform">
                           <Link to="/clinic" className='p-4 py-3' >
             Explore Clinic
             </Link >

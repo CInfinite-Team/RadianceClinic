@@ -81,10 +81,10 @@ const SlidingBanner = (category) => {
                   {slides[currentIndex].description}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <PrimaryBtn className="hover:scale-105 w-full items-center justify-center !p-0 !py-0 z-10 transition-transform">
+                <PrimaryBtn title='Book Appointment' className="hover:scale-105 w-full items-center justify-center !p-0 !py-0 z-10 transition-transform">
                         <Link to='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
-                    <SecondaryBtn className="justify-center w-full">
+                    <SecondaryBtn title= {slides[currentIndex].buttonText} className="justify-center w-full">
                       {slides[currentIndex].buttonText}
                     </SecondaryBtn>
                 </div>
@@ -102,10 +102,10 @@ const SlidingBanner = (category) => {
                     {slides[currentIndex].description}
                   </p>
                   <div className="flex gap-4">
-                    <PrimaryBtn className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
+                    <PrimaryBtn title='Book Appointment' className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
                         <Link to='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
-                    <SecondaryBtn className="!p-0 !py-0">
+                    <SecondaryBtn title= {slides[currentIndex].buttonText} className="!p-0 !py-0">
                     <a href={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(data[currentIndex]))}`} className='p-4 py-3' > {slides[currentIndex].buttonText}</a> 
                     </SecondaryBtn>
                   </div>

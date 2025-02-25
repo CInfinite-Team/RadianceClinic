@@ -392,6 +392,7 @@ const HairformComponent = () => {
 
         <div className="col-span-full">
           <PrimaryBtn
+          title={loading ? 'Submitting...' : 'Submit'}
             type="submit"
             className="w-full sm:w-fit px-16 items-center justify-center"
             disabled={loading}

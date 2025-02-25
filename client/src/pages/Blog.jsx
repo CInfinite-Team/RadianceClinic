@@ -81,10 +81,10 @@ const Blog = () => {
         {/* Button for category filtering */}
         <div className="flex justify-between items-center w-full mb-4  pb-4 flex-wrap">
           <div className="flex gap-5 overflow-x-auto pb-2">
-            <PrimaryBtn className="px-4 py-2" onClick={() => handleCategoryChange('')}>All</PrimaryBtn>
-            <PrimaryBtn className="px-4 py-2" onClick={() => handleCategoryChange('skin')}>Skin</PrimaryBtn>
-            <PrimaryBtn className="px-4 py-2" onClick={() => handleCategoryChange('hair')}>Hair</PrimaryBtn>
-            <PrimaryBtn className="px-4 py-2" onClick={() => handleCategoryChange('laser')}>Laser</PrimaryBtn>
+            <PrimaryBtn title='All' className="px-4 py-2" onClick={() => handleCategoryChange('')}>All</PrimaryBtn>
+            <PrimaryBtn title='Skin' className="px-4 py-2" onClick={() => handleCategoryChange('skin')}>Skin</PrimaryBtn>
+            <PrimaryBtn title='Hair' className="px-4 py-2" onClick={() => handleCategoryChange('hair')}>Hair</PrimaryBtn>
+            <PrimaryBtn title='Laser' className="px-4 py-2" onClick={() => handleCategoryChange('laser')}>Laser</PrimaryBtn>
           </div>
 
           <div className="flex items-center gap-2 mt-4 sm:mt-0 sm:ml-auto">

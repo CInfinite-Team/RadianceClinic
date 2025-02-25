@@ -182,7 +182,7 @@ function ContactForm() {
             </span>
           </label>
 
-          <PrimaryBtn className="items-center justify-center gap-3" disabled={loading}>
+          <PrimaryBtn title={loading ? 'Sending...' : 'Send Message'} className="items-center justify-center gap-3" disabled={loading}>
             {loading ? 'Sending...' : 'Send Message'} <ArrowRightCircleIcon size={18} />
           </PrimaryBtn>
 

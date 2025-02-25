@@ -408,6 +408,7 @@ function BlogAdd({ selectedLink }) {
                 {/* Submit Button - Always visible at bottom */}
                 <div className="p-6 border-t border-gray-200">
                   <PrimaryBtn
+                  title={loading ? 'Submitting....' : 'Submit'}
                     type="submit"
                     disabled={loading}
                     className="w-full !py-2 justify-center "

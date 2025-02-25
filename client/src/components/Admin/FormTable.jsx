@@ -82,6 +82,7 @@ function FormTable({ data, handleViewData, onStatusUpdate }) {
                   </td>
                   <td className="px-4 py-2 bg-[#F0DFFF] text-center">
                     <PrimaryBtn
+                    title='See Details'
                       onClick={() => handleViewData(item)}
                       className="whitespace-nowrap !py-2"
                     >

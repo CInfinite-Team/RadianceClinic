@@ -55,7 +55,7 @@ console.log(treatmentData.CardTitle)
                 {Show ? Show.description : 'Loading....'}
                 </p>
 
-                <PrimaryBtn className='mt-5 !p-0 !py-0'> <a href='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </a></PrimaryBtn>
+                <PrimaryBtn title='Book Appointment' className='mt-5 !p-0 !py-0'> <a href='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </a></PrimaryBtn>
 
                 </div>
 
@@ -126,7 +126,7 @@ console.log(treatmentData.CardTitle)
                   
                 
 
-                <PrimaryBtn className='mt-5 !p-0 !py-0'> <a href='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </a></PrimaryBtn>
+                <PrimaryBtn title='Book Appointment' className='mt-5 !p-0 !py-0'> <a href='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </a></PrimaryBtn>
 
                 </div>
 
@@ -143,7 +143,7 @@ Radiance Clinic
 <p className='xl:text-lg text-[#554075] font-medium  lg:w-[450px] xl:w-[575px] '>
 At Dr. Barde's Radiance, we understand that hair restoration is a personal journey, and we’re committed to providing the highest level of care and expertise. Our clinic combines advanced hair restoration technologies with a personalized approach tailored to each client’s unique needs. Led by experienced professionals, Radiance ensures safe, effective treatments designed to deliver natural and lasting results. Our mission is not only to restore hair but also to boost confidence and enhance well-being. Choose Radiance for a compassionate, results-driven experience that prioritizes your comfort and satisfaction every step of the way.</p>
 
-<PrimaryBtn className='!p-0 !py-0'><a href="/clinic" className='p-4 py-3'>Explore Clinic</a></PrimaryBtn>
+<PrimaryBtn title='Explore Clinic' className='!p-0 !py-0'><a href="/clinic" className='p-4 py-3'>Explore Clinic</a></PrimaryBtn>
 
 </div>
 

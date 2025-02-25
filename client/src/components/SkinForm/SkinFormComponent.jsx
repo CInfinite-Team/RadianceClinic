@@ -313,6 +313,7 @@ function SkinFormComponent() {
 
         <div className="col-span-full">
           <PrimaryBtn
+          title= {isSubmitting ? 'Submitting...' : 'Submit'}
             type="submit"
             disabled={isSubmitting}
             className="w-full sm:w-fit px-16 items-center justify-center"

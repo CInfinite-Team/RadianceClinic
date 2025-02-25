@@ -148,6 +148,7 @@ const Login = () => {
 
             <PrimaryBtn 
               type="submit" 
+              title={isLoading ? 'Logging in...' : 'Login'}
               disabled={isLoading}
               className="w-full justify-center !py-2 transition duration-300 disabled:opacity-50"
             >

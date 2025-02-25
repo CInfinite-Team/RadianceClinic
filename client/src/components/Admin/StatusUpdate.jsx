@@ -81,7 +81,7 @@ const[StatusLoading,setSatusLoading]=useState(false)
             </button>
           ))}
 
-          <PrimaryBtn onClick={handleStatusUpdate}>{ StatusLoading ? 'Updatig...' : 'Update Status'}</PrimaryBtn>
+          <PrimaryBtn title={ StatusLoading ? 'Updatig...' : 'Update Status'} onClick={handleStatusUpdate}>{ StatusLoading ? 'Updatig...' : 'Update Status'}</PrimaryBtn>
         </div>
       </div>
     </>

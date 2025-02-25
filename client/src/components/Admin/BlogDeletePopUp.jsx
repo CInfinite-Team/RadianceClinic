@@ -51,8 +51,8 @@ const loginTokenCookie = Cookies.get('LoginStatus');
           {/* Pop-up content */}
           <p>Are you sure you want to delete this blog titled as ({title})?</p>
           <div className="flex gap-4 mt-4">
-            <PrimaryBtn onClick={() => SetShowPopUp(false)}>Cancel</PrimaryBtn>
-            <PrimaryBtn className="bg-[#e22d2d]" onClick={handleDelete}>
+            <PrimaryBtn title='Cancel' onClick={() => SetShowPopUp(false)}>Cancel</PrimaryBtn>
+            <PrimaryBtn title='Delete' className="bg-[#e22d2d]" onClick={handleDelete}>
               Delete
             </PrimaryBtn>
           </div>

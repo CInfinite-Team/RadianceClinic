@@ -8,7 +8,7 @@ function Topbar({title}) {
                 <p className=" text-lg lg:text-3xl font-semibold text-white ">
                  {title} 
                 </p>
-                <SecondaryBtn  className="!p-0 !py-0" ><a href="/" className='p-4 py-2 whitespace-nowrap'>View Website</a></SecondaryBtn>
+                <SecondaryBtn title='View Website' className="!p-0 !py-0" ><a href="/" className='p-4 py-2 whitespace-nowrap'>View Website</a></SecondaryBtn>
               </div>
  </>
   )

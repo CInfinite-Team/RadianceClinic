@@ -111,7 +111,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
         </nav>
 
         <div className="mt-auto w-full">
-          <PrimaryBtn onClick={Logout}
+          <PrimaryBtn title='Log out' onClick={Logout}
              className={'w-full justify-center !py-2 rounded-md  whitespace-nowrap  '}
         >Log out</PrimaryBtn>
         </div>
