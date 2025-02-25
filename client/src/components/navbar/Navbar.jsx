@@ -167,7 +167,7 @@ const Navbar = () => {
                        
                         className="w-full text-left px-4 py-2 text-black hover:text-[#725B98] flex items-center justify-between"
                       >
-                       <a  href={`/services/${category.category}`} className='w-[80%]'>  {category.category}</a> 
+                       <a  href={`/services/${category.category}`} className='w-[80%] h-full'>  {category.category}</a> 
                         <svg className={`w-4 h-4 ml-1 lg:hidden  ${activeMobileSubmenu === key ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5h10z" /></svg>
 
                       </button>
