@@ -31,7 +31,7 @@ const TestimonialCardNew = ({
   return (
     <div 
       onMouseLeave={() => setHoveredIndex(null)}
-      className="flex flex-col ml-3 md:flex-row h-fit bg-white shadow-md my-4 rounded-lg overflow-hidden"
+      className="flex flex-col ml-3 sm:flex-row h-fit bg-white shadow-md my-4 rounded-lg overflow-hidden"
     >
 
         

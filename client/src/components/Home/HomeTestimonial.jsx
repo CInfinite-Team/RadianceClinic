@@ -136,7 +136,7 @@ function HomeTestimonial() {
           <div className={`w-full md:px-32 lg:px-12 transition-all delay-300 duration-700 transform ${
             isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
           }`}>
-            <Slider className='sm:h-[450px] lg:h-[440px] 2xl:h-full px-7 md:px-0' {...sliderSettings}>
+            <Slider className=' sm:h-[600px] md:h-[450px] lg:h-[440px] 2xl:h-full px-7 md:px-0' {...sliderSettings}>
               {selectedData.map((data, index) => (
                 <TestimonialCardNew
                   key={index}
