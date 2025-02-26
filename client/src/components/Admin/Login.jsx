@@ -9,8 +9,8 @@ import { Navigate } from 'react-router-dom';
 // import { ToastContainer, toast, Slide } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 import SERVER_URL from '../../constant.mjs';
-import Plantall1 from '../../assets/SharedAssets/Plantall1.png';
-import Plantall2 from '../../assets/SharedAssets/Plantall2.png';
+import Plantall1 from '../../assets/SharedAssets/Plantall1.webp';
+import Plantall2 from '../../assets/SharedAssets/Plantall2.webp';
 
 
 const Login = () => {

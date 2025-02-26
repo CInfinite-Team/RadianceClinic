@@ -111,7 +111,7 @@ const SlidingBanner = (category) => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <img loading='lazy' width="auto" height="auto"
+                  <img loading='eager' width="auto" height="auto"
                     src={slides[currentIndex].image}
                     alt="Hair treatment visualization"
                     className="rounded-lg shadow-xl bg-[#554075] w-full h-auto object-cover max-w-md mx-auto"
