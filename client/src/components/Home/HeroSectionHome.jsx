@@ -88,9 +88,9 @@ function HeroSectionHome() {
                     src={Images[currentImg]} 
                     loading="eager" 
                     alt="" 
-                    className={`max-w-[100vw] md:max-w-[31rem] lg:hidden will-change-auto lg:max-w-[73vh] xl:max-w-[73vh] right-0 lg:absolute lg:-right-20 xl:right-0 bottom-0 md:translate-x-[30%] lg:!translate-x-0 -z-10 2xl:max-w-[36rem] transition-all duration-700 transform ${
+                    className={`max-w-[100vw] sm:max-w-[31rem] lg:hidden will-change-auto lg:max-w-[73vh] xl:max-w-[73vh] right-0 lg:absolute lg:-right-20 xl:right-0 bottom-0 sm:translate-x-[30%] lg:!translate-x-0 -z-10 2xl:max-w-[36rem] transition-all duration-700 transform ${
                         currentImg === 2 || currentImg === 1 
-                            ? 'md:max-w-[55%] lg:!max-w-[59vh] lg:right-0 md:!translate-x-[41%] lg:translate-x-0 2xl:!max-w-[30rem] xl:!max-w-[60vh]'
+                            ? 'sm:max-w-[55%] lg:!max-w-[59vh] lg:right-0 sm:!translate-x-[41%] lg:translate-x-0 2xl:!max-w-[30rem] xl:!max-w-[60vh]'
                             : ''
                     } ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
                 />
@@ -112,7 +112,7 @@ function HeroSectionHome() {
                     src={Images[currentImg]} 
                     loading="eager" 
                     alt="" 
-                    className={`max-w-[100vw] hidden lg:block  will-change-auto  right-0 lg:absolute lg:-right-0 xl:right-0 bottom-0 md:translate-x-[30%] lg:!translate-x-0 -z-10 !h-[80vh] transition-all duration-700 transform  ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
+                    className={`max-w-[100vw] hidden lg:block  will-change-auto  right-0 lg:absolute lg:-right-0 xl:right-0 bottom-0 sm:translate-x-[30%] lg:!translate-x-0 -z-10 !h-[80vh] transition-all duration-700 transform  ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
                 />
         </div>
     );

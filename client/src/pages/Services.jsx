@@ -5,8 +5,8 @@ import SlidingBanner from '../components/AllServices/SlidingBanner';
 import Servicescarousel from '../components/ServicesPage/ServicesCarousel';
 import { Hairtreatments,Skintreatments,LaserTreatments,AntiAgingTreatments,CosmeticTreatments } from '../components/ServicesPage/Treatments';
 // import PrimaryBtn from '../components/Buttons/PrimaryBtn';
-import Testimonial from '../components/SharedComponents/Testimonial';
-
+// import Testimonial from '../components/SharedComponents/Testimonial';
+import HomeTestimonial from '../components/Home/HomeTestimonial';
 function Services(category) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,7 +35,7 @@ function Services(category) {
       {/* <PrimaryBtn className='mx-auto mt-10'> Explore Our Services </PrimaryBtn> */}
       </div>
 
-      <Testimonial/>
+      <HomeTestimonial/>
 
       <Footer></Footer>
     </div>
