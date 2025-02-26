@@ -124,7 +124,7 @@ const Navbar = () => {
             {/* Center Logo */}
             <div className="absolute hover:scale-110 transition-transform duration-500 lg:static lg:translate-x-0 left-4 transform -translate-x-1/2">
               <Link to="/">
-                <img loading='lazy' width="auto" height="auto" src={Logo} alt="Logo" className="h-16 w-auto" />
+                <img loading='eager' width="auto" height="auto" src={Logo} alt="Logo" className="h-16 w-auto" />
               </Link>
             </div>
 

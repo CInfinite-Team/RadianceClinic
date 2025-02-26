@@ -33,12 +33,12 @@ function HeroSectionHome() {
     
     return (
         <div className="relative w-screen min-h-screen xl:min-h-max xl:h-screen  HeroGradient flex justify-end items-end xl:items-center 2xl:items-end 2xl:pb-24 overflow-hidden">
-            <img loading='lazy' width="auto" height="auto" 
+            <img loading='eager' width="auto" height="auto" 
                 src={Plant} 
                 alt="" 
                 className="absolute hidden plant-img  lg:block w-[25%] xl:w-[290px] 2xl:w-[290px] top-10 left-6 xl:top-5 2xl:top-10 xl:left-20 animate-float"
             />
-            <img loading='lazy' width="auto" height="auto" 
+            <img loading='eager' width="auto" height="auto" 
                 src={sparkling} 
                 alt="" 
                 className="absolute Sparkle hidden lg:block 2xl:w-[160px] top-32 xl:top-48 2xl:top-44 left-1/2 -translate-x-28 "
