@@ -13,7 +13,6 @@ import { cosmeticSlides } from "./cosmetic.js";
 import {Hairtreatments,Skintreatments,LaserTreatments,AntiAgingTreatments,CosmeticTreatments} from "../ServicesPage/Treatments";
 
 const SlidingBanner = (category) => {
-  
   let slides = hairSlides;
   let data = Hairtreatments;
 
@@ -35,25 +34,55 @@ const SlidingBanner = (category) => {
   }
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const[TreatmentData, setTreatmentData] = useState(data);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
-  // useEffect(() => {
-  //   setTreatmentData(data.filter(
-  //     (treatment) => treatment.title === slides[currentIndex].title
-  //   )[0]);
-  //   console.log(TreatmentData);
-  // }, [currentIndex, slides, data]);
-  
+  // Handle touch start
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  // Handle touch move
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  // Handle touch end
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+
+    if (distance > 50) {
+      // Swipe left: Go to the next slide
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }
+
+    if (distance < -50) {
+      // Swipe right: Go to the previous slide
+      setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+    }
+
+    // Reset touch values
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
 
   return (
-    <div className="relative top-0 mx-4 pt-24 sm:mx-8 lg:mx-16 lg:mt-40 lg:pt-2 mb-8">
+    <div
+      className="relative top-0 mx-4 pt-24 sm:mx-8 lg:mx-16 lg:mt-40 lg:pt-2 mb-8"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="relative w-full bg-[#E2DBFF] overflow-hidden rounded-xl shadow-lg border border-purple-100">
         <AnimatePresence mode="wait">
           <motion.div
@@ -64,8 +93,8 @@ const SlidingBanner = (category) => {
             transition={{ duration: 0.5 }}
             className="min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]"
           >
-            {/* Mobile Layout */}
-            <div className="lg:hidden flex flex-col p-6 sm:p-8 h-full">
+              {/* Mobile Layout */}
+              <div className="lg:hidden flex flex-col p-6 sm:p-8 h-full">
               <div className="aspect-[4/3] w-full mb-6">
                 <img loading='lazy' width="auto" height="auto"
                   src={slides[currentIndex].image}
@@ -121,7 +150,8 @@ const SlidingBanner = (category) => {
             </div>
           </motion.div>
         </AnimatePresence>
-        
+
+        {/* Indicators for the banner */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3">
           {slides.map((_, index) => (
             <button
