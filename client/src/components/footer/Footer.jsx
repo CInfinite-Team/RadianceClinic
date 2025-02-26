@@ -1,11 +1,63 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [isVisible, setIsVisible] = useState(false);
 
+const LinksData=[
+  
+   { 
+    Text: 'Book Appointment',
+    Link: '/book-appointment'
+  },
+  {
+    Text: 'Hair Form',
+    Link: '/patient-form/hair'
+  },
+  {
+    Text: 'Skin Form',
+    Link: '/patient-form/skin'
+  },
+  {
+    Text: 'Blog',
+    Link: '/blog'
+  },
+  { 
+    Text: 'About Us',
+    Link: '/about-us'
+  },
+  {
+    Text: 'Clinic',
+    Link: '/clinic'
+  },
+ 
+  { 
+    Text: 'Contact Us',
+    Link: '/contact-us'
+  },
+  {
+    Text: 'Quick Links',
+    Link: '/quick-links'
+  }
+]
+
+const IconData=[
+  {
+    icon: Facebook,
+    link: 'https://www.facebook.com/radianceclinicnagpur1/'
+  },
+  {
+    icon: Instagram,
+    link: 'https://www.instagram.com/radianceclinicnagpur/'
+  },
+
+  {
+    icon: Youtube,
+    link: 'https://www.youtube.com/channel/UCcca28C8TbpVCiCj2sKsWmw'
+  },
+]
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -38,12 +90,12 @@ const Footer = () => {
           }`}>
             <h2 className="text-lg font-semibold mb-4  duration-300 transition-transform">Links</h2>
             <ul className="space-y-2">
-              {["Book Appointment", "Hair Form", "Blog", "About Us", "Clinic", "Contact Us", "Quick Links"].map((item, index) => (
+              {LinksData.map((item, index) => (
                 <li key={index} className={`transition-all duration-500 transform ${
                   isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
                 }`} style={{ transitionDelay: `${index * 100}ms` }}>
-                  <Link to={`/${item.toLowerCase().replace(' ', '-')}`} className="hover:underline hover:text-gray-300">
-                    {item}
+                  <Link to={item.Link} className="hover:underline hover:text-gray-300">
+                    {item.Text}
                   </Link>
                 </li>
               ))}
@@ -56,7 +108,7 @@ const Footer = () => {
           }`} style={{ transitionDelay: '200ms' }}>
             <h3 className="text-lg font-semibold mb-4  duration-300 transition-transform">Our Services</h3>
             <ul className="space-y-2">
-              {["Hair", "Skin", "Laser", "Anti-Aging", "Cosmetic Surgery"].map((service, index) => (
+              {["Hair", "Skin", "Laser", "Anti-Aging", "Cosmetic-Surgery"].map((service, index) => (
                 <li key={index} className={`transition-all duration-500 transform ${
                   isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
                 }`} style={{ transitionDelay: `${(index * 100) + 300}ms` }}>
@@ -103,11 +155,11 @@ const Footer = () => {
           }`} style={{ transitionDelay: '600ms' }}>
             <h3 className="text-lg font-semibold mb-4  duration-300 transition-transform">Socials</h3>
             <div className="flex space-x-4">
-              {[Facebook, Instagram, Linkedin, Youtube].map((Icon, index) => (
-                <a key={index} href="#" className={`hover:text-gray-300 hover:-translate-y-1 hover:scale-110 transition-all duration-500 transform ${
+              {IconData.map((Icon, index) => (
+                <a key={index} href={Icon.link} className={`hover:text-gray-300 hover:-translate-y-1 hover:scale-110 transition-all duration-500 transform ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`} >
-                  <Icon size={20} />
+                  <Icon.icon size={20} />
                 </a>
               ))}
             </div>
