@@ -26,35 +26,54 @@ export const TestimonialHomeHair=[
 //             Position:'Lawyer',
 //             Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
 //     },
-    {
-        video:Yogesh_review ,
-        Treatment:'Hair Transplant',
-        Name:'Yogesh',
-        // Position:'Lawyer',
-        Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
-},
-{
-        video:Mayur_Karro_Review,
-        Treatment:'Scalp Micropigmentation',
-        Name:'Mayur Karro',
-        // Position:'Lawyer',
-        Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
-},
-{
-        video:Mustafa,
-        Treatment:'PRP Therapy',
-        Name:'Mustafa',
-        // Position:'Lawyer',
-        Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
-},
-
+    
 {
         video: Neha_Review_Acne,
         Treatment:'Achne Treatment',
         Name:'Neha',
     //     Position:'Lawyer',
-        Review:'Barde Radiance really the best ever in India mostly Face-lift service  is a cosmetic surgical procedure to create a younger appearance in your face. The procedure can reduce the sagging. really the best ever in India mostly  Face-lift',
+    ReviewHalf:"I'm Neha, I had acne for years. It's crazy how Dr. Barde's treatment",
+    ReviewRest:' my skin by 95% at Radiance Clinic.',
+    bold:' improved',
+conclusion:'Reduced acne by 95% and regained clear skin.',
 },
+
+{
+        video:Mayur_Karro_Review,
+        Treatment:'Scalp Micropigmentation',
+        Name:'Mayur Karro',
+        // Position:'Lawyer',
+        ReviewHalf:"I'm Mayur, my hairline was fading fast. It's crazy how Dr. Barde's Radiance Clinic completely",
+        ReviewRest:".",
+        bold:' restored my hair',
+        conclusion:'Restored hairline and regained hair health.'
+},
+
+
+
+{
+        video:Mustafa,
+        Treatment:'PRP Therapy',
+        Name:'Mustafa',
+        // Position:'Lawyer',
+        ReviewHalf:"I'm Mustafa, I did GFG treatment for six months. It's crazy how Dr. Barde's Radiance Clinic",
+        ReviewRest:' my life.',
+        bold:' transformed',
+        conclusion:'Completed six months of GFG treatment with remarkable results.',
+},
+
+{
+        video:Yogesh_review ,
+        Treatment:'Hair Transplant',
+        Name:'Yogesh',
+        // Position:'Lawyer',
+        ReviewHalf:"I'm Yogesh, I was having continuos hairfall. it's crazy how Dr. Barde's Radiance Clinic has",
+        ReviewRest:' my life.',
+        bold:' transformed',
+        conclusion:'Regrew hair and restored confidence',                
+},
+
+
 
 //     {
 //             video:'',

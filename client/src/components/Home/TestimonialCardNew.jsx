@@ -59,10 +59,10 @@ const TestimonialCardNew = ({
       <div className="flex flex-col justify-center p-6 pr-3 xl:p-8 xl:pr-3 relative ">
       <img src={InvertedComa} alt="" className='absolute top-0 xl:top-10 left-3 w-28 lg:w-[10vw] z-0 opacity-40 ' />
             <blockquote className="text-xl z-10 xl:text-2xl 2xl:text-[2.4vw] 2xl:leading-tight font-light text-[#52436A] mb-4 leading-relaxed">
-            “It&apos;s crazy, I use it like I use a scale. I&apos;ve come to rely on it every day. Lumen has{" "}
-              <span className="text-purple-900 font-normal">transformed</span> my life.”
+            “{data.ReviewHalf}
+              <span className="text-purple-900 font-normal">{data.bold}</span> {data.ReviewRest}”
             </blockquote>
-            <p className=" z-10  text-zinc-400 italic 2xl:text-[1.4vw]">Lost 15 lbs and broke through their plateau</p>
+            <p className=" z-10  text-zinc-400 italic 2xl:text-[1.4vw]">{data.conclusion}</p>
           </div>
     </div>
   );
