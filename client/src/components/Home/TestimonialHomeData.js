@@ -1,7 +1,11 @@
 import Yogesh_review from '../../assets/Home/Review_Hairs/Yogesh_review.mp4'
+import Yogesh_review_vtt from '../../assets/Home/Review_Hairs/VTT_FILES/Yogesh_review.vtt'
 import Mayur_Karro_Review from '../../assets/Home/Review_Hairs/Mayur_Karro_Review.mp4'
+import Mayur_Karro_Review_vtt from '../../assets/Home/Review_Hairs/VTT_FILES/Mayur_Karro_Review.vtt'
 import Mustafa from '../../assets/Home/Review_Hairs/Mustafa.mp4'
+import Mustafa_vtt from '../../assets/Home/Review_Hairs/VTT_FILES/Mustafa.vtt'
 import Neha_Review_Acne from '../../assets/Home/Review_Skin/Neha_Review_Acne.mp4'
+import Neha_Review_Acne_vtt from '../../assets/Home/Review_Skin/VTT_FILES/Neha_Review_Acne.vtt'
 
 export const TestimonialHomeHair=[
 
@@ -31,6 +35,7 @@ export const TestimonialHomeHair=[
         video: Neha_Review_Acne,
         Treatment:'Achne Treatment',
         Name:'Neha',
+        VTTfile:Neha_Review_Acne_vtt,
     //     Position:'Lawyer',
     ReviewHalf:"I'm Neha, I had acne for years. It's crazy how Dr. Barde's treatment",
     ReviewRest:' my skin by 95% at Radiance Clinic.',
@@ -42,6 +47,7 @@ conclusion:'Reduced acne by 95% and regained clear skin.',
         video:Mayur_Karro_Review,
         Treatment:'Scalp Micropigmentation',
         Name:'Mayur Karro',
+        VTTfile:Mayur_Karro_Review_vtt,
         // Position:'Lawyer',
         ReviewHalf:"I'm Mayur, my hairline was fading fast. It's crazy how Dr. Barde's Radiance Clinic completely",
         ReviewRest:".",
@@ -55,6 +61,7 @@ conclusion:'Reduced acne by 95% and regained clear skin.',
         video:Mustafa,
         Treatment:'PRP Therapy',
         Name:'Mustafa',
+        VTTfile:Mustafa_vtt,
         // Position:'Lawyer',
         ReviewHalf:"I'm Mustafa, I did GFG treatment for six months. It's crazy how Dr. Barde's Radiance Clinic",
         ReviewRest:' my life.',
@@ -66,6 +73,7 @@ conclusion:'Reduced acne by 95% and regained clear skin.',
         video:Yogesh_review ,
         Treatment:'Hair Transplant',
         Name:'Yogesh',
+        VTTfile:Yogesh_review_vtt,
         // Position:'Lawyer',
         ReviewHalf:"I'm Yogesh, I was having continuos hairfall. it's crazy how Dr. Barde's Radiance Clinic has",
         ReviewRest:' my life.',

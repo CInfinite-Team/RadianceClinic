@@ -44,7 +44,10 @@ const TestimonialCardNew = ({
           className="  object-cover"
           playsInline
           onEnded={() => setPlayingVideo(null)}
-        />
+        >
+           <source src={data.video} type="video/mp4" />
+           <track src={data.VTTfile} kind="subtitles" srclang="Hindi" label="Hindi"></track>
+          </video>
       <button 
                     onClick={handleVideoClick}
                     className={`bg-[#ffffff86] p-2 rounded-full ${playingVideo === index && 'opacity-0'} transition duration-500 group-hover:opacity-100 flex items-center justify-center top-1/2 z-30 left-1/2 cursor-pointer absolute -translate-x-1/2 -translate-y-1/2  hover:scale-110`}
