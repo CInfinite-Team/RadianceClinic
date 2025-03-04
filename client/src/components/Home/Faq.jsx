@@ -3,12 +3,15 @@ import PrimaryBtn from '../../components/Buttons/PrimaryBtn';
 import QueDropDown from './QueDropDown';
 import { Search } from 'lucide-react';
 import { faqData } from '../../components/Home/FaqData';
-import Leafs from '../../assets/SharedAssets/Leafs.svg'
+import Leafs from '../../assets/SharedAssets/Leafs.svg';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 function Faq() {
-  const [selectedCategory, setSelectedCategory] = useState(''); 
-  const [searchTerm, setSearchTerm] = useState(''); 
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+  const faqsPerPage = 6;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,6 +40,18 @@ function Faq() {
     const matchesSearch = data.Question.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const totalPages = Math.ceil(filteredFaqs.length / faqsPerPage);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => (prevPage - 1 + totalPages) % totalPages);
+  };
+
+  const paginatedFaqs = filteredFaqs.slice(currentPage * faqsPerPage, (currentPage + 1) * faqsPerPage);
 
   return (
     <>
@@ -67,29 +82,10 @@ function Faq() {
               onChange={(e) => setSearchTerm(e.target.value)} 
             />
           </div>
-
-          <div className={`flex w-full justify-center gap-4 transition-all duration-700 transform ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`} style={{ transitionDelay: '400ms' }}>
-            <PrimaryBtn
-            title='Hair'
-              className='px-8   duration-500 transition-transform'
-              onClick={() => setSelectedCategory('hair')} 
-            >
-              Hair
-            </PrimaryBtn>
-            <PrimaryBtn
-            title='Skin'
-              className='px-8 duration-500 transition-transform'
-              onClick={() => setSelectedCategory('skin')}
-            >
-              Skin
-            </PrimaryBtn>
-          </div>
         </div>
 
         <div className='flex z-10 flex-col w-full lg:w-[50%] gap-5'>
-          {filteredFaqs.splice(0, 6).map((data, index) => (
+          {paginatedFaqs.map((data, index) => (
             <div 
               key={index}
               className={`transition-all duration-700 transform ${
@@ -100,6 +96,10 @@ function Faq() {
               <QueDropDown Question={data.Question} Answer={data.Answer} opened={false} />
             </div>
           ))}
+          <div className='flex justify-center gap-5'>
+            <button className='text-[#554075]' onClick={handlePrevPage}><ChevronLeft/></button>
+            <button className='text-[#554075]' onClick={handleNextPage}><ChevronRight/></button>
+          </div>
         </div>
       </div>
     </>

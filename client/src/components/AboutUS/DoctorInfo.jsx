@@ -45,18 +45,18 @@ function DoctorInfo({
       </div>
 
       {/* Doctor Info */}
-      <div className={`flex flex-col gap-3 lg:max-w-[44rem] xl:max-w-5xl transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}>
+      <div className={`flex flex-col gap-3 lg:max-w-[44rem] xl:max-w-5xl 2xl:max-w-[75%] transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}>
         
         <div className='flex flex-col gap-3 lg:pl-6'>
           <h2 className={`font-bold font-ElMessiri text-[#554075] leading-tight transition-all duration-1000 ${isVisible ? 'animate-fadeIn' : ''}`} style={{fontSize:'clamp(36px,5vw,60px)'}}>
             {Name}
           </h2>
-          <p className={`text-[#B2A6CE] font-semibold transition-all duration-1000 ${isVisible ? 'animate-fadeIn animation-delay-200' : ''}`} style={{fontSize:'clamp(18px,1.5vw,22px)'}}>
+          <p className={`text-[#B2A6CE] font-semibold transition-all duration-1000 ${isVisible ? 'animate-fadeIn animation-delay-200' : ''}`} style={{fontSize:'clamp(18px,1.5vw,40px)'}}>
             {Position}
           </p>
           
           {info.map((data, index) => (
-            <p key={index} className={`text-[#50535C] transition-all duration-1000 ${isVisible ? 'animate-fadeIn animation-delay-400' : ''}`}>
+            <p key={index} className={`text-[#50535C] 2xl:text-2xl transition-all duration-1000 ${isVisible ? 'animate-fadeIn animation-delay-400' : ''}`}>
               {data}
             </p>
           ))}

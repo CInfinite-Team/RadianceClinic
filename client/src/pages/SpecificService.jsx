@@ -2,12 +2,10 @@ import React,{useEffect,useState} from 'react'
 import { useLocation } from 'react-router-dom';
 import PrimaryBtn from '../components/Buttons/PrimaryBtn'
 import Appointment from '../assets/SharedAssets/Appointment'
-import HairTransplant from '../assets/Services/HairTransplant.svg'
-import HairTransplantP from '../assets/Services/Process/HairTransplantP.svg'
+
 import HeroSectionAll from '../components/SharedComponents/HeroSectionAll'
 import GrayFlower from '../assets/SharedAssets/GrayFlower.svg'
 import AfterCare from '../assets/SharedAssets/AfterCare.svg'
-import Leafs from '../assets/SharedAssets/Leafs.svg'
 import Clinic from '../assets/Home/Clinic.svg'
 import Faq from '../components/Home/Faq'
 import Footer from '../components/footer/Footer'
@@ -38,7 +36,7 @@ console.log(treatmentData.CardTitle)
   return (
     <>
 <Navbar/>
-<HeroSectionAll Title={'Hair Transplant'} Path={'Home'} SubPath={'Services / Hair Transplant'} />
+<HeroSectionAll Title={Show.CardTitle} Path={'Home'} SubPath={`Services / ${Show.CardTitle}`} />
 
     
         <div className={`flex flex-col items-center gap-16 py-20 w-screen px-3 md:px-10 xl:px-28 ${Show ? '' : 'bg-[#E2DBFF]'} `}>

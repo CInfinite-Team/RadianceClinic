@@ -72,7 +72,7 @@ const Blog = () => {
       <Navbar />
       <HeroSectionAll Title={'Blog'} Path={'Home'} SubPath={'Blog'} />
 
-      <div className="min-h-screen bg-gray-100 flex flex-col py-8 p-5 xl:p-10">
+      <div className="min-h-screen bg-gray-100 flex flex-col py-8 p-5 xl:p-10 2xl:px-24">
         <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
           Blogs
         </h2>
