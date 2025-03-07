@@ -16,9 +16,9 @@ function InfoCard({Photo,Name,CardPosition,facebook,instagram,youtube}) {
                 </div>
 
                 <div className='flex gap-5 bg-white px-5 py-1 '>
-                    <Link to={facebook} > <img loading='lazy' width="auto" height="auto" src={Instagram} alt="Barde Radience Instagram" className='2xl:w-14 2xl:h-14' /> </Link>
-                    <Link to={instagram} > <img loading='lazy' width="auto" height="auto" src={Facebook} alt="Barde Radience Facebook" className='2xl:w-14 2xl:h-14' /> </Link>
-                    <Link to={youtube} > <img loading='lazy' width="auto" height="auto" src={Youtube} alt="Barde Radience Instagram" className='2xl:w-14 2xl:h-14' /> </Link>
+                    <Link to={'https://www.instagram.com/radianceclinicnagpur/'} target='_blank' > <img loading='lazy' width="auto" height="auto" src={Instagram} alt="Barde Radience Instagram" className='2xl:w-14 2xl:h-14' /> </Link>
+                    <Link to={'https://www.facebook.com/radianceclinicnagpur1/'} target='_blank' > <img loading='lazy' width="auto" height="auto" src={Facebook} alt="Barde Radience Facebook" className='2xl:w-14 2xl:h-14' /> </Link>
+                    <Link to={'https://www.youtube.com/channel/UCcca28C8TbpVCiCj2sKsWmw'} target='_blank' > <img loading='lazy' width="auto" height="auto" src={Youtube} alt="Barde Radience Instagram" className='2xl:w-14 2xl:h-14' /> </Link>
                 </div>
 
             </div>

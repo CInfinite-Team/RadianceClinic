@@ -11,6 +11,7 @@ import {NitinInfo} from '../components/AboutUS/InfoParagraph'
 import {RadhikaInfo} from '../components/AboutUS/InfoParagraph'
 import Nitin from '../assets/Aboutus/Nitin.svg'
 import Radhika from '../assets/Aboutus/Radhika.svg'
+import ContactPlate from '../components/ContactUs/ContactPlate'
 import Stats from '../components/AboutUS/Stats'
 // import Testimonial from '../components/SharedComponents/Testimonial'
 import HomeTestimonial from '../components/Home/HomeTestimonial'
@@ -44,6 +45,7 @@ function AboutUs() {
   <DoctorInfo Photo={Radhika} Name={'Dr. Radhika Barde'} Position={'Cosmetic Surgeon'} CardPosition={'Cosmetic Surgeon'} info={RadhikaInfo} AwardsData={awardsDataRadhika} AwardImage={Radhika_Award_Images} facebook={'/'} instagram={'/'} youtube={'/'} />
   <Stats/>
   <HomeTestimonial/>
+  <ContactPlate/>
   <Footer/>
   </>
   )
