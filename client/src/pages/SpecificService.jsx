@@ -26,7 +26,7 @@ useEffect(() => {
   const urlParams = new URLSearchParams(location.search);
   const treatmentData = JSON.parse(urlParams.get('Data'));
   const Title = urlParams.get('Title');
-console.log(treatmentData.CardTitle)
+// console.log(treatmentData.CardTitle)
   if (treatmentData) {
     setShow(treatmentData);
     setTitle(Title);
@@ -36,7 +36,7 @@ console.log(treatmentData.CardTitle)
   return (
     <>
 <Navbar/>
-<HeroSectionAll Title={Show.CardTitle} Path={'Home'} SubPath={`Services / ${Show.CardTitle}`} />
+<HeroSectionAll Title={Show ? Show.CardTitle :'Loading...'} Path={'Home'} SubPath={`Services / ${Show ? Show.CardTitle :'Loading...'}`} />
 
     
         <div className={`flex flex-col items-center gap-16 py-20 w-screen px-3 md:px-10 xl:px-28 ${Show ? '' : 'bg-[#E2DBFF]'} `}>

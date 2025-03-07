@@ -32,7 +32,7 @@ const formatUploadDate = (dateString) => {
 };
   
   return (
-    <div className="w-full bg-white border relative border-gray-300 rounded-lg shadow-lg overflow-hidden flex flex-col">
+    <a href={`/BlogSpecific?id=${id}`} className="w-full bg-white border relative border-gray-300 rounded-lg shadow-lg overflow-hidden flex flex-col">
       <span className='px-4 rounded-xl bg-[#0000006c] backdrop-blur-md top-2 left-2 font-ElMessiri absolute text-white w-fit'>{category}</span>
       <img loading='lazy' width="auto" height="auto" src={`${image}`} alt={title} className="w-full h-64 object-fit" />
       <div className="p-4 flex flex-col justify-between flex-grow">
@@ -54,13 +54,13 @@ const formatUploadDate = (dateString) => {
             <p className="text-xs text-gray-500 2xl:text-xl ">{designation}</p>
           </div>
           </div>
-          <PrimaryBtn
+          {/* <PrimaryBtn
           title='Read More'
             className = 'w-full !p-0 !py-0 justify-center md:w-fit mt-4 md:mt-0'
-          ><a className='p-4 py-3 2xl:font-medium ' href={`/BlogSpecific?id=${id}`}>Read More</a></PrimaryBtn>
+          ><a className='p-4 py-3 2xl:font-medium ' href={`/BlogSpecific?id=${id}`}>Read More</a></PrimaryBtn> */}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

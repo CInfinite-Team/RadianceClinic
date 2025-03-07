@@ -138,10 +138,7 @@ const IconData=[
               <li className={`text-sm transition-all duration-500 transform ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
               }`} style={{ transitionDelay: '700ms' }}>
-                Address: Shop No. 6, Firdoushi Tower,<br />
-                Wardha Rd, besides Hitavda Press &<br />
-                Shaliini Hospital, near Dhantoli, Nagpur,<br />
-                Maharashtra 440012
+               2nd Floor, Panchavati Tower, Wardha Rd, beside Hitvada Press & Shatau Hospital, near Dhantoli, Dhantoli, Nagpur, Maharashtra 440012
               </li>
               <li className={`text-sm mt-2 transition-all duration-500 transform ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
