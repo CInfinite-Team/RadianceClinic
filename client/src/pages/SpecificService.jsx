@@ -144,8 +144,8 @@ At Dr. Barde's Radiance, we understand that hair restoration is a personal journ
 <PrimaryBtn title='Explore Clinic' className='!p-0 !py-0'><a href="/clinic" className='p-4 py-3'>Explore Clinic</a></PrimaryBtn>
 
 </div>
-
-<img loading='lazy' width="auto" height="auto" src={Clinic} alt="" className='lg:max-w-[45%] xl:max-w-[460px] order-1 lg:order-2 ' />
+<iframe width="560" height="315" className={`lg:max-w-[460px] 2xl:max-w-[43vw] md:h-[400px] lg:h-[315px] 2xl:h-[23vw] 2xl:aspect-video w-full order-1 lg:order-2 xl:max-w-[593px] transition-all duration-1000 transform hover:scale-[1.02] `} src="https://www.youtube.com/embed/9m_8Q2UZieA?si=rnhoelnH08bXrPak" title="YouTube video player"  frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{/* <img loading='lazy' width="auto" height="auto" src={Clinic} alt="" className='lg:max-w-[45%] xl:max-w-[460px] order-1 lg:order-2 ' /> */}
 
 </div>
 

@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoadingAnimation from './components/Loading/LoadingAnimation';
 import Terms from './pages/Legal/Terms';
+import PrivacyPolicy from './pages/Legal/Privacy_Policy';
 const Home = lazy(() => import('./pages/Home'));
 const BookAppointment = lazy(() => import('./pages/BookAppointment'));
 const PrivateRoute = lazy(() => import('./components/Admin/PrivateRoute'));
@@ -40,6 +41,11 @@ function App() {
       path: '/terms-and-conditions',
       element: <Terms  />,
     },
+    {
+      path: '/privacy-policy',
+      element: <PrivacyPolicy  />,
+    },
+   
     {
       path: '/services/hair',
       element: <Services category="hair" />,
