@@ -44,7 +44,7 @@ function ExploreClinic() {
           Radiance Clinic
         </h2>
 
-        <p className={`xl:text-lg text-[#50535C] lg:w-[450px] xl:w-[575px] transition-all delay-300 duration-700 transform ${
+        <p className={`xl:text-lg text-[#50535C] lg:w-[450px]  2xl:text-[1.5vw] 2xl:leading-tight 2xl:w-[44vw] xl:w-[575px] transition-all delay-300 duration-700 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           Radiance Skin Anti aging and Hair Transplant Clinic is a vision that was founded with the intention of delivering cutting-edge skin care and hair services. We understand that great skin and healthy hair adds a lot to the personality and boosts confidence! Under able hands of Dr. Nitin Barde, who is an expert in advanced skin treatment, rejuvenation and revision services as well as hair restoration and transplantation services, Radiance Clinic is growing to be the best in the field of cosmetic dermatology and treatments. Hair Transplant In Nagpur.
@@ -61,13 +61,17 @@ function ExploreClinic() {
         </div>
       </div>
 
-      <img loading='lazy' width="auto" height="auto" 
+      <iframe width="560" height="315" className={`lg:max-w-[460px] 2xl:max-w-[43vw] md:h-[400px] lg:h-[315px] 2xl:h-[23vw] 2xl:aspect-video w-full order-1 lg:order-2 xl:max-w-[593px] transition-all duration-1000 transform hover:scale-[1.02] ${
+          isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+        }`} src="https://www.youtube.com/embed/9m_8Q2UZieA?si=rnhoelnH08bXrPak" title="YouTube video player"  frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      
+      {/* <img loading='lazy' width="auto" height="auto" 
         src={Clinic} 
         alt="" 
         className={`lg:max-w-[460px] order-1 lg:order-2 xl:max-w-[593px] transition-all duration-1000 transform hover:scale-[1.02] ${
           isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
-      />
+      /> */}
     </div>
   );
 }

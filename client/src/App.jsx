@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoadingAnimation from './components/Loading/LoadingAnimation';
+import Terms from './pages/Legal/Terms';
 const Home = lazy(() => import('./pages/Home'));
 const BookAppointment = lazy(() => import('./pages/BookAppointment'));
 const PrivateRoute = lazy(() => import('./components/Admin/PrivateRoute'));
@@ -35,6 +36,10 @@ function App() {
     //   path: '/services',
     //   element: <Services category="all" />,
     // },
+    {
+      path: '/Terms-and-conditions',
+      element: <Terms  />,
+    },
     {
       path: '/services/hair',
       element: <Services category="hair" />,
