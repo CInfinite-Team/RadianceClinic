@@ -103,4 +103,5 @@ const updateLeadStatus = async (req, res) => {
     }
 };
 
+
 module.exports = { getLeads, getLeadDetails, updateLeadStatus };
