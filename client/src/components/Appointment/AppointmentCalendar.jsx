@@ -1,9 +1,14 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import axios from 'axios';
 import GrayFlower from '../../assets/SharedAssets/GrayFlower.svg';
+import SERVER_URL from '../../constant.mjs';
 
-const AppointmentCalendar = ({ selectedDate, setSelectedDate, selectedTime, setSelectedTime }) => {
+const AppointmentCalendar = ({ reload, selectedDate, setSelectedDate, selectedTime, setSelectedTime }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [bookedSlots, setBookedSlots] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // Time slots
   const timeSlots = [
@@ -17,6 +22,28 @@ const AppointmentCalendar = ({ selectedDate, setSelectedDate, selectedTime, setS
     { time: "6pm-7pm", available: true },
     { time: "7pm-8pm", available: true }
   ];
+
+  // Fetch booked slots from API
+  useEffect(() => {
+    const fetchBookedSlots = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`${SERVER_URL}/api/user/appointmentSlots`);
+        if (response.data.success) {
+          setBookedSlots(response.data.data);
+        } else {
+          setError('Failed to fetch booked slots');
+        }
+      } catch (err) {
+        console.error('Error fetching booked slots:', err);
+        setError('Error fetching booked slots');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBookedSlots();
+  }, [reload]);
 
   // Get days in month
   const getDaysInMonth = (date) => {
@@ -38,16 +65,28 @@ const AppointmentCalendar = ({ selectedDate, setSelectedDate, selectedTime, setS
   };
 
   // Function to check if the selected date is in the past
-  const isPastDate = () => {
+  const isPastDate = (date) => {
     const now = new Date();
-    return selectedDate?.getFullYear() < now.getFullYear() ||
-           (selectedDate?.getFullYear() === now.getFullYear() && selectedDate?.getMonth() < now.getMonth()) ||
-           (selectedDate?.getFullYear() === now.getFullYear() && selectedDate?.getMonth() === now.getMonth() && selectedDate?.getDate() < now.getDate());
+    now.setHours(0, 0, 0, 0);
+    date.setHours(0, 0, 0, 0);
+    return date < now;
+  };
+
+  // Function to check if date is today
+  const isToday = (date) => {
+    const now = new Date();
+    return date.getDate() === now.getDate() && 
+           date.getMonth() === now.getMonth() && 
+           date.getFullYear() === now.getFullYear();
   };
 
   // Function to check if the time slot is in the past
   const isPastTimeSlot = (timeSlot) => {
+    if (!selectedDate) return false;
+    
     const now = new Date();
+    if (!isToday(new Date(selectedDate))) return false;
+    
     const timeMap = {
       "10am-11am": 10,
       "11am-12pm": 11,
@@ -59,8 +98,24 @@ const AppointmentCalendar = ({ selectedDate, setSelectedDate, selectedTime, setS
       "6pm-7pm": 18,
       "7pm-8pm": 19
     };
+    
     const timeHour = timeMap[timeSlot];
-    return selectedDate?.getDate() === now.getDate() && selectedDate?.getMonth() === now.getMonth() && selectedDate?.getFullYear() === now.getFullYear() && timeHour < now.getHours();
+    return timeHour <= now.getHours();
+  };
+
+  
+  // Check if a time slot is booked
+  const isTimeSlotBooked = (date, timeSlot) => {
+    if (!date){console.log("No date"); return false;}
+    
+    const formattedDate = new Date(date);
+    formattedDate.setHours(0, 0, 0, 0);
+    
+    return bookedSlots.some(slot => {
+      const slotDate = new Date(slot.appointmentDate);
+      slotDate.setHours(0, 0, 0, 0);
+      return slotDate.getTime() === formattedDate.getTime() && slot.appointmentTime === timeSlot;
+    });
   };
 
   // Generate calendar days
@@ -76,23 +131,26 @@ const AppointmentCalendar = ({ selectedDate, setSelectedDate, selectedTime, setS
 
     // Add actual days
     for (let day = 1; day <= daysInMonth; day++) {
+      const dayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
       const isSelected = selectedDate?.getDate() === day && 
                         selectedDate?.getMonth() === currentDate.getMonth() &&
                         selectedDate?.getFullYear() === currentDate.getFullYear();
+      
+      const isPast = isPastDate(new Date(dayDate));
       
       days.push(
         <button
           key={day}
           onClick={() => {
-            setSelectedDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), day));
-            setSelectedTime(null); // Reset the selected time whenever the date is changed
+            if (!isPast) {
+              setSelectedDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), day));
+              setSelectedTime(null); // Reset the selected time whenever the date is changed
+            }
           }}
+          disabled={isPast}
           className={`h-8 w-8 rounded-full flex items-center justify-center
-            ${isSelected ? 'bg-[#8369a9] text-white' : 'hover:bg-purple-100'}
-            ${day === new Date().getDate() && 
-              currentDate.getMonth() === new Date().getMonth() &&
-              currentDate.getFullYear() === new Date().getFullYear()
-              ? 'font-bold' : ''}`}
+            ${isSelected ? 'bg-[#8369a9] text-white' : isPast ? 'text-gray-400 cursor-not-allowed' : 'hover:bg-purple-100'}
+            ${isToday(dayDate) ? 'font-bold' : ''}`}
         >
           {day}
         </button>
@@ -139,26 +197,44 @@ const AppointmentCalendar = ({ selectedDate, setSelectedDate, selectedTime, setS
           <div className="grid grid-cols-7 gap-1 text-[#554075]">
             {generateCalendarDays()}
           </div>
-          </div>
+        </div>
       </div>
 
+      {/* Loading State */}
+      {loading && (
+        <div className="text-center py-4 text-[#554075]">
+          Loading available slots...
+        </div>
+      )}
+
+      {/* Error State */}
+      {error && (
+        <div className="text-center py-4 text-red-500">
+          {error}
+        </div>
+      )}
+
       {/* Time Slots */}
-      {selectedDate && (
+      {selectedDate && !loading && !error && (
         <div className="grid grid-cols-3 relative z-10 gap-2">
-          {timeSlots.map(({ time, available }) => (
-            <button
+          {timeSlots.map(({ time }) => {
+            const isBooked = isTimeSlotBooked(selectedDate, time);
+            const isPast = isPastTimeSlot(time);
+            return (
+              <button
               key={time}
-              disabled={isPastDate() || !available || isPastTimeSlot(time)}
+              disabled={isPast || isBooked}
               onClick={() => setSelectedTime(time)}
               className={`py-2 px-4 lg:px-1 xl:px-4 rounded-lg text-sm
                 ${selectedTime === time ? 'bg-[#e9d5ff] text-white' : ''}
-                ${available && !isPastTimeSlot(time) && !isPastDate()
-                  ? 'bg-[#beb0e0] hover:bg-purple-200 text-white' 
-                  : 'bg-gray-100 border-2 text-gray-400 cursor-not-allowed'}`}
+                ${isBooked ? 'bg-[#554075] text-white cursor-not-allowed' : 
+                  isPast ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 
+                  'bg-[#beb0e0] hover:bg-[#d9bbff]'}`}
             >
               {time}
             </button>
-          ))}
+            );
+          })}
         </div>
       )}
 

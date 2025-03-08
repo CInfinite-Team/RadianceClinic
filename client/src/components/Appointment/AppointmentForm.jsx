@@ -20,6 +20,7 @@ function AppointmentForm() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -93,6 +94,7 @@ function AppointmentForm() {
       });
       setSelectedDate(null);
       setSelectedTime(null);
+      setReload(!reload);
     } catch (err) {
       console.error(err.response?.data || err.message);
       setError(
@@ -301,6 +303,7 @@ function AppointmentForm() {
             setSelectedDate={setSelectedDate}
             selectedTime={selectedTime}
             setSelectedTime={setSelectedTime}
+            reload={reload}
           />
         </div>
       </div>
