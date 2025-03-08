@@ -37,7 +37,7 @@ function App() {
     //   element: <Services category="all" />,
     // },
     {
-      path: '/Terms-and-conditions',
+      path: '/terms-and-conditions',
       element: <Terms  />,
     },
     {

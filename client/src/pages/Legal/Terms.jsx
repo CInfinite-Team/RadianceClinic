@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../../components/footer/Footer';
 import Grayflower from '../../assets/SharedAssets/GrayFlower.svg';
-
+import Navbar from '../../components/navbar/Navbar';
 function Terms() {
   const [openSections, setOpenSections] = useState({});
 
@@ -50,7 +50,7 @@ function Terms() {
         <meta name="keywords" content="terms and conditions, Dr. Barde's Radiance Clinic, terms of service, terms of use, user agreement, website rules, legal terms, usage policy, website terms, legal agreement, site terms, conditions of use" />
         <link rel="canonical" href="/terms-and-condition" />
       </Helmet>
-
+<Navbar/>
 <HeroSectionAll Title="Terms & Conditions" Path="Home/ Legal" SubPath="Terms & Conditions" />
      
 

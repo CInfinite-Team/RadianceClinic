@@ -272,7 +272,7 @@ function AppointmentForm() {
             />
             <span className='text-[#AB9DCD]'>
               I agree with{' '}
-              <a href="/terms-and-condition" target="_blank" className="hover:underline cursor-pointer text-[#554075]">
+              <a href="/terms-and-conditions" target="_blank" className="hover:underline cursor-pointer text-[#554075]">
                 Terms of Use
               </a>{' '}
               and{' '}
