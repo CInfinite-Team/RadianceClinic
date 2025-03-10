@@ -14,6 +14,7 @@ export const NitinData =
     InsagramLink:'https://www.instagram.com/radianceclinicnagpur/',
     FacebookLink:'https://www.facebook.com/radianceclinicnagpur1/',
     YoutubeLink:'https://www.youtube.com/channel/UCcca28C8TbpVCiCj2sKsWmw',
+    Whatsapp:'https://wa.me/919822176677',
 }
 export const RadhikaData =
 {   Image:Radhika, 
@@ -27,4 +28,5 @@ export const RadhikaData =
     InsagramLink:'https://www.instagram.com/radianceclinicnagpur/',
     FacebookLink:'https://www.facebook.com/radianceclinicnagpur1/',
     YoutubeLink:'https://www.youtube.com/channel/UCcca28C8TbpVCiCj2sKsWmw',
+    Whatsapp:'https://wa.me/919822176677',
 }

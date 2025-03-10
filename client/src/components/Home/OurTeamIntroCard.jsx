@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Appointment from '../../assets/SharedAssets/Appointment';
-import TiledArrow from '../../assets/SharedAssets/TiledArrow.svg';
+// import TiledArrow from '../../assets/SharedAssets/TiledArrow.svg';
 import Instagram from '../../assets/Home/Instagram.svg';
+import Whatsapp from '../../assets/Home/Whatsapp.svg';
 import Facebook from '../../assets/Home/Facebook.svg';
 import Youtube from '../../assets/Home/Youtube.svg';
 import GrayFlower from '../../assets/SharedAssets/GrayFlower.svg';
@@ -78,19 +79,22 @@ function OurTeamIntroCard({ Data }) {
            <PrimaryBtn title='Book Appointment' className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
                         <Link to='/book-appointment' className='p-4 py-3 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
-          <a href='/about-us' className="p-4 rounded-full bg-white hover:rotate-45 transition-transform duration-500">
+          {/* <a href='/about-us' className="p-4 rounded-full bg-white hover:rotate-45 transition-transform duration-500">
                                      <img width="auto" loading='lazy' height="auto" src={TiledArrow} alt="" />
-        </a>
+        </a> */}
           <div className='flex gap-4 items-center'>
             <p className='text-lg font-semibold text-[#7E719E]'>Follow :</p>
-            <a href={Data.InsagramLink} className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
-              <img loading='lazy' width="auto" height="auto" src={Instagram} alt="" className='w-6' />
+            <a href={Data.InsagramLink} target='_blank' className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
+              <img loading='lazy' width="auto" height="auto" src={Instagram} alt="Dr. Barde's Radiance Clinic Instagram" className='w-6' />
             </a>
-            <a href={Data.FacebookLink} className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
-              <img loading='lazy' width="auto" height="auto" src={Facebook} alt="" className='w-6' />
+            <a href={Data.FacebookLink} target='_blank' className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
+              <img loading='lazy' width="auto" height="auto" src={Facebook} alt="Dr. Barde's Radiance Clinic Facebook" className='w-6' />
             </a>
-            <a href={Data.YoutubeLink} className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
-              <img loading='lazy' width="auto" height="auto" src={Youtube} alt="" className='w-7' />
+            <a href={Data.YoutubeLink} target='_blank' className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
+              <img loading='lazy' width="auto" height="auto" src={Youtube} alt="Dr. Barde's Radiance Clinic Youtube" className='w-7' />
+            </a>
+            <a href={Data.Whatsapp} target='_blank' className="hover:scale-110 hover:-translate-y-1 duration-500 transition-transform">
+              <img loading='lazy' width="auto" height="auto" src={Whatsapp} alt="Dr. Barde's Radiance Clinic WhatsApp" className='w-7' />
             </a>
           </div>
         </div>

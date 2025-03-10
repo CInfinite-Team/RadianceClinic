@@ -12,7 +12,7 @@ function QuickLinkDescription() {
   return (
     <>
     <Navbar/>
-    <HeroSectionAll Title={'Appoitnment'} Path={'Home'} SubPath={'Appoitnment'} />
+    <HeroSectionAll Title={'Appointment'} Path={'Home'} SubPath={'Appointment'} />
     <AppointmentForm/>
     <div className='bg-[#fef7ff] py-24 px-4 md:px-4 xl:px-20'>
     <h1 className='font-ElMessiri text-[#554075] text-center font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>

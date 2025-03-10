@@ -59,8 +59,8 @@ function HeroSectionHome() {
                         <PrimaryBtn title='Book Appointment' className=" !p-0 !py-0 2xl:text-3xl 2xl:rounded-lg  justify-center items-center ">
                         <Link to='/book-appointment' className='p-4 py-3 2xl:p-5 flex items-center'> Book Appointment <Appointment size={'24px'} className='2xl:w-10  2xl:h-10' />  </Link>
                         </PrimaryBtn>
-                        <SecondaryBtn title= {SecondBtnText[currentImg]} className=" !p-0 !py-0 2xl:text-3xl 2xl:rounded-lg  justify-center 2xl:max-w-[440px] items-center relative group max-w-[250px] whitespace-nowrap ">
-    <Link to={Links[currentImg]} className='p-4 py-3 2xl:p-6 overflow-hidden text-ellipsis whitespace-nowrap' > 
+                        <SecondaryBtn title= {SecondBtnText[currentImg]} className=" !p-0 !py-0 2xl:text-3xl 2xl:rounded-lg  justify-center items-center relative group whitespace-nowrap ">
+    <Link to={Links[currentImg]} className='p-4 py-3 2xl:p-6 ' > 
         {SecondBtnText[currentImg]}
     </Link>
     {/* <span className='absolute bg-[#0000005d] text-white rounded-md font-normal backdrop-blur-md border-[#d4cafd] border-2 opacity-0 group-hover:opacity-100 transition-all duration-500 -top-12 -left-2 p-1'>

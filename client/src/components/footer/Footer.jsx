@@ -129,12 +129,12 @@ const IconData=[
           }`} style={{ transitionDelay: '400ms' }}>
             <h3 className="text-lg font-semibold mb-4  duration-300 transition-transform">Contact Us</h3>
             <ul className="space-y-2">
-              <li className={`transition-all duration-500 transform ${
+              <li className={`hover:underline transition-all duration-500 transform ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
-              }`} style={{ transitionDelay: '500ms' }}>(+91) 9822179877</li>
-              <li className={`transition-all duration-500 transform ${
+              }`} style={{ transitionDelay: '500ms' }}> <a href="tel:+918822179877"> (+91) 9822179877</a></li>
+              <li className={`hover:underline transition-all duration-500 transform ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
-              }`} style={{ transitionDelay: '600ms' }}>(+91) 8888069877</li>
+              }`} style={{ transitionDelay: '600ms' }}> <a href="tel:+918888069877">(+91) 8888069877</a> </li>
               <li className={`text-sm transition-all duration-500 transform ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
               }`} style={{ transitionDelay: '700ms' }}>
