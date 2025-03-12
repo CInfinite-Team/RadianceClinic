@@ -28,7 +28,7 @@ const BlogDeleteCards = ({ currentCards ,Loading}) => {
     }
 
     return (
-        <div className="grid grid-cols-1 xl:grid-cols-2 justify-items-center   gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 2xl:justify-items-start xl:justify-items-center   gap-8">
             {currentCards.map((card) => (
                 <DeleteCard
                     key={card._id} 
