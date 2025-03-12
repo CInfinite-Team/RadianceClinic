@@ -3,7 +3,7 @@ import PrimaryBtn from '../Buttons/PrimaryBtn';
 import Logo from '../../assets/Admin/LoginLogo.svg';
 import dashboard from '../../assets/Admin/dashboard.svg';
 import Blog from '../../assets/Admin/Blog.svg';
-import DeleteBlog from '../../assets/Admin/DeleteBlog.svg';
+import ViewBlog from '../../assets/Admin/ViewBlog.svg';
 import leads from '../../assets/Admin/leads.svg';
 import appointments from '../../assets/Admin/appointments.svg';
 import forms from '../../assets/Admin/forms.svg';
@@ -91,7 +91,7 @@ function Left_Panel({handleLinkClick,selectedLink}) {
           >
             <img loading='lazy' width="auto" height="auto"
               src={Blog}
-              className="mr-2 w-6 h-6 "
+              className="mr-2 w-[23px] h-[23px] "
               alt="Blog"
             />
             Add Blogs
@@ -102,11 +102,11 @@ function Left_Panel({handleLinkClick,selectedLink}) {
             onClick={() => handleLinkClick('Delblogs')}
           >
             <img loading='lazy' width="auto" height="auto"
-              src={DeleteBlog}
-              className="mr-2 w-5 h-5 "
+              src={ViewBlog}
+              className="mr-2 w-[23px] h-[23px] "
               alt="Blog"
             />
-            Delete Blogs
+            View Blogs
           </a>
         </nav>
 
