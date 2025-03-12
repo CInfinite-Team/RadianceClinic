@@ -86,14 +86,14 @@ const Navbar = () => {
             <div className={`hidden lg:flex gap-10 xl:gap-20 flex-1 justify-start transition-all delay-500 duration-500 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
               <Link to="/" className="text-black hover:text-[#725B98]">Home</Link>
               <Link to="/book-appointment" className="text-black hover:text-[#725B98]">Book Appointment</Link>
-              <div className="relative group"
+              <div className="relative z-50 group"
                 onMouseEnter={() => handleMouseEnter('services')}
                 onMouseLeave={handleMouseLeave}>
                 <button className="text-black hover:text-[#725B98] flex items-center">
                   Services
                   <svg className="w-4 h-4 ml-1 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5h10z" /></svg>
                 </button>
-                <ul className={`absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-md transition-all duration-300 ${activeSubmenu === 'services' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-5'}`}>
+                <ul className={`absolute left-0 mt-2 z-50 w-48 bg-white border border-gray-200 rounded shadow-md transition-all duration-300 ${activeSubmenu === 'services' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-5'}`}>
                   {Object.entries(serviceItems).map(([key, category]) => (
                     <li key={key} className="relative group/submenu">
                       <div className="flex items-center justify-between text-black hover:bg-gray-100 hover:text-[#725B98] cursor-pointer">
@@ -102,11 +102,11 @@ const Navbar = () => {
                         </Link>
                         <svg className="w-4 h-4 ml-1 lg:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5h10z" /></svg>
                         </div>
-                      <ul className="absolute left-full top-0 w-48 bg-white border border-gray-200 rounded shadow-md opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300">
+                      <ul className="absolute left-full z-50 top-0 w-48 bg-white border border-gray-200 rounded shadow-md opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-300">
                         {category.treatments.map((treatment) => (
                           <li key={treatment.CardTitle}>
                              <Link 
-                              to={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(treatment))}&Title=${encodeURIComponent(category.category)}`}
+                              to={treatment.link}
                               className="block px-4 py-2 text-black hover:bg-gray-100 hover:text-[#725B98]"
                             >
                               <div className="text-sm font-medium">{treatment.CardTitle}</div>
@@ -124,7 +124,7 @@ const Navbar = () => {
             {/* Center Logo */}
             <div className="absolute hover:scale-110 transition-transform duration-500 lg:static lg:translate-x-0 left-4 transform -translate-x-1/2">
               <Link to="/">
-                <img loading='eager' width="auto" height="auto" src={Logo} alt="Logo" className="h-16 w-auto" />
+                <img loading='eager' width="auto" height="auto" src={Logo} alt="Logo" className="h-16 w-auto z-0" />
               </Link>
             </div>
 
@@ -175,7 +175,7 @@ const Navbar = () => {
                       {category.treatments.map((treatment) => (
                           <li key={treatment.CardTitle}>
                             <Link
-                                to={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(treatment))}&Title=${encodeURIComponent(category.category)}`}
+                                to={treatment.link}
                                 className="block px-4 py-2 text-black hover:text-[#725B98]"
                               >
                                 <div className="text-sm font-medium">{treatment.CardTitle}</div>

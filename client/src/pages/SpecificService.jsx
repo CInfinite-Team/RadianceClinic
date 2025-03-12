@@ -10,6 +10,8 @@ import Clinic from '../assets/Home/Clinic.svg'
 import Faq from '../components/Home/Faq'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/navbar/Navbar'
+import { Hairtreatments,Skintreatments,LaserTreatments,AntiAgingTreatments,CosmeticTreatments } from '../components/ServicesPage/Treatments';
+
 
 
 function SpecificService() {
@@ -23,14 +25,44 @@ const [Title, setTitle] = useState(null);
 
 const location = useLocation();
 useEffect(() => {
-  const urlParams = new URLSearchParams(location.search);
-  const treatmentData = JSON.parse(urlParams.get('Data'));
-  const Title = urlParams.get('Title');
-// console.log(treatmentData.CardTitle)
-  if (treatmentData) {
-    setShow(treatmentData);
-    setTitle(Title);
+      const currentPath = location.pathname;
+
+  const matchedHairTreatment = Hairtreatments.find(
+    (treatment) => currentPath === treatment.link 
+  )
+  const matchedSkinTreatment = Skintreatments.find(
+    (treatment) => currentPath === treatment.link 
+  )
+  const matchedLaserTreatment = LaserTreatments.find(
+    (treatment) => currentPath === treatment.link 
+  )
+  const matchedAntiAgingTreatment = AntiAgingTreatments.find(
+    (treatment) => currentPath === treatment.link 
+  )
+  const matchedCosmeticTreatmentsTreatment = CosmeticTreatments.find(
+    (treatment) => currentPath === treatment.link 
+  )
+
+  if (matchedHairTreatment) {
+    setShow(matchedHairTreatment);
+    setTitle('HAIR'); // Set the title based on your logic
   }
+  else if (matchedSkinTreatment) {
+    setShow(matchedSkinTreatment);
+    setTitle('SKIN'); // Set the title based on your logic
+  }
+  else if (matchedLaserTreatment) {
+    setShow(matchedLaserTreatment);
+    setTitle('LASER'); // Set the title based on your logic
+}
+  else if (matchedAntiAgingTreatment) {
+    setShow(matchedAntiAgingTreatment);
+    setTitle('Anti-Aging'); // Set the title based on your logic
+}
+  else if (matchedCosmeticTreatmentsTreatment) {
+    setShow(matchedCosmeticTreatmentsTreatment);
+    setTitle('Cosmetic-Treatment'); // Set the title based on your logic
+}
 }, [location]);
 
   return (

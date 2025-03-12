@@ -40,7 +40,6 @@ https://radinace-clinic.vercel.app/services/cosmetic-surgery/vitiligo-surgery
 https://radinace-clinic.vercel.app/services/cosmetic-surgery/ear-lobe-repair
 https://radinace-clinic.vercel.app/services/cosmetic-surgery/scar-revision
 https://radinace-clinic.vercel.app/services/cosmetic-surgery/vampire-facelift
-https://radinace-clinic.vercel.app/services/cosmetic-surgery/other-surgery
 https://radinace-clinic.vercel.app/about-us
 https://radinace-clinic.vercel.app/clinic
 https://radinace-clinic.vercel.app/blog

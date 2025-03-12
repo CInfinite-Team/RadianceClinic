@@ -67,6 +67,142 @@ function App() {
       element: <Services category="cosmetic" />,
     },
     {
+      path: '/services/hair/hair-transplant',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/hair/fue-hair-transplant',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/hair/female-hair-transplant',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/hair/prp-therapy',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/hair/eyebrow-beard-hair-transplant',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/hair/alopecia-treatment',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/skin/pimple-treatment',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/skin/acne-scar-treatment',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/skin/rejuvenation',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/skin/chemical-peels',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/skin/meso-glow',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/skin/pigment-reduction',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/skin/microdermabrasion',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/cosmetic-surgery',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/laser/permanent-hair-removal',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/laser/tattoo-removal',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/laser/laser-facial-carbon-peels',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/laser/pigmentation-removal',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/laser/laser-skin-rejuvenation',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/laser/stretch-marks-reduction',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/laser/body-face-contouring',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/anti-aging/botox',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/anti-aging/dermal-filler',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/anti-aging/hand-feet-rejuvenation',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/anti-aging/skin-tightening',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/anti-aging/thread-lift',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/anti-aging/autologous-fat-transfer',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/anti-aging/vampire-facelift',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/cosmetic-surgery/wart-mole-removal',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/cosmetic-surgery/vitiligo-surgery',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/cosmetic-surgery/ear-lobe-repair',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/cosmetic-surgery/scar-revision',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/cosmetic-surgery/vampire-facelift',
+      element: <SpecificService />,
+    },
+    {
+      path: '/services/cosmetic-surgery/vampire-facelift',
+      element: <SpecificService />,
+    },
+    {
       path: '/about-us',
       element: <AboutUs/>,
     },

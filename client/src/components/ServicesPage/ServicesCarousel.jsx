@@ -22,6 +22,7 @@ const PrevArrow = ({ onClick }) => (
   </button>
 );
 
+
 const Servicescarousel = ({Data,Title}) => {
   const settings = {
     dots: false,
@@ -57,7 +58,7 @@ const Servicescarousel = ({Data,Title}) => {
         <Slider {...settings}>
           {Data.map((treatment, index) => (
             <div key={index} className="px-4">
-             <a href={`/specific-service/?Data=${encodeURIComponent(JSON.stringify(treatment))}&Title=${encodeURIComponent(Title)}`} className="flex flex-col items-center">
+             <a href={`${treatment.link}`} className="flex flex-col items-center">
                 <div className="rounded-full border-[6px] border-[#7491A1] p-1 mb-4">
                   <img loading='lazy' width="auto" height="auto"
                     src={treatment.image}
