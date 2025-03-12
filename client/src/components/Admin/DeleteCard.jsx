@@ -60,7 +60,7 @@ const DeleteCard = ({
         {/* User information and button in a flex container */}
         <div className="mt-4 flex flex-col justify-between">
           <div className="flex items-center gap-4">
-            <img width="auto" height="auto" loading='lazy' src={UserPhoto} alt="" className="w-16 h-16 rounded-full object-cover" />
+            <img width="auto" height="auto" loading='lazy' src={UserPhoto} alt="Dr. Barde" className="w-16 border-2 h-16 rounded-full object-cover" />
             <div>
               <p className="text-lg font-semibold text-gray-700 font-ElMessiri">{username}</p>
               <p className="text-xs text-gray-500">{designation}</p>
