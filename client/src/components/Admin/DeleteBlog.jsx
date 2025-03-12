@@ -78,7 +78,7 @@ const DeleteBlog = ({setshowDeletePopup}) => {
 
       <div className="min-h-screen  flex flex-col py-8 p-5 xl:p-10">
         <h1 className='mb-10 font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>
-          Delete Blogs
+          View Blogs
         </h1>
 
         {/* Button for category filtering */}

@@ -13,8 +13,8 @@ const loginTokenCookie = Cookies.get('LoginStatus');
   const handleDelete = async () => {
     try {
       
-      const response = await axios.delete(`${SERVER_URL}/api/admin/blogsById/`, {
-       data: {id},
+      const response = await axios.delete(`${SERVER_URL}/api/admin/blogsById`, {
+        params: { id } ,
         headers: {
           Authorization: `Bearer ${token}`, 
         },
