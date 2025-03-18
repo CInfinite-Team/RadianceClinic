@@ -4,7 +4,7 @@ import SecondaryBtn from '../Buttons/SecondaryBtn';
 function Topbar({title}) {
   return (
  <>
-   <div className="w-full md:max-w-7xl md:mx-auto p-4 md:p-6 gap-2 bg-[#554078] flex items-center justify-between">
+   <div className="w-full md:max-w-7xl 2xl:max-w-full  md:mx-auto p-4 md:p-6 gap-2 bg-[#554078] flex items-center justify-between">
                 <p className=" text-lg lg:text-3xl font-semibold text-white ">
                  {title} 
                 </p>

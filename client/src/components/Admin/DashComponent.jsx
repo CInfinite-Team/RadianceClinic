@@ -35,7 +35,7 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
         <>
           <Topbar title={'Welcome, Dr. Barde'} />
           <div className="w-full flex justify-center">
-            <div className="w-full max-w-7xl flex flex-wrap  flex-row lg:justify-between  gap-5 mt-6 py-6">
+            <div className="w-full max-w-7xl 2xl:max-w-full flex flex-wrap  flex-row lg:justify-between  gap-5 mt-6 py-6">
               <CountBox 
                 handleLinkClick={handleLinkClick} 
                 data={counts} 
@@ -59,7 +59,7 @@ function DashComponent({ selectedLink, handleLinkClick, data }) {
           </div>
 
           <div className="w-full max-h-8xl flex justify-center">
-            <div className="w-full max-w-7xl flex flex-wrap xl:flex-row flex-col justify-center xl:space-x-6 space-y-6 xl:space-y-0 mt-6 py-6">
+            <div className="w-full max-w-7xl 2xl:max-w-full flex flex-wrap xl:flex-row flex-col justify-center xl:space-x-6 space-y-6 xl:space-y-0 mt-6 py-6">
               
               {/* Latest Leads Box */}
               <div className='grid grid-cols-1 sm:grid-cols-2 bg-[#F0DFFF] items-start flex-1 w-full p-6 gap-4'>

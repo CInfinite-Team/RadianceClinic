@@ -26,7 +26,7 @@ function FormsAdmin({ selectedLink, data, handleViewData, onRefresh }) {
               </div>
             </div>
           </div>
-          <div className="w-full max-w-7xl overflow-x-auto mx-auto">
+          <div className="w-full max-w-7xl 2xl:max-w-full overflow-x-auto mx-auto">
             <FormTable
               data={formData}
               handleViewData={handleViewData}
