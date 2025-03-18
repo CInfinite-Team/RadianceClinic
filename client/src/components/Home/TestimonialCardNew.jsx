@@ -36,18 +36,15 @@ const TestimonialCardNew = ({
 
         
       {/* Video section */}
-      <div className="relative group w-fit h-fit">
+      <div className="relative group sm:w-[400px] sm:h-[250px] md:w-[600px] md:h-[300px] xl:w-[500px] xl:h-[300px] 2xl:w-[850px] 2xl:h-[470px]">
         <video
           id={`video-${index}`}
           ref={videoRef}
           src={data.video}
-          className="  object-cover"
+          className="w-full h-full object-cover"
           playsInline
           onEnded={() => setPlayingVideo(null)}
-        >
-           <source src={data.video} type="video/mp4" />
-           <track src={data.VTTfile} kind="subtitles" srclang="Hindi" label="Hindi"></track>
-          </video>
+        ></video>
       <button 
                     onClick={handleVideoClick}
                     className={`bg-[#ffffff86] p-2 rounded-full ${playingVideo === index && 'opacity-0'} transition duration-500 group-hover:opacity-100 flex items-center justify-center top-1/2 z-30 left-1/2 cursor-pointer absolute -translate-x-1/2 -translate-y-1/2  hover:scale-110`}
