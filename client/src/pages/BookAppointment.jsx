@@ -14,7 +14,7 @@ function BookAppointment() {
   return (
     <>
       <Helmet>
-        <title>Book Appointment – Radiance Clinic, Nagpur</title>
+        <title>Book Your Appointment – Radiance Clinic, Nagpur</title>
         <meta
         name="description"
         content="Book a consultation at Radiance Clinic for expert skin care, anti-aging, and hair transplant services in Nagpur, India."
@@ -24,6 +24,7 @@ function BookAppointment() {
       </Helmet>
       <Navbar/>
       <HeroSectionAll Title={'Consultation Appointment'} Path={'Home'} SubPath={'Consultation Appointment'} />
+     
       <AppointmentForm/>
       <Footer/>
     </>

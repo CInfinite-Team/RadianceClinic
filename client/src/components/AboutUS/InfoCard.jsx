@@ -22,7 +22,7 @@ function InfoCard({Photo,Name,CardPosition,facebook,instagram,youtube}) {
                 </div>
 
             </div>
-            <Link to={'/appointment'} className=' underline text-[#3A2953] text-xl 2xl:text-4xl text-center font-ElMessiri font-bold w-full ' >Book Appointment</Link>
+            <Link to={'/appointment'} className=' underline text-[#3A2953] text-xl 2xl:text-4xl text-center font-ElMessiri font-bold w-full ' >Book Your Appointment</Link>
         </div>
     </>
   )

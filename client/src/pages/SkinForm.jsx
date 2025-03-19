@@ -25,7 +25,7 @@ function SkinForm() {
       href="https://radianceclinic.co.in/patient-form/skin" />
     </Helmet>
     <Navbar/>
-    <PatientFormsTitle Title='New patient Enrollment For Skin Treatment' />
+    <PatientFormsTitle Title='Transform Your Skin at the Best Skin Clinic in Nagpur' />
     <SkinFormComponent/>
     <Footer/>
    </>

@@ -85,7 +85,7 @@ useEffect(() => {
                 {Show ? Show.description : 'Loading....'}
                 </p>
 
-                <PrimaryBtn title='Book Appointment' className='mt-5 !p-0 !py-0'> <a href='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </a></PrimaryBtn>
+                <PrimaryBtn title='Book Your Appointment' className='mt-5 !p-0 !py-0'> <a href='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </a></PrimaryBtn>
 
                 </div>
 
@@ -156,7 +156,7 @@ useEffect(() => {
                   
                 
 
-                <PrimaryBtn title='Book Appointment' className='mt-5 !p-0 !py-0'> <a href='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </a></PrimaryBtn>
+                <PrimaryBtn title='Book Your Appointment' className='mt-5 !p-0 !py-0'> <a href='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </a></PrimaryBtn>
 
                 </div>
 

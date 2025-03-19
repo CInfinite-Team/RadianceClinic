@@ -15,7 +15,7 @@ function FillerContent(){
                             Discover Confidence Through Expert Care</h4>
                         <p className='text-[#8C73B3] font-Inter font-bold pb-2 text-sm md:text-base xl:text-lg'>
                             Book your consultation today and take the first step toward revitalizing your hair and skin health.</p>
-                        <PrimaryBtn title='Book Appointment' className='w-full md:w-fit items-center justify-center'>Book Appointment <Appointment size={'24px'} /></PrimaryBtn>
+                        <PrimaryBtn title='Book Your Appointment' className='w-full md:w-fit items-center justify-center'>Book Appointment <Appointment size={'24px'} /></PrimaryBtn>
                     </div>
 
                     <div className='bg-[#554075] p-5 flex-1 flex flex-col justify-between'>
@@ -23,7 +23,7 @@ function FillerContent(){
                             Empowered Beauty, Expertly Delivered.</h4>
                         <p className='text-[#E2DBFF] font-Inter font-bold pb-2 text-sm md:text-base xl:text-lg'>
                             Explore personalized treatments for hair restoration and skincare that redefine beauty and self-confidence at Dr Barde’s Radiance.</p>
-                        <SecondaryBtn title='Book Appointment' className='w-full md:w-fit items-center justify-center'>Book Appointment <Appointment size={'24px'} /></SecondaryBtn>
+                        <SecondaryBtn title='Book Your Appointment' className='w-full md:w-fit items-center justify-center'>Book Appointment <Appointment size={'24px'} /></SecondaryBtn>
                     </div>
                 </div>
 

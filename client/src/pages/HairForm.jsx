@@ -26,7 +26,7 @@ function HairForm() {
     href="https://radianceclinic.co.in/patient-form/hair" />
    </Helmet>
    <Navbar/>
-    <PatientFormsTitle Title='New patient Enrollment For Hair Treatment' />
+    <PatientFormsTitle Title=' Book Your Hair Transplant in Nagpur Today' />
     <HairformComponent/>
     <Footer/>
    </>

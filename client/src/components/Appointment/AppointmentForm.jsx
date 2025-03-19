@@ -122,7 +122,20 @@ function AppointmentForm() {
 
   return (
     <>
-      <div className={`grid grid-cols-1 lg:grid-cols-3 py-24 px-4 md:px-4 xl:px-20 bg-[#fef7ff] transition  duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+     <div className="flex flex-col overflow-hidden relative pt-12 items-center   gap-5  bg-[#FDF2FF] ">
+        <h2
+          className=" font-bold font-ElMessiri text-[#554075] leading-tight text-center px-1 z-10 "
+          style={{ fontSize: "clamp(36px,4vw,55px)" }}
+        >
+           Book Your Appointment
+        </h2>
+        <p className="text-sm sm:text-base w-[97%] md:w-[80%] lg:w-[60%] xl:w-[60%] text-center text-[#554075] z-10">
+        Schedule your hair transplant in Nagpur or skin treatment with the best skin clinic in Nagpur. Fill out the form below to get started!   </p>
+
+      </div>
+      <div className={`grid grid-cols-1 lg:grid-cols-3 pb-24 pt-8 px-4 md:px-4 xl:px-20 bg-[#fef7ff] transition  duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      
+      
         <form onSubmit={handleSubmit} className='bg-white col-span-2 relative overflow-visible gap-12 z-10 p-7 flex flex-col shadow-lg shadow-[#E0D1F7]'>
           {error && <div className="text-red-500 mb-4 p-3 bg-red-50 rounded animate-fadeIn">{error}</div>}
           {success && <div className="text-green-500 mb-4 p-3 bg-green-50 rounded animate-fadeIn">{success}</div>}

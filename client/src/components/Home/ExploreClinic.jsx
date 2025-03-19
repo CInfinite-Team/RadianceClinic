@@ -47,7 +47,7 @@ function ExploreClinic() {
         <p className={`xl:text-lg text-[#50535C] lg:w-[450px]  2xl:text-[1.5vw] 2xl:leading-tight 2xl:w-[44vw] xl:w-[575px] transition-all delay-300 duration-700 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          Radiance Skin Anti aging and Hair Transplant Clinic is a vision that was founded with the intention of delivering cutting-edge skin care and hair services. We understand that great skin and healthy hair adds a lot to the personality and boosts confidence! Under able hands of Dr. Nitin Barde, who is an expert in advanced skin treatment, rejuvenation and revision services as well as hair restoration and transplantation services, Radiance Clinic is growing to be the best in the field of cosmetic dermatology and treatments. Hair Transplant In Nagpur.
+         Radiance Clinic, based in Nagpur, is your premier destination for advanced hair transplants and skin treatments. Founded by Dr. Nitin Barde, a leading dermatologist, we specialize in delivering natural, lasting results—whether it’s the best hair transplant in Nagpur or transformative skin care. Our expert team uses cutting-edge technology to ensure every patient leaves confident and radiant. Discover why we’re known as the best skin clinic in Nagpur!
         </p>
 
         <div className={`transition-all duration-1000 delay-300 transform ${

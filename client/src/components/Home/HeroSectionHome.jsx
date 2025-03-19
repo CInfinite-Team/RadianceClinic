@@ -51,13 +51,13 @@ function HeroSectionHome() {
                         </h1>
 
                         <p className="max-w-[90vw] mx-auto md:mx-0 md:max-w-[520px] xl:max-w-[680px] 2xl:max-w-[45vw] 2xl:mt-10 text-[#7E7E7E] font-Inter text-[16px] xl:text-[19px] 2xl:text-3xl text-center lg:text-left animate-fadeIn animation-delay-200">
-                            Our signature treatments are designed to enhance natural beauty. We use advanced techniques to refresh, nourish, and bring out your skin's radiance, giving you a flawless glow.
+                           Transform your hair and skin with expert care at Radiance Clinic, Nagpur. Specializing in affordable hair transplants and advanced skin treatments, we deliver natural, lasting results. Take the first step today!
                         </p>
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-7 items-center animate-fadeIn animation-delay-400">
-                        <PrimaryBtn title='Book Appointment' className=" !p-0 !py-0 2xl:text-3xl 2xl:rounded-lg  justify-center items-center ">
-                        <Link to='/book-appointment' className='p-4 py-3 2xl:p-5 flex items-center'> Book Appointment <Appointment size={'24px'} className='2xl:w-10  2xl:h-10' />  </Link>
+                        <PrimaryBtn title='Book Your Appointment' className=" !p-0 !py-0 2xl:text-3xl 2xl:rounded-lg  justify-center items-center ">
+                        <Link to='/book-appointment' className='p-4 py-3 2xl:p-5 flex items-center'> Book Your Appointment <Appointment size={'24px'} className='2xl:w-10  2xl:h-10' />  </Link>
                         </PrimaryBtn>
                         <SecondaryBtn title= {SecondBtnText[currentImg]} className=" !p-0 !py-0 2xl:text-3xl 2xl:rounded-lg  justify-center items-center relative group whitespace-nowrap ">
     <Link to={Links[currentImg]} className='p-4 py-3 2xl:p-6 ' > 

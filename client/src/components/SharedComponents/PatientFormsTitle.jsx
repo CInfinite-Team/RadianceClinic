@@ -8,7 +8,7 @@ const PatientFormsTitle = memo(({ Title }) => {
             <div className=' pb-10 md:pb-0 relative flex flex-col md:flex-row justify-start gap-10 xl:gap-32 items-center w-full overflow-hidden'>
                 <img loading='lazy' width="auto" height="auto" src={Doctor} alt="" className=' md:max-w-[300px] lg:max-w-[455px]' />
                 <h1
-          className=" font-ElMessiri lg:max-w-[465px] xl:max-w-[650px] z-10 text-[#554075] font-bold text-center lg:text-left leading-[40px] md:leading-[70px] lg:leading-[80px] xl:leading-[91px] text-[45px] md:text-[70px] xl:text-[90px] 2xl:text-[98px]"
+          className=" font-ElMessiri lg:max-w-[465px] xl:max-w-[650px] z-10 text-[#554075] font-bold text-center md:text-left leading-[40px] md:leading-[70px] lg:leading-[80px] xl:leading-[91px] text-[35px] md:text-[60px] xl:text-[80px] 2xl:text-[98px]"
           // style={{ fontSize: "clamp(36px,4vw,55px)" }}
         >
          {Title}

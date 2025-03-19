@@ -76,7 +76,7 @@ function OurTeamIntroCard({ Data }) {
         <div className={`flex items-center flex-wrap gap-5 transition-all duration-700 delay-500 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-           <PrimaryBtn title='Book Appointment' className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
+           <PrimaryBtn title='Book Your Appointment' className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
                         <Link to='/book-appointment' className='p-4 py-3 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
           {/* <a href='/about-us' className="p-4 rounded-full bg-white hover:rotate-45 transition-transform duration-500">

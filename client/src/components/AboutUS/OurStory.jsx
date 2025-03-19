@@ -26,7 +26,7 @@ function OurStory() {
             </p>
           ))}
 
-<PrimaryBtn title='Book Appointment' className="hover:scale-105 animate-fadeIn animation-delay-600 !p-0 !py-0 z-10 transition">
+<PrimaryBtn title='Book Your Appointment' className="hover:scale-105 animate-fadeIn animation-delay-600 !p-0 !py-0 z-10 transition">
                         <a href='/book-appointment' className='p-4 py-3 gap-2 flex 2xl:py-5'> Book Appointment <Appointment size={'24px'} />  </a>
                         </PrimaryBtn>
         </div>

@@ -128,7 +128,7 @@ function HomeTestimonial() {
               What Our Patients Say
             </h2>
             <p className="text-sm sm:text-base w-[97%] md:w-[80%] lg:w-[60%] xl:w-[60%] text-center text-[#554075] z-10">
-              Here are some of the reviews that our patients gave us according to our treatments on Google
+            See why patients trust Radiance Skin Clinic Nagpur for life-changing hair and skin transformations. From the best hair transplant in Nagpur to advanced skin treatments, our expert care delivers results that speak for themselves. Read their stories below!
             </p>
           </div>
 

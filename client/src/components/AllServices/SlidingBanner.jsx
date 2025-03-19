@@ -110,7 +110,7 @@ const SlidingBanner = (category) => {
                   {slides[currentIndex].description}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <PrimaryBtn title='Book Appointment' className="hover:scale-105 w-full items-center justify-center !p-0 !py-0 z-10 transition-transform">
+                <PrimaryBtn title='Book Your Appointment' className="hover:scale-105 w-full items-center justify-center !p-0 !py-0 z-10 transition-transform">
                         <Link to='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
                     <SecondaryBtn title= {slides[currentIndex].buttonText} className="justify-center w-full">
@@ -131,7 +131,7 @@ const SlidingBanner = (category) => {
                     {slides[currentIndex].description}
                   </p>
                   <div className="flex gap-4">
-                    <PrimaryBtn title='Book Appointment' className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
+                    <PrimaryBtn title='Book Your Appointment' className="hover:scale-105 !p-0 !py-0 z-10 transition-transform">
                         <Link to='/book-appointment' className='p-4 py-3 gap-2 flex'> Book Appointment <Appointment size={'24px'} />  </Link>
                         </PrimaryBtn>
                     <SecondaryBtn title= {slides[currentIndex].buttonText} className="!p-0 !py-0">

@@ -92,9 +92,9 @@ function Treatments() {
               isVisible ? 'opacity-100 translate-y-0' : ''
             }`}
           >
-            <PrimaryBtn title='Book Appointment ' className='w-full md:w-fit items-center justify-center !p-0 !py-0 transition-transform duration-300'>
+            <PrimaryBtn title='Book Your Appointment ' className='w-full md:w-fit items-center justify-center !p-0 !py-0 transition-transform duration-300'>
               <a href='/book-appointment' className='p-4 py-3 gap-2 2xl:p-5 flex items-center'>
-                Book Appointment <Appointment size={'24px'} />
+                Book Your Appointment <Appointment size={'24px'} />
               </a>
             </PrimaryBtn>
             <SecondaryBtn title='Learn More' className='w-full md:w-fit items-center justify-center !p-0 !py-0 transition-transform duration-300'>
