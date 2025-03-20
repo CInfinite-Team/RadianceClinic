@@ -7,7 +7,7 @@ function AwardsAndAchievements({AwardsData, AwardImage}) {
   return (
   <>
    <section className="max-w-5xl 2xl:max-w-full mx-auto lg:px-6">
-      <h2 className=" font-bold font-ElMessiri text-[#554075] mb-8" style={{fontSize:'clamp(36px,4vw,55px)'}}>Awards And Achievement</h2>
+      <h2 className=" font-bold font-ElMessiri text-[#554075] mb-8" style={{fontSize:'clamp(36px,4vw,55px)'}}>Medical Journey</h2>
       
       <div className=" border-l-2 border-[#554075] ml-16">
         {AwardsData.map((award, index) => (

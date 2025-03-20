@@ -42,7 +42,7 @@ function AboutUs() {
   <HeroSectionAll Title={'About Us'} Path={'Home'} SubPath={'About Us'} />
   <OurStory />
   <DoctorInfo Photo={Nitin} Name={'Dr. Nitin Barde'} Position={'Founder & Cosmetic Surgeon'} CardPosition={'Cosmetic Surgeon'} info={NitinInfo} AwardsData={awardsDataNitin} AwardImage={Nitin_Award_Images} facebook={'/'} instagram={'/'} youtube={'/'} />
-  <DoctorInfo Photo={Radhika} Name={'Dr. Radhika Barde'} Position={'Cosmetic Surgeon'} CardPosition={'Cosmetic Surgeon'} info={RadhikaInfo} AwardsData={awardsDataRadhika} AwardImage={Radhika_Award_Images} facebook={'/'} instagram={'/'} youtube={'/'} />
+  <DoctorInfo Photo={Radhika} Name={'Dr. Radhika Barde'} Position={'Cosmetic Surgeon'} CardPosition={'Cosmetic Surgeon'} info={RadhikaInfo}  facebook={'/'} instagram={'/'} youtube={'/'} />
   <Stats/>
   <HomeTestimonial/>
   <ContactPlate/>

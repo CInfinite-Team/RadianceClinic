@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Reception from '../../assets/Clinic/Reception.svg';
-import OperationTheater from '../../assets/Clinic/OperationTheater.svg';
+import OperationTheater from '../../assets/Clinic/Radiance-Clinic4.jpg';
 import Operation2 from '../../assets/Clinic/Operation2.svg';
 import Image3 from '../../assets/Clinic/Image3.svg';
 

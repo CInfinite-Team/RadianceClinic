@@ -62,9 +62,9 @@ function DoctorInfo({
           ))}
         </div>
 
-        <div className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}>
+        {AwardsData && <div className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}>
           <AwardsAndAchievements AwardsData={AwardsData} AwardImage={AwardImage} />
-        </div>
+        </div>}
       </div>
     </div>
   );
