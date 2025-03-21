@@ -127,7 +127,7 @@ function AppointmentForm() {
           className=" font-bold font-ElMessiri text-[#554075] leading-tight text-center px-1 z-10 "
           style={{ fontSize: "clamp(36px,4vw,55px)" }}
         >
-           Book Your Appointment
+           Expert Skin and Hair Care Awaits
         </h2>
         <p className="text-sm sm:text-base w-[97%] md:w-[80%] lg:w-[60%] xl:w-[60%] text-center text-[#554075] z-10">
         Schedule your hair transplant in Nagpur or skin treatment with the best skin clinic in Nagpur. Fill out the form below to get started!   </p>
