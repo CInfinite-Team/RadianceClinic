@@ -131,7 +131,7 @@ const Navbar = () => {
             {/* Right Navigation */}
             <div className={`hidden lg:flex gap-14 xl:gap-24 flex-1 justify-end transition-all delay-700 duration-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
               <Link to="/clinic" className="text-black hover:text-[#725B98]">Clinic</Link>
-              <Link to="/blog" className="text-black hover:text-[#725B98]">Blog</Link>
+              <Link to="/blog" className="text-black hover:text-[#725B98]">Blogs</Link>
               <Link to="/contact-us" className="text-black hover:text-[#725B98]">Contact Us</Link>
               <div className="relative group">
                 <button className="text-black hover:text-[#725B98] flex items-center">
@@ -189,7 +189,7 @@ const Navbar = () => {
               </li>
               <li><Link to="/about-us" className="block px-4 py-2 text-black hover:text-[#725B98]">About Us</Link></li>
               <li><Link to="/clinic" className="block px-4 py-2 text-black hover:text-[#725B98]">Clinic</Link></li>
-              <li><Link to="/blog" className="block px-4 py-2 text-black hover:text-[#725B98]">Blog</Link></li>
+              <li><Link to="/blog" className="block px-4 py-2 text-black hover:text-[#725B98]">Blogs</Link></li>
               <li><Link to="/contact-us" className="block px-4 py-2 text-black hover:text-[#725B98]">Contact Us</Link></li>
               <li>
                 <button

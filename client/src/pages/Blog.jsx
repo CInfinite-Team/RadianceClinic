@@ -70,7 +70,7 @@ const Blog = () => {
   return (
     <>
       <Navbar />
-      <HeroSectionAll Title={'Blog'} Path={'Home'} SubPath={'Blog'} />
+      <HeroSectionAll Title={'Blogs'} Path={'Home'} SubPath={'Blogs'} />
 
       <div className="min-h-screen bg-gray-100 flex flex-col py-8 p-5 xl:p-10 2xl:px-24">
         <h2 className='font-ElMessiri text-[#554075] font-bold leading-tight animate-fadeIn' style={{ fontSize: 'clamp(36px,6vw,60px)' }}>

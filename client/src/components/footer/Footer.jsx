@@ -11,7 +11,7 @@ const Footer = () => {
 const LinksData=[
   
    { 
-    Text: 'Book Appointment',
+    Text: 'Book Your Appointment',
     Link: '/book-appointment'
   },
   {
@@ -23,7 +23,7 @@ const LinksData=[
     Link: '/patient-form/skin'
   },
   {
-    Text: 'Blog',
+    Text: 'Blogs',
     Link: '/blog'
   },
   { 
@@ -131,10 +131,10 @@ const IconData=[
             <ul className="space-y-2">
               <li className={`hover:underline transition-all duration-500 transform ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
-              }`} style={{ transitionDelay: '500ms' }}> <a href="tel:+918822179877"> (+91) 9822179877</a></li>
+              }`} style={{ transitionDelay: '500ms' }}> <a href="tel:+919822176677"> (+91) 9822176677</a></li>
               <li className={`hover:underline transition-all duration-500 transform ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
-              }`} style={{ transitionDelay: '600ms' }}> <a href="tel:+918888069877">(+91) 8888069877</a> </li>
+              }`} style={{ transitionDelay: '600ms' }}> <a href="tel:+918669666677">(+91) 8669666677</a> </li>
               <li className={`text-sm transition-all duration-500 transform ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
               }`} style={{ transitionDelay: '700ms' }}>

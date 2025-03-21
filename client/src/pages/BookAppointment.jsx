@@ -23,7 +23,7 @@ function BookAppointment() {
         href="https://radianceclinic.co.in/book-appointment" />
       </Helmet>
       <Navbar/>
-      <HeroSectionAll Title={'Consultation Appointment'} Path={'Home'} SubPath={'Consultation Appointment'} />
+      <HeroSectionAll Title={'Book Your Appointment'} Path={'Home'} SubPath={'Book Your Appointment'} />
      
       <AppointmentForm/>
       <Footer/>

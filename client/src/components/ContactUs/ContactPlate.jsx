@@ -20,7 +20,7 @@ function ContactPlate() {
             <a href="/"><img loading='lazy' width="auto" height="auto" src={Logo} alt="" className={` ${IsOpen ? 'hidden' : ''} w-16`} /></a>
 
             <div className='flex justify-between items-center w-full '>
-                <a href="tel:+919822179877" target='_blank'><img loading='lazy' width="auto" height="auto" src={Phone} alt="" /></a>
+                <a href="tel:+919822176677" target='_blank'><img loading='lazy' width="auto" height="auto" src={Phone} alt="" /></a>
                 <a href="https://wa.me/919822176677" target='_blank'><img loading='lazy' width="auto" height="auto" src={Whatsapp} alt="" /></a>
                 <a href="mailto:radianceclinicnagpur@gmail.com" target='_blank'><img loading='lazy' width="auto" height="auto" src={Email} alt="" /></a>
                 <a href="/"><img  loading='lazy' width="auto" height="auto" src={Logo} alt="Barde radiance Logo" className='w-11' /></a>
