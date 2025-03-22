@@ -121,6 +121,26 @@ const IconData=[
                 </li>
               ))}
             </ul>
+            <h3 className="text-lg font-semibold my-4  duration-300 transition-transform">Legal</h3>
+            <ul className="space-y-2">
+             
+                <li className={`transition-all duration-500 transform ${
+                  isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
+                }`} style={{ transitionDelay: `${(0 * 100) + 300}ms` }}>
+                  <Link to={`/privacy-policy`} className="hover:underline hover:text-gray-300">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li className={`transition-all duration-500 transform ${
+                  isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
+                }`} style={{ transitionDelay: `${(1 * 100) + 300}ms` }}>
+                  <Link to={`/terms-and-conditions`} className="hover:underline hover:text-gray-300">
+                    Terms & Conditions
+                  </Link>
+                </li>
+           
+            </ul>
+            
           </div>
 
           {/* Contact Us Section */}
