@@ -14,10 +14,10 @@ function BookAppointment() {
   return (
     <>
       <Helmet>
-        <title>Book Your Appointment – Radiance Clinic, Nagpur</title>
+        <title>Book Your Appointment | Radinace Clinic – Hair & Skin Care in Nagpur</title>
         <meta
         name="description"
-        content="Book a consultation at Radiance Clinic for expert skin care, anti-aging, and hair transplant services in Nagpur, India."
+        content="Schedule your hair transplant or skin treatment consultation at Radinace Clinic in Nagpur. Expert care, personalized solutions. Book now!"
         />
         <link rel="canonical"
         href="https://radianceclinic.co.in/book-appointment" />

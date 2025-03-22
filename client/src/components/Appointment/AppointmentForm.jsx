@@ -1,10 +1,46 @@
 import React, { useState, useEffect  } from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import axios from 'axios';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import AppointmentCalendar from './AppointmentCalendar';
 import SERVER_URL from '../../constant.mjs';
+import {whychoose} from './Whychoose.js';
+import { ChevronRight,ChevronLeft } from 'lucide-react';
 
 function AppointmentForm() {
+  const NextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div className="custom-next-arrow" onClick={onClick}>
+          <ChevronLeft/>
+      </div>
+    );
+  };
+  
+  const PrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div className="custom-prev-arrow" onClick={onClick}>
+        <ChevronRight/>
+      </div>
+    );
+  };
+  
+  // Slider Settings
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    fade: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: false,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -333,6 +369,45 @@ function AppointmentForm() {
         </div>
         <div className='bg-[#554075] w-44 lg:w-52 xl:w-96 h-[1px]'></div>
       </div>
+
+      <div className='flex flex-col px-1 pt-10  bg-[#FDF2FF] items-center'>
+        <h2 className='font-bold font-ElMessiri mb-2 text-[#554075] leading-tight text-center px-1 z-10' style={{ fontSize: 'clamp(36px,4vw,55px)' }}>
+        Why Choose Radinace Clinic ?
+        </h2>
+
+        <p className=" w-[97%] md:w-[80%] lg:w-[60%] xl:w-[60%] text-[#554075] z-10 text-center">
+        Why choose Radinace Clinic? We provide expert medical care with personalized treatment plans tailored to your needs. Our clinic combines advanced technology, a compassionate team of professionals, and a welcoming environment to ensure you receive the best possible care and comfort.    
+          </p>
+
+          <div className="col-span-1 md:p-5 mb-10 relative h-full w-full z-10 lg:p-0  transition-opacity duration-1000 delay-500 opacity-100">
+      <Slider {...sliderSettings} className='h-full my-6 w-full  mx-auto'>
+        {whychoose.map((item, index) => (
+          <div key={index} className="relative flex items-center justify-center my-20 w-full">
+
+          <div className=' bg-[#FDF2FF] rounded-md p-2 infocardshadow w-[80%] xl:w-[50%] mx-auto  z-10 flex flex-col items-center justify-center gap-5'>
+          
+          <h3 className='text-2xl font-bold font-ElMessiri text-[#554075] text-center '>{item.title}</h3>
+          <p className="  text-[#554075] mx-auto z-10 text-center">
+      {item.description}   
+          </p>
+          </div>
+        </div>))}
+
+       
+        
+       
+      </Slider>
+    </div>
+      </div>
+      {/* <div className='flex flex-col gap-7 px-1 py-10  bg-[#FDF2FF] items-center'>
+        <h2 className='font-bold font-ElMessiri text-[#554075] leading-tight text-center px-1 z-10' style={{ fontSize: 'clamp(36px,4vw,55px)' }}>
+        How to Book Your Appointment
+        </h2>
+
+        <p className=" w-[97%] md:w-[92%]  text-[#554075] z-10">
+        Booking your appointment is fast and simple. Just fill out the form above, and our team will contact you within 24 hours to confirm your consultation. Whether you’re looking for a hair transplant in Nagpur or advanced skin care solutions, we’re here to guide you every step of the way.       </p>
+
+      </div> */}
     </>
   );
 }
