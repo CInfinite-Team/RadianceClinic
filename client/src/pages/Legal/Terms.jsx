@@ -58,7 +58,7 @@ function Terms() {
 
         <img src={Grayflower} alt="Filler content" width="auto" height="auto" className=' rotate-12 absolute top-5 right-0 z-0' />
      
-      <div className="flex items-center gap-4 w-full justify-center mx-auto">
+      {/* <div className="flex items-center gap-4 w-full justify-center mx-auto">
                  
                   <h3
                     className="font-ElMessiri text-[#554075] font-bold text-center"
@@ -67,7 +67,7 @@ function Terms() {
                     Terms and Conditions
                   </h3>
                   
-                </div>
+                </div> */}
 
         <div
         
